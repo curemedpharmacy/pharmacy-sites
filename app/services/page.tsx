@@ -1,0 +1,72 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ServiceLabelCard } from "@/components/ServiceLabelCard";
+import { JsonLd } from "@/components/JsonLd";
+import { getBrandConfig } from "@/lib/brands";
+import { breadcrumbSchema } from "@/lib/schema";
+import { getServicesForBrand } from "@/lib/services";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const brand = getBrandConfig();
+  return {
+    title: `Services | ${brand.name}`,
+    description: `Explore ${brand.name} services for medication support, vaccinations, delivery, testing, and personalized pharmacy care designed for patients in Paterson, New Jersey.`,
+    alternates: { canonical: "/services" },
+  };
+}
+
+export default function ServicesPage() {
+  const brand = getBrandConfig();
+  const services = getServicesForBrand(brand);
+  const breadcrumb = breadcrumbSchema([
+    { name: "Home", url: brand.url },
+    { name: "Services", url: `${brand.url}/services` },
+  ]);
+
+  return (
+    <section className="mx-auto max-w-6xl px-6 py-20">
+      <JsonLd data={breadcrumb} />
+      <div className="max-w-3xl">
+        <span className="font-mono text-xs uppercase tracking-wider text-amber-dark">
+          Services
+        </span>
+        <h1 className="mt-3 font-display text-4xl font-semibold text-ink">
+          Pharmacy care that fits everyday life
+        </h1>
+        <p className="mt-6 text-lg leading-relaxed text-ink/70">
+          From same-day refills to personalized medication support, {brand.name}{" "}
+          offers practical services designed to keep care simple.
+        </p>
+      </div>
+
+      <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {services.map((service) => (
+          <ServiceLabelCard
+            key={service.slug}
+            rx={service.rx}
+            title={service.title}
+            description={service.description}
+            directions={service.directions}
+            href={`/services/${service.slug}`}
+          />
+        ))}
+      </div>
+
+      <div className="mt-12 rounded-md border border-ink/10 bg-tan/40 p-8">
+        <h2 className="font-display text-2xl font-semibold text-ink">
+          Need help choosing a service?
+        </h2>
+        <p className="mt-3 text-sm leading-relaxed text-ink/70">
+          Call {brand.phone} or visit us at {brand.address.street} to speak with
+          a pharmacist about what you need.
+        </p>
+        <Link
+          href="/contact"
+          className="mt-6 inline-flex rounded-full bg-amber px-5 py-3 font-mono text-xs uppercase tracking-wider text-paper transition hover:bg-amber-dark"
+        >
+          Contact us
+        </Link>
+      </div>
+    </section>
+  );
+}

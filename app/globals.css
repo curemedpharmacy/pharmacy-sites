@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+/*
+  Design system: "Apothecary Label"
+  Rooted in the vernacular of prescription bottles and pharmacy
+  labels -- warm amber glass, kraft-paper labels, clinical ink,
+  and monospaced "directions" typography for hours/phone/dosage-style
+  data. See design notes in README.md.
+*/
+@theme {
+  --color-ink: #1b2b26;
+  --color-paper: #fbfaf7;
+  --color-tan: #ede6d6;
+  --color-amber: #c9711d;
+  --color-amber-dark: #9c5714;
+  --color-sage: #7a9b8e;
+  --color-alert: #b23a2e;
+
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+/* Respect reduced-motion preferences site-wide */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Visible keyboard focus ring, on brand */
+:focus-visible {
+  outline: 2px solid var(--color-amber);
+  outline-offset: 2px;
+}
