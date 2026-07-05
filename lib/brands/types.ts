@@ -1,5 +1,10 @@
 export type BrandHours = { day: string; time: string };
 
+export type BrandImage = {
+  path: string;
+  alt: string;
+};
+
 export type BrandConfig = {
   slug: "curemed" | "saimz";
   name: string;
@@ -26,4 +31,10 @@ export type BrandConfig = {
   };
   npi?: string;
   offersCompounding: boolean;
+  heroImages: BrandImage[];
+  galleryImages: {
+    team: BrandImage;
+    services: BrandImage;
+    storefront: BrandImage;
+  };
 };

@@ -29,4 +29,36 @@ export const curemed: BrandConfig = {
     linkedin: "https://www.linkedin.com/company/curemed-pharmacy",
   },
   offersCompounding: true,
+  heroImages: [
+    {
+      path: "/images/curemed/hero/interior-store-shelves.webp",
+      alt: "Interior view of the pharmacy shelves",
+    },
+    {
+      path: "/images/curemed/hero/grand-opening-ribbon-cutting.webp",
+      alt: "Grand opening ribbon cutting event",
+    },
+     {
+      path: "/images/curemed/hero/storefront-personalized-care.webp",
+      alt: "Storefront with personalized pharmacy care",
+    },
+    {
+      path: "/images/curemed/hero/community-health-screening.webp",
+      alt: "Community health screening event",
+    },
+  ],
+  galleryImages: {
+    team: {
+      path: "/images/curemed/team/pharmacist-consultation.webp",
+      alt: "Pharmacist consultation photo",
+    },
+    services: {
+      path: "/images/curemed/services/medication-therapy-management.webp",
+      alt: "Medication therapy management photo",
+    },
+    storefront: {
+      path: "/images/curemed/storefront/checkout-counter.webp",
+      alt: "Storefront checkout counter photo",
+    },
+  },
 };

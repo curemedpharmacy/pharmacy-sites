@@ -23,8 +23,22 @@ export const saimz: BrandConfig = {
     { day: "Saturday", time: "10:00 AM - 2:00 PM" },
     { day: "Sunday", time: "Closed" },
   ],
-  social: {
-  },
+  social: {},
   npi: "1962995290",
   offersCompounding: false,
+  heroImages: [],
+  galleryImages: {
+    team: {
+      path: "",
+      alt: "",
+    },
+    services: {
+      path: "",
+      alt: "",
+    },
+    storefront: {
+      path: "",
+      alt: "",
+    },
+  },
 };

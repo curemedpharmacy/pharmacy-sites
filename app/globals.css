@@ -3,22 +3,21 @@
 /*
   Design system: "Apothecary Label"
   Rooted in the vernacular of prescription bottles and pharmacy
-  labels -- warm amber glass, kraft-paper labels, clinical ink,
-  and monospaced "directions" typography for hours/phone/dosage-style
-  data. See design notes in README.md.
+  labels -- now aligned to the Curemed logo palette with a fresh
+  green accent, deep navy text, and a warm off-white background.
 */
 @theme {
-  --color-ink: #1b2b26;
-  --color-paper: #fbfaf7;
-  --color-tan: #ede6d6;
-  --color-amber: #c9711d;
-  --color-amber-dark: #9c5714;
+  --color-ink: #1c3a5e;
+  --color-paper: #f7f4eb;
+  --color-tan: #e8e0cf;
+  --color-amber: #8cc63f;
+  --color-amber-dark: #6f9d2f;
   --color-sage: #7a9b8e;
   --color-alert: #b23a2e;
 
-  --font-display: "Fraunces", ui-serif, Georgia, serif;
-  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --font-display: "Roboto", "Segoe UI", Arial, sans-serif;
+  --font-body: "Roboto", "Segoe UI", Arial, sans-serif;
+  --font-mono: "Roboto", "Segoe UI", Arial, sans-serif;
 }
 
 html {
@@ -29,6 +28,27 @@ body {
   background-color: var(--color-paper);
   color: var(--color-ink);
   font-family: var(--font-body);
+}
+
+body,
+p,
+span,
+li,
+a,
+button,
+input,
+textarea,
+select {
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
 }
 
 /* Respect reduced-motion preferences site-wide */

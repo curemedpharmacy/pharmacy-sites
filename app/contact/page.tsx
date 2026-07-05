@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import { ContactForm } from "@/components/ContactForm";
 import { getBrandConfig } from "@/lib/brands";
 
-export const metadata: Metadata = {
-  title: "Contact Us",
-  description:
-    "Contact the pharmacy by phone or send a message with your prescription or service question.",
-  alternates: { canonical: "/contact" },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const brand = getBrandConfig();
+  return {
+    title: `Contact ${brand.name}`,
+    description: `Reach ${brand.name} at ${brand.phone} or visit us at ${brand.address.street} in Paterson for pharmacy questions and service help.`,
+    alternates: { canonical: "/contact" },
+  };
+}
 
 export default function ContactPage() {
   const brand = getBrandConfig();

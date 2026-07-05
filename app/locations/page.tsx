@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { JsonLd } from "@/components/JsonLd";
@@ -8,7 +9,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const brand = getBrandConfig();
   return {
     title: `Locations | ${brand.name}`,
-    description: `Visit ${brand.name} at ${brand.address.street}, ${brand.address.city}, ${brand.address.state} ${brand.address.zip}.`,
+    description: `Visit ${brand.name} at ${brand.address.street} in Paterson, NJ, during our posted hours and call ${brand.phone} with questions.`,
     alternates: { canonical: "/locations" },
   };
 }
@@ -29,10 +30,45 @@ export default function LocationsPage() {
         </h1>
         <p className="mt-6 text-lg leading-relaxed text-ink/70">
           {brand.name} is located at {brand.address.street},{" "}
-          {brand.address.city}, {brand.address.state} {brand.address.zip}. We
-          welcome walk-ins for many services and are happy to help by phone as
-          well.
+          {brand.address.city}, {brand.address.state} {brand.address.zip}. Our
+          caring goes beyond the cure, and we welcome visits for refill
+          questions, vaccine appointments, testing, and everyday pharmacy
+          support.
         </p>
+      </div>
+
+      <div className="mt-8 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="overflow-hidden rounded-md border border-ink/10 bg-paper">
+          {brand.galleryImages.storefront.path ? (
+            <Image
+              src={brand.galleryImages.storefront.path}
+              alt={brand.galleryImages.storefront.alt}
+              width={1200}
+              height={800}
+              loading="lazy"
+              className="h-80 w-full object-cover"
+            />
+          ) : (
+            <div className="flex h-80 items-center justify-center px-6 text-center text-sm leading-7 text-ink/70">
+              Location photography will be added soon.
+            </div>
+          )}
+        </div>
+
+        <div className="rounded-md border border-ink/10 bg-tan/40 p-8">
+          <h2 className="font-display text-2xl font-semibold text-ink">
+            Easy to reach, easy to visit
+          </h2>
+          <p className="mt-4 text-sm leading-relaxed text-ink/70">
+            Whether you are stopping by for a refill, a vaccine, or a medication
+            question, our location is set up to make visits straightforward and
+            welcoming.
+          </p>
+          <p className="mt-4 text-sm leading-relaxed text-ink/70">
+            We welcome local patients who want convenient access to pharmacy
+            support without long waits or complicated steps.
+          </p>
+        </div>
       </div>
 
       <div className="mt-12 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">

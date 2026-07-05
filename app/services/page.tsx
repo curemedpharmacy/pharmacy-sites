@@ -10,7 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const brand = getBrandConfig();
   return {
     title: `Services | ${brand.name}`,
-    description: `Explore ${brand.name} services for medication support, vaccinations, delivery, testing, and personalized pharmacy care designed for patients in Paterson, New Jersey.`,
+    description: `${brand.name} offers pharmacy services such as refill support, delivery, vaccinations, testing, medication support, and ${brand.offersCompounding ? "compounding" : "local care"} in Paterson.`,
     alternates: { canonical: "/services" },
   };
 }
@@ -31,11 +31,12 @@ export default function ServicesPage() {
           Services
         </span>
         <h1 className="mt-3 font-display text-4xl font-semibold text-ink">
-          Pharmacy care that fits everyday life
+          Practical pharmacy support for everyday care
         </h1>
         <p className="mt-6 text-lg leading-relaxed text-ink/70">
-          From same-day refills to personalized medication support, {brand.name}{" "}
-          offers practical services designed to keep care simple.
+          At {brand.name}, our caring goes beyond the cure. We help patients in
+          Paterson with refill support, medication organization, delivery,
+          testing, and other services that keep care close to home.
         </p>
       </div>
 
@@ -57,8 +58,8 @@ export default function ServicesPage() {
           Need help choosing a service?
         </h2>
         <p className="mt-3 text-sm leading-relaxed text-ink/70">
-          Call {brand.phone} or visit us at {brand.address.street} to speak with
-          a pharmacist about what you need.
+          Call {brand.phone} or visit us at {brand.address.street} to talk
+          through what you need.
         </p>
         <Link
           href="/contact"

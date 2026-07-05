@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -27,7 +28,7 @@ export async function generateMetadata({
 
   return {
     title: `${service.title} | ${brand.name}`,
-    description: `Learn more about ${service.title} from ${brand.name}, including how this pharmacy service helps patients stay organized, supported, and confident every day.`,
+    description: `${service.title} is one of the pharmacy services offered by ${brand.name} in Paterson, from refill support to medication guidance and routine care.`,
     alternates: { canonical: `/services/${service.slug}` },
   };
 }
@@ -48,6 +49,13 @@ export default async function ServiceDetailPage({
     { name: "Services", url: `${brand.url}/services` },
     { name: service.title, url: `${brand.url}/services/${service.slug}` },
   ]);
+
+  const serviceImage =
+    brand.slug === "curemed" &&
+    (service.slug === "medication-therapy-management" ||
+      service.slug === "immunizations")
+      ? brand.galleryImages.services
+      : null;
 
   return (
     <section className="mx-auto max-w-5xl px-6 py-20">
@@ -76,6 +84,19 @@ export default async function ServiceDetailPage({
           {service.heroDescription}
         </p>
       </div>
+
+      {serviceImage ? (
+        <div className="mt-8 overflow-hidden rounded-md border border-ink/10 bg-paper">
+          <Image
+            src={serviceImage.path}
+            alt={serviceImage.alt}
+            width={1200}
+            height={800}
+            loading="lazy"
+            className="h-80 w-full object-cover"
+          />
+        </div>
+      ) : null}
 
       <div className="mt-10 grid gap-8 lg:grid-cols-[1.4fr_0.8fr]">
         <div className="rounded-md border border-ink/10 bg-tan/30 p-8">

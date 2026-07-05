@@ -7,7 +7,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const brand = getBrandConfig();
   return {
     title: `FAQ | ${brand.name}`,
-    description: `Find answers about insurance, prescription transfers, delivery, and pharmacy services at ${brand.name}.`,
+    description: `Find practical answers about delivery, prescription transfers, vaccines, testing, and pharmacy services at ${brand.name}.`,
     alternates: { canonical: "/faq" },
   };
 }

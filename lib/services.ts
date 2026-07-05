@@ -10,7 +10,6 @@ export type ServiceItem = {
   heroDescription: string;
   overview: string;
   highlights: string[];
-  includesCompounding?: boolean;
 };
 
 const sharedServices: ServiceItem[] = [
@@ -19,17 +18,17 @@ const sharedServices: ServiceItem[] = [
     rx: "01",
     title: "Diabetes Testing & Education",
     description:
-      "Affordable A1C, cholesterol, and diabetes testing, plus one-on-one education from an accredited pharmacist.",
+      "We offer diabetes testing and education in a community setting, with one-on-one support from our pharmacy team.",
     directions: "Walk-in testing, education by appointment",
     heroTitle: "Diabetes support that fits your routine",
     heroDescription:
-      "Our pharmacists offer practical education and testing that helps patients understand their numbers and take the next step with confidence.",
+      "Our team offers practical education and testing that helps patients understand their options and plan their next steps.",
     overview:
-      "We provide accessible testing and education for patients managing diabetes, prediabetes, and cholesterol concerns.",
+      "We provide accessible testing and education for patients managing diabetes and related wellness questions.",
     highlights: [
       "A1C and cholesterol testing",
       "One-on-one medication education",
-      "Personalized follow-up guidance",
+      "Helpful follow-up conversations",
     ],
   },
   {
@@ -37,17 +36,17 @@ const sharedServices: ServiceItem[] = [
     rx: "02",
     title: "Medication Synchronization",
     description:
-      "We sync refills to a single pickup or delivery date so your routine stays simple and reliable.",
+      "We help coordinate refills so medications can be picked up or delivered on a single schedule.",
     directions: "One pickup date, every medication",
     heroTitle: "One refill date for every prescription",
     heroDescription:
-      "Medication synchronization helps reduce missed doses and makes monthly refills easier to manage.",
+      "Medication synchronization helps make monthly refill routines easier to manage and less stressful.",
     overview:
-      "We coordinate your medications so you can pick up or receive everything on the same schedule each month.",
+      "We coordinate medications so patients can keep up with their routine without extra trips or confusion.",
     highlights: [
       "Monthly refill alignment",
-      "Fewer rushed trips to the pharmacy",
-      "Support for complex medication routines",
+      "Less time spent coordinating pickups",
+      "Support for complex routines",
     ],
   },
   {
@@ -55,17 +54,17 @@ const sharedServices: ServiceItem[] = [
     rx: "03",
     title: "Compliance Packaging",
     description:
-      "We sort medications into easy daily packets so complex regimens are simpler to follow correctly.",
+      "We can organize medications into easy-to-follow daily packets to help simplify routines.",
     directions: "Ask us to set up your packets",
     heroTitle: "A clearer way to stay on track",
     heroDescription:
-      "Compliance packaging helps patients organize daily medications and avoid missed doses.",
+      "Compliance packaging helps patients organize daily medications in a way that is easier to follow at home.",
     overview:
-      "We prepare medication packets that make it easier to follow a prescribed routine at home.",
+      "We prepare medication packets that make it easier to follow a prescribed routine each day.",
     highlights: [
       "Daily dose packs",
       "Helpful for caregivers and seniors",
-      "Supports medication adherence",
+      "Support for medication adherence",
     ],
   },
   {
@@ -73,16 +72,16 @@ const sharedServices: ServiceItem[] = [
     rx: "04",
     title: "Immunizations",
     description:
-      "Flu, COVID-19, RSV, and routine vaccinations administered by our licensed pharmacists.",
+      "We provide routine vaccinations such as flu, COVID-19, and RSV when available.",
     directions: "Walk-ins welcome, most insurance accepted",
     heroTitle: "Vaccines administered close to home",
     heroDescription:
-      "We offer routine and seasonal immunizations in a convenient community setting.",
+      "Our pharmacists offer vaccine services in a convenient community setting.",
     overview:
-      "Our pharmacists provide vaccine services that are easy to access and tailored to your care needs.",
+      "We provide routine vaccine services that are easy to access and tailored to patient needs.",
     highlights: [
       "Flu, COVID-19, and RSV vaccines",
-      "No appointment needed for many visits",
+      "Convenient local access",
       "Pharmacist-administered care",
     ],
   },
@@ -91,17 +90,17 @@ const sharedServices: ServiceItem[] = [
     rx: "05",
     title: "Free Local Delivery",
     description:
-      "We bring your medications to your door at no charge, usually within the day.",
+      "We offer free local delivery for eligible prescriptions and routine needs within our service area.",
     directions: "Same-day within local delivery zone",
-    heroTitle: "Fast delivery without the extra cost",
+    heroTitle: "Helpful delivery without the extra cost",
     heroDescription:
-      "Free delivery keeps your medications convenient and accessible for routine pickups.",
+      "Our free delivery service helps patients receive medications in a convenient way.",
     overview:
-      "We offer free local delivery to patients who prefer to receive prescriptions at home.",
+      "We offer local delivery to patients who prefer having prescriptions brought to them.",
     highlights: [
       "No-cost delivery",
-      "Same-day service in our delivery area",
-      "Helpful for busy households and mobility concerns",
+      "Convenient local service",
+      "Help for busy households",
     ],
   },
   {
@@ -109,31 +108,67 @@ const sharedServices: ServiceItem[] = [
     rx: "06",
     title: "Medication Therapy Management",
     description:
-      "We review your medications with you to improve safety, simplify your routine, and answer questions.",
+      "We can review medications with patients and help clarify questions about a routine or treatment plan.",
     directions: "Personalized review with a pharmacist",
     heroTitle: "Medication reviews designed around you",
     heroDescription:
-      "Medication therapy management gives patients a structured, one-on-one review of their medications and goals.",
+      "Medication therapy management gives patients a chance to talk through their medications with a pharmacist.",
     overview:
       "Our pharmacists help patients understand how each medication fits into their treatment plan and daily routine.",
     highlights: [
       "Medication review with a pharmacist",
-      "Support for side effects and medication questions",
-      "Better understanding of your treatment plan",
+      "Support for routine questions",
+      "A clearer understanding of your plan",
+    ],
+  },
+  {
+    slug: "weight-loss-program",
+    rx: "07",
+    title: "Weight Loss Program",
+    description:
+      "We offer a pharmacist-guided weight loss program that supports follow-up and routine care discussions.",
+    directions: "Ask us about availability and next steps",
+    heroTitle: "Support for a weight loss journey",
+    heroDescription:
+      "Our weight loss program is designed to support patients with follow-up and practical pharmacy guidance.",
+    overview:
+      "We offer a weight loss program that helps patients talk through options and stay connected to care.",
+    highlights: [
+      "Pharmacist-guided support",
+      "Routine follow-up conversations",
+      "Care that stays close to home",
+    ],
+  },
+  {
+    slug: "specialty-medication",
+    rx: "08",
+    title: "Specialty Medication",
+    description:
+      "We support patients with specialty medication questions and help connect them with the right pharmacy guidance.",
+    directions: "Call us to discuss availability",
+    heroTitle: "Specialty medication support with a personal touch",
+    heroDescription:
+      "We help patients navigate specialty medication questions and stay connected to the pharmacy team.",
+    overview:
+      "We offer support for specialty medication needs and can help patients understand how to move forward.",
+    highlights: [
+      "Support for specialty medication questions",
+      "Helpful follow-up conversations",
+      "Care from a local pharmacy team",
     ],
   },
 ];
 
 const compoundingService: ServiceItem = {
   slug: "compounding",
-  rx: "07",
+  rx: "09",
   title: "Custom Compounding",
   description:
-    "Personalized dosages, flavors, and forms for patients whose needs are not met by commercial medications.",
+    "We offer custom compounding for patients who may benefit from tailored dosage forms or flavors.",
   directions: "By consultation — call ahead",
   heroTitle: "Compounding care tailored to your needs",
   heroDescription:
-    "Our compounding service creates customized medication options when standard products do not fit the patient well.",
+    "Our compounding service offers customized medication options when a standard product may not fit a patient well.",
   overview:
     "We prepare customized formulations that can support unique patient needs and treatment goals.",
   highlights: [
@@ -141,11 +176,37 @@ const compoundingService: ServiceItem = {
     "Flavoring options when appropriate",
     "Personalized pharmacist consultation",
   ],
-  includesCompounding: true,
+};
+
+const pointOfCareService: ServiceItem = {
+  slug: "point-of-care-testing",
+  rx: "10",
+  title: "Point of Care Testing",
+  description:
+    "We provide point-of-care testing services that make it easier to check in and receive guidance in one visit.",
+  directions: "Ask us about availability",
+  heroTitle: "Convenient testing close to home",
+  heroDescription:
+    "Point-of-care testing gives patients a practical way to receive testing and support in the pharmacy setting.",
+  overview:
+    "We offer point-of-care testing for patients who want a convenient visit and follow-up guidance from the pharmacy team.",
+  highlights: [
+    "Quick in-pharmacy testing",
+    "Helpful guidance from our team",
+    "Convenient follow-up conversations",
+  ],
 };
 
 export function getServicesForBrand(brand: BrandConfig): ServiceItem[] {
-  return brand.offersCompounding
-    ? [...sharedServices, compoundingService]
-    : sharedServices;
+  const services = [...sharedServices];
+
+  if (brand.offersCompounding) {
+    services.push(compoundingService);
+  }
+
+  if (brand.slug === "curemed") {
+    services.push(pointOfCareService);
+  }
+
+  return services;
 }
