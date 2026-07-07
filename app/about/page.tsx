@@ -16,7 +16,7 @@ export default function AboutPage() {
   const brand = getBrandConfig();
 
   const pharmacyInfo = {
-    founded: 2018,
+    founded: 2015,
     teamSize: 12,
     specialties: ["Medication Management", "Immunizations", "Health Screenings", "Delivery Service"],
     values: ["Trust", "Compassion", "Excellence", "Community"],
@@ -110,7 +110,7 @@ export default function AboutPage() {
               </div>
               <div className="rounded-xl bg-sage/5 border border-sage/10 p-3 text-center">
                 <Star className="h-5 w-5 text-sage mx-auto" />
-                <p className="mt-1 text-sm font-medium text-ink">4.9★</p>
+                <p className="mt-1 text-sm font-medium text-ink">4.7★</p>
                 <p className="text-[10px] text-ink/50">Rating</p>
               </div>
             </div>

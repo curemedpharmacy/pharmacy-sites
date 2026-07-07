@@ -191,7 +191,7 @@ export default function HomePage() {
                 <p className="text-[10px] sm:text-xs text-ink/50">Happy Patients</p>
               </div>
               <div className="rounded-xl bg-paper/80 p-3 sm:p-4 border border-ink/5 text-center">
-                <p className="font-display text-xl sm:text-2xl font-bold text-ink">4.9</p>
+                <p className="font-display text-xl sm:text-2xl font-bold text-ink">4.7</p>
                 <p className="text-[10px] sm:text-xs text-ink/50">Average Rating</p>
               </div>
               <div className="rounded-xl bg-paper/80 p-3 sm:p-4 border border-ink/5 text-center">

@@ -192,7 +192,7 @@ export default function BlogPage() {
           </div>
           <div className="rounded-xl bg-paper/60 border border-ink/5 p-4 text-center hover:border-amber/20 transition-colors">
             <Tag className="h-5 w-5 text-amber-dark mx-auto" />
-            <p className="mt-2 font-display text-xl font-bold text-ink">4.9★</p>
+            <p className="mt-2 font-display text-xl font-bold text-ink">4.7★</p>
             <p className="text-[10px] text-ink/50">Helpful Rating</p>
           </div>
         </div>

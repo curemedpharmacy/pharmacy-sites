@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Image from "next/image";
 import { ServiceLabelCard } from "@/components/ServiceLabelCard";
 import { JsonLd } from "@/components/JsonLd";
 import { getBrandConfig } from "@/lib/brands";
 import { breadcrumbSchema } from "@/lib/schema";
 import { getServicesForBrand } from "@/lib/services";
-import { Phone, ArrowRight, Award } from "lucide-react";
+import { Phone, Award, Clock } from "lucide-react";
 
 export async function generateMetadata(): Promise<Metadata> {
   const brand = getBrandConfig();
@@ -35,7 +34,7 @@ export default function ServicesPage() {
   return (
     <section className="mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-16 lg:py-20">
       <JsonLd data={breadcrumb} />
-      
+
       {/* ===== HEADER SECTION ===== */}
       <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
         <div className="max-w-2xl">
@@ -48,25 +47,24 @@ export default function ServicesPage() {
             <span className="block text-amber-dark">for everyday care</span>
           </h1>
           <p className="mt-4 text-base leading-relaxed text-ink/70 max-w-lg">
-            At {brand.name}, our caring goes beyond the cure. We help patients in
-            Paterson with refill support, medication organization, delivery,
+            At {brand.name}, our caring goes beyond the cure. We help patients
+            in Paterson with refill support, medication organization, delivery,
             testing, and other services that keep care close to home.
           </p>
         </div>
-        
+
         {/* Quick Stats */}
+        {/* Quick Stats — real GBP rating only; no invented numbers */}
         <div className="flex shrink-0 gap-4">
           <div className="rounded-xl bg-paper/80 border border-ink/10 px-4 py-3 text-center min-w-20">
-            <p className="font-display text-xl font-bold text-ink">15+</p>
+            <p className="font-display text-xl font-bold text-ink">
+              {services.length}
+            </p>
             <p className="text-[10px] text-ink/50">Services</p>
           </div>
           <div className="rounded-xl bg-paper/80 border border-ink/10 px-4 py-3 text-center min-w-20">
-            <p className="font-display text-xl font-bold text-ink">500+</p>
-            <p className="text-[10px] text-ink/50">Patients</p>
-          </div>
-          <div className="rounded-xl bg-paper/80 border border-ink/10 px-4 py-3 text-center min-w-20">
-            <p className="font-display text-xl font-bold text-ink">4.9★</p>
-            <p className="text-[10px] text-ink/50">Rating</p>
+            <p className="font-display text-xl font-bold text-ink">4.7★</p>
+            <p className="text-[10px] text-ink/50">Google Rating</p>
           </div>
         </div>
       </div>
@@ -74,7 +72,10 @@ export default function ServicesPage() {
       {/* ===== FEATURED IMAGES ROW ===== */}
       <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">
         {serviceImages.map((img, index) => (
-          <div key={index} className="relative aspect-4/3 overflow-hidden rounded-xl">
+          <div
+            key={index}
+            className="relative aspect-4/3 overflow-hidden rounded-xl"
+          >
             <Image
               src={img}
               alt={`Pharmacy service ${index + 1}`}
@@ -96,7 +97,7 @@ export default function ServicesPage() {
             {services.length} services available
           </span>
         </div>
-        
+
         <div className="grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
             <ServiceLabelCard
@@ -104,36 +105,31 @@ export default function ServicesPage() {
               rx={service.rx}
               title={service.title}
               description={service.description}
-              directions={service.directions || "PICK UP IN STORE OR SAME-DAY DELIVERY"}
+              directions={
+                service.directions || "PICK UP IN STORE OR SAME-DAY DELIVERY"
+              }
               href={`/services/${service.slug}`}
             />
           ))}
         </div>
       </div>
 
-      {/* ===== CTA SECTION ===== */}
-      <div className="mt-12 rounded-2xl border border-amber/10 bg-linear-to-br from-amber/5 via-paper to-sage/5 p-6 sm:p-8">
-        <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
-          <div>
-            <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-amber-dark">
-              <Phone className="h-3 w-3" />
-              Need Help?
-            </span>
-            <h3 className="mt-2 font-display text-xl font-semibold text-ink sm:text-2xl">
-              Call or visit us to get started
-            </h3>
-            <p className="mt-1 text-sm text-ink/70">
-              Call {brand.phone} or visit us at {brand.address.street} to talk
-              through what you need.
-            </p>
-          </div>
-          <Link
-            href="/contact"
-            className="shrink-0 inline-flex items-center gap-2 rounded-full bg-amber px-6 sm:px-8 py-2.5 font-mono text-xs font-medium uppercase tracking-wider text-paper transition-all hover:bg-amber-dark hover:scale-105"
+      {/* ===== QUICK INFO — real facts only, no invented stats ===== */}
+      <div className="mt-8 flex flex-wrap gap-3 max-w-3xl">
+        <div className="flex items-center gap-2 rounded-full bg-paper/80 border border-ink/5 px-4 py-2">
+          <Clock className="h-4 w-4 text-amber-dark" />
+          <span className="text-xs font-medium text-ink">
+            {brand.hours[0]?.time ?? "Call for hours"}
+          </span>
+        </div>
+        <div className="flex items-center gap-2 rounded-full bg-paper/80 border border-ink/5 px-4 py-2">
+          <Phone className="h-4 w-4 text-amber-dark" />
+          <a
+            href={`tel:${brand.phone}`}
+            className="text-xs font-medium text-ink hover:text-amber-dark"
           >
-            Contact Us
-            <ArrowRight className="h-3.5 w-3.5" />
-          </Link>
+            {brand.phone}
+          </a>
         </div>
       </div>
     </section>

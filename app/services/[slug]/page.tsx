@@ -5,8 +5,7 @@ import { getBrandConfig } from "@/lib/brands";
 import { breadcrumbSchema } from "@/lib/schema";
 import { JsonLd } from "@/components/JsonLd";
 import { getServicesForBrand } from "@/lib/services";
-import { Phone, MapPin, ArrowRight, Award, Clock, Check, Calendar, Users, Shield, ChevronRight } from "lucide-react";
-
+import { Phone, MapPin, ArrowRight, Award, Check, Shield, ChevronRight } from "lucide-react";
 type ServiceDetailPageProps = {
   params: Promise<{ slug: string }>;
 };
@@ -50,16 +49,30 @@ export default async function ServiceDetailPage({
     { name: service.title, url: `${brand.url}/services/${service.slug}` },
   ]);
 
-  // أيقونة حسب نوع الخدمة
   const getServiceIcon = () => {
     const icons: Record<string, React.ReactNode> = {
-      "diabetes-testing-education": <Shield className="h-6 w-6" />,
-      "immunizations": <Shield className="h-6 w-6" />,
+      "immunizations-vaccines": <Shield className="h-6 w-6" />,
       "medication-therapy-management": <Shield className="h-6 w-6" />,
-      "delivery": <Shield className="h-6 w-6" />,
-      "testing": <Shield className="h-6 w-6" />,
+      "travel-health-hajj": <Shield className="h-6 w-6" />,
+      "womens-health": <Shield className="h-6 w-6" />,
+      "health-screenings": <Shield className="h-6 w-6" />,
+      "delivery-service": <Shield className="h-6 w-6" />,
+      "compounding": <Shield className="h-6 w-6" />,
     };
     return icons[service.slug] || <Award className="h-6 w-6" />;
+  };
+
+  const getServiceColor = () => {
+    const colors: Record<string, string> = {
+      "immunizations-vaccines": "bg-blue-50 text-blue-600",
+      "medication-therapy-management": "bg-emerald-50 text-emerald-600",
+      "travel-health-hajj": "bg-amber-50 text-amber-600",
+      "womens-health": "bg-pink-50 text-pink-600",
+      "health-screenings": "bg-sage/20 text-sage",
+      "delivery-service": "bg-purple-50 text-purple-600",
+      "compounding": "bg-indigo-50 text-indigo-600",
+    };
+    return colors[service.slug] || "bg-amber/10 text-amber-dark";
   };
 
   return (
@@ -86,7 +99,7 @@ export default async function ServiceDetailPage({
         {/* ===== HEADER ===== */}
         <div className="max-w-3xl">
           <div className="flex items-center gap-3 mb-4">
-            <div className="rounded-full bg-amber/10 p-2 text-amber-dark">
+            <div className={`rounded-full ${getServiceColor()} p-2`}>
               {getServiceIcon()}
             </div>
             <span className="font-mono text-xs font-medium text-amber-dark bg-amber/10 px-3 py-1 rounded-full">
@@ -100,30 +113,6 @@ export default async function ServiceDetailPage({
           <p className="mt-4 text-base sm:text-lg leading-relaxed text-ink/70 max-w-2xl">
             {service.heroDescription}
           </p>
-        </div>
-
-        {/* ===== QUICK INFO CARDS ===== */}
-        <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl">
-          <div className="rounded-xl bg-paper/80 border border-ink/5 p-3 text-center hover:border-amber/20 transition-colors">
-            <Clock className="h-4 w-4 text-amber-dark mx-auto" />
-            <p className="text-[10px] text-ink/50 mt-1">Hours</p>
-            <p className="text-xs font-medium text-ink">Mon–Sat</p>
-          </div>
-          <div className="rounded-xl bg-paper/80 border border-ink/5 p-3 text-center hover:border-amber/20 transition-colors">
-            <Users className="h-4 w-4 text-amber-dark mx-auto" />
-            <p className="text-[10px] text-ink/50 mt-1">Patients</p>
-            <p className="text-xs font-medium text-ink">500+</p>
-          </div>
-          <div className="rounded-xl bg-paper/80 border border-ink/5 p-3 text-center hover:border-amber/20 transition-colors">
-            <Calendar className="h-4 w-4 text-amber-dark mx-auto" />
-            <p className="text-[10px] text-ink/50 mt-1">Booking</p>
-            <p className="text-xs font-medium text-ink">Available</p>
-          </div>
-          <div className="rounded-xl bg-paper/80 border border-ink/5 p-3 text-center hover:border-amber/20 transition-colors">
-            <Award className="h-4 w-4 text-amber-dark mx-auto" />
-            <p className="text-[10px] text-ink/50 mt-1">Rating</p>
-            <p className="text-xs font-medium text-ink">4.9★</p>
-          </div>
         </div>
 
         {/* ===== MAIN CONTENT ===== */}
@@ -161,6 +150,49 @@ export default async function ServiceDetailPage({
                 ))}
               </ul>
             </div>
+
+            {/* ===== FACEBOOK POSTS SECTION ===== */}
+            {/* {service.facebookPosts && service.facebookPosts.length > 0 && (
+              <div className="rounded-2xl border border-ink/10 bg-paper/60 p-6 sm:p-8">
+                <h3 className="font-display text-lg font-semibold text-ink flex items-center gap-2 mb-4">
+                  Related Facebook Posts
+                </h3>
+                <div className="space-y-3">
+                  {service.facebookPosts.map((post, index) => (
+                    <div 
+                      key={index}
+                      className="p-4 rounded-xl border border-ink/5 bg-paper/40 hover:border-amber/10 transition-colors"
+                    >
+                      <div className="flex items-start justify-between">
+                        <div>
+                          <p className="text-sm font-medium text-ink">{post.title}</p>
+                          <p className="text-xs text-ink/50 mt-1">{post.date}</p>
+                        </div>
+                        <Link
+                          href={post.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="shrink-0 inline-flex items-center gap-1 text-xs font-medium text-[#1877F2] hover:underline"
+                        >
+                          {post.type === 'video' ? (
+                            <>
+                              <Video className="h-3.5 w-3.5" />
+                              Watch Video
+                            </>
+                          ) : (
+                            'View Post'
+                          )}
+                          <ArrowRight className="h-3 w-3" />
+                        </Link>
+                      </div>
+                      <p className="mt-2 text-sm text-ink/60 line-clamp-2">
+                        {post.content}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )} */}
           </div>
 
           {/* Right Column - Sidebar */}

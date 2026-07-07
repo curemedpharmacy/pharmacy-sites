@@ -10,203 +10,232 @@ export type ServiceItem = {
   heroDescription: string;
   overview: string;
   highlights: string[];
+  facebookPosts?: {
+    title: string;
+    content: string;
+    date: string;
+    // link: string;
+    type: 'post' | 'video';
+  }[];
 };
 
+// الخدمات المستخرجة من صفحة الفيسبوك الخاصة بـ CureMed Pharmacy
 const sharedServices: ServiceItem[] = [
   {
-    slug: "diabetes-testing-education",
+    slug: "immunizations-vaccines",
     rx: "01",
-    title: "Diabetes Testing & Education",
+    title: "Immunizations & Vaccines",
     description:
-      "We offer diabetes testing and education in a community setting, with one-on-one support from our pharmacy team.",
-    directions: "Walk-in testing, education by appointment",
-    heroTitle: "Diabetes support that fits your routine",
+      "Protect yourself and your family with routine vaccinations including flu, COVID-19, RSV, and travel vaccines.",
+    directions: "WALK-IN OR CALL TO SCHEDULE",
+    heroTitle: "Stay protected with routine immunizations",
     heroDescription:
-      "Our team offers practical education and testing that helps patients understand their options and plan their next steps.",
+      "We offer a full range of vaccines to keep you and your community healthy, including annual flu shots and travel-specific immunizations.",
     overview:
-      "We provide accessible testing and education for patients managing diabetes and related wellness questions.",
+      "At CureMed Pharmacy, we make it easy to stay up to date on your vaccinations. Our pharmacists are trained to administer vaccines safely and answer any questions you may have. We offer flu, COVID-19, RSV, pneumococcal, and travel vaccines. The CDC recommends everyone six months and older get an annual flu shot—it's not too late! Stop by to get yourself and your family vaccinated today.",
     highlights: [
-      "A1C and cholesterol testing",
-      "One-on-one medication education",
-      "Helpful follow-up conversations",
+      "Annual flu and COVID-19 vaccines",
+      "RSV and pneumococcal vaccines",
+      "Travel vaccines for Hajj and international travel",
+      "Walk-in or scheduled appointments",
+      "Friendly and knowledgeable pharmacists",
+      "CDC recommended for all ages 6 months+",
     ],
-  },
-  {
-    slug: "medication-synchronization",
-    rx: "02",
-    title: "Medication Synchronization",
-    description:
-      "We help coordinate refills so medications can be picked up or delivered on a single schedule.",
-    directions: "One pickup date, every medication",
-    heroTitle: "One refill date for every prescription",
-    heroDescription:
-      "Medication synchronization helps make monthly refill routines easier to manage and less stressful.",
-    overview:
-      "We coordinate medications so patients can keep up with their routine without extra trips or confusion.",
-    highlights: [
-      "Monthly refill alignment",
-      "Less time spent coordinating pickups",
-      "Support for complex routines",
-    ],
-  },
-  {
-    slug: "compliance-packaging",
-    rx: "03",
-    title: "Compliance Packaging",
-    description:
-      "We can organize medications into easy-to-follow daily packets to help simplify routines.",
-    directions: "Ask us to set up your packets",
-    heroTitle: "A clearer way to stay on track",
-    heroDescription:
-      "Compliance packaging helps patients organize daily medications in a way that is easier to follow at home.",
-    overview:
-      "We prepare medication packets that make it easier to follow a prescribed routine each day.",
-    highlights: [
-      "Daily dose packs",
-      "Helpful for caregivers and seniors",
-      "Support for medication adherence",
-    ],
-  },
-  {
-    slug: "immunizations",
-    rx: "04",
-    title: "Immunizations",
-    description:
-      "We provide routine vaccinations such as flu, COVID-19, and RSV when available.",
-    directions: "Walk-ins welcome, most insurance accepted",
-    heroTitle: "Vaccines administered close to home",
-    heroDescription:
-      "Our pharmacists offer vaccine services in a convenient community setting.",
-    overview:
-      "We provide routine vaccine services that are easy to access and tailored to patient needs.",
-    highlights: [
-      "Flu, COVID-19, and RSV vaccines",
-      "Convenient local access",
-      "Pharmacist-administered care",
-    ],
-  },
-  {
-    slug: "free-delivery",
-    rx: "05",
-    title: "Free Local Delivery",
-    description:
-      "We offer free local delivery for eligible prescriptions and routine needs within our service area.",
-    directions: "Same-day within local delivery zone",
-    heroTitle: "Helpful delivery without the extra cost",
-    heroDescription:
-      "Our free delivery service helps patients receive medications in a convenient way.",
-    overview:
-      "We offer local delivery to patients who prefer having prescriptions brought to them.",
-    highlights: [
-      "No-cost delivery",
-      "Convenient local service",
-      "Help for busy households",
-    ],
+    facebookPosts: [
+      {
+        title: "Flu Season Protection",
+        content: "The CDC recommends everyone six months and older get an annual flu shot. It's not too late! Stop by CureMed Pharmacy to get yourself and your family vaccinated today.",
+        date: "February 27, 2024",
+        // link: "https://www.facebook.com/curemed/posts/flu-shot-2024",
+        type: "post"
+      }
+    ]
   },
   {
     slug: "medication-therapy-management",
-    rx: "06",
+    rx: "02",
     title: "Medication Therapy Management",
     description:
-      "We can review medications with patients and help clarify questions about a routine or treatment plan.",
-    directions: "Personalized review with a pharmacist",
-    heroTitle: "Medication reviews designed around you",
+      "Our pharmacists take the time to explain your medications, answer questions, and help you manage your health with confidence.",
+    directions: "ASK YOUR PHARMACIST FOR A REVIEW",
+    heroTitle: "Clear guidance for your medications",
     heroDescription:
-      "Medication therapy management gives patients a chance to talk through their medications with a pharmacist.",
+      "We don't just fill prescriptions—we help you understand them. Our team is here to make your medication routine simple and stress-free.",
     overview:
-      "Our pharmacists help patients understand how each medication fits into their treatment plan and daily routine.",
+      "Understanding your medications is key to staying healthy. At CureMed Pharmacy, our pharmacists provide personalized consultations to review your medications, discuss potential interactions, and ensure you're getting the most out of your treatment plan. We work closely with your doctors and healthcare providers to ensure comprehensive and coordinated care.",
     highlights: [
-      "Medication review with a pharmacist",
-      "Support for routine questions",
-      "A clearer understanding of your plan",
+      "Personalized medication reviews",
+      "Clear explanations of drug interactions",
+      "Support for chronic conditions like diabetes and heart disease",
+      "Help with managing multiple medications",
+      "Questions answered with care and patience",
+      "Coordinated care with your healthcare team",
     ],
+    facebookPosts: [
+      {
+        title: "Medication Reviews",
+        content: "Our pharmacists won't just fill your prescriptions, they help explain your medications and take the time to answer your questions. Personalized service that makes a difference.",
+        date: "March 26, 2024",
+        // link: "https://www.facebook.com/curemed/posts/medication-reviews",
+        type: "post"
+      },
+      {
+        title: "Your Healthcare Team",
+        content: "Our pharmacists are part of your healthcare team. We can work closely with your doctors and healthcare providers to ensure comprehensive and coordinated care.",
+        date: "March 13, 2024",
+        // link: "https://www.facebook.com/curemed/posts/healthcare-team",
+        type: "post"
+      }
+    ]
   },
   {
-    slug: "weight-loss-program",
+    slug: "travel-health-hajj",
+    rx: "03",
+    title: "Travel Health & Hajj Kits",
+    description:
+      "Prepare for your journey with essential travel vaccinations and custom health kits designed for Hajj and international travel.",
+    directions: "BOOK A TRAVEL HEALTH CONSULTATION",
+    heroTitle: "Travel with confidence and care",
+    heroDescription:
+      "We provide all the recommended travel vaccinations and emergency health kits for Hajj and international trips.",
+    overview:
+      "Traveling abroad? Let CureMed Pharmacy help you prepare. We offer travel health consultations, required vaccinations, and custom over-the-counter kits for Hajj and other journeys. Our team will make sure you're ready for a safe and healthy trip.",
+    highlights: [
+      "Meningococcal, flu, and pneumococcal vaccines",
+      "Custom travel health kits (pain relief, antibiotics, pulse oximeter)",
+      "Hajj-specific health recommendations",
+      "Travel health consultations",
+      "Emergency medication kits",
+      "Blister pads and other essentials",
+    ],
+    facebookPosts: [
+      {
+        title: "Prepare for Hajj with Confidence",
+        content: "Prepare for Hajj with confidence! Required & recommended essential over-the-counter kit: Meningococcal Conjugate (ACWY), Influenza (Flu), Pneumococcal, Acetaminophen (Pain Relief), Triple Antibiotic Ointment, Antidiarrheal, Pulse Oximeter, Blister Pads. All your travel vaccinations and emergency kits are available at CureMed Pharmacy.",
+        date: "May 13, 2024",
+        // link: "https://www.facebook.com/curemed/posts/hajj-kit",
+        type: "post"
+      }
+    ]
+  },
+  {
+    slug: "womens-health",
+    rx: "04",
+    title: "Women's Health Services",
+    description:
+      "Join our private women's health events and get expert guidance on wellness, aging, and reproductive health.",
+    directions: "RSVP TO ATTEND",
+    heroTitle: "Expert care for women's wellness",
+    heroDescription:
+      "We host intimate, private women's health sessions designed to provide meaningful conversations and expert guidance.",
+    overview:
+      "CureMed Pharmacy is proud to support women's health through private events led by experienced healthcare professionals. These sessions offer a safe, welcoming space for women to discuss health concerns, aging, and wellness. Join us for our upcoming events with Dr. Naglaa Rizk, bringing over 30 years of experience.",
+    highlights: [
+      "Private women's health events",
+      "Led by Dr. Naglaa Rizk (30+ years experience)",
+      "Topics: aging, reproductive health, wellness",
+      "Limited seating for intimate discussions",
+      "RSVP required",
+      "Safe and welcoming space",
+    ],
+    facebookPosts: [
+      {
+        title: "Women's Health Event",
+        content: "Join us for a private women's health session at CureMed Pharmacy by Dr. Naglaa Rizk. Behind Closed Doors: The Mature Woman Edition. May 3, 2024 at 4:30 PM. 311 Crooks Ave, Paterson, NJ. RSVP Required - Limited Seating.",
+        date: "May 1, 2024",
+        // link: "https://www.facebook.com/curemed/posts/womens-health",
+        type: "post"
+      }
+    ]
+  },
+  {
+    slug: "health-screenings",
+    rx: "05",
+    title: "Health Screenings & Wellness",
+    description:
+      "Stay on top of your health with free blood pressure monitoring, cholesterol checks, and community wellness events.",
+    directions: "VISIT US FOR A SCREENING",
+    heroTitle: "Know your numbers, stay healthy",
+    heroDescription:
+      "We offer free health screenings and wellness checks to help you monitor your blood pressure, cholesterol, and more.",
+    overview:
+      "Prevention starts with awareness. At CureMed Pharmacy, we regularly host community health events featuring free blood pressure and cholesterol screenings. These events are open to everyone and are a great way to stay informed about your health. February is Heart Health Month—stop by for a free blood pressure screening.",
+    highlights: [
+      "Free blood pressure monitoring",
+      "Cholesterol screenings",
+      "Community wellness events",
+      "Diabetes risk assessments",
+      "Heart health education",
+      "Open to everyone in the community",
+    ],
+    facebookPosts: [
+      {
+        title: "Heart Health Month",
+        content: "February is #HeartHealthMonth. From blood pressure monitoring to cholesterol management we're here to support your journey to a healthier heart. Stop by for a free blood pressure screening.",
+        date: "February 22, 2024",
+        // link: "https://www.facebook.com/curemed/posts/heart-health",
+        type: "post"
+      }
+    ]
+  },
+  {
+    slug: "delivery-service",
+    rx: "06",
+    title: "Local Prescription Delivery",
+    description:
+      "We offer free local delivery to our community, making it easy to get your medications without leaving home.",
+    directions: "CALL TO SET UP DELIVERY",
+    heroTitle: "Your medications, delivered with care",
+    heroDescription:
+      "We offer free local delivery for prescriptions and over-the-counter medications to our community in Paterson.",
+    overview:
+      "Need your medications but can't make it to the pharmacy? CureMed Pharmacy offers free local delivery for eligible prescriptions. Our delivery service is reliable, friendly, and designed to make your life easier. Stay where you are—CureMed has you covered! Your health and time matter most.",
+    highlights: [
+      "Free local delivery",
+      "Prescription and OTC delivery",
+      "Reliable and friendly service",
+      "Convenient for busy schedules",
+      "Contact us to set up delivery",
+      "Stay where you are—we've got you covered",
+    ],
+    facebookPosts: [
+      {
+        title: "Stay Where You Are",
+        content: "Stay where you are—CureMed has you covered! Your health and time matter most. Managing your prescriptions shouldn't feel like a hassle. We offer free local delivery.",
+        date: "May 23, 2024",
+        // link: "https://www.facebook.com/curemed/posts/delivery-service",
+        type: "post"
+      }
+    ]
+  },
+  {
+    slug: "compounding",
     rx: "07",
-    title: "Weight Loss Program",
+    title: "Compounding Services",
     description:
-      "We offer a pharmacist-guided weight loss program that supports follow-up and routine care discussions.",
-    directions: "Ask us about availability and next steps",
-    heroTitle: "Support for a weight loss journey",
+      "Our compounding pharmacy offers custom medication formulations tailored to the unique needs of our patients.",
+    directions: "CONSULT WITH OUR PHARMACIST",
+    heroTitle: "Custom medication, personalized for you",
     heroDescription:
-      "Our weight loss program is designed to support patients with follow-up and practical pharmacy guidance.",
+      "Our compounding services provide custom medication formulations for patients who need tailored treatment options.",
     overview:
-      "We offer a weight loss program that helps patients talk through options and stay connected to care.",
+      "We offer compounding services to create custom medication formulations for patients with unique needs. Whether it's a different dosage form, a combination of medications, or an allergen-free formula, our pharmacists can work with you and your doctor to create the right solution.",
     highlights: [
-      "Pharmacist-guided support",
-      "Routine follow-up conversations",
-      "Care that stays close to home",
+      "Custom medication formulations",
+      "Personalized dosages",
+      "Allergen-free options",
+      "Work with your doctor",
+      "Unique formulations for special needs",
+      "Tailored to your specific requirements",
     ],
-  },
-  {
-    slug: "specialty-medication",
-    rx: "08",
-    title: "Specialty Medication",
-    description:
-      "We support patients with specialty medication questions and help connect them with the right pharmacy guidance.",
-    directions: "Call us to discuss availability",
-    heroTitle: "Specialty medication support with a personal touch",
-    heroDescription:
-      "We help patients navigate specialty medication questions and stay connected to the pharmacy team.",
-    overview:
-      "We offer support for specialty medication needs and can help patients understand how to move forward.",
-    highlights: [
-      "Support for specialty medication questions",
-      "Helpful follow-up conversations",
-      "Care from a local pharmacy team",
-    ],
-  },
+    facebookPosts: []
+  }
 ];
 
-const compoundingService: ServiceItem = {
-  slug: "compounding",
-  rx: "09",
-  title: "Custom Compounding",
-  description:
-    "We offer custom compounding for patients who may benefit from tailored dosage forms or flavors.",
-  directions: "By consultation — call ahead",
-  heroTitle: "Compounding care tailored to your needs",
-  heroDescription:
-    "Our compounding service offers customized medication options when a standard product may not fit a patient well.",
-  overview:
-    "We prepare customized formulations that can support unique patient needs and treatment goals.",
-  highlights: [
-    "Custom strengths and forms",
-    "Flavoring options when appropriate",
-    "Personalized pharmacist consultation",
-  ],
-};
-
-const pointOfCareService: ServiceItem = {
-  slug: "point-of-care-testing",
-  rx: "10",
-  title: "Point of Care Testing",
-  description:
-    "We provide point-of-care testing services that make it easier to check in and receive guidance in one visit.",
-  directions: "Ask us about availability",
-  heroTitle: "Convenient testing close to home",
-  heroDescription:
-    "Point-of-care testing gives patients a practical way to receive testing and support in the pharmacy setting.",
-  overview:
-    "We offer point-of-care testing for patients who want a convenient visit and follow-up guidance from the pharmacy team.",
-  highlights: [
-    "Quick in-pharmacy testing",
-    "Helpful guidance from our team",
-    "Convenient follow-up conversations",
-  ],
-};
-
 export function getServicesForBrand(brand: BrandConfig): ServiceItem[] {
-  const services = [...sharedServices];
-
-  if (brand.offersCompounding) {
-    services.push(compoundingService);
+  if (brand.slug === "saimz") {
+    return sharedServices.filter(service => service.slug !== "compounding");
   }
-
-  if (brand.slug === "curemed") {
-    services.push(pointOfCareService);
-  }
-
-  return services;
+  
+  return sharedServices;
 }

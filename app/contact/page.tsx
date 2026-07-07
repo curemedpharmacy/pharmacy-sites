@@ -118,7 +118,7 @@ export default function ContactPage() {
               </div>
               <div className="rounded-xl bg-paper/40 border border-ink/5 p-3 text-center">
                 <Phone className="h-4 w-4 text-amber-dark mx-auto" />
-                <p className="mt-1 text-xs font-medium text-ink">4.9★</p>
+                <p className="mt-1 text-xs font-medium text-ink">4.7★</p>
                 <p className="text-[10px] text-ink/50">Rating</p>
               </div>
             </div>
