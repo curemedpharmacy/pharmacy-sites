@@ -15,9 +15,9 @@
   --color-sage: #7a9b8e;
   --color-alert: #b23a2e;
 
-  --font-display: "Roboto", "Segoe UI", Arial, sans-serif;
-  --font-body: "Roboto", "Segoe UI", Arial, sans-serif;
-  --font-mono: "Roboto", "Segoe UI", Arial, sans-serif;
+  --font-body: var(--font-body);
+  --font-display: var(--font-body);
+  --font-mono: var(--font-body);
 }
 
 html {
@@ -27,7 +27,7 @@ html {
 body {
   background-color: var(--color-paper);
   color: var(--color-ink);
-  font-family: var(--font-body);
+  font-family: var(--font-body) "Segoe UI", Arial, sans-serif;
 }
 
 body,
@@ -39,7 +39,7 @@ button,
 input,
 textarea,
 select {
-  font-family: var(--font-body);
+  font-family: inherit;
 }
 
 h1,
