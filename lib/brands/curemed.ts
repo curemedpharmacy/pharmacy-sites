@@ -30,17 +30,15 @@ export const curemed: BrandConfig = {
   },
   offersCompounding: true,
   heroImages: [
-    {
-      path: "/images/curemed/hero/interior-store-shelves.webp",
-      alt: "Interior view of the pharmacy shelves",
-    },
-    {
-      path: "/images/curemed/hero/grand-opening-ribbon-cutting.webp",
-      alt: "Grand opening ribbon cutting event",
-    },
+    
      {
       path: "/images/curemed/hero/storefront-personalized-care.png",
       alt: "Storefront with personalized pharmacy care",
+    },
+    
+    {
+      path: "/images/curemed/hero/grand-opening-ribbon-cutting.webp",
+      alt: "Grand opening ribbon cutting event",
     },
     {
       path: "/images/curemed/hero/community-health-screening.webp",
