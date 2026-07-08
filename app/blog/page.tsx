@@ -4,38 +4,123 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { getBrandConfig } from "@/lib/brands";
-import { User, Tag, Heart, BookOpen, Shield, TrendingUp, ExternalLink } from "lucide-react";
+import { getServicesForBrand } from "@/lib/services";
+import type { ServiceItem } from "@/lib/services";
+import { User, Tag, Heart, BookOpen, Shield, TrendingUp, ExternalLink, Calendar } from "lucide-react";
 
-const allPosts = [
-  {
-    title: "Watch: Community Health Insights",
-    summary:
-      "Check out our latest video on community health and wellness tips from the pharmacy team.",
-    image: "/images/curemed/hero/community-health-screening.webp",
-    alt: "Community health video thumbnail",
-    category: "Video",
-    author: "Pharmacy Team",
-    link: "https://www.facebook.com/share/v/17jADQabxu/",
-    isVideo: true,
-  },
-  {
-    title: "Understanding Your Medications Better",
-    summary:
-      "A helpful guide on how to talk to your pharmacist about medication reviews and interactions.",
-    image: "/images/curemed/services/medication-therapy-management.webp",
-    alt: "Pharmacist reviewing medication with a patient",
-    category: "Medication Support",
-    author: "Clinical Team",
-    link: "https://www.facebook.com/share/p/1AGrmvbt6u/",
-    isVideo: false,
-  },
+// تعريف نوع البوست التوعوي
+type HealthPost = {
+  title: string;
+  summary: string;
+  image: string;
+  alt: string;
+  category: string;
+  author: string;
+  link: string;
+  isVideo: boolean;
+  date: string;
+  content: string;
+};
+
+// الكلمات المفتاحية للتصفية (نصائح واستشارات)
+const advisoryKeywords = [
+  "health", "wellness", "tips", "guide", "advice", "prevention",
+  "awareness", "education", "support", "care", "screening",
+  "vaccination", "medication", "nutrition", "exercise",
+  "mental health", "self-care", "healthy", "reminder",
+  "benefits", "protect", "stay healthy", "wellbeing",
+  "chronic", "management", "prevent", "detection"
 ];
 
-// استخراج التصنيفات الفريدة تلقائياً
-const categories = ["All Posts", ...new Set(allPosts.map(post => post.category))];
+// استخراج البوستات التوعوية فقط
+const getAdvisoryPosts = (services: ServiceItem[]): HealthPost[] => {
+  const posts: HealthPost[] = [];
+
+  services.forEach(service => {
+    if (service.facebookPosts && service.facebookPosts.length > 0) {
+      service.facebookPosts.forEach(post => {
+        const content = (post.content || "").toLowerCase();
+        const title = (post.title || "").toLowerCase();
+        
+        // التحقق إذا كان المحتوى يحتوي على كلمات مفتاحية توعوية
+        const isAdvisory = advisoryKeywords.some(keyword => 
+          content.includes(keyword) || title.includes(keyword)
+        );
+
+        // استثناء البوستات الترويجية أو الإعلانية
+        const isPromotional = content.includes("call us") || 
+                             content.includes("stop by") || 
+                             content.includes("visit us") ||
+                             content.includes("transfer") ||
+                             content.includes("delivery") ||
+                             content.includes("prescription") ||
+                             content.includes("shop") ||
+                             content.includes("buy");
+
+        // إذا كان المحتوى توعوي وليس ترويجي
+        if (isAdvisory && !isPromotional) {
+          // تحديد الصورة
+          let image = "";
+          if (post.type === 'video' && post.videoThumbnail) {
+            image = post.videoThumbnail;
+          } else if (post.image) {
+            image = post.image;
+          } else {
+            image = "/images/curemed/services/pharmacist-consultation.webp";
+          }
+
+          // تحديد التصنيف المناسب
+          let category = "Wellness Tips";
+          if (content.includes("vaccine") || content.includes("flu") || content.includes("immunization")) {
+            category = "Vaccines & Prevention";
+          } else if (content.includes("medication") || content.includes("prescription") || content.includes("drug")) {
+            category = "Medication Support";
+          } else if (content.includes("women") || content.includes("pregnancy") || content.includes("menopause")) {
+            category = "Women's Health";
+          } else if (content.includes("heart") || content.includes("blood pressure") || content.includes("cholesterol")) {
+            category = "Heart Health";
+          } else if (content.includes("diabetes") || content.includes("blood sugar") || content.includes("glucose")) {
+            category = "Diabetes Care";
+          } else if (content.includes("mental") || content.includes("stress") || content.includes("anxiety")) {
+            category = "Mental Wellness";
+          } else if (content.includes("bone") || content.includes("osteoporosis") || content.includes("calcium")) {
+            category = "Bone Health";
+          } else if (content.includes("travel") || content.includes("hajj") || content.includes("journey")) {
+            category = "Travel Health";
+          }
+
+          posts.push({
+            title: post.title || service.title,
+            summary: post.content || service.description,
+            image: image,
+            alt: service.title,
+            category: category,
+            author: "CureMed Pharmacy Team",
+            link: post.postId ? `https://www.facebook.com/curemed/posts/${post.postId}` : "#",
+            isVideo: post.type === 'video',
+            date: post.date || "Recent",
+            content: post.content || "",
+          });
+        }
+      });
+    }
+  });
+
+  // ترتيب البوستات حسب التاريخ (الأحدث أولاً)
+  return posts.sort((a, b) => {
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+    return dateB.getTime() - dateA.getTime();
+  });
+};
 
 export default function BlogPage() {
   const brand = getBrandConfig();
+  const services = getServicesForBrand(brand);
+  const allPosts = getAdvisoryPosts(services);
+
+  // استخراج التصنيفات الفريدة تلقائياً
+  const categories = ["All Posts", ...new Set(allPosts.map(post => post.category))];
   const [selectedCategory, setSelectedCategory] = useState("All Posts");
 
   // تصفية المنشورات حسب التصنيف المحدد
@@ -65,7 +150,7 @@ export default function BlogPage() {
           </p>
         </div>
 
-        {/* Category Filters - تعمل الآن */}
+        {/* Category Filters */}
         <div className="mt-8 flex flex-wrap gap-2">
           {categories.map((category) => (
             <button
@@ -89,52 +174,49 @@ export default function BlogPage() {
 
         {/* Posts Grid */}
         <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {filteredPosts.map((post) => (
+          {filteredPosts.map((post, index) => (
             <article
-              key={post.title}
+              key={index}
               className="group relative overflow-hidden rounded-2xl border border-ink/10 bg-paper/80 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-amber/20"
             >
               {/* Image Section */}
               <div className="relative overflow-hidden h-48">
-                {brand.slug === "curemed" ? (
-                  <>
-                    <Image
-                      src={post.image}
-                      alt={post.alt}
-                      width={800}
-                      height={560}
-                      loading="lazy"
-                      className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-linear-to-t from-ink/30 via-transparent to-transparent" />
-                    
-                    {/* Badges on Image */}
-                    <div className="absolute top-3 left-3 flex flex-wrap gap-1.5">
-                      <span className="rounded-full bg-paper/90 backdrop-blur-sm px-3 py-1 text-[10px] font-medium text-ink/80 border border-ink/5">
-                        {post.category}
-                      </span>
-                      {post.isVideo && (
-                        <span className="rounded-full bg-red-500/90 backdrop-blur-sm px-3 py-1 text-[10px] font-medium text-white border border-red-400/30 flex items-center gap-1">
-                          <svg className="h-3 w-3 fill-current" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-                          Video
-                        </span>
-                      )}
-                    </div>
-                  </>
-                ) : (
-                  <div className="flex h-48 items-center justify-center bg-linear-to-br from-sage/10 to-amber/10 px-6 text-center text-sm leading-7 text-ink/70">
-                    <div className="flex flex-col items-center gap-2">
-                      <BookOpen className="h-8 w-8 text-ink/20" />
-                      <span>Helpful pharmacy guidance will be shared here.</span>
-                    </div>
-                  </div>
-                )}
+                <Image
+                  src={post.image}
+                  alt={post.alt}
+                  width={800}
+                  height={560}
+                  loading="lazy"
+                  className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  unoptimized={true}
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-ink/30 via-transparent to-transparent" />
+                
+                {/* Badges on Image */}
+                <div className="absolute top-3 left-3 flex flex-wrap gap-1.5">
+                  <span className="rounded-full bg-paper/90 backdrop-blur-sm px-3 py-1 text-[10px] font-medium text-ink/80 border border-ink/5">
+                    {post.category}
+                  </span>
+                  {post.isVideo && (
+                    <span className="rounded-full bg-red-500/90 backdrop-blur-sm px-3 py-1 text-[10px] font-medium text-white border border-red-400/30 flex items-center gap-1">
+                      <svg className="h-3 w-3 fill-current" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+                      Video
+                    </span>
+                  )}
+                </div>
+
+                {/* Date Badge */}
+                <div className="absolute bottom-3 left-3">
+                  <span className="rounded-full bg-paper/80 backdrop-blur-sm px-2.5 py-1 text-[10px] font-medium text-ink/60 border border-ink/5 flex items-center gap-1">
+                    <Calendar className="h-3 w-3" />
+                    {post.date}
+                  </span>
+                </div>
               </div>
 
               {/* Content */}
               <div className="p-5">               
-
-                <h2 className="mt-3 font-display text-lg font-semibold text-ink group-hover:text-amber-dark transition-colors">
+                <h2 className="mt-1 font-display text-lg font-semibold text-ink group-hover:text-amber-dark transition-colors line-clamp-2">
                   {post.title}
                 </h2>
                 <p className="mt-2 text-sm leading-relaxed text-ink/70 line-clamp-2">
@@ -177,12 +259,12 @@ export default function BlogPage() {
         <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4">
           <div className="rounded-xl bg-paper/60 border border-ink/5 p-4 text-center hover:border-amber/20 transition-colors">
             <Heart className="h-5 w-5 text-amber-dark mx-auto" />
-            <p className="mt-2 font-display text-xl font-bold text-ink">50+</p>
+            <p className="mt-2 font-display text-xl font-bold text-ink">{allPosts.length}+</p>
             <p className="text-[10px] text-ink/50">Health Tips Shared</p>
           </div>
           <div className="rounded-xl bg-paper/60 border border-ink/5 p-4 text-center hover:border-amber/20 transition-colors">
             <Shield className="h-5 w-5 text-amber-dark mx-auto" />
-            <p className="mt-2 font-display text-xl font-bold text-ink">15+</p>
+            <p className="mt-2 font-display text-xl font-bold text-ink">{categories.length - 1}+</p>
             <p className="text-[10px] text-ink/50">Topics Covered</p>
           </div>
           <div className="rounded-xl bg-paper/60 border border-ink/5 p-4 text-center hover:border-amber/20 transition-colors">

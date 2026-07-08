@@ -1,67 +1,79 @@
+"use client";
+
+import Image from "next/image";
 import Link from "next/link";
+import { ReactNode } from "react";
 import { ArrowRight } from "lucide-react";
 
 type ServiceLabelCardProps = {
-  rx: string; // label number, e.g. "01" styled like an Rx number
+  rx: string;
   title: string;
   description: string;
-  directions: string; // short monospace line, e.g. "PICK UP IN STORE OR SAME-DAY DELIVERY"
+  directions: string;
   href: string;
-  icon?: React.ReactNode; // أيقونة اختيارية
+  icon?: ReactNode;
+  image?: string;
 };
 
-/**
- * The site's signature element: a service card drawn like a
- * prescription bottle label -- amber top edge, an "Rx" number,
- * and a monospaced "directions" line, echoing real pharmacy labels
- * without leaning on the generic medical-cross cliché.
- */
-export function ServiceLabelCard({ 
-  rx, 
-  title, 
-  description, 
-  directions, 
+export function ServiceLabelCard({
+  rx,
+  title,
+  description,
+  directions,
   href,
-  icon 
+  icon,
+  image,
 }: ServiceLabelCardProps) {
   return (
     <Link
       href={href}
-      className="group relative block overflow-hidden rounded-xl border border-ink/10 bg-paper/80 p-6 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-amber/20"
+      className="group relative flex flex-col overflow-hidden rounded-xl border border-ink/10 bg-paper/60 transition-all hover:border-amber/30 hover:shadow-lg hover:-translate-y-1"
     >
-      {/* Amber top strip */}
-      <span className="absolute inset-x-0 top-0 h-1.5 bg-linear-to-r from-amber to-amber-dark" aria-hidden />
-      
-      {/* Decorative background pattern - subtle */}
-      <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-amber/5 blur-2xl transition-all duration-500 group-hover:bg-amber/10" aria-hidden />
-
-      <div className="relative z-10">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            {icon && (
-              <span className="text-amber-dark opacity-70 group-hover:opacity-100 transition-opacity">
-                {icon}
-              </span>
-            )}
-            <span className="font-mono text-xs font-medium text-amber-dark bg-amber/10 px-2.5 py-0.5 rounded-full">
-              RX № {rx}
-            </span>
+      {/* صورة الخدمة (إذا وجدت) */}
+      {image && (
+        <div className="relative w-full h-40 overflow-hidden bg-sage/5">
+          <Image
+            src={image}
+            alt={title}
+            width={400}
+            height={160}
+            className="h-40 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            unoptimized={true}
+          />
+          <div className="absolute inset-0 bg-linear-to-t from-ink/20 via-transparent to-transparent" />
+          {/* RX badge */}
+          <div className="absolute top-3 left-3 rounded-full bg-paper/90 backdrop-blur-sm px-2.5 py-1 text-[10px] font-mono font-medium text-ink/80 border border-ink/5">
+            RX-{rx}
           </div>
-          <span className="font-mono text-xs text-ink/30 transition-all duration-300 group-hover:text-amber group-hover:translate-x-0.5 flex items-center gap-1">
-            READ <ArrowRight className="h-3 w-3" />
-          </span>
+        </div>
+      )}
+
+      <div className="flex flex-1 flex-col p-5">
+        <div className="flex items-start gap-3">
+          {icon && (
+            <div className="mt-1 rounded-lg bg-amber/10 p-2 text-amber-dark group-hover:bg-amber/20 transition-colors">
+              {icon}
+            </div>
+          )}
+          <div>
+            <h3 className="font-display text-base font-semibold text-ink group-hover:text-amber-dark transition-colors">
+              {title}
+            </h3>
+            <p className="mt-1 text-sm leading-relaxed text-ink/70 line-clamp-2">
+              {description}
+            </p>
+          </div>
         </div>
 
-        <h3 className="mt-4 font-display text-xl font-semibold text-ink group-hover:text-amber-dark transition-colors duration-200">
-          {title}
-        </h3>
-        <p className="mt-2 text-sm leading-relaxed text-ink/70 line-clamp-2">
-          {description}
-        </p>
-
-        <p className="mt-5 border-t border-dashed border-ink/15 pt-3 font-mono text-[11px] uppercase tracking-[0.15em] text-ink/40 group-hover:text-ink/60 transition-colors">
-          {directions}
-        </p>
+        <div className="mt-4 flex items-center justify-between border-t border-ink/5 pt-3">
+          <span className="text-xs font-medium uppercase tracking-wider text-ink/40">
+            {directions}
+          </span>
+          <span className="inline-flex items-center gap-1 text-xs font-medium text-amber-dark transition-all group-hover:gap-2 group-hover:text-amber">
+            Learn More
+            <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+          </span>
+        </div>
       </div>
     </Link>
   );

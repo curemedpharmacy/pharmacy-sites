@@ -37,12 +37,12 @@ export const curemed: BrandConfig = {
     },
     
     {
-      path: "/images/curemed/hero/grand-opening-ribbon-cutting.webp",
+      path: "/images/curemed/hero/hero-slider-image.png",
       alt: "Grand opening ribbon cutting event",
     },
     {
-      path: "/images/curemed/hero/community-health-screening.webp",
-      alt: "Community health screening event",
+      path: "/images/curemed/hero/hero-slide-image3.webp",
+      alt: "Grand opening crowd photo",
     },
   ],
   galleryImages: {

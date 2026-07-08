@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { ServiceLabelCard } from "@/components/ServiceLabelCard";
 import { JsonLd } from "@/components/JsonLd";
 import { getBrandConfig } from "@/lib/brands";
 import { breadcrumbSchema } from "@/lib/schema";
 import { getServicesForBrand } from "@/lib/services";
-import { Phone, Award, Clock } from "lucide-react";
+import type { ServiceItem } from "@/lib/services";
+import { Phone, Award, Clock, Syringe, Pill, Globe, Heart, Stethoscope, Truck, FileText, Briefcase } from "lucide-react";
 
 export async function generateMetadata(): Promise<Metadata> {
   const brand = getBrandConfig();
@@ -24,12 +24,48 @@ export default function ServicesPage() {
     { name: "Services", url: `${brand.url}/services` },
   ]);
 
-  // صور تعبر عن الخدمات
-  const serviceImages = [
-    "/images/curemed/services/mtm-pricing-window.webp",
-    "/images/curemed/services/community-education-session.webp",
-    "/images/curemed/services/pharmacist-consultation.webp",
-  ];
+  // أيقونات لكل خدمة
+  const getServiceIcon = (slug: string) => {
+    const icons: Record<string, React.ReactNode> = {
+      "immunizations-vaccines": <Syringe className="h-4 w-4" />,
+      "medication-therapy-management": <Pill className="h-4 w-4" />,
+      "travel-health-hajj": <Globe className="h-4 w-4" />,
+      "womens-health": <Heart className="h-4 w-4" />,
+      "health-screenings": <Stethoscope className="h-4 w-4" />,
+      "delivery-service": <Truck className="h-4 w-4" />,
+      "prescription-transfers": <FileText className="h-4 w-4" />,
+      "health-clarity-sessions": <Briefcase className="h-4 w-4" />,
+    };
+    return icons[slug] || <Award className="h-4 w-4" />;
+  };
+
+  // الحصول على صورة الخدمة من البوست الأول (نفس منطق الـ slug)
+  const getServiceImage = (service: ServiceItem) => {
+    // إذا كان هناك بوستات
+    if (service.facebookPosts && service.facebookPosts.length > 0) {
+      const firstPost = service.facebookPosts[0];
+      // إذا كان فيديو، استخدم الـ thumbnail
+      if (firstPost.type === 'video' && firstPost.videoThumbnail) {
+        return firstPost.videoThumbnail;
+      }
+      // إذا كان بوست عادي، استخدم الصورة
+      if (firstPost.image) {
+        return firstPost.image;
+      }
+    }
+    // الصورة الافتراضية للخدمة
+    const images: Record<string, string> = {
+      "immunizations-vaccines": "/images/curemed/services/immunization-clinic.webp",
+      "medication-therapy-management": "/images/curemed/services/medication-therapy-management.webp",
+      "travel-health-hajj": "/images/curemed/services/travel-health.webp",
+      "womens-health": "/images/curemed/services/womens-health-event.webp",
+      "health-screenings": "/images/curemed/services/health-screening-event.webp",
+      "delivery-service": "/images/curemed/services/delivery-service.webp",
+      "prescription-transfers": "/images/curemed/services/prescription-transfer.webp",
+      "health-clarity-sessions": "/images/curemed/services/health-clarity-session.webp",
+    };
+    return images[service.slug] || "/images/curemed/services/pharmacist-consultation.webp";
+  };
 
   return (
     <section className="mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-16 lg:py-20">
@@ -54,7 +90,6 @@ export default function ServicesPage() {
         </div>
 
         {/* Quick Stats */}
-        {/* Quick Stats — real GBP rating only; no invented numbers */}
         <div className="flex shrink-0 gap-4">
           <div className="rounded-xl bg-paper/80 border border-ink/10 px-4 py-3 text-center min-w-20">
             <p className="font-display text-xl font-bold text-ink">
@@ -67,24 +102,6 @@ export default function ServicesPage() {
             <p className="text-[10px] text-ink/50">Google Rating</p>
           </div>
         </div>
-      </div>
-
-      {/* ===== FEATURED IMAGES ROW ===== */}
-      <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">
-        {serviceImages.map((img, index) => (
-          <div
-            key={index}
-            className="relative aspect-4/3 overflow-hidden rounded-xl"
-          >
-            <Image
-              src={img}
-              alt={`Pharmacy service ${index + 1}`}
-              fill
-              className="object-cover hover:scale-105 transition-transform duration-500"
-            />
-            <div className="absolute inset-0 bg-linear-to-t from-ink/30 via-transparent to-transparent" />
-          </div>
-        ))}
       </div>
 
       {/* ===== SERVICES GRID ===== */}
@@ -105,16 +122,16 @@ export default function ServicesPage() {
               rx={service.rx}
               title={service.title}
               description={service.description}
-              directions={
-                service.directions || "PICK UP IN STORE OR SAME-DAY DELIVERY"
-              }
+              directions={service.directions || "PICK UP IN STORE OR SAME-DAY DELIVERY"}
               href={`/services/${service.slug}`}
+              icon={getServiceIcon(service.slug)}
+              image={getServiceImage(service)}
             />
           ))}
         </div>
       </div>
 
-      {/* ===== QUICK INFO — real facts only, no invented stats ===== */}
+      {/* ===== QUICK INFO ===== */}
       <div className="mt-8 flex flex-wrap gap-3 max-w-3xl">
         <div className="flex items-center gap-2 rounded-full bg-paper/80 border border-ink/5 px-4 py-2">
           <Clock className="h-4 w-4 text-amber-dark" />
