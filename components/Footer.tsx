@@ -14,31 +14,35 @@ export function Footer() {
   return (
     <footer className="border-t border-ink/10 bg-linear-to-br from-paper via-paper to-sage/5">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 py-8 sm:py-10">
-        {/* ===== LOGO ROW - بمفرده ===== */}
-        <div className="mb-3 flex justify-center md:justify-start">
+        {/* ===== LOGO ROW - نفس حجم الهيدر ===== */}
+        <div className="mb-6 flex justify-start">
+          <Link href="/" className="flex items-center gap-3 shrink-0">
           {hasBrandLogo ? (
             <Image
               src={logoPath}
               alt={brand.name}
-              width={600}
-              height={200}
-              className="h-24 w-auto object-contain"
+              width={200}
+              height={50}
+              className="h-12 w-auto object-contain transition-transform duration-200 hover:scale-[1.02] md:h-14"
             />
           ) : (
             <p className="font-display text-2xl font-semibold text-ink">
               {brand.name}
             </p>
           )}
+          </Link>
         </div>
 
-        {/* ===== CONTENT ROW - العناوين والمحتوى ===== */}
-        <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-4">
+
+
+        {/* ===== CONTENT ROW - تنسيق محسّن ===== */}
+        <div className="grid gap-8 sm:gap-10 lg:grid-cols-4 md:grid-cols-2">
           {/* Column 1: About / Description */}
-          <div className="space-y-2">
+          <div className="space-y-3">
             <p className="text-sm leading-relaxed text-ink/70 max-w-xs">
               {brand.description || "Your trusted community pharmacy."}
             </p>
-            <div className="inline-flex items-center gap-2 rounded-full bg-amber/10 px-3 py-1">
+            <div className="inline-flex items-center gap-2 rounded-full bg-amber/10 px-3 py-1.5">
               <Award className="h-3 w-3 text-amber-dark" />
               <span className="text-[10px] font-medium text-amber-dark">
                 Independent Community Pharmacy
@@ -48,8 +52,8 @@ export function Footer() {
 
           {/* Column 2: Visit */}
           <div>
-            <h3 className="flex items-center gap-2 font-mono text-[10px] font-medium uppercase tracking-wider text-ink/50">
-              <MapPin className="h-3.5 w-3.5" />
+            <h3 className="flex items-center gap-2 font-mono text-[11px] font-medium uppercase tracking-wider text-ink/50">
+              <MapPin className="h-4 w-4" />
               Visit Us
             </h3>
             <address className="mt-2 not-italic text-sm text-ink/80 leading-relaxed">
@@ -59,30 +63,30 @@ export function Footer() {
             </address>
             <Link
               href="/locations"
-              className="inline-flex items-center gap-1 mt-2 text-[10px] font-medium text-amber-dark hover:underline"
+              className="inline-flex items-center gap-1 mt-2 text-[11px] font-medium text-amber-dark hover:underline transition-colors"
             >
               Get Directions
-              <ArrowRight className="h-3 w-3" />
+              <ArrowRight className="h-3.5 w-3.5" />
             </Link>
           </div>
 
-          {/* Column 3: Hours - تنسيق جديد بجدول */}
+          {/* Column 3: Hours */}
           <div>
-            <h3 className="flex items-center gap-2 font-mono text-[10px] font-medium uppercase tracking-wider text-ink/50">
-              <Clock className="h-3.5 w-3.5" />
+            <h3 className="flex items-center gap-2 font-mono text-[11px] font-medium uppercase tracking-wider text-ink/50">
+              <Clock className="h-4 w-4" />
               Hours
             </h3>
-            <div className="mt-2 space-y-1">
+            <div className="mt-2 space-y-1.5">
               {brand.hours.map((h, index) => {
                 const isToday = h.day === "Mon" || h.day === "Today";
                 return (
                   <div 
                     key={h.day} 
-                    className={`flex items-center gap-2 py-1 ${
+                    className={`flex items-center justify-between py-1.5 ${
                       index !== brand.hours.length - 1 ? 'border-b border-ink/5' : ''
-                    } ${isToday ? 'bg-amber/5 rounded-md px-2 -mx-2' : ''}`}
+                    } ${isToday ? 'bg-amber/5 rounded-md px-2.5 -mx-2.5' : ''}`}
                   >
-                    <div className="flex-1 flex items-center gap-2">
+                    <div className="flex items-center gap-2">
                       {isToday && (
                         <Circle className="h-1.5 w-1.5 fill-emerald-500 text-emerald-500 animate-pulse" />
                       )}
@@ -105,23 +109,23 @@ export function Footer() {
 
           {/* Column 4: Contact */}
           <div>
-            <h3 className="flex items-center gap-2 font-mono text-[10px] font-medium uppercase tracking-wider text-ink/50">
-              <Phone className="h-3.5 w-3.5" />
+            <h3 className="flex items-center gap-2 font-mono text-[11px] font-medium uppercase tracking-wider text-ink/50">
+              <Phone className="h-4 w-4" />
               Contact
             </h3>
-            <div className="mt-2 space-y-2">
+            <div className="mt-2 space-y-2.5">
               <a
                 href={`tel:${brand.phone}`}
-                className="flex items-center gap-2 text-sm text-ink/80 transition-colors hover:text-amber-dark"
+                className="flex items-center gap-2.5 text-sm text-ink/80 transition-colors hover:text-amber-dark group"
               >
-                <Phone className="h-3.5 w-3.5 text-ink/40" />
+                <Phone className="h-4 w-4 text-ink/40 group-hover:text-amber-dark transition-colors" />
                 {brand.phone}
               </a>
               <a
                 href={`mailto:${brand.email}`}
-                className="flex items-center gap-2 text-sm text-ink/80 transition-colors hover:text-amber-dark"
+                className="flex items-center gap-2.5 text-sm text-ink/80 transition-colors hover:text-amber-dark group"
               >
-                <Mail className="h-3.5 w-3.5 text-ink/40" />
+                <Mail className="h-4 w-4 text-ink/40 group-hover:text-amber-dark transition-colors" />
                 {brand.email}
               </a>
             </div>
@@ -129,11 +133,11 @@ export function Footer() {
         </div>
 
         {/* ===== BOTTOM BAR ===== */}
-        <div className="mt-8 pt-4 border-t border-ink/10 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="font-mono text-[10px] text-ink/40 text-center sm:text-left">
+        <div className="mt-10 pt-5 border-t border-ink/10 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="font-mono text-[10px] text-ink/40">
             © {new Date().getFullYear()} {brand.name}. All rights reserved.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-5 font-mono text-[10px] text-ink/40">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 font-mono text-[10px] text-ink/40">
             <Link
               href="/privacy"
               className="transition-colors hover:text-amber-dark"

@@ -6,12 +6,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { getBrandConfig } from "@/lib/brands";
 import { Menu, X, Phone } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const navLinks = [
   { href: "/services", label: "Services" },
+  { href: "/about", label: "About Us" },
   { href: "/locations", label: "Locations" },
-  { href: "/blog", label: "Health Notes" },
-  { href: "/about", label: "About" },
+  // { href: "/blog", label: "Health Notes" },
   { href: "/faq", label: "FAQ" },
 ];
 
@@ -48,16 +49,16 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-ink/10 bg-paper/95 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 py-2.5">
-        {/* ===== LOGO - مكبر ===== */}
+        {/* ===== LOGO - مصغر ===== */}
         <Link href="/" className="flex items-center gap-3 shrink-0">
           {hasBrandLogo ? (
             <Image
               src={logoPath}
               alt={brand.name}
-              width={320}
-              height={80}
+              width={220} // ✅ تغيير من 320 إلى 220
+              height={55} // ✅ تغيير من 80 إلى 55
               priority
-              className="h-20 w-auto object-contain transition-transform duration-200 hover:scale-[1.02] md:h-24"
+              className="h-14 w-auto object-contain transition-transform duration-200 hover:scale-[1.02] md:h-16" // ✅ تغيير من h-20 إلى h-14 و md:h-24 إلى md:h-16
             />
           ) : (
             <span className="font-display text-2xl font-semibold text-ink">
@@ -80,7 +81,7 @@ export function Header() {
                 className={`rounded-full px-4 py-2 font-mono text-[13px] font-medium uppercase tracking-[0.12em] transition-all duration-200 ${
                   isActive
                     ? "bg-amber/10 text-amber-dark"
-                    : "text-ink/80 hover:bg-tan/60 hover:text-amber-dark"
+                    : "text-ink/70 hover:bg-amber/5 hover:text-amber-dark"
                 }`}
               >
                 {link.label}
@@ -90,30 +91,34 @@ export function Header() {
         </nav>
 
         {/* ===== DESKTOP CTA ===== */}
-        <Link
-          href="/contact"
-          className="hidden lg:inline-flex items-center gap-2 rounded-full bg-amber px-6 py-2.5 font-mono text-[13px] font-medium uppercase tracking-[0.12em] text-paper transition-all duration-200 hover:bg-amber-dark hover:scale-105 hover:shadow-lg"
+        <Button
+          asChild
+          className="hidden lg:inline-flex items-center gap-2 rounded-full bg-amber px-6 py-2.5 font-mono text-[13px] font-medium uppercase tracking-[0.12em] text-ink transition-all duration-200 hover:bg-amber-light hover:scale-105 hover:shadow-lg hover:shadow-amber/30"
         >
-          <Phone className="h-4 w-4" />
-          Refill / Contact
-        </Link>
+          <Link href="/contact">
+            <Phone className="h-4 w-4" />
+            Refill / Contact
+          </Link>
+        </Button>
 
         {/* ===== MOBILE MENU BUTTON ===== */}
-        <button
+        <Button
           ref={menuButtonRef}
           type="button"
+          variant="ghost"
+          size="icon"
           onClick={() => setIsMenuOpen((open) => !open)}
           aria-expanded={isMenuOpen}
           aria-controls="mobile-nav-panel"
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="relative flex h-11 w-11 items-center justify-center rounded-full text-ink transition-colors duration-200 hover:bg-tan/70 lg:hidden"
+          className="relative h-11 w-11 rounded-full text-ink hover:bg-amber/10 lg:hidden"
         >
           {isMenuOpen ? (
             <X className="h-6 w-6" />
           ) : (
             <Menu className="h-6 w-6" />
           )}
-        </button>
+        </Button>
       </div>
 
       {/* ===== MOBILE NAVIGATION PANEL ===== */}
@@ -136,20 +141,22 @@ export function Header() {
                 className={`flex min-h-11 items-center rounded-lg px-4 font-mono text-[13px] font-medium uppercase tracking-[0.12em] transition-colors duration-200 ${
                   isActive
                     ? "bg-amber/10 text-amber-dark"
-                    : "text-ink/80 hover:bg-tan/60 hover:text-amber-dark"
+                    : "text-ink/70 hover:bg-amber/5 hover:text-amber-dark"
                 }`}
               >
                 {link.label}
               </Link>
             );
           })}
-          <Link
-            href="/contact"
-            className="mt-2 flex min-h-11 items-center justify-center gap-2 rounded-full bg-amber px-5 font-mono text-[13px] font-medium uppercase tracking-[0.12em] text-paper transition-colors duration-200 hover:bg-amber-dark"
+          <Button
+            asChild
+            className="mt-2 flex min-h-11 items-center justify-center gap-2 rounded-full bg-amber px-5 font-mono text-[13px] font-medium uppercase tracking-[0.12em] text-ink transition-all duration-200 hover:bg-amber-light hover:scale-105 hover:shadow-lg hover:shadow-amber/30"
           >
-            <Phone className="h-4 w-4" />
-            Refill / Contact
-          </Link>
+            <Link href="/contact">
+              <Phone className="h-4 w-4" />
+              Refill / Contact
+            </Link>
+          </Button>
         </nav>
       </div>
     </header>

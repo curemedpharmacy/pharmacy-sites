@@ -29,18 +29,20 @@ export function ServiceLabelCard({
       href={href}
       className="group relative flex flex-col overflow-hidden rounded-xl border border-ink/10 bg-paper/60 transition-all hover:border-amber/30 hover:shadow-lg hover:-translate-y-1"
     >
-      {/* صورة الخدمة (إذا وجدت) */}
+      {/* صورة الخدمة */}
       {image && (
-        <div className="relative w-full h-40 overflow-hidden bg-sage/5">
+        <div className="relative w-full aspect-4/3 overflow-hidden rounded-t-xl">
           <Image
             src={image}
             alt={title}
-            width={400}
-            height={160}
-            className="h-40 w-full object-cover transition-transform duration-500 group-hover:scale-105"
-            unoptimized={true}
+            fill
+            sizes="(max-width: 768px) 100vw, 400px"
+            className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
+            unoptimized
           />
+
           <div className="absolute inset-0 bg-linear-to-t from-ink/20 via-transparent to-transparent" />
+
           {/* RX badge */}
           <div className="absolute top-3 left-3 rounded-full bg-paper/90 backdrop-blur-sm px-2.5 py-1 text-[10px] font-mono font-medium text-ink/80 border border-ink/5">
             RX-{rx}

@@ -101,14 +101,14 @@ export function ServiceImage({
 
   return (
     <Image
-      src={imgSrc}
-      alt={alt}
-      width={width}
-      height={height}
-      className={className}
-      onError={handleError}
-      unoptimized={isExternalImage}
-      priority={false}
-    />
+  src={imgSrc}
+  alt={alt}
+  fill
+  sizes="(max-width: 768px) 100vw, 400px"
+  className={`${className} object-cover object-center`}
+  onError={handleError}
+  unoptimized={isExternalImage}
+  priority={false}
+/>
   );
 }

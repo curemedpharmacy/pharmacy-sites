@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getBrandConfig } from "@/lib/brands";
-import { MapPin, Phone, Award, Heart, Shield, Users, Star, Building, CheckCircle, Calendar, Quote } from "lucide-react";
 
 export async function generateMetadata(): Promise<Metadata> {
   const brand = getBrandConfig();
   return {
-    title: `About ${brand.name}`,
-    description: `${brand.name} serves Paterson from ${brand.address.street} with refill support, delivery, vaccinations, testing, and medication support.`,
+    title: `About ${brand.name} | Community Pharmacy in Paterson, NJ`,
+    description: `Learn about ${brand.name}, a trusted community pharmacy in Paterson since 2015. We offer personalized care, free delivery, immunizations, and medication management.`,
     alternates: { canonical: "/about" },
   };
 }
@@ -18,170 +17,318 @@ export default function AboutPage() {
   const pharmacyInfo = {
     founded: 2015,
     teamSize: 12,
-    specialties: ["Medication Management", "Immunizations", "Health Screenings", "Delivery Service"],
-    values: ["Trust", "Compassion", "Excellence", "Community"],
+    patientsServed: "500+",
+    rating: "4.7★",
+    specialties: [
+      { name: "Medication Management", description: "Comprehensive reviews and adherence support" },
+      { name: "Immunizations", description: "Flu, COVID-19, RSV, and more" },
+      { name: "Health Screenings", description: "Blood pressure, diabetes, cholesterol" },
+      { name: "Delivery Service", description: "Free local prescription delivery" },
+    ],
+    values: [
+      { name: "Trust", description: "Building lasting relationships through honesty" },
+      { name: "Compassion", description: "Caring for each patient like family" },
+      { name: "Excellence", description: "Committed to the highest quality care" },
+      { name: "Community", description: "Serving our neighbors in Paterson" },
+    ],
+    milestones: [
+      { year: 2015, event: "Pharmacy founded in Paterson" },
+      { year: 2017, event: "Launched free delivery service" },
+      { year: 2019, event: "Expanded immunizations program" },
+      { year: 2021, event: "Added health screening services" },
+      { year: 2024, event: "Served 500+ patients and counting" },
+    ],
+    communityEvents: [
+      {
+        title: "Women's Health Event",
+        description:
+          "Hosted a private women's health session led by a specialist, creating a safe space for open discussions on topics often considered private.",
+        date: "May 2026",
+      },
+      {
+        title: "Health Fair Participation",
+        description:
+          "Organized and participated in community health fairs, providing free health screenings, educational materials, and family-friendly activities.",
+        date: "August 2023",
+      },
+      {
+        title: "Community Solidarity",
+        description:
+          "Closed our doors in solidarity with global events, demonstrating our commitment to humanity and community values beyond healthcare.",
+        date: "December 2023",
+      },
+      {
+        title: "Pharmacy Internship Program",
+        description:
+          "Welcomed pharmacy interns from LECOM School of Pharmacy, providing hands-on clinical experience and mentoring the next generation of pharmacists.",
+        date: "July 2026",
+      },
+    ],
+    patientStories: [
+      {
+        title: "A Patient's Legacy",
+        description:
+          "For nearly 12 years, a patient named George visited us almost daily, not just for medications but for connection. When he stopped coming, we checked on him, visited him in the hospital, and remained a source of support for his family. This is what community pharmacy means to us.",
+      },
+      {
+        title: "More Than a Pharmacy",
+        description:
+          "We celebrate life's happy moments with our patients and stand beside families during the hardest ones. From birthdays to farewells, we are part of the fabric of our community.",
+      },
+      {
+        title: "A Life-Saving Conversation",
+        description:
+          "A patient came in looking for a headache medication. Instead of simply handing over a bottle, we asked a few questions and checked their blood pressure. It was dangerously high. That conversation changed the next step in their care.",
+      },
+    ],
+    clinicalServices: [
+      {
+        title: "Health Clarity Sessions",
+        description:
+          "Dedicated one-on-one time with a clinical pharmacist, personalized around your story, your concerns, and your health goals. Together, we create a plan that works for you.",
+      },
+      {
+        title: "Diabetes Support",
+        description:
+          "From glucose testing to medication management and lifestyle education, we provide comprehensive support for patients living with diabetes.",
+      },
+      {
+        title: "Medicare & Insurance Guidance",
+        description:
+          "We help patients navigate Medicare Part D plans and insurance questions, ensuring they get the coverage they need without the confusion.",
+      },
+    ],
   };
 
   return (
-    <section className="relative overflow-hidden bg-linear-to-br from-paper via-paper to-sage/5 min-h-[70vh]">
-      {/* Background decorative elements */}
-      <div className="absolute top-0 right-0 -z-10 h-150 w-150 rounded-full bg-amber/5 blur-3xl" />
-      <div className="absolute bottom-0 left-0 -z-10 h-100 w-100 rounded-full bg-sage/10 blur-3xl" />
-      
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-16 lg:py-20">
-        {/* ===== HERO SECTION ===== */}
-        <div className="max-w-3xl">
-          <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-amber-dark bg-amber/10 px-3 py-1 rounded-full">
-            <Heart className="h-3 w-3" />
-            Our Story
-          </span>
-          <h1 className="mt-4 font-display text-3xl font-bold text-ink sm:text-4xl lg:text-5xl leading-tight">
-            About {brand.name}
-          </h1>
-          <div className="mt-4 space-y-4">
-            <p className="text-base leading-relaxed text-ink/70">
-              {brand.name} is a neighborhood pharmacy in Paterson, New Jersey,
-              serving patients from {brand.address.street} with refill support,
-              free local delivery, diabetes testing and education, immunizations,
-              medication reviews, and everyday care that stays close to home.
+    <section className="min-h-screen bg-paper">
+
+      {/* ===== HERO SECTION - Full Width ===== */}
+      <div className="w-full bg-linear-to-br from-amber/5 via-paper to-sage/5 border-b border-ink/5 py-20 sm:py-24 lg:py-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl">
+            <p className="font-mono text-sm uppercase tracking-wider text-amber-dark font-semibold">
+              Our Story
             </p>
-            <p className="text-base leading-relaxed text-ink/70">
-              Founded in {pharmacyInfo.founded} with a vision to provide accessible
-              healthcare, our pharmacy has grown into a trusted community partner
-              serving over 500 patients in the Paterson area.
+            <h1 className="mt-4 font-display text-4xl font-bold text-ink sm:text-5xl lg:text-6xl leading-tight">
+              About {brand.name}
+            </h1>
+            <div className="mt-6 space-y-4 text-lg leading-relaxed text-ink/70 max-w-3xl">
+              <p>
+                {brand.name} is a neighborhood pharmacy in Paterson, New Jersey,
+                serving patients from {brand.address.street} with refill support,
+                free local delivery, diabetes testing and education, immunizations,
+                medication reviews, and everyday care that stays close to home.
+              </p>
+              <p>
+                Founded in {pharmacyInfo.founded} with a vision to provide accessible
+                healthcare, our pharmacy has grown into a trusted community partner
+                serving over {pharmacyInfo.patientsServed} patients in the Paterson area.
+                We believe healthcare begins with listening, and every patient has a story
+                that deserves to be heard.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ===== QUICK STATS - Full Width ===== */}
+      <div className="w-full border-b border-ink/5 py-8 sm:py-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <div className="rounded-xl border border-ink/5 bg-paper/40 p-5 text-center">
+              <p className="text-2xl font-bold text-ink">{pharmacyInfo.founded}</p>
+              <p className="text-sm text-ink/50">Founded</p>
+            </div>
+            <div className="rounded-xl border border-ink/5 bg-paper/40 p-5 text-center">
+              <p className="text-2xl font-bold text-ink">{pharmacyInfo.teamSize}+</p>
+              <p className="text-sm text-ink/50">Team Members</p>
+            </div>
+            <div className="rounded-xl border border-ink/5 bg-paper/40 p-5 text-center">
+              <p className="text-2xl font-bold text-ink">{pharmacyInfo.patientsServed}</p>
+              <p className="text-sm text-ink/50">Patients Served</p>
+            </div>
+            <div className="rounded-xl border border-ink/5 bg-paper/40 p-5 text-center">
+              <p className="text-2xl font-bold text-ink">{pharmacyInfo.rating}</p>
+              <p className="text-sm text-ink/50">Rating</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ===== CONTENT - Full Width with Max Width ===== */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 space-y-16">
+
+        {/* ===== VALUES ===== */}
+        <div>
+          <div className="max-w-3xl">
+            <h2 className="font-display text-3xl font-semibold text-ink">Our Core Values</h2>
+            <p className="mt-2 text-lg text-ink/70">
+              Guiding principles that shape everything we do.
             </p>
-            <p className="text-base leading-relaxed text-ink/70">
-              Our regular hours are{" "}
-              <span className="font-medium text-ink">
-                {brand.hours.map((hour) => `${hour.day} ${hour.time}`).join("; ")}
-              </span>.
-              {brand.offersCompounding
-                ? " We also offer custom compounding at this location."
-                : " Compounding is not offered at this location."}
-            </p>
+          </div>
+          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {pharmacyInfo.values.map((value) => (
+              <div key={value.name} className="rounded-xl border border-ink/5 bg-paper/40 p-5">
+                <p className="text-lg font-semibold text-ink">{value.name}</p>
+                <p className="text-sm text-ink/50 mt-1">{value.description}</p>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* ===== VALUES & INFO CARDS ===== */}
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
-          {/* Values Card */}
-          <div className="rounded-2xl border border-ink/10 bg-paper/60 p-6 sm:p-8">
-            <h2 className="font-display text-xl font-semibold text-ink flex items-center gap-2">
-              <Heart className="h-5 w-5 text-amber-dark" />
-              What We Believe
-            </h2>
-            <p className="mt-3 text-sm leading-relaxed text-ink/70">
-              We focus on clear communication, practical support, and a
-              patient-first approach that helps neighbors feel comfortable asking
-              questions and getting the help they need.
+        {/* ===== CLINICAL SERVICES ===== */}
+        <div>
+          <div className="max-w-3xl">
+            <h2 className="font-display text-3xl font-semibold text-ink">Our Clinical Services</h2>
+            <p className="mt-2 text-lg text-ink/70">
+              We go beyond traditional pharmacy services to provide comprehensive
+              clinical care that addresses your unique health needs.
             </p>
-            
-            <div className="mt-4 grid grid-cols-2 gap-3">
-              {pharmacyInfo.values.map((value) => (
-                <div key={value} className="rounded-xl bg-amber/5 border border-amber/10 p-3 text-center">
-                  <Shield className="h-5 w-5 text-amber-dark mx-auto" />
-                  <p className="mt-1 text-xs font-medium text-ink">{value}</p>
+          </div>
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+            {pharmacyInfo.clinicalServices.map((service) => (
+              <div key={service.title} className="rounded-xl border border-ink/5 bg-paper/40 p-5">
+                <p className="text-lg font-semibold text-ink">{service.title}</p>
+                <p className="text-sm text-ink/50 mt-1">{service.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ===== PATIENT STORIES ===== */}
+        <div>
+          <div className="max-w-3xl">
+            <h2 className="font-display text-3xl font-semibold text-ink">Patient Stories</h2>
+            <p className="mt-2 text-lg text-ink/70">
+              These are the moments that define who we are and why we do what we do.
+            </p>
+          </div>
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+            {pharmacyInfo.patientStories.map((story) => (
+              <div key={story.title} className="rounded-xl border border-ink/5 bg-paper/40 p-5">
+                <p className="text-lg font-semibold text-ink">{story.title}</p>
+                <p className="text-sm text-ink/50 mt-1 leading-relaxed">{story.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ===== COMMUNITY EVENTS ===== */}
+        <div>
+          <div className="max-w-3xl">
+            <h2 className="font-display text-3xl font-semibold text-ink">Community Events & Engagement</h2>
+            <p className="mt-2 text-lg text-ink/70">
+              We believe in being an active and engaged member of the Paterson community.
+            </p>
+          </div>
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+            {pharmacyInfo.communityEvents.map((event) => (
+              <div key={event.title} className="rounded-xl border border-ink/5 bg-paper/40 p-5">
+                <div className="flex flex-wrap items-baseline justify-between gap-2">
+                  <p className="text-lg font-semibold text-ink">{event.title}</p>
+                  <span className="text-sm text-ink/40 font-mono">{event.date}</span>
                 </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Quick Facts Card */}
-          <div className="rounded-2xl border border-ink/10 bg-paper/60 p-6 sm:p-8">
-            <h2 className="font-display text-xl font-semibold text-ink flex items-center gap-2">
-              <Award className="h-5 w-5 text-amber-dark" />
-              Quick Facts
-            </h2>
-            <div className="mt-4 grid grid-cols-2 gap-4">
-              <div className="rounded-xl bg-sage/5 border border-sage/10 p-3 text-center">
-                <Calendar className="h-5 w-5 text-sage mx-auto" />
-                <p className="mt-1 text-sm font-medium text-ink">{pharmacyInfo.founded}</p>
-                <p className="text-[10px] text-ink/50">Founded</p>
+                <p className="text-sm text-ink/50 mt-1 leading-relaxed">{event.description}</p>
               </div>
-              <div className="rounded-xl bg-sage/5 border border-sage/10 p-3 text-center">
-                <Users className="h-5 w-5 text-sage mx-auto" />
-                <p className="mt-1 text-sm font-medium text-ink">{pharmacyInfo.teamSize}+</p>
-                <p className="text-[10px] text-ink/50">Team Members</p>
-              </div>
-              <div className="rounded-xl bg-sage/5 border border-sage/10 p-3 text-center">
-                <Heart className="h-5 w-5 text-sage mx-auto" />
-                <p className="mt-1 text-sm font-medium text-ink">500+</p>
-                <p className="text-[10px] text-ink/50">Patients Served</p>
-              </div>
-              <div className="rounded-xl bg-sage/5 border border-sage/10 p-3 text-center">
-                <Star className="h-5 w-5 text-sage mx-auto" />
-                <p className="mt-1 text-sm font-medium text-ink">4.7★</p>
-                <p className="text-[10px] text-ink/50">Rating</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 
-        {/* ===== SERVICES & SPECIALTIES ===== */}
-        <div className="mt-8 rounded-2xl border border-ink/10 bg-paper/60 p-6 sm:p-8">
-          <h2 className="font-display text-xl font-semibold text-ink flex items-center gap-2">
-            <Building className="h-5 w-5 text-amber-dark" />
-            Our Services
-          </h2>
-          <p className="mt-2 text-sm text-ink/70">
-            We offer a range of pharmacy services to support your health and wellness journey.
-          </p>
-          <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+        {/* ===== SPECIALTIES ===== */}
+        <div>
+          <div className="max-w-3xl">
+            <h2 className="font-display text-3xl font-semibold text-ink">Our Specialties</h2>
+            <p className="mt-2 text-lg text-ink/70">
+              We offer a range of pharmacy services to support your health and wellness journey.
+            </p>
+          </div>
+          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {pharmacyInfo.specialties.map((service) => (
-              <div key={service} className="rounded-xl border border-ink/5 bg-paper/40 p-3 text-center hover:border-amber/20 transition-colors">
-                <CheckCircle className="h-4 w-4 text-emerald-500 mx-auto" />
-                <p className="mt-1 text-xs font-medium text-ink/80">{service}</p>
+              <div key={service.name} className="rounded-xl border border-ink/5 bg-paper/40 p-5 text-center">
+                <p className="text-lg font-semibold text-ink">{service.name}</p>
+                <p className="text-sm text-ink/50 mt-1">{service.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ===== MILESTONES ===== */}
+        <div>
+          <div className="max-w-3xl">
+            <h2 className="font-display text-3xl font-semibold text-ink">Our Journey</h2>
+            <p className="mt-2 text-lg text-ink/70">
+              Key moments in our history.
+            </p>
+          </div>
+          <div className="mt-6 space-y-4">
+            {pharmacyInfo.milestones.map((milestone, index) => (
+              <div key={index} className="flex flex-wrap items-baseline gap-4 border-b border-ink/5 pb-4 last:border-b-0">
+                <span className="font-mono text-lg font-bold text-amber-dark w-20">{milestone.year}</span>
+                <p className="text-lg text-ink/70">{milestone.event}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* ===== TESTIMONIALS ===== */}
-        <div className="mt-8 grid gap-4 md:grid-cols-2">
-          <div className="rounded-2xl border border-ink/10 bg-paper/60 p-5">
-            <Quote className="h-5 w-5 text-amber-dark" />
-            <p className="mt-2 text-sm italic text-ink/70">
-              &quot;The team at {brand.name} always takes the time to explain my medications clearly. I feel genuinely cared for every visit.&quot;
+        <div>
+          <div className="max-w-3xl">
+            <h2 className="font-display text-3xl font-semibold text-ink">What Our Patients Say</h2>
+            <p className="mt-2 text-lg text-ink/70">
+              Real feedback from real people.
             </p>
-            <p className="mt-3 text-xs font-medium text-ink/50">&mdash; Sarah M., Paterson</p>
           </div>
-          <div className="rounded-2xl border border-ink/10 bg-paper/60 p-5">
-            <Quote className="h-5 w-5 text-amber-dark" />
-            <p className="mt-2 text-sm italic text-ink/70">
-              &quot;Their delivery service has been a lifesaver for my family. Reliable, friendly, and always on time.&quot;
-            </p>
-            <p className="mt-3 text-xs font-medium text-ink/50">&mdash; David R., Paterson</p>
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="rounded-xl border border-ink/5 bg-paper/40 p-6">
+              <p className="text-lg italic text-ink/70 leading-relaxed">
+                &ldquo;The team at {brand.name} always takes the time to explain my medications clearly. I feel genuinely cared for every visit.&rdquo;
+              </p>
+              <div className="mt-4">
+                <p className="text-sm font-medium text-ink">Sarah M.</p>
+                <p className="text-sm text-ink/50">Paterson, NJ</p>
+              </div>
+            </div>
+            <div className="rounded-xl border border-ink/5 bg-paper/40 p-6">
+              <p className="text-lg italic text-ink/70 leading-relaxed">
+                &ldquo;Their delivery service has been a lifesaver for my family. Reliable, friendly, and always on time.&rdquo;
+              </p>
+              <div className="mt-4">
+                <p className="text-sm font-medium text-ink">David R.</p>
+                <p className="text-sm text-ink/50">Paterson, NJ</p>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
 
-        {/* ===== CTA SECTION ===== */}
-        <div className="mt-10 rounded-2xl border border-amber/10 bg-linear-to-br from-amber/5 via-paper to-sage/5 p-6 sm:p-8">
-          <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
-            <div>
-              <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-amber-dark">
-                <Phone className="h-3 w-3" />
-                Visit Us
-              </span>
-              <h3 className="mt-2 font-display text-xl font-semibold text-ink sm:text-2xl">
+      {/* ===== CTA SECTION - Full Width ===== */}
+      <div className="w-full bg-linear-to-br from-amber/5 via-paper to-sage/5 border-t border-ink/5 py-16 sm:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
+            <div className="max-w-2xl">
+              <h3 className="font-display text-3xl font-semibold text-ink">
                 Come see the {brand.name} difference
               </h3>
-              <p className="mt-1 text-sm text-ink/70">
-                {brand.address.street}, {brand.address.city}, {brand.address.state} {brand.address.zip}
-              </p>
+              <div className="mt-3 space-y-1 text-lg text-ink/70">
+                <p>{brand.address.street}</p>
+                <p>{brand.address.city}, {brand.address.state} {brand.address.zip}</p>
+                <p className="text-base text-ink/50">
+                  {brand.hours.map((hour) => `${hour.day}: ${hour.time}`).join(" • ")}
+                </p>
+              </div>
             </div>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-4 shrink-0">
               <a
                 href={`tel:${brand.phone}`}
-                className="inline-flex items-center gap-2 rounded-full bg-amber px-6 py-2.5 font-mono text-xs font-medium uppercase tracking-wider text-paper transition-all hover:bg-amber-dark hover:scale-[1.02]"
+                className="inline-flex items-center gap-2 rounded-full bg-amber px-8 py-3.5 font-mono text-sm font-medium uppercase tracking-wider text-ink transition-all hover:bg-amber-light hover:scale-105"
               >
-                <Phone className="h-3.5 w-3.5" />
-                Call Us
+                Call Now
               </a>
               <Link
                 href="/locations"
-                className="inline-flex items-center gap-2 rounded-full border border-ink/20 px-6 py-2.5 font-mono text-xs font-medium uppercase tracking-wider text-ink transition-all hover:border-ink/40 hover:bg-ink/5"
+                className="inline-flex items-center gap-2 rounded-full border border-ink/20 px-8 py-3.5 font-mono text-sm font-medium uppercase tracking-wider text-ink transition-all hover:border-ink/40 hover:bg-ink/5 hover:scale-105"
               >
-                <MapPin className="h-3.5 w-3.5" />
                 Get Directions
               </Link>
             </div>

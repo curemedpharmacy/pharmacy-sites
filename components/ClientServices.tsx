@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ServiceLabelCard } from "@/components/ServiceLabelCard";
 import { ArrowRight, Syringe, Pill, Globe, Heart, Stethoscope, Truck, FileText, Briefcase, Award } from "lucide-react";
 import type { ServiceItem } from "@/lib/services";
+import {Button} from "@/components/ui/button";
 
 type ClientServicesProps = {
   services: ServiceItem[];
@@ -71,16 +72,18 @@ export function ClientServices({ services }: ClientServicesProps) {
       </div>
 
       {hasMoreServices && (
-        <div className="mt-10 flex justify-center">
-          <Link
-            href="/services"
-            className="group inline-flex items-center gap-2 rounded-full border-2 border-ink/10 bg-paper px-7 py-3 font-mono text-sm font-medium text-ink transition-all hover:border-ink/30 hover:bg-ink/5 hover:shadow-md"
-          >
-            View All Services
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Link>
-        </div>
-      )}
+  <div className="mt-10 flex justify-center">
+    <Button 
+      asChild 
+      className="group inline-flex items-center justify-center gap-2 rounded-full bg-amber px-7 py-3 h-auto font-mono text-sm font-medium uppercase tracking-wider text-ink transition-all hover:bg-amber-light hover:scale-105 hover:shadow-lg hover:shadow-amber/30"
+    >
+      <Link href="/services" className="inline-flex items-center gap-2">
+        View All Services
+        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+      </Link>
+    </Button>
+  </div>
+)}
     </>
   );
 }
