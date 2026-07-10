@@ -5,39 +5,183 @@ import { Clock, MapPin, Phone, Mail, Award, ArrowRight, Circle } from "lucide-re
 
 export function Footer() {
   const brand = getBrandConfig();
+  const isSaimz = brand.slug === "saimz";
+  
   const hasBrandLogo = brand.slug === "curemed" || brand.slug === "saimz";
   const logoPath =
     brand.slug === "curemed"
       ? "/images/curemed/logo.png"
       : "/images/saimz/logo.png";
 
+  // ============================================================
+  // ===== SAIMZ FOOTER - منسق مع الهيرو =====
+  // ============================================================
+  if (isSaimz) {
+    return (
+      <footer className="bg-linear-to-br from-[#0A1628] via-[#0F2040] to-[#1A4A7A] pt-12 pb-6 border-t border-white/5 shadow-2xl shadow-black/30">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          {/* ===== LOGO ===== */}
+          <div className="mb-8 flex justify-start">
+            <Link href="/" className="flex items-center shrink-0 group">
+              <span className="font-display text-2xl font-bold tracking-wider text-white transition-all duration-300 group-hover:text-[#4A9FFF] group-hover:scale-105">
+                SAIMZ
+              </span>
+            </Link>
+          </div>
+
+          {/* ===== CONTENT ROW ===== */}
+          <div className="grid gap-8 sm:gap-10 lg:grid-cols-4 md:grid-cols-2">
+            {/* Column 1: About */}
+            <div className="space-y-3">
+              <p className="text-sm leading-relaxed text-white/50 max-w-xs">
+                {brand.description || "Your trusted community pharmacy."}
+              </p>
+              <div className="inline-flex items-center gap-2 rounded-full bg-[#4A9FFF]/10 px-3 py-1.5 border border-[#4A9FFF]/20">
+                <Award className="h-3 w-3 text-[#4A9FFF]" />
+                <span className="text-[10px] font-medium text-[#4A9FFF]">
+                  Independent Pharmacy
+                </span>
+              </div>
+            </div>
+
+            {/* Column 2: Visit */}
+            <div>
+              <h3 className="flex items-center gap-2 font-mono text-[11px] font-medium uppercase tracking-wider text-white/30">
+                <MapPin className="h-4 w-4" />
+                Visit Us
+              </h3>
+              <address className="mt-2 not-italic text-sm text-white/60 leading-relaxed">
+                {brand.address.street}
+                <br />
+                {brand.address.city}, {brand.address.state} {brand.address.zip}
+              </address>
+              <Link
+                href="/locations"
+                className="inline-flex items-center gap-1 mt-2 text-[11px] font-medium text-[#4A9FFF] hover:text-white transition-colors"
+              >
+                Get Directions
+                <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            </div>
+
+            {/* Column 3: Hours */}
+            <div>
+              <h3 className="flex items-center gap-2 font-mono text-[11px] font-medium uppercase tracking-wider text-white/30">
+                <Clock className="h-4 w-4" />
+                Hours
+              </h3>
+              <div className="mt-2 space-y-1.5">
+                {brand.hours.map((h, index) => {
+                  const isToday = h.day === "Mon" || h.day === "Today";
+                  return (
+                    <div 
+                      key={h.day} 
+                      className={`flex items-center justify-between py-1.5 ${
+                        index !== brand.hours.length - 1 ? 'border-b border-white/5' : ''
+                      } ${isToday ? 'bg-[#4A9FFF]/10 rounded-md px-2.5 -mx-2.5' : ''}`}
+                    >
+                      <div className="flex items-center gap-2">
+                        {isToday && (
+                          <Circle className="h-1.5 w-1.5 fill-emerald-500 text-emerald-500 animate-pulse" />
+                        )}
+                        <span className={`text-sm font-medium ${
+                          isToday ? 'text-[#4A9FFF]' : 'text-white/60'
+                        }`}>
+                          {h.day}
+                        </span>
+                      </div>
+                      <span className={`text-sm font-mono ${
+                        isToday ? 'text-[#4A9FFF] font-semibold' : 'text-white/30'
+                      }`}>
+                        {h.time}
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Column 4: Contact */}
+            <div>
+              <h3 className="flex items-center gap-2 font-mono text-[11px] font-medium uppercase tracking-wider text-white/30">
+                <Phone className="h-4 w-4" />
+                Contact
+              </h3>
+              <div className="mt-2 space-y-2.5">
+                <a
+                  href={`tel:${brand.phone}`}
+                  className="flex items-center gap-2.5 text-sm text-white/60 transition-colors hover:text-[#4A9FFF] group"
+                >
+                  <Phone className="h-4 w-4 text-white/30 group-hover:text-[#4A9FFF] transition-colors" />
+                  {brand.phone}
+                </a>
+                <a
+                  href={`mailto:${brand.email}`}
+                  className="flex items-center gap-2.5 text-sm text-white/60 transition-colors hover:text-[#4A9FFF] group"
+                >
+                  <Mail className="h-4 w-4 text-white/30 group-hover:text-[#4A9FFF] transition-colors" />
+                  {brand.email}
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* ===== BOTTOM BAR ===== */}
+          <div className="mt-10 pt-5 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <p className="font-mono text-[10px] text-white/20">
+              © {new Date().getFullYear()} {brand.name}. All rights reserved.
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 font-mono text-[10px] text-white/20">
+              <Link
+                href="/privacy"
+                className="transition-colors hover:text-[#4A9FFF]"
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                href="/terms"
+                className="transition-colors hover:text-[#4A9FFF]"
+              >
+                Terms of Service
+              </Link>
+              <Link
+                href="/accessibility"
+                className="transition-colors hover:text-[#4A9FFF]"
+              >
+                Accessibility
+              </Link>
+            </div>
+          </div>
+        </div>
+      </footer>
+    );
+  }
+
+  // ============================================================
+  // ===== CUREMED FOOTER =====
+  // ============================================================
   return (
     <footer className="border-t border-ink/10 bg-linear-to-br from-paper via-paper to-sage/5">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 py-8 sm:py-10">
-        {/* ===== LOGO ROW - نفس حجم الهيدر ===== */}
         <div className="mb-6 flex justify-start">
           <Link href="/" className="flex items-center gap-3 shrink-0">
-          {hasBrandLogo ? (
-            <Image
-              src={logoPath}
-              alt={brand.name}
-              width={200}
-              height={50}
-              className="h-12 w-auto object-contain transition-transform duration-200 hover:scale-[1.02] md:h-14"
-            />
-          ) : (
-            <p className="font-display text-2xl font-semibold text-ink">
-              {brand.name}
-            </p>
-          )}
+            {hasBrandLogo ? (
+              <Image
+                src={logoPath}
+                alt={brand.name}
+                width={200}
+                height={50}
+                className="h-12 w-auto object-contain transition-transform duration-200 hover:scale-[1.02] md:h-14"
+              />
+            ) : (
+              <p className="font-display text-2xl font-semibold text-ink">
+                {brand.name}
+              </p>
+            )}
           </Link>
         </div>
 
-
-
-        {/* ===== CONTENT ROW - تنسيق محسّن ===== */}
         <div className="grid gap-8 sm:gap-10 lg:grid-cols-4 md:grid-cols-2">
-          {/* Column 1: About / Description */}
           <div className="space-y-3">
             <p className="text-sm leading-relaxed text-ink/70 max-w-xs">
               {brand.description || "Your trusted community pharmacy."}
@@ -50,7 +194,6 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Visit */}
           <div>
             <h3 className="flex items-center gap-2 font-mono text-[11px] font-medium uppercase tracking-wider text-ink/50">
               <MapPin className="h-4 w-4" />
@@ -70,7 +213,6 @@ export function Footer() {
             </Link>
           </div>
 
-          {/* Column 3: Hours */}
           <div>
             <h3 className="flex items-center gap-2 font-mono text-[11px] font-medium uppercase tracking-wider text-ink/50">
               <Clock className="h-4 w-4" />
@@ -107,7 +249,6 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Column 4: Contact */}
           <div>
             <h3 className="flex items-center gap-2 font-mono text-[11px] font-medium uppercase tracking-wider text-ink/50">
               <Phone className="h-4 w-4" />
@@ -132,28 +273,18 @@ export function Footer() {
           </div>
         </div>
 
-        {/* ===== BOTTOM BAR ===== */}
         <div className="mt-10 pt-5 border-t border-ink/10 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="font-mono text-[10px] text-ink/40">
             © {new Date().getFullYear()} {brand.name}. All rights reserved.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 font-mono text-[10px] text-ink/40">
-            <Link
-              href="/privacy"
-              className="transition-colors hover:text-amber-dark"
-            >
+            <Link href="/privacy" className="transition-colors hover:text-amber-dark">
               Privacy Policy
             </Link>
-            <Link
-              href="/terms"
-              className="transition-colors hover:text-amber-dark"
-            >
+            <Link href="/terms" className="transition-colors hover:text-amber-dark">
               Terms of Service
             </Link>
-            <Link
-              href="/accessibility"
-              className="transition-colors hover:text-amber-dark"
-            >
+            <Link href="/accessibility" className="transition-colors hover:text-amber-dark">
               Accessibility
             </Link>
           </div>

@@ -1,19 +1,268 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getBrandConfig } from "@/lib/brands";
+import {
+  Phone,
+  MapPin,
+  Heart,
+  Users,
+  Shield,
+  Award,
+  Clock,
+  Truck,
+  Pill,
+  Syringe,
+  Stethoscope,
+} from "lucide-react";
 
 export async function generateMetadata(): Promise<Metadata> {
   const brand = getBrandConfig();
   return {
     title: `About ${brand.name} | Community Pharmacy in Paterson, NJ`,
-    description: `Learn about ${brand.name}, a trusted community pharmacy in Paterson since 2015. We offer personalized care, free delivery, immunizations, and medication management.`,
+    description: `Learn about ${brand.name}, a trusted community pharmacy in Paterson. We offer personalized care, free delivery, immunizations, and medication management.`,
     alternates: { canonical: "/about" },
   };
 }
 
 export default function AboutPage() {
   const brand = getBrandConfig();
+  const isSaimz = brand.slug === "saimz";
 
+  // ===== SAIMZ ABOUT =====
+  if (isSaimz) {
+    return (
+      <section className="min-h-screen">
+        {/* ===== HERO - Full Width ===== */}
+        <div className="bg-linear-to-br from-[#0A1628] via-[#0F2040] to-[#1A4A7A] py-20 sm:py-24 text-white w-full">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <div className="max-w-3xl">
+              <span className="inline-block font-mono text-xs uppercase tracking-wider text-[#4A9FFF] bg-[#4A9FFF]/10 px-3 py-1 rounded-full mb-4">
+                Our Story
+              </span>
+              <h1 className="font-display text-4xl font-bold sm:text-5xl lg:text-6xl leading-tight">
+                About {brand.name}
+              </h1>
+              <p className="mt-4 text-lg text-white/60 leading-relaxed max-w-2xl">
+                {brand.name} is a locally owned pharmacy in Paterson, New
+                Jersey, dedicated to providing high-quality, compassionate, and
+                affordable care.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* ===== ABOUT TEXT - Full Width ===== */}
+        <div className="bg-white py-16 w-full border-b border-[#1A4A7A]/5">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6">
+            <p className="text-lg text-[#0A1628]/70 leading-relaxed">
+              Saimz Pharmacy is a locally owned pharmacy dedicated to enhancing
+              the community with high-quality, compassionate, and affordable
+              care. We set ourselves apart by offering services that extend
+              beyond mere prescription fulfillment.
+            </p>
+            <p className="mt-4 text-lg text-[#0A1628]/70 leading-relaxed">
+              Located in the Paterson, NJ area, we are proud to serve our
+              neighbors with a commitment to accessibility and convenience. Our
+              pharmacy accepts all insurance plans to ensure seamless access to
+              medications without barriers.
+            </p>
+            <p className="mt-4 text-lg text-[#0A1628]/70 leading-relaxed">
+              We believe healthcare begins with listening, and every patient has
+              a story that deserves to be heard. Our team is dedicated to
+              building lasting relationships with each person we serve.
+            </p>
+          </div>
+        </div>
+
+        {/* ===== SERVICES - Full Width ===== */}
+        <div className="bg-[#E8F0FE] py-16 w-full border-b border-[#1A4A7A]/5">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <h2 className="font-display text-3xl font-bold text-[#0A1628] text-center mb-10">
+              Our Services
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+              <div className="bg-white rounded-xl border border-[#1A4A7A]/10 p-5 hover:shadow-md transition-shadow">
+                <div className="flex items-center gap-3 mb-2">
+                  <Truck className="h-5 w-5 text-[#1A4A7A]" />
+                  <h3 className="font-semibold text-[#0A1628]">
+                    Free Delivery
+                  </h3>
+                </div>
+                <p className="text-sm text-[#6A8AAA]">
+                  We bring your medications right to your door at no extra cost.
+                </p>
+              </div>
+              <div className="bg-white rounded-xl border border-[#1A4A7A]/10 p-5 hover:shadow-md transition-shadow">
+                <div className="flex items-center gap-3 mb-2">
+                  <Pill className="h-5 w-5 text-[#1A4A7A]" />
+                  <h3 className="font-semibold text-[#0A1628]">
+                    Medication Management
+                  </h3>
+                </div>
+                <p className="text-sm text-[#6A8AAA]">
+                  Our pharmacists work with you to optimize your medication
+                  regimens.
+                </p>
+              </div>
+              <div className="bg-white rounded-xl border border-[#1A4A7A]/10 p-5 hover:shadow-md transition-shadow">
+                <div className="flex items-center gap-3 mb-2">
+                  <Clock className="h-5 w-5 text-[#1A4A7A]" />
+                  <h3 className="font-semibold text-[#0A1628]">
+                    Medication Synchronization
+                  </h3>
+                </div>
+                <p className="text-sm text-[#6A8AAA]">
+                  We align all your prescriptions to be ready on the same day
+                  each month.
+                </p>
+              </div>
+              <div className="bg-white rounded-xl border border-[#1A4A7A]/10 p-5 hover:shadow-md transition-shadow">
+                <div className="flex items-center gap-3 mb-2">
+                  <Stethoscope className="h-5 w-5 text-[#1A4A7A]" />
+                  <h3 className="font-semibold text-[#0A1628]">
+                    Compliance Packaging
+                  </h3>
+                </div>
+                <p className="text-sm text-[#6A8AAA]">
+                  We organize your medications into easy-to-use, pre-sorted
+                  doses.
+                </p>
+              </div>
+              <div className="bg-white rounded-xl border border-[#1A4A7A]/10 p-5 hover:shadow-md transition-shadow">
+                <div className="flex items-center gap-3 mb-2">
+                  <Syringe className="h-5 w-5 text-[#1A4A7A]" />
+                  <h3 className="font-semibold text-[#0A1628]">
+                    Immunizations
+                  </h3>
+                </div>
+                <p className="text-sm text-[#6A8AAA]">
+                  Flu shots, COVID-19 vaccinations, and more to keep you
+                  protected.
+                </p>
+              </div>
+              <div className="bg-white rounded-xl border border-[#1A4A7A]/10 p-5 hover:shadow-md transition-shadow">
+                <div className="flex items-center gap-3 mb-2">
+                  <Shield className="h-5 w-5 text-[#1A4A7A]" />
+                  <h3 className="font-semibold text-[#0A1628]">
+                    Safe Medication Disposal
+                  </h3>
+                </div>
+                <p className="text-sm text-[#6A8AAA]">
+                  We offer a responsible way to dispose of expired or unused
+                  medications.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ===== VALUES - Full Width ===== */}
+        <div className="bg-white py-16 w-full border-b border-[#1A4A7A]/5">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <h2 className="font-display text-3xl font-bold text-[#0A1628] text-center mb-10">
+              Our Values
+            </h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto text-center">
+              <div>
+                <div className="bg-[#1A4A7A]/10 rounded-full p-3 w-fit mx-auto">
+                  <Heart className="h-6 w-6 text-[#1A4A7A]" />
+                </div>
+                <p className="mt-3 font-semibold text-[#0A1628]">Compassion</p>
+                <p className="text-sm text-[#6A8AAA]">
+                  Caring for each patient like family
+                </p>
+              </div>
+              <div>
+                <div className="bg-[#1A4A7A]/10 rounded-full p-3 w-fit mx-auto">
+                  <Shield className="h-6 w-6 text-[#1A4A7A]" />
+                </div>
+                <p className="mt-3 font-semibold text-[#0A1628]">Excellence</p>
+                <p className="text-sm text-[#6A8AAA]">Highest quality care</p>
+              </div>
+              <div>
+                <div className="bg-[#1A4A7A]/10 rounded-full p-3 w-fit mx-auto">
+                  <Users className="h-6 w-6 text-[#1A4A7A]" />
+                </div>
+                <p className="mt-3 font-semibold text-[#0A1628]">Community</p>
+                <p className="text-sm text-[#6A8AAA]">Serving our neighbors</p>
+              </div>
+              <div>
+                <div className="bg-[#1A4A7A]/10 rounded-full p-3 w-fit mx-auto">
+                  <Award className="h-6 w-6 text-[#1A4A7A]" />
+                </div>
+                <p className="mt-3 font-semibold text-[#0A1628]">Trust</p>
+                <p className="text-sm text-[#6A8AAA]">
+                  Building lasting relationships
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ===== WHAT WE BELIEVE - Full Width ===== */}
+        <div className="bg-linear-to-br from-[#0A1628] via-[#0F2040] to-[#1A4A7A] py-16 w-full text-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+            <h2 className="font-display text-3xl font-bold mb-6">
+              What We Believe
+            </h2>
+            <p className="text-lg text-white/70 leading-relaxed max-w-3xl mx-auto">
+              We believe that healthcare is personal. Every patient who walks
+              through our doors is more than just a prescription — they are a
+              neighbor, a family member, and a friend. Our mission is to provide
+              care that is compassionate, accessible, and tailored to each
+              individual&apos;s needs.
+            </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-4 text-sm text-white/50">
+              <span>• Patient-Centered Care</span>
+              <span>• Accessibility for All</span>
+              <span>• Community First</span>
+              <span>• Quality You Can Trust</span>
+            </div>
+          </div>
+        </div>
+
+        {/* ===== VISIT US - Full Width ===== */}
+        <div className="bg-white py-16 w-full">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6">
+            <div className="flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
+              <div>
+                <h3 className="font-display text-2xl font-bold text-[#0A1628]">
+                  Visit Our Pharmacy
+                </h3>
+                <p className="text-[#6A8AAA] mt-1">
+                  {brand.address.street}, {brand.address.city},{" "}
+                  {brand.address.state} {brand.address.zip}
+                </p>
+                <p className="text-sm text-[#6A8AAA]">
+                  {brand.hours.map((h) => `${h.day}: ${h.time}`).join(" • ")}
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href={`tel:${brand.phone}`}
+                  className="inline-flex items-center gap-2 rounded-full bg-[#1A4A7A] hover:bg-[#0A1628] text-white px-6 py-3 font-mono text-sm font-medium uppercase tracking-wider transition-all duration-300 hover:scale-105"
+                >
+                  <Phone className="h-4 w-4" />
+                  Call Now
+                </a>
+                <Link
+                  href="/locations"
+                  className="inline-flex items-center gap-2 rounded-full border-2 border-[#1A4A7A]/20 hover:border-[#1A4A7A] text-[#0A1628] px-6 py-3 font-mono text-sm font-medium uppercase tracking-wider transition-all duration-300 hover:scale-105"
+                >
+                  <MapPin className="h-4 w-4" />
+                  Directions
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // ============================================================
+  // ===== CUREMED ABOUT (الأصلي كما هو) =====
+  // ============================================================
   const pharmacyInfo = {
     founded: 2015,
     teamSize: 12,

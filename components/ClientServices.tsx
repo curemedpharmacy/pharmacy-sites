@@ -10,7 +10,6 @@ type ClientServicesProps = {
   services: ServiceItem[];
 };
 
-// أيقونات لكل خدمة
 const getServiceIcon = (slug: string) => {
   const icons: Record<string, React.ReactNode> = {
     "immunizations-vaccines": <Syringe className="h-4 w-4" />,
@@ -25,7 +24,6 @@ const getServiceIcon = (slug: string) => {
   return icons[slug] || <Award className="h-4 w-4" />;
 };
 
-// الحصول على صورة الخدمة من البوست الأول (نفس منطق الـ slug)
 const getServiceImage = (service: ServiceItem) => {
   if (service.facebookPosts && service.facebookPosts.length > 0) {
     const firstPost = service.facebookPosts[0];
@@ -36,7 +34,6 @@ const getServiceImage = (service: ServiceItem) => {
       return firstPost.image;
     }
   }
-  // الصورة الافتراضية للخدمة
   const images: Record<string, string> = {
     "immunizations-vaccines": "/images/curemed/services/immunization-clinic.webp",
     "medication-therapy-management": "/images/curemed/services/medication-therapy-management.webp",
@@ -72,18 +69,18 @@ export function ClientServices({ services }: ClientServicesProps) {
       </div>
 
       {hasMoreServices && (
-  <div className="mt-10 flex justify-center">
-    <Button 
-      asChild 
-      className="group inline-flex items-center justify-center gap-2 rounded-full bg-amber px-7 py-3 h-auto font-mono text-sm font-medium uppercase tracking-wider text-ink transition-all hover:bg-amber-light hover:scale-105 hover:shadow-lg hover:shadow-amber/30"
-    >
-      <Link href="/services" className="inline-flex items-center gap-2">
-        View All Services
-        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-      </Link>
-    </Button>
-  </div>
-)}
+        <div className="mt-10 flex justify-center">
+          <Button 
+            asChild 
+            className="group inline-flex items-center justify-center gap-2 rounded-full bg-amber px-7 py-3 h-auto font-mono text-sm font-medium uppercase tracking-wider text-ink transition-all hover:bg-amber-light hover:scale-105 hover:shadow-lg hover:shadow-amber/30"
+          >
+            <Link href="/services" className="inline-flex items-center gap-2">
+              View All Services
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </Button>
+        </div>
+      )}
     </>
   );
 }

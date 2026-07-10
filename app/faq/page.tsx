@@ -4,7 +4,8 @@ import { JsonLd } from "@/components/JsonLd";
 import { getBrandConfig } from "@/lib/brands";
 import { faqPageSchema } from "@/lib/schema";
 import { 
-  HelpCircle, Phone, MapPin, ChevronDown, Truck, Pill, MessageCircle, Users, Building, Heart
+  HelpCircle, Phone, MapPin, ChevronDown, Truck, Pill, 
+  MessageCircle, Users, Building, Heart
 } from "lucide-react";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -18,6 +19,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function FaqPage() {
   const brand = getBrandConfig();
+  const isSaimz = brand.slug === "saimz";
 
   const faqCategories = [
     {
@@ -78,6 +80,93 @@ export default function FaqPage() {
     },
   ];
 
+  // ===== SAIMZ FAQ =====
+  if (isSaimz) {
+    return (
+      <section className="min-h-screen bg-[#E8F0FE] py-16 sm:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <JsonLd data={faqPageSchema(faqCategories.flatMap(cat => cat.items))} />
+
+          {/* ===== HEADER ===== */}
+          <div className="max-w-3xl mx-auto text-center mb-14">
+            <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#1A4A7A] bg-[#1A4A7A]/10 px-4 py-1.5 rounded-full">
+              <HelpCircle className="h-3 w-3" />
+              FAQ
+            </span>
+            <h1 className="mt-4 font-display text-4xl font-bold text-[#0A1628] sm:text-5xl">
+              Frequently Asked Questions
+            </h1>
+            <p className="mt-3 text-[#6A8AAA] max-w-2xl mx-auto">
+              Find quick answers to the most common questions. If you don&apos;t see your question, don&apos;t hesitate to reach out!
+            </p>
+          </div>
+
+          {/* ===== FAQ ===== */}
+          <div className="max-w-4xl mx-auto space-y-8">
+            {faqCategories.map((category) => {
+              const CategoryIcon = category.icon;
+              return (
+                <div key={category.name} className="bg-white rounded-2xl border border-[#1A4A7A]/10 p-6 sm:p-8 shadow-sm">
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className="bg-[#1A4A7A]/10 rounded-full p-2">
+                      <CategoryIcon className="h-5 w-5 text-[#1A4A7A]" />
+                    </div>
+                    <h2 className="font-display text-xl font-bold text-[#0A1628]">
+                      {category.name}
+                    </h2>
+                  </div>
+                  <div className="space-y-3">
+                    {category.items.map((item, index) => (
+                      <details
+                        key={item.question}
+                        className="group rounded-xl border border-[#1A4A7A]/5 hover:border-[#4A9FFF]/30 transition-all duration-200"
+                      >
+                        <summary className="flex cursor-pointer items-center justify-between font-medium text-[#0A1628] p-4 list-none hover:text-[#1A4A7A] transition-colors">
+                          <span className="flex items-center gap-3 text-sm sm:text-base">
+                            <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#1A4A7A]/10 text-xs font-bold text-[#1A4A7A]">
+                              {index + 1}
+                            </span>
+                            {item.question}
+                          </span>
+                          <ChevronDown className="h-5 w-5 text-[#6A8AAA] transition-transform duration-200 group-open:rotate-180" />
+                        </summary>
+                        <div className="px-4 pb-4 pt-1 border-t border-[#1A4A7A]/5">
+                          <p className="text-sm text-[#6A8AAA] leading-relaxed">
+                            {item.answer}
+                          </p>
+                        </div>
+                      </details>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* ===== CTA ===== */}
+          <div className="mt-12 max-w-4xl mx-auto bg-white rounded-2xl border border-[#1A4A7A]/10 p-6 sm:p-8 flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
+            <div>
+              <h3 className="font-display text-lg font-bold text-[#0A1628]">Still have questions?</h3>
+              <p className="text-sm text-[#6A8AAA]">
+                Call us at <a href={`tel:${brand.phone}`} className="text-[#1A4A7A] hover:text-[#4A9FFF] transition-colors font-medium">{brand.phone}</a> or visit our pharmacy.
+              </p>
+            </div>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 rounded-full bg-[#1A4A7A] hover:bg-[#0A1628] text-white px-6 py-2.5 font-mono text-sm font-medium uppercase tracking-wider transition-all duration-300 hover:scale-105"
+            >
+              <Phone className="h-4 w-4" />
+              Contact Us
+            </Link>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // ============================================================
+  // ===== CUREMED FAQ =====
+  // ============================================================
   return (
     <section className="relative overflow-hidden bg-linear-to-br from-paper via-paper to-sage/5 min-h-[70vh]">
       <div className="absolute top-0 right-0 -z-10 h-150 w-150 rounded-full bg-amber/5 blur-3xl" />
@@ -86,7 +175,6 @@ export default function FaqPage() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-16 lg:py-20">
         <JsonLd data={faqPageSchema(faqCategories.flatMap(cat => cat.items))} />
 
-        {/* ===== HEADER ===== */}
         <div className="max-w-3xl">
           <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-amber-dark bg-amber/10 px-3 py-1 rounded-full">
             <HelpCircle className="h-3 w-3" />
@@ -101,7 +189,6 @@ export default function FaqPage() {
           </p>
         </div>
 
-        {/* ===== FAQ CATEGORIES ===== */}
         <div className="mt-10 space-y-8">
           {faqCategories.map((category) => {
             const CategoryIcon = category.icon;
@@ -141,7 +228,6 @@ export default function FaqPage() {
           })}
         </div>
 
-        {/* ===== CONTACT CTA ===== */}
         <div className="mt-10 rounded-2xl border border-amber/10 bg-linear-to-br from-amber/5 via-paper to-sage/5 p-6 sm:p-8">
           <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
             <div>
@@ -172,7 +258,6 @@ export default function FaqPage() {
           </div>
         </div>
 
-        {/* ===== QUICK LINKS ===== */}
         <div className="mt-6 grid grid-cols-1 sm:grid-cols-4 gap-4">
           <Link
             href="/locations"

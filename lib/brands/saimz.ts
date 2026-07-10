@@ -5,7 +5,7 @@ export const saimz: BrandConfig = {
   name: "Saimz Pharmacy",
   shortName: "Saimz",
   legalName: "Saimz Pharmacy (DBA: Curemed Clinical Pharmacy per NPI registry)",
-  url: "https://saimz-pharm.squarespace.com/",
+  url: "https://saimzxr.com/",
   description:
     "Saimz Pharmacy is a locally owned neighborhood pharmacy on Broadway in Paterson, NJ offering medication synchronization, compliance packaging, immunizations, and free delivery.",
   tagline: "Your Neighborhood Pharmacy on Broadway",
@@ -26,19 +26,33 @@ export const saimz: BrandConfig = {
   social: {},
   npi: "1962995290",
   offersCompounding: false,
-  heroImages: [],
+  // ===== صور مبدئية من Curemed =====
+  heroImages: [
+    {
+      path: "/images/saimz/services/travel-health.jpeg",
+      alt: "Saimz Pharmacy - Professional Care",
+    },
+    {
+      path: "/images/saimz/saimz-hero1.webp",
+      alt: "Saimz Pharmacy - Expert Team",
+    },
+    {
+      path: "/images/saimz/saimz-hero3.webp",
+      alt: "Saimz Pharmacy - Patient Care",
+    },
+  ],
   galleryImages: {
     team: {
-      path: "",
-      alt: "",
+      path: "/images/saimz/services/immunization-clinic.jpeg",
+      alt: "Saimz Pharmacy Team",
     },
     services: {
-      path: "",
-      alt: "",
+      path: "/images/saimz/services/health-screening.jpeg",
+      alt: "Saimz Pharmacy Services",
     },
     storefront: {
-      path: "",
-      alt: "",
+      path: "/images/saimz/services/delivery.jpeg",
+      alt: "Saimz Pharmacy Storefront",
     },
   },
 };

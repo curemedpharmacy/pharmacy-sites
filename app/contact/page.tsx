@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
 import { getBrandConfig } from "@/lib/brands";
-import { Phone, MapPin, Clock, Mail, ArrowRight, Shield } from "lucide-react";
+import { Phone, MapPin, Clock, Mail, ArrowRight, Shield, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -16,14 +16,107 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function ContactPage() {
   const brand = getBrandConfig();
+  const isSaimz = brand.slug === "saimz";
 
+  // ===== SAIMZ CONTACT =====
+  if (isSaimz) {
+    return (
+      <section className="min-h-screen bg-[#E8F0FE] py-16 sm:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+
+          {/* ===== HEADER ===== */}
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#1A4A7A] bg-[#1A4A7A]/10 px-4 py-1.5 rounded-full">
+              <Sparkles className="h-3 w-3" />
+              Contact Us
+            </span>
+            <h1 className="mt-4 font-display text-4xl font-bold text-[#0A1628] sm:text-5xl">
+              Get in Touch
+            </h1>
+            <p className="mt-3 text-[#6A8AAA] max-w-2xl mx-auto">
+              Have a question? Need a refill? Want to schedule a visit? 
+              We&apos;re here to help. Fill out the form below and we&apos;ll get back to you within 24 hours.
+            </p>
+          </div>
+
+          {/* ===== FORM ===== */}
+          <div className="max-w-4xl mx-auto bg-white rounded-2xl border border-[#1A4A7A]/10 p-6 sm:p-8 lg:p-10 shadow-lg">
+            <ContactForm brand={brand} />
+            
+            <div className="mt-6 pt-6 border-t border-[#1A4A7A]/5 flex items-center justify-center gap-2 text-xs text-[#6A8AAA]">
+              <Shield className="h-4 w-4 text-emerald-500" />
+              <span>Your information is secure and private</span>
+            </div>
+          </div>
+
+          {/* ===== INFO ===== */}
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
+            <div className="bg-white rounded-xl border border-[#1A4A7A]/10 p-5 text-center hover:shadow-md transition-shadow">
+              <div className="bg-[#1A4A7A]/10 rounded-full p-3 w-fit mx-auto">
+                <Phone className="h-5 w-5 text-[#1A4A7A]" />
+              </div>
+              <p className="mt-2 text-xs font-mono uppercase tracking-wider text-[#6A8AAA]">Call Us</p>
+              <a href={`tel:${brand.phone}`} className="text-base font-semibold text-[#0A1628] hover:text-[#4A9FFF] transition-colors">
+                {brand.phone}
+              </a>
+            </div>
+            
+            <div className="bg-white rounded-xl border border-[#1A4A7A]/10 p-5 text-center hover:shadow-md transition-shadow">
+              <div className="bg-[#1A4A7A]/10 rounded-full p-3 w-fit mx-auto">
+                <Clock className="h-5 w-5 text-[#1A4A7A]" />
+              </div>
+              <p className="mt-2 text-xs font-mono uppercase tracking-wider text-[#6A8AAA]">Hours</p>
+              <div className="text-sm font-medium text-[#0A1628] space-y-0.5">
+                {brand.hours.map((h) => (
+                  <div key={h.day} className="flex justify-center gap-2">
+                    <span>{h.day}</span>
+                    <span className="text-[#6A8AAA]">{h.time}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-xl border border-[#1A4A7A]/10 p-5 text-center hover:shadow-md transition-shadow">
+              <div className="bg-[#1A4A7A]/10 rounded-full p-3 w-fit mx-auto">
+                <MapPin className="h-5 w-5 text-[#1A4A7A]" />
+              </div>
+              <p className="mt-2 text-xs font-mono uppercase tracking-wider text-[#6A8AAA]">Visit</p>
+              <p className="text-sm font-medium text-[#0A1628]">{brand.address.street}</p>
+              <p className="text-sm text-[#6A8AAA]">{brand.address.city}, {brand.address.state}</p>
+              <Link href="/locations" className="inline-flex items-center gap-1 mt-1 text-xs font-medium text-[#1A4A7A] hover:text-[#4A9FFF] transition-colors">
+                Get Directions
+                <ArrowRight className="h-3 w-3" />
+              </Link>
+            </div>
+          </div>
+
+          {/* ===== CTA ===== */}
+          <div className="mt-8 max-w-4xl mx-auto bg-white rounded-2xl border border-[#1A4A7A]/10 p-6 flex flex-col items-center text-center gap-4 sm:flex-row sm:text-left sm:justify-between">
+            <div>
+              <h3 className="font-display text-lg font-bold text-[#0A1628]">Prefer to talk in person?</h3>
+              <p className="text-sm text-[#6A8AAA]">
+                {brand.address.street}, {brand.address.city}, {brand.address.state} {brand.address.zip}
+              </p>
+            </div>
+            <Link href="/locations" className="inline-flex items-center gap-2 rounded-full bg-[#1A4A7A] hover:bg-[#0A1628] text-white px-6 py-2.5 font-mono text-sm font-medium uppercase tracking-wider transition-all duration-300 hover:scale-105 shrink-0">
+              Find us
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // ============================================================
+  // ===== CUREMED CONTACT =====
+  // ============================================================
   return (
     <section className="relative overflow-hidden bg-linear-to-br from-paper via-paper to-sage/5 min-h-[70vh]">
       <div className="absolute top-0 right-0 -z-10 h-150 w-150 rounded-full bg-amber/5 blur-3xl" />
       <div className="absolute bottom-0 left-0 -z-10 h-100 w-100 rounded-full bg-sage/10 blur-3xl" />
       
       <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-16 lg:py-20">
-        {/* ===== HEADER ===== */}
         <div className="text-center max-w-3xl mx-auto">
           <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-amber-dark bg-amber/10 px-3 py-1 rounded-full">
             <Mail className="h-3 w-3" />
@@ -38,7 +131,6 @@ export default function ContactPage() {
           </p>
         </div>
 
-        {/* ===== FORM - FULL WIDTH ===== */}
         <div className="mt-10 w-full">
           <div className="rounded-2xl border border-ink/10 bg-paper/60 p-6 sm:p-8 lg:p-12 shadow-lg">
             <div className="mb-6">
@@ -57,7 +149,6 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* ===== QUICK CONTACT INFO ===== */}
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 w-full">
           <div className="rounded-xl border border-ink/10 bg-paper/60 p-5 text-center hover:border-amber/20 hover:shadow-md transition-all">
             <div className="rounded-full bg-amber/10 p-3 w-fit mx-auto text-amber-dark">
@@ -98,7 +189,6 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* ===== CTA ===== */}
         <div className="mt-10 w-full rounded-2xl border border-amber/10 bg-linear-to-br from-amber/5 via-paper to-sage/5 p-6 sm:p-8">
           <div className="flex flex-col items-center text-center gap-4 sm:flex-row sm:text-left sm:justify-between">
             <div>

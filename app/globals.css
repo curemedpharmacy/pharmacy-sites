@@ -1,17 +1,9 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
-/*
-  ---break---
-*/
+
 @custom-variant dark (&:is(.dark *));
 
-/*
-  Design system: "Apothecary Label"
-  Rooted in the vernacular of prescription bottles and pharmacy
-  labels -- now aligned to the Curemed logo palette with a fresh
-  green accent, deep navy text, and a warm off-white background.
-*/
 @theme {
   --color-ink: #1c3a5e;
   --color-paper: #f7f4eb;
@@ -30,10 +22,176 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ===== BODY - Default (Curemed) ===== */
 body {
   background-color: var(--color-paper);
   color: var(--color-ink);
   font-family: var(--font-body) "Segoe UI", Arial, sans-serif;
+}
+
+/* ===== BODY - SAIMZ (Light Blue) ===== */
+body.saimz-brand {
+  background: #E8F0FE;
+  color: #0F2040;
+  min-height: 100vh;
+}
+
+/* SAIMZ - Dark sections (Hero, Footer, etc) */
+body.saimz-brand .saimz-dark-section {
+  background: linear-gradient(135deg, #0A1628 0%, #0F2040 50%, #1A4A7A 100%);
+  color: #FFFFFF;
+}
+
+body.saimz-brand .saimz-dark-section * {
+  color: #FFFFFF;
+}
+
+body.saimz-brand .saimz-dark-section a:not(.saimz-btn):not(.saimz-btn-outline) {
+  color: #4A9FFF;
+}
+
+body.saimz-brand .saimz-dark-section a:not(.saimz-btn):not(.saimz-btn-outline):hover {
+  color: #FFFFFF;
+}
+
+/* SAIMZ - Light sections (white/light backgrounds) */
+body.saimz-brand .saimz-light-section {
+  background: #FFFFFF;
+  color: #0F2040;
+}
+
+body.saimz-brand .saimz-light-section * {
+  color: #0F2040;
+}
+
+body.saimz-brand .saimz-light-section a:not(.saimz-btn):not(.saimz-btn-outline) {
+  color: #1A4A7A;
+}
+
+body.saimz-brand .saimz-light-section a:not(.saimz-btn):not(.saimz-btn-outline):hover {
+  color: #4A9FFF;
+}
+
+/* SAIMZ - Buttons */
+body.saimz-brand .saimz-btn {
+  background: #4A9FFF;
+  color: #FFFFFF;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+body.saimz-brand .saimz-btn:hover {
+  background: #1A4A7A;
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(74, 159, 255, 0.3);
+}
+
+body.saimz-brand .saimz-btn-outline {
+  background: transparent;
+  color: #4A9FFF;
+  border: 2px solid #4A9FFF;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+body.saimz-brand .saimz-btn-outline:hover {
+  background: #4A9FFF;
+  color: #FFFFFF;
+  transform: scale(1.05);
+}
+
+body.saimz-brand .saimz-btn-white {
+  background: #FFFFFF;
+  color: #0F2040;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+body.saimz-brand .saimz-btn-white:hover {
+  background: #4A9FFF;
+  color: #FFFFFF;
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(74, 159, 255, 0.3);
+}
+
+/* SAIMZ - Cards */
+body.saimz-brand .saimz-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(74, 159, 255, 0.15);
+  color: #FFFFFF;
+  transition: all 0.3s ease;
+}
+
+body.saimz-brand .saimz-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(74, 159, 255, 0.4);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+body.saimz-brand .saimz-card-light {
+  background: #FFFFFF;
+  border: 1px solid rgba(74, 159, 255, 0.15);
+  color: #0F2040;
+  transition: all 0.3s ease;
+}
+
+body.saimz-brand .saimz-card-light:hover {
+  border-color: #4A9FFF;
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(74, 159, 255, 0.15);
+}
+
+/* SAIMZ - Text colors */
+body.saimz-brand .saimz-text-muted {
+  color: rgba(255, 255, 255, 0.6);
+}
+body.saimz-brand .saimz-text-sky {
+  color: #4A9FFF;
+}
+body.saimz-brand .saimz-text-navy {
+  color: #0F2040;
+}
+body.saimz-brand .saimz-text-light {
+  color: #E8F0FE;
+}
+
+/* SAIMZ - Borders */
+body.saimz-brand .saimz-border-muted {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+body.saimz-brand .saimz-border-sky {
+  border-color: rgba(74, 159, 255, 0.3);
+}
+body.saimz-brand .saimz-border-light {
+  border-color: rgba(74, 159, 255, 0.1);
+}
+
+/* SAIMZ - Scrollbar */
+body.saimz-brand::-webkit-scrollbar {
+  width: 8px;
+}
+body.saimz-brand::-webkit-scrollbar-track {
+  background: #E8F0FE;
+}
+body.saimz-brand::-webkit-scrollbar-thumb {
+  background: #4A9FFF;
+  border-radius: 4px;
+}
+body.saimz-brand::-webkit-scrollbar-thumb:hover {
+  background: #1A4A7A;
 }
 
 body,
@@ -57,7 +215,6 @@ h6 {
   font-family: var(--font-display);
 }
 
-/* Respect reduced-motion preferences site-wide */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -69,14 +226,16 @@ h6 {
   }
 }
 
-/* Visible keyboard focus ring, on brand */
 :focus-visible {
   outline: 2px solid var(--color-amber);
   outline-offset: 2px;
 }
-/*
-  ---break---
-*/
+
+body.saimz-brand :focus-visible {
+  outline: 2px solid #4A9FFF;
+  outline-offset: 2px;
+}
+
 @theme inline {
   --font-heading: var(--font-sans);
   --font-sans: var(--font-sans);
@@ -119,9 +278,7 @@ h6 {
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
 }
-/*
-  ---break---
-*/
+
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -156,9 +313,7 @@ h6 {
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 }
-/*
-  ---break---
-*/
+
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
@@ -192,9 +347,7 @@ h6 {
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
 }
-/*
-  ---break---
-*/
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -205,4 +358,46 @@ h6 {
   html {
     @apply font-sans;
   }
+}
+
+/* ============================================================
+   SAIMZ BRAND COLORS
+   ============================================================ */
+:root {
+  --saimz-dark: #0A1628;
+  --saimz-navy: #0F2040;
+  --saimz-blue: #1A4A7A;
+  --saimz-sky: #4A9FFF;
+  --saimz-light-sky: #7ABFFF;
+  --saimz-light: #E8F0FE;
+  --saimz-white: #FFFFFF;
+  --saimz-gray: #6A8AAA;
+}
+
+.saimz-bg-dark { background-color: var(--saimz-dark); }
+.saimz-bg-navy { background-color: var(--saimz-navy); }
+.saimz-bg-blue { background-color: var(--saimz-blue); }
+.saimz-bg-sky { background-color: var(--saimz-sky); }
+.saimz-bg-light { background-color: var(--saimz-light); }
+.saimz-bg-white { background-color: var(--saimz-white); }
+
+.saimz-text-dark { color: var(--saimz-dark); }
+.saimz-text-navy { color: var(--saimz-navy); }
+.saimz-text-blue { color: var(--saimz-blue); }
+.saimz-text-sky { color: var(--saimz-sky); }
+.saimz-text-white { color: var(--saimz-white); }
+.saimz-text-gray { color: var(--saimz-gray); }
+
+.saimz-border-dark { border-color: var(--saimz-dark); }
+.saimz-border-navy { border-color: var(--saimz-navy); }
+.saimz-border-blue { border-color: var(--saimz-blue); }
+.saimz-border-sky { border-color: var(--saimz-sky); }
+.saimz-border-light { border-color: var(--saimz-light); }
+
+.saimz-gradient-dark {
+  background: linear-gradient(135deg, #0A1628 0%, #0F2040 50%, #1A4A7A 100%);
+}
+
+.saimz-gradient-sky {
+  background: linear-gradient(135deg, #4A9FFF 0%, #1A4A7A 100%);
 }

@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils";
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const brand = getBrandConfig();
+const isSaimz = brand.slug === "saimz";
 
 export const metadata: Metadata = {
   metadataBase: new URL(brand.url),
@@ -44,7 +45,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={cn("font-sans", geist.variable)}>
-      <body className="antialiased">
+      <body className={`antialiased ${isSaimz ? "saimz-brand" : ""}`}>
         <JsonLd data={pharmacyLocalBusinessSchema()} />
         <Header />
         <main>{children}</main>
