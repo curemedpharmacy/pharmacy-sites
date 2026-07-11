@@ -10,7 +10,7 @@ export const curemed: BrandConfig = {
     "Curemed Pharmacy is an independent, accredited pharmacy in Paterson, NJ offering prescription refills, diabetes testing and education, immunizations, and free local delivery.",
   tagline: "Paterson's Trusted Independent Pharmacy",
   phone: "+1-862-225-9432",
-  email: "pharmacy@curemedpharmacy.com",
+  email: "operation@curemedpharmacy.com",
   address: {
     street: "311 Crooks Ave Suite C",
     city: "Paterson",

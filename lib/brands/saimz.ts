@@ -26,10 +26,9 @@ export const saimz: BrandConfig = {
   social: {},
   npi: "1962995290",
   offersCompounding: false,
-  // ===== صور مبدئية من Curemed =====
   heroImages: [
     {
-      path: "/images/saimz/services/travel-health.jpeg",
+      path: "/images/saimz/saimz.webp",
       alt: "Saimz Pharmacy - Professional Care",
     },
     {

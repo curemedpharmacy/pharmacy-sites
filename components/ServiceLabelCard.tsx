@@ -28,7 +28,6 @@ export function ServiceLabelCard({
   isSaimz = false,
   compact = false,
 }: ServiceLabelCardProps) {
-  
   // ===== SAIMZ COMPACT =====
   if (isSaimz && compact) {
     return (
@@ -46,14 +45,12 @@ export function ServiceLabelCard({
               className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
               unoptimized
             />
-            
-            <div className="absolute inset-0 bg-linear-to-t from-[#0A1628]/70 via-[#0A1628]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            
+            <div className="absolute inset-0 bg-linear-to-t from-[#07111F]/90 via-[#0A1628]/65 to-[#0A1628]/15 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500" />{" "}
             <div className="absolute top-3 left-3 rounded-full bg-white/90 backdrop-blur-sm px-2.5 py-1 text-[10px] font-mono font-semibold text-[#0A1628] border border-[#4A9FFF]/20 shadow-lg z-10">
               RX-{rx}
             </div>
-
-            <div className="absolute inset-x-0 bottom-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-10">
+            <div className="absolute inset-x-0 bottom-0 p-4 translate-y-0 md:translate-y-full md:group-hover:translate-y-0 transition-transform duration-500 ease-out z-10">
+              {" "}
               <div className="flex items-start gap-3 text-white">
                 {icon && (
                   <div className="mt-0.5 rounded-xl bg-white/10 p-2 text-white/80 group-hover:bg-[#4A9FFF]/20 group-hover:text-[#4A9FFF] transition-all duration-300">
@@ -69,7 +66,6 @@ export function ServiceLabelCard({
                   </p>
                 </div>
               </div>
-
               <div className="mt-3 flex items-center justify-between border-t border-white/10 pt-3">
                 <span className="text-[9px] font-mono font-medium uppercase tracking-wider text-white/50">
                   {directions}
@@ -103,14 +99,14 @@ export function ServiceLabelCard({
               className="object-cover object-center transition-transform duration-700 group-hover:scale-110"
               unoptimized
             />
-            
-            <div className="absolute inset-0 bg-linear-to-t from-[#0A1628]/80 via-[#0A1628]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            
+
+            <div className="absolute inset-0 bg-linear-to-t from-[#0A1628]/80 via-[#0A1628]/30 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500" />
             <div className="absolute top-4 left-4 rounded-full bg-white/90 backdrop-blur-sm px-3 py-1 text-[10px] font-mono font-semibold text-[#0A1628] border border-[#4A9FFF]/20 shadow-lg z-10">
               RX-{rx}
             </div>
 
-            <div className="absolute inset-x-0 bottom-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-10">
+            <div className="absolute inset-x-0 bottom-0 p-6 translate-y-0 md:translate-y-full md:group-hover:translate-y-0 transition-transform duration-500 ease-out z-10">
+              {" "}
               <div className="flex items-start gap-3 text-white">
                 {icon && (
                   <div className="mt-1 rounded-xl bg-white/10 p-2.5 text-white/80 group-hover:bg-[#4A9FFF]/20 group-hover:text-[#4A9FFF] transition-all duration-300 group-hover:scale-110">
@@ -126,7 +122,6 @@ export function ServiceLabelCard({
                   </p>
                 </div>
               </div>
-
               <div className="mt-4 flex items-center justify-between border-t border-white/10 pt-4">
                 <span className="text-[10px] font-mono font-medium uppercase tracking-wider text-white/50">
                   {directions}

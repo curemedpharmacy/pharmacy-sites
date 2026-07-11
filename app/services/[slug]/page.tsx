@@ -124,7 +124,7 @@ export default async function ServiceDetailPage({
       "travel-health-hajj": `${basePath}/travel-health.jpeg`,
       "womens-health": `${basePath}/womens-health.jpeg`,
       "health-screenings": `${basePath}/health-screening.jpeg`,
-      "delivery-service": `${basePath}/delivery.jpeg`,
+      "delivery-service": `${basePath}/delivery-image.jpeg`,
       "prescription-transfers": `${basePath}/prescription-transfer.jpeg`,
       "health-clarity-sessions": `${basePath}/health-clarity.jpeg`,
     };
@@ -133,7 +133,7 @@ export default async function ServiceDetailPage({
 
   const heroImage = getHeroImage();
 
-  // ===== SAIMZ (بدون فيسبوك) =====
+  // ===== SAIMZ =====
   if (isSaimz) {
     return (
       <section className="min-h-screen bg-[#E8F0FE] py-12 sm:py-16">

@@ -98,19 +98,19 @@ export function Header() {
           </nav>
 
           {/* ===== DESKTOP BUTTON ===== */}
-          <Button
-            asChild
-            className={`hidden lg:inline-flex items-center gap-2 rounded-full px-6 py-3 font-mono text-[13px] font-medium uppercase tracking-[0.12em] transition-all duration-300 active:scale-95 ${
-              isContactActive
-                ? "bg-white text-[#0A1628] shadow-xl shadow-[#4A9FFF]/20"
-                : "bg-[#4A9FFF] text-white hover:bg-white hover:text-[#0A1628] hover:scale-105 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[#4A9FFF]/30"
-            }`}
-          >
-            <Link href="/contact">
-              <Phone className="h-4 w-4" />
-              Call Pharmacy
-            </Link>
-          </Button>
+         <Button
+  asChild
+  className={`hidden lg:inline-flex items-center gap-2 rounded-full px-6 py-3 font-mono text-[13px] font-medium uppercase tracking-[0.12em] transition-all duration-300 active:scale-95 ${
+    isContactActive
+      ? "bg-white text-[#0A1628] shadow-xl shadow-[#4A9FFF]/20 hover:bg-white hover:text-[#0A1628] hover:shadow-xl hover:shadow-[#4A9FFF]/20"
+      : "bg-[#4A9FFF] text-white hover:bg-white hover:text-[#0A1628] hover:scale-105 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[#4A9FFF]/30"
+  }`}
+>
+  <Link href="/contact">
+    <Phone className="h-4 w-4" />
+    Call Pharmacy
+  </Link>
+</Button>
 
           {/* ===== MENU BUTTON ===== */}
           <Button

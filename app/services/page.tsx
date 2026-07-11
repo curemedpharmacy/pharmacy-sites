@@ -51,7 +51,7 @@ export default function ServicesPage() {
         "immunizations-vaccines": `${basePath}/immunization-clinic.jpeg`,
         "medication-therapy-management": `${basePath}/medication-therapy-management.webp`,
         "health-screenings": `${basePath}/health-screening.jpeg`,
-        "delivery-service": `${basePath}/delivery.jpeg`,
+        "delivery-service": `${basePath}/delivery-image.jpeg`,
         "prescription-transfers": `${basePath}/prescription-transfer.jpeg`,
         "health-clarity-sessions": `${basePath}/health-clarity.jpeg`,
       };
