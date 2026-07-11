@@ -7,8 +7,9 @@ import { JsonLd } from "@/components/JsonLd";
 import { pharmacyLocalBusinessSchema } from "@/lib/schema";
 import { getBrandConfig } from "@/lib/brands";
 import { cn } from "@/lib/utils";
+import { Providers } from "./providers";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 const brand = getBrandConfig();
 const isSaimz = brand.slug === "saimz";
@@ -46,10 +47,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={cn("font-sans", geist.variable)}>
       <body className={`antialiased ${isSaimz ? "saimz-brand" : ""}`}>
-        <JsonLd data={pharmacyLocalBusinessSchema()} />
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <Providers>
+          <JsonLd data={pharmacyLocalBusinessSchema()} />
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

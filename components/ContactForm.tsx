@@ -1,31 +1,40 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useMutation } from "@tanstack/react-query";
 import type { BrandConfig } from "@/lib/brands/types";
-import { contactFormSchema, type ContactFormValues } from "@/lib/contact";
+import { contactFormSchema, type ContactFormValues, submitContactForm } from "@/lib/contact";
 
 type ContactFormProps = {
   brand: BrandConfig;
 };
 
 export function ContactForm({ brand }: ContactFormProps) {
-  const [submitMessage, setSubmitMessage] = useState("");
   const isSaimz = brand.slug === "saimz";
   
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { errors },
     reset,
   } = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
   });
 
-  const onSubmit = async (_values: ContactFormValues) => {
-    setSubmitMessage("Thanks for reaching out. We will follow up soon.");
-    reset();
+  const mutation = useMutation({
+    mutationFn: (values: ContactFormValues) => submitContactForm(values, brand.slug),
+    onSuccess: () => {
+      reset();
+    },
+    onError: (_error: Error) => {
+      // الخطأ يتم التعامل معه في الـ UI
+      console.error("Contact form error:", _error);
+    },
+  });
+
+  const onSubmit = async (values: ContactFormValues) => {
+    mutation.mutate(values);
   };
 
   // ===== SAIMZ FORM =====
@@ -41,6 +50,7 @@ export function ContactForm({ brand }: ContactFormProps) {
               {...register("name")}
               className="w-full rounded-xl border border-[#1A4A7A]/15 bg-[#E8F0FE]/50 px-4 py-3 text-[#0A1628] outline-none transition focus:border-[#4A9FFF] focus:ring-2 focus:ring-[#4A9FFF]/20"
               placeholder="Your name"
+              disabled={mutation.isPending}
             />
             {errors.name && (
               <p className="mt-1 text-sm text-red-500">{errors.name.message}</p>
@@ -55,6 +65,7 @@ export function ContactForm({ brand }: ContactFormProps) {
               {...register("email")}
               className="w-full rounded-xl border border-[#1A4A7A]/15 bg-[#E8F0FE]/50 px-4 py-3 text-[#0A1628] outline-none transition focus:border-[#4A9FFF] focus:ring-2 focus:ring-[#4A9FFF]/20"
               placeholder="you@example.com"
+              disabled={mutation.isPending}
             />
             {errors.email && (
               <p className="mt-1 text-sm text-red-500">{errors.email.message}</p>
@@ -71,6 +82,7 @@ export function ContactForm({ brand }: ContactFormProps) {
             {...register("phone")}
             className="w-full rounded-xl border border-[#1A4A7A]/15 bg-[#E8F0FE]/50 px-4 py-3 text-[#0A1628] outline-none transition focus:border-[#4A9FFF] focus:ring-2 focus:ring-[#4A9FFF]/20"
             placeholder="973-555-0100"
+            disabled={mutation.isPending}
           />
           {errors.phone && (
             <p className="mt-1 text-sm text-red-500">{errors.phone.message}</p>
@@ -86,6 +98,7 @@ export function ContactForm({ brand }: ContactFormProps) {
             {...register("message")}
             className="w-full rounded-xl border border-[#1A4A7A]/15 bg-[#E8F0FE]/50 px-4 py-3 text-[#0A1628] outline-none transition focus:border-[#4A9FFF] focus:ring-2 focus:ring-[#4A9FFF]/20"
             placeholder="Tell us what you need help with"
+            disabled={mutation.isPending}
           />
           {errors.message && (
             <p className="mt-1 text-sm text-red-500">{errors.message.message}</p>
@@ -94,15 +107,21 @@ export function ContactForm({ brand }: ContactFormProps) {
 
         <button
           type="submit"
-          disabled={isSubmitting}
+          disabled={mutation.isPending}
           className="w-full rounded-full bg-[#1A4A7A] hover:bg-[#0A1628] text-white px-6 py-3.5 font-mono text-sm font-medium uppercase tracking-wider transition-all duration-300 hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-70"
         >
-          {isSubmitting ? "Sending..." : "Send Message"}
+          {mutation.isPending ? "Sending..." : "Send Message"}
         </button>
 
-        {submitMessage && (
+        {mutation.isSuccess && (
           <div className="mt-4 rounded-xl bg-emerald-50 border border-emerald-200 p-4 text-center text-emerald-700 text-sm">
-            {submitMessage}
+            Thanks for reaching out. We will follow up soon.
+          </div>
+        )}
+
+        {mutation.isError && (
+          <div className="mt-4 rounded-xl bg-red-50 border border-red-200 p-4 text-center text-red-700 text-sm">
+            {mutation.error?.message || "Something went wrong. Please try again."}
           </div>
         )}
       </form>
@@ -122,6 +141,7 @@ export function ContactForm({ brand }: ContactFormProps) {
             {...register("name")}
             className="w-full rounded-md border border-ink/15 bg-paper px-4 py-3 outline-none transition focus:border-amber"
             placeholder="Your name"
+            disabled={mutation.isPending}
           />
           {errors.name ? (
             <p className="mt-2 text-sm text-amber-dark">
@@ -137,6 +157,7 @@ export function ContactForm({ brand }: ContactFormProps) {
             {...register("email")}
             className="w-full rounded-md border border-ink/15 bg-paper px-4 py-3 outline-none transition focus:border-amber"
             placeholder="you@example.com"
+            disabled={mutation.isPending}
           />
           {errors.email ? (
             <p className="mt-2 text-sm text-amber-dark">
@@ -153,6 +174,7 @@ export function ContactForm({ brand }: ContactFormProps) {
           {...register("phone")}
           className="w-full rounded-md border border-ink/15 bg-paper px-4 py-3 outline-none transition focus:border-amber"
           placeholder="973-555-0100"
+          disabled={mutation.isPending}
         />
         {errors.phone ? (
           <p className="mt-2 text-sm text-amber-dark">
@@ -168,6 +190,7 @@ export function ContactForm({ brand }: ContactFormProps) {
           {...register("message")}
           className="w-full rounded-md border border-ink/15 bg-paper px-4 py-3 outline-none transition focus:border-amber"
           placeholder="Tell us what you need help with"
+          disabled={mutation.isPending}
         />
         {errors.message ? (
           <p className="mt-2 text-sm text-amber-dark">
@@ -178,15 +201,23 @@ export function ContactForm({ brand }: ContactFormProps) {
 
       <button
         type="submit"
-        disabled={isSubmitting}
+        disabled={mutation.isPending}
         className="mt-8 rounded-full bg-amber px-5 py-3 font-mono text-xs uppercase tracking-wider text-paper transition hover:bg-amber-dark disabled:cursor-not-allowed disabled:opacity-70"
       >
-        {isSubmitting ? "Sending..." : "Send message"}
+        {mutation.isPending ? "Sending..." : "Send message"}
       </button>
 
-      {submitMessage ? (
-        <p className="mt-4 text-sm text-sage">{submitMessage}</p>
-      ) : null}
+      {mutation.isSuccess && (
+        <p className="mt-4 text-sm text-sage">
+          Thanks for reaching out. We will follow up soon.
+        </p>
+      )}
+
+      {mutation.isError && (
+        <p className="mt-4 text-sm text-red-500">
+          {mutation.error?.message || "Something went wrong. Please try again."}
+        </p>
+      )}
     </form>
   );
 }
