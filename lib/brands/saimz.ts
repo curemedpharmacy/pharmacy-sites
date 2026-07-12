@@ -5,7 +5,7 @@ export const saimz: BrandConfig = {
   name: "Saimz Pharmacy",
   shortName: "Saimz",
   legalName: "Saimz Pharmacy (DBA: Curemed Clinical Pharmacy per NPI registry)",
-  url: "https://saimzxr.com/",
+  url: "https://saimzrx.com/",
   description:
     "Saimz Pharmacy is a locally owned neighborhood pharmacy on Broadway in Paterson, NJ offering medication synchronization, compliance packaging, immunizations, and free delivery.",
   tagline: "Your Neighborhood Pharmacy on Broadway",
