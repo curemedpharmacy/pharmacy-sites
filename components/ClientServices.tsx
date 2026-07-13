@@ -2,10 +2,26 @@
 
 import Link from "next/link";
 import { ServiceLabelCard } from "@/components/ServiceLabelCard";
-import { ArrowRight, Syringe, Pill, Globe, Heart, Stethoscope, Truck, FileText, Briefcase, Award } from "lucide-react";
+import {
+  ArrowRight,
+  Syringe,
+  Pill,
+  Globe,
+  Heart,
+  Stethoscope,
+  Truck,
+  FileText,
+  Briefcase,
+  Award,
+  Languages,
+  Package,
+  ShieldCheck,
+  PillBottle,
+  Brain,
+} from "lucide-react";
 import type { ServiceItem } from "@/lib/services";
-import {Button} from "@/components/ui/button";
-import {getBrandConfig} from "@/lib/brands";
+import { Button } from "@/components/ui/button";
+import { getBrandConfig } from "@/lib/brands";
 import { getServiceImage } from "@/lib/services/images";
 
 type ClientServicesProps = {
@@ -22,6 +38,11 @@ const getServiceIcon = (slug: string) => {
     "delivery-service": <Truck className="h-4 w-4" />,
     "prescription-transfers": <FileText className="h-4 w-4" />,
     "health-clarity-sessions": <Briefcase className="h-4 w-4" />,
+    "all-languages": <Languages className="h-4 w-4" />,
+    "compliance-packaging": <Package className="h-4 w-4" />,
+    "accept-all-insurance": <ShieldCheck className="h-4 w-4" />,
+    "clinical-supplements": <PillBottle className="h-4 w-4" />,
+    "mental-health-awareness": <Brain className="h-4 w-4" />,
   };
   return icons[slug] || <Award className="h-4 w-4" />;
 };
@@ -42,7 +63,9 @@ export function ClientServices({ services }: ClientServicesProps) {
             rx={service.rx}
             title={service.title}
             description={service.description}
-            directions={service.directions || "PICK UP IN STORE OR SAME-DAY DELIVERY"}
+            directions={
+              service.directions || "PICK UP IN STORE OR SAME-DAY DELIVERY"
+            }
             href={`/services/${service.slug}`}
             icon={getServiceIcon(service.slug)}
             image={getServiceImage(service, isSaimz)}
@@ -52,8 +75,8 @@ export function ClientServices({ services }: ClientServicesProps) {
 
       {hasMoreServices && (
         <div className="mt-10 flex justify-center">
-          <Button 
-            asChild 
+          <Button
+            asChild
             className="group inline-flex items-center justify-center gap-2 rounded-full bg-amber px-7 py-3 h-auto font-mono text-sm font-medium uppercase tracking-wider text-ink transition-all hover:bg-amber-light hover:scale-105 hover:shadow-lg hover:shadow-amber/30"
           >
             <Link href="/services" className="inline-flex items-center gap-2">

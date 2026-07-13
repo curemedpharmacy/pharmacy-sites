@@ -2,7 +2,7 @@ import type { ServiceItem } from "@/lib/services";
 
 export function getServiceImage(
   service: ServiceItem,
-  isSaimz: boolean
+  isSaimz: boolean,
 ): string {
   if (isSaimz) {
     const basePath = "/images/saimz/services";
@@ -13,6 +13,11 @@ export function getServiceImage(
       "health-screenings": `${basePath}/health-screening.jpeg`,
       "delivery-service": `${basePath}/delivery-image.jpeg`,
       "prescription-transfers": `${basePath}/prescription-transfer.jpeg`,
+      "all-languages": `${basePath}/all-languages.webp`,
+      "compliance-packaging": `${basePath}/compliance-packaging.webp`,
+      "accept-all-insurance": `${basePath}/accept-all-insurance.webp`,
+      "clinical-supplements": `${basePath}/clinical-supplements.webp`,
+      "mental-health-awareness": `${basePath}/mental-health-awareness.webp`,
     };
 
     return images[service.slug] || `${basePath}/pharmacist-consultation.jpeg`;
@@ -36,20 +41,17 @@ export function getServiceImage(
       "/images/curemed/services/immunization-clinic.webp",
     "medication-therapy-management":
       "/images/curemed/services/medication-therapy-management.webp",
-    "travel-health-hajj":
-      "/images/curemed/services/travel-health.webp",
-    "womens-health":
-      "/images/curemed/services/womens-health.webp",
-    "health-screenings":
-      "/images/curemed/services/health-screening.webp",
-    "delivery-service":
-      "/images/curemed/services/delivery-service.webp",
+    "travel-health-hajj": "/images/curemed/services/travel-health.webp",
+    "womens-health": "/images/curemed/services/womens-health.webp",
+    "health-screenings": "/images/curemed/services/health-screening.webp",
+    "delivery-service": "/images/curemed/services/delivery-service.webp",
     "prescription-transfers":
       "/images/curemed/services/prescription-transfer.webp",
-    "health-clarity-sessions":
-      "/images/curemed/services/health-clarity.webp",
+    "health-clarity-sessions": "/images/curemed/services/health-clarity.webp",
   };
 
-  return images[service.slug] ||
-    "/images/curemed/services/pharmacist-consultation.webp";
+  return (
+    images[service.slug] ||
+    "/images/curemed/services/pharmacist-consultation.webp"
+  );
 }

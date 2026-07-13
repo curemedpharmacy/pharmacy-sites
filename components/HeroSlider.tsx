@@ -15,6 +15,7 @@ import {
   HeartPulse,
 } from "lucide-react";
 import Link from "next/link";
+import { Button } from "@base-ui/react";
 
 type HeroSliderProps = {
   brand: BrandConfig;
@@ -67,7 +68,7 @@ const saimzContent: HeroContent = {
   ],
 };
 
-// ===== CUREMED HERO (نفسه الأصلي مع HeartPulse) =====
+// ===== CUREMED HERO =====
 const curemedContent = {
   title: "Care close to",
   highlight: "home.",
@@ -284,7 +285,6 @@ export function HeroSlider({ brand }: HeroSliderProps) {
           <div className="absolute top-0 right-0 w-1/3 h-full bg-linear-to-l from-[#4A9FFF]/5 to-transparent hidden sm:block" />
           <div className="absolute bottom-0 left-0 w-1/4 h-1/2 bg-linear-to-r from-[#4A9FFF]/3 to-transparent hidden sm:block" />
 
-          {/* ===== نقاط متحركة - تظهر فقط بعد تحميل الكلاينت ===== */}
           {isMounted && (
             <div className="absolute inset-0 overflow-hidden hidden sm:block">
               {[...Array(15)].map((_, i) => {
@@ -321,30 +321,37 @@ export function HeroSlider({ brand }: HeroSliderProps) {
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-0">
             <div className="max-w-3xl">
               <div
-                className="inline-flex items-center gap-2 sm:gap-3 rounded-full bg-white/10 backdrop-blur-md px-3 sm:px-4 py-1 sm:py-1.5 border border-white/20 transition-all duration-700 ease-out"
+                className="flex flex-wrap items-center gap-2 sm:gap-3 transition-all duration-700 ease-out"
                 style={{
                   opacity: contentOpacity,
                   transform: `translateY(-${contentTranslateY}px)`,
                 }}
               >
-                <span className="relative flex h-1.5 w-1.5 sm:h-2 sm:w-2">
-                  <span
-                    className={`absolute inline-flex h-full w-full animate-ping rounded-full opacity-75 ${
-                      isOpen ? "bg-emerald-400" : "bg-red-400"
-                    }`}
-                  />
-                  <span
-                    className={`relative inline-flex h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full ${
-                      isOpen ? "bg-emerald-400" : "bg-red-400"
-                    }`}
-                  />
+                {/* Pharmacy Badge */}
+                <span className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-md px-3 sm:px-4 py-1 sm:py-1.5 border border-white/20 font-mono text-[10px] sm:text-xs font-medium uppercase tracking-wider text-white">
+                  <HeartPulse className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#4A9FFF]" />
+                  Independent Community Pharmacy
                 </span>
 
+                {/* Open / Closed */}
                 <span
-                  className={`font-mono text-[10px] sm:text-xs font-medium uppercase tracking-wider ${
+                  className={`inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-md px-3 sm:px-4 py-1 sm:py-1.5 border border-white/20 font-mono text-[10px] sm:text-xs font-medium uppercase tracking-wider ${
                     isOpen ? "text-emerald-300" : "text-red-300"
                   }`}
                 >
+                  <span className="relative flex h-2 w-2">
+                    <span
+                      className={`absolute inline-flex h-full w-full animate-ping rounded-full opacity-75 ${
+                        isOpen ? "bg-emerald-400" : "bg-red-400"
+                      }`}
+                    />
+                    <span
+                      className={`relative inline-flex h-2 w-2 rounded-full ${
+                        isOpen ? "bg-emerald-400" : "bg-red-400"
+                      }`}
+                    />
+                  </span>
+
                   {isOpen ? "Open" : "Closed"}
                 </span>
               </div>
@@ -409,16 +416,16 @@ export function HeroSlider({ brand }: HeroSliderProps) {
                 }}
               >
                 <Link href={content.ctaLink}>
-                  <button className="group inline-flex items-center gap-2 bg-linear-to-r from-[#4A9FFF] to-[#7ABFFF] hover:from-white hover:to-white text-white hover:text-[#0A1628] px-5 sm:px-8 py-2.5 sm:py-3.5 rounded-full font-mono text-xs sm:text-sm font-semibold uppercase tracking-wider transition-all duration-300 hover:scale-105 shadow-lg shadow-[#4A9FFF]/30 hover:shadow-[#4A9FFF]/50">
+                  <Button className="group inline-flex items-center cursor-pointer gap-2 bg-linear-to-r from-[#4A9FFF] to-[#7ABFFF] hover:from-white hover:to-white text-white hover:text-[#0A1628] px-5 sm:px-8 py-2.5 sm:py-3.5 rounded-full font-mono text-xs sm:text-sm font-semibold uppercase tracking-wider transition-all duration-300 hover:scale-105 shadow-lg shadow-[#4A9FFF]/30 hover:shadow-[#4A9FFF]/50">
                     {content.ctaText}
                     <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4 transition-transform group-hover:translate-x-1" />
-                  </button>
+                  </Button>
                 </Link>
                 <Link href="/services">
-                  <button className="inline-flex items-center gap-2 border border-white/30 hover:border-[#4A9FFF] text-white hover:text-[#4A9FFF] px-5 sm:px-8 py-2.5 sm:py-3.5 rounded-full font-mono text-xs sm:text-sm font-semibold uppercase tracking-wider transition-all duration-300 hover:scale-105 hover:bg-white/5 backdrop-blur-sm">
+                  <Button className="inline-flex items-center cursor-pointer gap-2 border border-white/30 hover:border-[#4A9FFF] text-white hover:text-[#4A9FFF] px-5 sm:px-8 py-2.5 sm:py-3.5 rounded-full font-mono text-xs sm:text-sm font-semibold uppercase tracking-wider transition-all duration-300 hover:scale-105 hover:bg-white/5 backdrop-blur-sm">
                     Explore Services
                     <ChevronRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-                  </button>
+                  </Button>
                 </Link>
               </div>
 
@@ -451,7 +458,7 @@ export function HeroSlider({ brand }: HeroSliderProps) {
         {hasMultipleSlides && (
           <div className="absolute bottom-4 sm:bottom-8 left-1/2 z-30 flex -translate-x-1/2 items-center gap-2 sm:gap-3">
             {slides.map((_, index) => (
-              <button
+              <Button
                 key={index}
                 type="button"
                 onClick={() => handleManualNavigation(() => goToSlide(index))}
@@ -595,35 +602,34 @@ export function HeroSlider({ brand }: HeroSliderProps) {
 
               <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-3 pt-1">
                 <Link href={content.ctaLink}>
-                  <button className="inline-flex items-center gap-2 rounded-full bg-amber px-5 sm:px-8 py-2 sm:py-3 font-mono text-[10px] sm:text-sm font-medium uppercase tracking-wider text-ink transition-all hover:bg-amber-light hover:scale-105 hover:shadow-lg hover:shadow-amber/30">
+                  <Button className="inline-flex items-center gap-2 rounded-full cursor-pointer bg-amber px-5 sm:px-8 py-2 sm:py-3 font-mono text-[10px] sm:text-sm font-medium uppercase tracking-wider text-ink transition-all hover:bg-amber-light hover:scale-105 hover:shadow-lg hover:shadow-amber/30">
                     {content.ctaText}
-                  </button>
+                  </Button>
                 </Link>
                 <Link href="/services">
-                  <button className="inline-flex items-center gap-2 rounded-full border-2 border-white/30 bg-white/10 backdrop-blur-sm px-5 sm:px-8 py-2 sm:py-3 font-mono text-[10px] sm:text-sm font-medium uppercase tracking-wider text-white transition-all hover:border-white/50 hover:bg-white/20 hover:scale-105">
+                  <Button className="inline-flex items-center gap-2 rounded-full cursor-pointer border-2 border-white/30 bg-white/10 backdrop-blur-sm px-5 sm:px-8 py-2 sm:py-3 font-mono text-[10px] sm:text-sm font-medium uppercase tracking-wider text-white transition-all hover:border-white/50 hover:bg-white/20 hover:scale-105">
                     Browse Services
-                  </button>
+                  </Button>
                 </Link>
               </div>
 
-              {/* ===== الإحصائيات - 3 عناصر تحت بعض ===== */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 pt-3 sm:pt-6 border-t border-white/10 w-full">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 pt-3 sm:pt-6 border-t border-white/10 w-full justify-items-center sm:justify-items-start">
                 {content.stats.map((stat, idx) => (
                   <div
                     key={idx}
-                    className="flex items-center gap-3 sm:gap-3 min-w-0"
+                    className="group flex items-center gap-3 min-w-0 w-full max-w-55 justify-center sm:justify-start cursor-default"
                   >
-                    <div className="rounded-lg bg-amber/20 backdrop-blur-sm p-2 sm:p-2 shrink-0">
-                      <div className="text-amber-light text-sm sm:text-base">
-                        {stat.icon}
-                      </div>
+                    <div className="rounded-lg bg-white/10 p-1.5 sm:p-2 text-amber transition-all duration-300 group-hover:bg-amber/20 group-hover:scale-110">
+                      {stat.icon}
                     </div>
-                    <div className="min-w-0 flex-1">
-                      <p className="text-sm sm:text-sm font-medium text-white truncate">
-                        {stat.value}
-                      </p>
-                      <p className="text-xs sm:text-xs text-white/50 truncate">
+
+                    <div>
+                      <p className="text-[10px] sm:text-xs text-white/40 font-medium transition-colors duration-300 group-hover:text-white/60">
                         {stat.label}
+                      </p>
+
+                      <p className="text-xs sm:text-sm font-semibold text-white transition-colors duration-300 group-hover:text-amber">
+                        {stat.value}
                       </p>
                     </div>
                   </div>
@@ -676,7 +682,7 @@ export function HeroSlider({ brand }: HeroSliderProps) {
       {hasMultipleSlides && (
         <div className="absolute bottom-4 sm:bottom-8 left-1/2 z-30 flex -translate-x-1/2 gap-1.5 sm:gap-2">
           {slides.map((_, index) => (
-            <button
+            <Button
               key={index}
               type="button"
               onClick={() => handleManualNavigation(() => goToSlide(index))}
