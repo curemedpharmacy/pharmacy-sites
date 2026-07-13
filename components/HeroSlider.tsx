@@ -4,7 +4,16 @@ import React from "react";
 import Image from "next/image";
 import { useEffect, useState, useCallback, useRef } from "react";
 import type { BrandConfig } from "@/lib/brands/types";
-import { ArrowRight, Shield, Clock, Truck, Phone, ChevronRight, CheckCircle, HeartPulse } from "lucide-react";
+import {
+  ArrowRight,
+  Shield,
+  Clock,
+  Truck,
+  Phone,
+  ChevronRight,
+  CheckCircle,
+  HeartPulse,
+} from "lucide-react";
 import Link from "next/link";
 
 type HeroSliderProps = {
@@ -33,12 +42,29 @@ const saimzContent: HeroContent = {
     "Where clinical excellence meets genuine compassion. Saimz Pharmacy delivers professional care with a personal touch.",
   ctaText: "Experience the Difference",
   ctaLink: "/contact",
-  features: ["Licensed Pharmacists", "Free Delivery", "Same-Day Service", "Insurance Accepted"],
+  features: [
+    "Licensed Pharmacists",
+    "Free Delivery",
+    "Same-Day Service",
+    "Insurance Accepted",
+  ],
   stats: [
-    { icon: <Clock className="h-4 w-4 sm:h-5 sm:w-5" />, label: "Hours", value: "Mon–Sat 9-6" },
-    { icon: <Truck className="h-4 w-4 sm:h-5 sm:w-5" />, label: "Delivery", value: "Free Local" },
-    { icon: <Phone className="h-4 w-4 sm:h-5 sm:w-5" />, label: "Call", value: "+1-973-782-4444" },
-  ]
+    {
+      icon: <Clock className="h-4 w-4 sm:h-5 sm:w-5" />,
+      label: "Hours",
+      value: "Mon–Sat 9-6",
+    },
+    {
+      icon: <Truck className="h-4 w-4 sm:h-5 sm:w-5" />,
+      label: "Delivery",
+      value: "Free Local",
+    },
+    {
+      icon: <Phone className="h-4 w-4 sm:h-5 sm:w-5" />,
+      label: "Call",
+      value: "+1-973-782-4444",
+    },
+  ],
 };
 
 // ===== CUREMED HERO (نفسه الأصلي مع HeartPulse) =====
@@ -51,10 +77,22 @@ const curemedContent = {
   ctaLink: "/contact",
   features: [],
   stats: [
-    { icon: <Clock className="h-5 w-5" />, label: "Open Hours", value: "Mon–Sat" },
-    { icon: <Truck className="h-5 w-5" />, label: "Local Delivery", value: "Free" },
-    { icon: <Phone className="h-5 w-5" />, label: "Call Us", value: "+1-862-225-9432" },
-  ]
+    {
+      icon: <Clock className="h-5 w-5" />,
+      label: "Open Hours",
+      value: "Mon–Sat",
+    },
+    {
+      icon: <Truck className="h-5 w-5" />,
+      label: "Local Delivery",
+      value: "Free",
+    },
+    {
+      icon: <Phone className="h-5 w-5" />,
+      label: "Call Us",
+      value: "+1-862-225-9432",
+    },
+  ],
 };
 
 export function HeroSlider({ brand }: HeroSliderProps) {
@@ -69,10 +107,10 @@ export function HeroSlider({ brand }: HeroSliderProps) {
   const slides = brand.heroImages || [];
   const hasMultipleSlides = slides.length > 1;
   const currentSlide = slides[activeIndex];
-  
-  const content = isSaimz ? saimzContent : curemedContent;
 
-  // حل مشكلة Hydration - تشغيل فقط على الكلاينت
+  const content = isSaimz ? saimzContent : curemedContent;
+  const isOpen = getPharmacyStatus(brand);
+
   useEffect(() => {
     setIsMounted(true);
   }, []);
@@ -102,12 +140,13 @@ export function HeroSlider({ brand }: HeroSliderProps) {
 
   const goToSlide = useCallback(
     (index: number) => {
-      if (isTransitioning || index === activeIndex || !hasMultipleSlides) return;
+      if (isTransitioning || index === activeIndex || !hasMultipleSlides)
+        return;
       setIsTransitioning(true);
       setActiveIndex(index);
       setTimeout(() => setIsTransitioning(false), 700);
     },
-    [isTransitioning, activeIndex, hasMultipleSlides]
+    [isTransitioning, activeIndex, hasMultipleSlides],
   );
 
   useEffect(() => {
@@ -132,7 +171,7 @@ export function HeroSlider({ brand }: HeroSliderProps) {
         }
       }, 5000);
     },
-    [goToNext, hasMultipleSlides, isSaimz]
+    [goToNext, hasMultipleSlides, isSaimz],
   );
 
   if (slides.length === 0) return null;
@@ -143,13 +182,79 @@ export function HeroSlider({ brand }: HeroSliderProps) {
   const contentOpacity = 1 - scrollProgress * 0.15;
   const contentTranslateY = scrollProgress * 20;
 
-  // ============================================================
-  // ===== SAIMZ HERO (معدل لحل مشكلة Hydration) =====
-  // ============================================================
+  function getPharmacyStatus(brand: BrandConfig) {
+    const now = new Date();
+
+    // Pharmacy is in New Jersey
+    const formatter = new Intl.DateTimeFormat("en-US", {
+      timeZone: "America/New_York",
+      weekday: "long",
+      hour: "numeric",
+      minute: "numeric",
+      hour12: true,
+    });
+
+    const parts = formatter.formatToParts(now);
+
+    const weekday = parts.find((p) => p.type === "weekday")?.value ?? "";
+
+    const hour = Number(parts.find((p) => p.type === "hour")?.value ?? 0);
+    const minute = Number(parts.find((p) => p.type === "minute")?.value ?? 0);
+    const dayPeriod =
+      parts.find((p) => p.type === "dayPeriod")?.value?.toLowerCase() ?? "am";
+
+    let currentHour = hour;
+    if (dayPeriod === "pm" && hour !== 12) currentHour += 12;
+    if (dayPeriod === "am" && hour === 12) currentHour = 0;
+
+    const currentMinutes = currentHour * 60 + minute;
+
+    const schedule = brand.hours.find((h) => {
+      if (h.day.includes("Monday - Friday")) {
+        return [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+        ].includes(weekday);
+      }
+
+      return h.day === weekday;
+    });
+
+    if (!schedule || schedule.time === "Closed") {
+      return false;
+    }
+
+    const match = schedule.time.match(
+      /(\d{1,2}):(\d{2})\s(AM|PM)\s-\s(\d{1,2}):(\d{2})\s(AM|PM)/i,
+    );
+
+    if (!match) return false;
+
+    const [, sh, sm, sap, eh, em, eap] = match;
+
+    const toMinutes = (h: string, m: string, p: string) => {
+      let hour = parseInt(h, 10);
+
+      if (p.toUpperCase() === "PM" && hour !== 12) hour += 12;
+      if (p.toUpperCase() === "AM" && hour === 12) hour = 0;
+
+      return hour * 60 + parseInt(m, 10);
+    };
+
+    const open = toMinutes(sh, sm, sap);
+    const close = toMinutes(eh, em, eap);
+
+    return currentMinutes >= open && currentMinutes < close;
+  }
+
+  // ===== SAIMZ HERO  =====
   if (isSaimz) {
     return (
-      <div 
-        ref={containerRef} 
+      <div
+        ref={containerRef}
         className="relative min-h-[90vh] w-full overflow-hidden"
         suppressHydrationWarning
       >
@@ -172,13 +277,13 @@ export function HeroSlider({ brand }: HeroSliderProps) {
               className="object-cover"
             />
           </div>
-          
+
           <div className="absolute inset-0 bg-linear-to-b from-[#0A1628]/60 via-[#0A1628]/40 to-[#0A1628]/80 sm:bg-linear-to-r sm:from-[#0A1628]/80 sm:via-[#0A1628]/50 sm:to-transparent" />
           <div className="absolute inset-0 bg-linear-to-t from-[#0A1628]/70 via-transparent to-transparent" />
-          
+
           <div className="absolute top-0 right-0 w-1/3 h-full bg-linear-to-l from-[#4A9FFF]/5 to-transparent hidden sm:block" />
           <div className="absolute bottom-0 left-0 w-1/4 h-1/2 bg-linear-to-r from-[#4A9FFF]/3 to-transparent hidden sm:block" />
-          
+
           {/* ===== نقاط متحركة - تظهر فقط بعد تحميل الكلاينت ===== */}
           {isMounted && (
             <div className="absolute inset-0 overflow-hidden hidden sm:block">
@@ -191,18 +296,18 @@ export function HeroSlider({ brand }: HeroSliderProps) {
                 const top = (seed * 13) % 100;
                 const duration = 10 + (seed % 15);
                 const delay = (seed * 5) % 8;
-                
+
                 return (
                   <div
                     key={i}
                     className="absolute rounded-full bg-[#4A9FFF] opacity-[0.03] animate-float"
                     style={{
-                      width: width + 'px',
-                      height: height + 'px',
-                      left: left + '%',
-                      top: top + '%',
-                      animationDuration: duration + 's',
-                      animationDelay: delay + 's',
+                      width: width + "px",
+                      height: height + "px",
+                      left: left + "%",
+                      top: top + "%",
+                      animationDuration: duration + "s",
+                      animationDelay: delay + "s",
                     }}
                   />
                 );
@@ -223,11 +328,24 @@ export function HeroSlider({ brand }: HeroSliderProps) {
                 }}
               >
                 <span className="relative flex h-1.5 w-1.5 sm:h-2 sm:w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                  <span className="relative inline-flex h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-emerald-400" />
+                  <span
+                    className={`absolute inline-flex h-full w-full animate-ping rounded-full opacity-75 ${
+                      isOpen ? "bg-emerald-400" : "bg-red-400"
+                    }`}
+                  />
+                  <span
+                    className={`relative inline-flex h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full ${
+                      isOpen ? "bg-emerald-400" : "bg-red-400"
+                    }`}
+                  />
                 </span>
-                <span className="font-mono text-[10px] sm:text-xs font-medium uppercase tracking-wider text-white/80">
-                  Open Today — Walk-ins Welcome
+
+                <span
+                  className={`font-mono text-[10px] sm:text-xs font-medium uppercase tracking-wider ${
+                    isOpen ? "text-emerald-300" : "text-red-300"
+                  }`}
+                >
+                  {isOpen ? "Open" : "Closed"}
                 </span>
               </div>
 
@@ -264,7 +382,10 @@ export function HeroSlider({ brand }: HeroSliderProps) {
                 }}
               >
                 {content.stats.map((stat, idx) => (
-                  <div key={idx} className="flex items-center gap-2 sm:gap-2.5 group cursor-default">
+                  <div
+                    key={idx}
+                    className="flex items-center gap-2 sm:gap-2.5 group cursor-default"
+                  >
                     <div className="rounded-lg bg-white/10 p-1.5 sm:p-2 text-[#4A9FFF] group-hover:bg-[#4A9FFF]/20 transition-all duration-300 group-hover:scale-110">
                       {stat.icon}
                     </div>
@@ -311,12 +432,16 @@ export function HeroSlider({ brand }: HeroSliderProps) {
                 {content.features.map((feature, idx) => (
                   <div key={idx} className="flex items-center gap-1 sm:gap-1.5">
                     <CheckCircle className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-emerald-400" />
-                    <span className="text-[10px] sm:text-xs text-white/50 font-medium">{feature}</span>
+                    <span className="text-[10px] sm:text-xs text-white/50 font-medium">
+                      {feature}
+                    </span>
                   </div>
                 ))}
                 <div className="flex items-center gap-1 sm:gap-1.5">
                   <Shield className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-[#4A9FFF]" />
-                  <span className="text-[10px] sm:text-xs text-white/50 font-medium">NPI #1962995290</span>
+                  <span className="text-[10px] sm:text-xs text-white/50 font-medium">
+                    NPI #1962995290
+                  </span>
                 </div>
               </div>
             </div>
@@ -342,16 +467,27 @@ export function HeroSlider({ brand }: HeroSliderProps) {
         )}
 
         <div className="absolute bottom-4 sm:bottom-8 right-4 sm:right-8 z-20 hidden lg:flex flex-col items-center gap-2">
-          <span className="text-[10px] font-mono uppercase tracking-wider text-white/20">Scroll</span>
+          <span className="text-[10px] font-mono uppercase tracking-wider text-white/20">
+            Scroll
+          </span>
           <div className="w-px h-12 bg-linear-to-b from-[#4A9FFF]/40 to-transparent animate-pulse" />
         </div>
 
         <style jsx>{`
           @keyframes float {
-            0%, 100% { transform: translateY(0px) translateX(0px); }
-            25% { transform: translateY(-15px) translateX(8px); }
-            50% { transform: translateY(-30px) translateX(-8px); }
-            75% { transform: translateY(-15px) translateX(15px); }
+            0%,
+            100% {
+              transform: translateY(0px) translateX(0px);
+            }
+            25% {
+              transform: translateY(-15px) translateX(8px);
+            }
+            50% {
+              transform: translateY(-30px) translateX(-8px);
+            }
+            75% {
+              transform: translateY(-15px) translateX(15px);
+            }
           }
           .animate-float {
             animation: float ease-in-out infinite;
@@ -365,7 +501,10 @@ export function HeroSlider({ brand }: HeroSliderProps) {
   // ===== CUREMED HERO (الأصلي مع HeartPulse والأيقونات - بدون تغيير) =====
   // ============================================================
   return (
-    <div ref={containerRef} className="relative h-screen w-full overflow-hidden bg-ink">
+    <div
+      ref={containerRef}
+      className="relative h-screen w-full overflow-hidden bg-ink"
+    >
       <div
         className={`absolute inset-0 transition-transform duration-700 ease-in-out ${
           isTransitioning ? "scale-105" : "scale-100"
@@ -395,7 +534,10 @@ export function HeroSlider({ brand }: HeroSliderProps) {
       </div>
 
       <div className="absolute top-20 right-20 z-5 h-96 w-96 rounded-full bg-amber/10 blur-3xl animate-pulse hidden sm:block" />
-      <div className="absolute bottom-20 left-20 z-5 h-80 w-80 rounded-full bg-sage/10 blur-3xl animate-pulse hidden sm:block" style={{ animationDelay: "2s" }} />
+      <div
+        className="absolute bottom-20 left-20 z-5 h-80 w-80 rounded-full bg-sage/10 blur-3xl animate-pulse hidden sm:block"
+        style={{ animationDelay: "2s" }}
+      />
 
       <div className="relative z-20 flex h-full items-center">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-0">
@@ -407,19 +549,36 @@ export function HeroSlider({ brand }: HeroSliderProps) {
                   : "opacity-100 translate-x-0"
               }`}
             >
-              {/* ===== BADGE مع HeartPulse ===== */}
+              {/* ===== BADGE  ===== */}
               <div className="flex flex-wrap items-center justify-center sm:justify-start gap-1.5 sm:gap-3">
                 <span className="inline-flex items-center gap-1 sm:gap-1.5 rounded-full backdrop-blur-sm px-2.5 sm:px-4 py-1 sm:py-1.5 font-mono text-[8px] sm:text-xs font-medium uppercase tracking-wider text-amber-50 border border-amber/30">
                   <HeartPulse className="h-4 w-4 sm:h-5 sm:w-5" />
-                  <span className="hidden xs:inline">Independent Community Pharmacy</span>
+                  <span className="hidden xs:inline">
+                    Independent Community Pharmacy
+                  </span>
                   <span className="xs:hidden">Pharmacy</span>
                 </span>
-                <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/20 backdrop-blur-sm px-2 sm:px-3 py-0.5 sm:py-1 text-[8px] sm:text-xs font-medium text-emerald-300 border border-emerald-400/30">
+                <span
+                  className={`inline-flex items-center gap-1 rounded-full backdrop-blur-sm px-2 sm:px-3 py-0.5 sm:py-1 text-[8px] sm:text-xs font-medium border ${
+                    isOpen
+                      ? "bg-emerald-500/20 text-emerald-300 border-emerald-400/30"
+                      : "bg-red-500/20 text-red-300 border-red-400/30"
+                  }`}
+                >
                   <span className="relative flex h-1 w-1 sm:h-1.5 sm:w-1.5">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                    <span className="relative inline-flex h-1 w-1 sm:h-1.5 sm:w-1.5 rounded-full bg-emerald-400" />
+                    <span
+                      className={`absolute inline-flex h-full w-full animate-ping rounded-full ${
+                        isOpen ? "bg-emerald-400" : "bg-red-400"
+                      } opacity-75`}
+                    />
+                    <span
+                      className={`relative inline-flex h-1 w-1 sm:h-1.5 sm:w-1.5 rounded-full ${
+                        isOpen ? "bg-emerald-400" : "bg-red-400"
+                      }`}
+                    />
                   </span>
-                  Open
+
+                  {isOpen ? "Open" : "Closed"}
                 </span>
               </div>
 
@@ -450,7 +609,10 @@ export function HeroSlider({ brand }: HeroSliderProps) {
               {/* ===== الإحصائيات - 3 عناصر تحت بعض ===== */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 pt-3 sm:pt-6 border-t border-white/10 w-full">
                 {content.stats.map((stat, idx) => (
-                  <div key={idx} className="flex items-center gap-3 sm:gap-3 min-w-0">
+                  <div
+                    key={idx}
+                    className="flex items-center gap-3 sm:gap-3 min-w-0"
+                  >
                     <div className="rounded-lg bg-amber/20 backdrop-blur-sm p-2 sm:p-2 shrink-0">
                       <div className="text-amber-light text-sm sm:text-base">
                         {stat.icon}
@@ -480,7 +642,8 @@ export function HeroSlider({ brand }: HeroSliderProps) {
                   ))}
                 </div>
                 <p className="text-[8px] sm:text-xs text-white/50 truncate">
-                  Trusted by <span className="font-medium text-white">500+</span> patients
+                  Trusted by{" "}
+                  <span className="font-medium text-white">500+</span> patients
                 </p>
               </div>
             </div>
@@ -496,7 +659,9 @@ export function HeroSlider({ brand }: HeroSliderProps) {
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-ink/60 via-transparent to-transparent" />
                   <div className="absolute bottom-6 left-6 right-6">
-                    <p className="text-white/80 text-sm font-medium">Independent Pharmacy</p>
+                    <p className="text-white/80 text-sm font-medium">
+                      Independent Pharmacy
+                    </p>
                     <p className="text-white/40 text-xs mt-1">
                       Slide {String(activeIndex + 1).padStart(2, "0")}
                     </p>

@@ -5,6 +5,8 @@ import { ServiceLabelCard } from "@/components/ServiceLabelCard";
 import { ArrowRight, Syringe, Pill, Globe, Heart, Stethoscope, Truck, FileText, Briefcase, Award } from "lucide-react";
 import type { ServiceItem } from "@/lib/services";
 import {Button} from "@/components/ui/button";
+import {getBrandConfig} from "@/lib/brands";
+import { getServiceImage } from "@/lib/services/images";
 
 type ClientServicesProps = {
   services: ServiceItem[];
@@ -24,28 +26,8 @@ const getServiceIcon = (slug: string) => {
   return icons[slug] || <Award className="h-4 w-4" />;
 };
 
-const getServiceImage = (service: ServiceItem) => {
-  if (service.facebookPosts && service.facebookPosts.length > 0) {
-    const firstPost = service.facebookPosts[0];
-    if (firstPost.type === 'video' && firstPost.videoThumbnail) {
-      return firstPost.videoThumbnail;
-    }
-    if (firstPost.image) {
-      return firstPost.image;
-    }
-  }
-  const images: Record<string, string> = {
-    "immunizations-vaccines": "/images/curemed/services/immunization-clinic.webp",
-    "medication-therapy-management": "/images/curemed/services/medication-therapy-management.webp",
-    "travel-health-hajj": "/images/curemed/services/travel-health.webp",
-    "womens-health": "/images/curemed/services/womens-health.webp",
-    "health-screenings": "/images/curemed/services/health-screening.webp",
-    "delivery-service": "/images/curemed/services/delivery-service.webp",
-    "prescription-transfers": "/images/curemed/services/prescription-transfer.webp",
-    "health-clarity-sessions": "/images/curemed/services/health-clarity.webp",
-  };
-  return images[service.slug] || "/images/curemed/services/pharmacist-consultation.webp";
-};
+const brand = getBrandConfig();
+const isSaimz = brand.slug === "saimz";
 
 export function ClientServices({ services }: ClientServicesProps) {
   const displayedServices = services.slice(0, 6);
@@ -63,7 +45,7 @@ export function ClientServices({ services }: ClientServicesProps) {
             directions={service.directions || "PICK UP IN STORE OR SAME-DAY DELIVERY"}
             href={`/services/${service.slug}`}
             icon={getServiceIcon(service.slug)}
-            image={getServiceImage(service)}
+            image={getServiceImage(service, isSaimz)}
           />
         ))}
       </div>

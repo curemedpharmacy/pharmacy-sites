@@ -5,6 +5,7 @@ import { HeroSlider } from "@/components/HeroSlider";
 import { ClientServices } from "@/components/ClientServices";
 import { getBrandConfig } from "@/lib/brands";
 import { getServicesForBrand } from "@/lib/services";
+import { getServiceImage } from "@/lib/services/images";
 import {
   Clock,
   Phone,
@@ -104,19 +105,6 @@ export default function HomePage() {
     return icons[slug] || <Award className="h-4 w-4" />;
   };
 
-  const getServiceImage = (slug: string) => {
-    const basePath = "/images/saimz/services";
-    const images: Record<string, string> = {
-      "immunizations-vaccines": `${basePath}/immunization-clinic.jpeg`,
-      "medication-therapy-management": `${basePath}/medication-therapy-management.webp`,
-      "health-screenings": `${basePath}/health-screening.jpeg`,
-      "delivery-service": `${basePath}/delivery.jpeg`,
-      "prescription-transfers": `${basePath}/prescription-transfer.jpeg`,
-      "health-clarity-sessions": `${basePath}/health-clarity.jpeg`,
-    };
-    return images[slug] || `${basePath}/pharmacist-consultation.jpeg`;
-  };
-
   // ===== SAIMZ =====
   if (isSaimz) {
     return (
@@ -148,7 +136,7 @@ export default function HomePage() {
                   directions={service.directions || "PICK UP IN STORE"}
                   href={`/services/${service.slug}`}
                   icon={getServiceIcon(service.slug)}
-                  image={getServiceImage(service.slug)}
+                  image={getServiceImage(service, isSaimz)}
                   isSaimz={true}
                   compact={true}
                 />
@@ -218,7 +206,7 @@ export default function HomePage() {
               <div className="relative group">
                 <div className="relative aspect-square max-w-md mx-auto rounded-2xl overflow-hidden border border-[#4A9FFF]/10 transition-all duration-500 group-hover:border-[#4A9FFF]/30 group-hover:shadow-2xl group-hover:shadow-[#4A9FFF]/10">
                   <Image
-                    src="/images/saimz/services/immunization-clinic.jpeg"
+                    src="/images/saimz/saimz-hero3.webp"
                     alt="Saimz Pharmacy"
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -390,7 +378,7 @@ export default function HomePage() {
                   <div className="relative w-[82%] ml-8 sm:ml-16 md:ml-32 lg:ml-45 -mt-5 sm:-mt-5 md:-mt-10 group">
                     <div className="relative aspect-4/3 rounded-2xl overflow-hidden border border-[#4A9FFF]/10 transition-all duration-500 group-hover:border-[#4A9FFF]/30 group-hover:shadow-2xl group-hover:shadow-[#4A9FFF]/10 group-hover:-translate-y-2">
                       <Image
-                        src="/images/saimz/services/travel-health.jpeg"
+                        src="/images/saimz/saimz-hero1.webp"
                         alt="Saimz Pharmacy Services"
                         fill
                         className="object-cover transition-transform duration-700 group-hover:scale-105"

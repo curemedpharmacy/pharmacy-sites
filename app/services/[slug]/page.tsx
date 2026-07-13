@@ -6,6 +6,7 @@ import { getBrandConfig } from "@/lib/brands";
 import { breadcrumbSchema } from "@/lib/schema";
 import { JsonLd } from "@/components/JsonLd";
 import { getServicesForBrand } from "@/lib/services";
+import {getServiceImage} from "@/lib/services/images";
 import {
   Phone,
   MapPin,
@@ -99,39 +100,13 @@ export default async function ServiceDetailPage({
       "delivery-service": "bg-purple-50 text-purple-600 border-purple-200",
       "prescription-transfers": "bg-indigo-50 text-indigo-600 border-indigo-200",
       "health-clarity-sessions": "bg-cyan-50 text-cyan-600 border-cyan-200",
-      compounding: "bg-rose-50 text-rose-600 border-rose-200",
+      "compounding": "bg-rose-50 text-rose-600 border-rose-200",
     };
     return colors[service.slug] || "bg-amber/10 text-amber-dark border-amber/20";
   };
 
-  const firstPost = service.facebookPosts && service.facebookPosts.length > 0 ? service.facebookPosts[0] : null;
-
-  const getHeroImage = () => {
-    // كيورمد: يجيب الصورة من الفيسبوك
-    if (!isSaimz && firstPost) {
-      if (firstPost.type === "video" && firstPost.videoThumbnail) {
-        return firstPost.videoThumbnail;
-      }
-      if (firstPost.image) {
-        return firstPost.image;
-      }
-    }
-    // سيمز: يستخدم الصور المحلية
-    const basePath = isSaimz ? "/images/saimz/services" : "/images/curemed/services";
-    const images: Record<string, string> = {
-      "immunizations-vaccines": `${basePath}/immunization-clinic.jpeg`,
-      "medication-therapy-management": `${basePath}/medication-therapy-management.webp`,
-      "travel-health-hajj": `${basePath}/travel-health.jpeg`,
-      "womens-health": `${basePath}/womens-health.jpeg`,
-      "health-screenings": `${basePath}/health-screening.jpeg`,
-      "delivery-service": `${basePath}/delivery-image.jpeg`,
-      "prescription-transfers": `${basePath}/prescription-transfer.jpeg`,
-      "health-clarity-sessions": `${basePath}/health-clarity.jpeg`,
-    };
-    return images[service.slug] || `${basePath}/pharmacist-consultation.jpeg`;
-  };
-
-  const heroImage = getHeroImage();
+  
+  const heroImage = getServiceImage(service, isSaimz);
 
   // ===== SAIMZ =====
   if (isSaimz) {

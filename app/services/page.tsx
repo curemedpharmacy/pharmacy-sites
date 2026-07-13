@@ -5,8 +5,21 @@ import { JsonLd } from "@/components/JsonLd";
 import { getBrandConfig } from "@/lib/brands";
 import { breadcrumbSchema } from "@/lib/schema";
 import { getServicesForBrand } from "@/lib/services";
-import type { ServiceItem } from "@/lib/services";
-import { Phone, Award, Clock, Syringe, Pill, Globe, Heart, Stethoscope, Truck, FileText, Briefcase, Sparkles } from "lucide-react";
+import { getServiceImage } from "@/lib/services/images";
+import {
+  Phone,
+  Award,
+  Clock,
+  Syringe,
+  Pill,
+  Globe,
+  Heart,
+  Stethoscope,
+  Truck,
+  FileText,
+  Briefcase,
+  Sparkles,
+} from "lucide-react";
 import Link from "next/link";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -42,47 +55,14 @@ export default function ServicesPage() {
     return icons[slug] || <Award className={className} />;
   };
 
-  // ===== نفس دالة getServiceImage من ClientServices =====
-  const getServiceImage = (service: ServiceItem) => {
-    // إذا كان سيمز، استخدم الصور المحلية
-    if (isSaimz) {
-      const basePath = "/images/saimz/services";
-      const images: Record<string, string> = {
-        "immunizations-vaccines": `${basePath}/immunization-clinic.jpeg`,
-        "medication-therapy-management": `${basePath}/medication-therapy-management.webp`,
-        "health-screenings": `${basePath}/health-screening.jpeg`,
-        "delivery-service": `${basePath}/delivery-image.jpeg`,
-        "prescription-transfers": `${basePath}/prescription-transfer.jpeg`,
-        "health-clarity-sessions": `${basePath}/health-clarity.jpeg`,
-      };
-      return images[service.slug] || `${basePath}/pharmacist-consultation.jpeg`;
-    }
-
-    // ===== كيورمد: نفس منطق ClientServices =====
-    // أولاً: يجيب الصورة من الفيسبوك إذا موجودة
-    if (service.facebookPosts && service.facebookPosts.length > 0) {
-      const firstPost = service.facebookPosts[0];
-      if (firstPost.type === 'video' && firstPost.videoThumbnail) {
-        return firstPost.videoThumbnail;
-      }
-      if (firstPost.image) {
-        return firstPost.image;
-      }
-    }
-    // ثانياً: الصور الافتراضية (بنفس امتداد ClientServices)
-    const images: Record<string, string> = {
-      "immunizations-vaccines": "/images/curemed/services/immunization-clinic.webp",
-      "medication-therapy-management": "/images/curemed/services/medication-therapy-management.webp",
-      "travel-health-hajj": "/images/curemed/services/travel-health.webp",
-      "womens-health": "/images/curemed/services/womens-health.webp",
-      "health-screenings": "/images/curemed/services/health-screening.webp",
-      "delivery-service": "/images/curemed/services/delivery-service.webp",
-      "prescription-transfers": "/images/curemed/services/prescription-transfer.webp",
-      "health-clarity-sessions": "/images/curemed/services/health-clarity.webp",
-    };
-    return images[service.slug] || "/images/curemed/services/pharmacist-consultation.webp";
-  };
-
+//   console.log("Brand:", brand.slug);
+// console.log(
+//   "Services:",
+//   services.map((s) => ({
+//     slug: s.slug,
+//     brands: s.brands,
+//   }))
+// );
   // ===== SAIMZ =====
   if (isSaimz) {
     return (
@@ -111,10 +91,12 @@ export default function ServicesPage() {
                 rx={service.rx}
                 title={service.title}
                 description={service.description}
-                directions={service.directions || "PICK UP IN STORE OR SAME-DAY DELIVERY"}
+                directions={
+                  service.directions || "PICK UP IN STORE OR SAME-DAY DELIVERY"
+                }
                 href={`/services/${service.slug}`}
                 icon={getServiceIcon(service.slug, "md")}
-                image={getServiceImage(service)}
+                image={getServiceImage(service, isSaimz)}
                 isSaimz={true}
                 compact={true}
               />
@@ -190,10 +172,12 @@ export default function ServicesPage() {
               rx={service.rx}
               title={service.title}
               description={service.description}
-              directions={service.directions || "PICK UP IN STORE OR SAME-DAY DELIVERY"}
+              directions={
+                service.directions || "PICK UP IN STORE OR SAME-DAY DELIVERY"
+              }
               href={`/services/${service.slug}`}
               icon={getServiceIcon(service.slug, "md")}
-              image={getServiceImage(service)} // ✅ نفس دالة الصور
+              image={getServiceImage(service, isSaimz)}
               isSaimz={false}
             />
           ))}

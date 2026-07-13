@@ -32,17 +32,17 @@ export const saimz: BrandConfig = {
       alt: "Saimz Pharmacy - Professional Care",
     },
     {
-      path: "/images/saimz/saimz-hero1.webp",
+      path: "/images/saimz/hero-slide2.png",
       alt: "Saimz Pharmacy - Expert Team",
     },
     {
-      path: "/images/saimz/saimz-hero3.webp",
+      path: "/images/saimz/hero-slide3.png",
       alt: "Saimz Pharmacy - Patient Care",
     },
   ],
   galleryImages: {
     team: {
-      path: "/images/saimz/services/immunization-clinic.jpeg",
+      path: "/images/saimz/services/immunization.jpeg",
       alt: "Saimz Pharmacy Team",
     },
     services: {
