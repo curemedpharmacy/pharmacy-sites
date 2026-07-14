@@ -49,10 +49,8 @@ const sharedServices: ServiceItem[] = [
       "Friendly and knowledgeable pharmacists",
       "CDC recommended for all ages 6 months+",
     ],
-    image: "/images/curemed/services/vaccination-clinic.webp",
-    videoUrl:
-      "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/curemed/posts/832231478918666&show_text=0&width=600&height=400",
-    brands: ["curemed", "saimz"], // متوفرة للجميع
+    image: "/images/curemed/services/vaccination-clinic.png",
+    brands: ["curemed", "saimz"],
     facebookPosts: [
       {
         title: "CDC Flu Shot Recommendation",
@@ -61,10 +59,9 @@ const sharedServices: ServiceItem[] = [
         date: "February 27, 2024",
         type: "video",
         postId: "832231478918666",
+        image: "/images/curemed/services/vaccination-clinic.png",
         videoUrl:
           "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/curemed/posts/832231478918666&show_text=0&width=600&height=400",
-        videoThumbnail:
-          "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/426293524_900176728468057_5826125832319842589_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1080&ctp=s960x960&_nc_cat=111&ccb=1-7&_nc_sid=d2b52d&_nc_ohc=Cz-6U065g4QQ7kNvwFUV74A&_nc_oc=AdrZr1iMiMj3P6trlaGIQbvX4TdwUJe71dVu9Twc8JF0ozsJnOq-lfVBhJx25c4iwFU&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&_nc_gid=36X7JOKfvW51jCETOxbzXA&_nc_ss=72289&oh=00_AQCXnjtiLw8MObSglzzuCUrvabOm5QzN6o_uJAXqddk6_g&oe=6A540AEB",
       },
       {
         title: "Flu Protection for Chronic Conditions",
@@ -73,10 +70,10 @@ const sharedServices: ServiceItem[] = [
         date: "February 20, 2024",
         type: "video",
         postId: "828014539340360",
+        image: "/images/curemed/services/Flu Protection.png",
+
         videoUrl:
           "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/curemed/posts/828014539340360&show_text=0&width=600&height=400",
-        videoThumbnail:
-          "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/426283197_1132697818146319_8004390102617871185_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1080&ctp=s960x960&_nc_cat=111&ccb=1-7&_nc_sid=d2b52d&_nc_ohc=3c17HGRRqUwQ7kNvwHmdKaC&_nc_oc=AdpVRDvYV2ArFlqBsq8rpkqvBxV2zlsH6xPaKpuCFMSS9wEkH-1X8fXhNnTK8-7-4Fk&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&_nc_gid=a0_ID29DIMMhcVFIPA395A&_nc_ss=72289&oh=00_AQCA4VpGZ7JGwOfN0W9WTOVWcP3APLRF1saq5BZx3mQNBA&oe=6A5420F5",
       },
       {
         title: "Flu Shot Protection",
@@ -85,10 +82,10 @@ const sharedServices: ServiceItem[] = [
         date: "February 13, 2024",
         type: "video",
         postId: "823452893129858",
+        image: "/images/curemed/services/Flu Shot.png",
+
         videoUrl:
           "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/curemed/posts/823452893129858&show_text=0&width=600&height=400",
-        videoThumbnail:
-          "https://scontent-sea1-1.xx.fbcdn.net/v/t15.5256-10/424146933_356663127194211_1469118553207595159_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1080&ctp=s960x960&_nc_cat=106&ccb=1-7&_nc_sid=d2b52d&_nc_ohc=77pNIrjDyTcQ7kNvwFjMC9E&_nc_oc=AdqQc9jCZ0VG_GMKe20R6O7GW6_rG8sF9BewddVbrDgfWn-4yMtBugejyStdGYC-30g&_nc_zt=23&_nc_ht=scontent-sea1-1.xx&_nc_gid=RFoyQfKlYJGd8lqZM_vo1Q&_nc_ss=7c289&oh=00_AQC7MmlF0XkyZMYswXYJhZUA8jm4rFW5wjgoBak-OeBuFg&oe=6A53FB92",
       },
     ],
   },
@@ -112,7 +109,7 @@ const sharedServices: ServiceItem[] = [
       "Questions answered with care and patience",
       "Coordinated care with your healthcare team",
     ],
-    image: "/images/curemed/services/medication-review.webp",
+    image: "/images/curemed/services/medication-therapy-management.png",
     videoUrl:
       "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/curemed/posts/850091337132680&show_text=0&width=600&height=400",
     brands: ["curemed", "saimz"],
@@ -124,10 +121,10 @@ const sharedServices: ServiceItem[] = [
         date: "March 26, 2024",
         type: "video",
         postId: "850091337132680",
+        image: "/images/curemed/services/medication-therapy-management.png",
+
         videoUrl:
           "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/curemed/posts/850091337132680&show_text=0&width=600&height=400",
-        videoThumbnail:
-          "https://scontent-lax3-2.xx.fbcdn.net/v/t15.5256-10/433808034_732448415700076_1176469433503713607_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1080&ctp=s960x960&_nc_cat=103&ccb=1-7&_nc_sid=d2b52d&_nc_ohc=3G4N7D9hPWMQ7kNvwFTzC25&_nc_oc=Adot3XWvgGVF4VsqLR4vebHAh9cZV3FoKuTiDGgluAqd4dr5Nt8_Ln48IzLb7-kpqSc&_nc_zt=23&_nc_ht=scontent-lax3-2.xx&_nc_gid=mAhD9EpIFUUFUehmGGaDpw&_nc_ss=72289&oh=00_AQB8PHnUCZKHZZWvqhbxVmDafPsbR-8u1ORfID9Zee5Xeg&oe=6A54170B",
       },
       {
         title: "Your Healthcare Team",
@@ -136,10 +133,9 @@ const sharedServices: ServiceItem[] = [
         date: "March 13, 2024",
         type: "video",
         postId: "841792617962552",
+        image: "/images/curemed/services/health-team.png",
         videoUrl:
           "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/curemed/posts/841792617962552&show_text=0&width=600&height=400",
-        videoThumbnail:
-          "https://scontent-bos5-1.xx.fbcdn.net/v/t15.5256-10/426278339_1114147093056965_8239859933176596328_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1080&ctp=s960x960&_nc_cat=107&ccb=1-7&_nc_sid=d2b52d&_nc_ohc=fqLyz-x_NokQ7kNvwHxpu38&_nc_oc=AdpTSH0wQSfysxaa87zzLEJuhgE4sQJIGwOTikobwFBHUH6z43tFwFwN3lmlkc6Knds&_nc_zt=23&_nc_ht=scontent-bos5-1.xx&_nc_gid=j5xP9zRV4Sng2hFGSmCazg&_nc_ss=72289&oh=00_AQCJBBVYNpb4j7dwQrcjktcluH5yCl2JGNqOeQSGKBMx7w&oe=6A5407C1",
       },
       {
         title: "Medication Explanations",
@@ -148,10 +144,10 @@ const sharedServices: ServiceItem[] = [
         date: "February 16, 2024",
         type: "video",
         postId: "825537426254738",
+        image: "/images/curemed/services/medication-explanations.png",
+
         videoUrl:
           "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/curemed/posts/825537426254738&show_text=0&width=600&height=400",
-        videoThumbnail:
-          "https://scontent-sea5-1.xx.fbcdn.net/v/t15.5256-10/426299205_753498576416870_3954166845546279727_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1080&ctp=s960x960&_nc_cat=107&ccb=1-7&_nc_sid=d2b52d&_nc_ohc=Avz8bfdELi8Q7kNvwHVf0nj&_nc_oc=Adr_EwvpVA2Z6YrLBDsb5vwyPTAg58MEtzMPk97Q5w76crCXgeg4iKAhEi3571v4IiY&_nc_zt=23&_nc_ht=scontent-sea5-1.xx&_nc_gid=RFoyQfKlYJGd8lqZM_vo1Q&_nc_ss=7c289&oh=00_AQAT2oq0Aj65AE-eOYuuURgHJiLW7bm6mncMDx-XfbiWTw&oe=6A54053C",
       },
     ],
   },
@@ -175,7 +171,7 @@ const sharedServices: ServiceItem[] = [
       "Emergency medication kits",
       "Blister pads and other essentials",
     ],
-    image: "/images/curemed/services/hajj-health-kit.webp",
+    image: "/images/curemed/services/travel-health.jpg",
     brands: ["curemed"], // فقط لـ Curemed
     facebookPosts: [
       {
@@ -185,8 +181,7 @@ const sharedServices: ServiceItem[] = [
         date: "May 13, 2024",
         type: "post",
         postId: "1471700071638467",
-        image:
-          "https://scontent-iad6-1.xx.fbcdn.net/v/t39.30808-6/698168356_1471699231638551_7337445361910062938_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1080&ctp=p526x296&_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=h253Y6xfcLcQ7kNvwGIbIDR&_nc_oc=AdoaKIdMC6mdnb_xzGXVj_fv8UpG5QH288Yc3N03aHaDeccq5rTFv13m8lTU2y4gBlw&_nc_zt=23&_nc_ht=scontent-iad6-1.xx&_nc_gid=e1XTiCZzaZhgMqrfJ4-cKA&_nc_ss=72289&oh=00_AQCXyABlqQll2t8l7AjXBjDQlwuSTk51vEVL8P08B0om-w&oe=6A5410B7",
+        image: "/images/curemed/services/travel-health.jpg",
       },
     ],
   },
@@ -210,7 +205,7 @@ const sharedServices: ServiceItem[] = [
       "RSVP required",
       "Safe and welcoming space",
     ],
-    image: "/images/curemed/services/womens-health-event.webp",
+    image: "/images/curemed/services/womens-health.jpg",
     brands: ["curemed"], // فقط لـ Curemed
     facebookPosts: [
       {
@@ -220,8 +215,7 @@ const sharedServices: ServiceItem[] = [
         date: "May 8, 2024",
         type: "post",
         postId: "1468164421992032",
-        image:
-          "https://scontent-lax7-1.xx.fbcdn.net/v/t39.30808-6/695534688_1468164531992021_4169663063534745081_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1536&ctp=s590x590&_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_ohc=BceR2jR-qLkQ7kNvwE6AqrM&_nc_oc=AdrP2h-dbeeJlGIHhgra9L3ZjdoGrUzb5Pi1NUOjrmgMArPqqWyrk-FhQVCD3CC7Ag0&_nc_zt=23&_nc_ht=scontent-lax7-1.xx&_nc_gid=mAhD9EpIFUUFUehmGGaDpw&_nc_ss=72289&oh=00_AQCVQNoNnOFXTWDllLAXpzsrw3zRJXEt7RyqFCsVyMZdRQ&oe=6A540625",
+        image: "/images/curemed/services/womens-health.jpg",
       },
       {
         title: "Women's Health Event",
@@ -230,8 +224,7 @@ const sharedServices: ServiceItem[] = [
         date: "May 1, 2024",
         type: "post",
         postId: "1462010385940769",
-        image:
-          "https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/685396652_1462009419274199_840628710487658668_n.jpg?stp=dst-jpg_tt6&cstp=mx1545x1999&ctp=p526x296&_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=nhq6k1TwuAEQ7kNvwGrlrs5&_nc_oc=AdpeUgBYwtJvy2CzlPhyKtOknwnJQ8JykxfWngr5szuXct8fYeqm0q06_ZxjWvOG4d8&_nc_zt=23&_nc_ht=scontent-lax3-1.xx&_nc_gid=mAhD9EpIFUUFUehmGGaDpw&_nc_ss=72289&oh=00_AQBTMnM0BAyS5T14AKkCK1wCN_k6kJrUq-AOzk0qexACUQ&oe=6A53FAE2",
+        image: "/images/curemed/services/health-event.jpg",
       },
     ],
   },
@@ -255,7 +248,7 @@ const sharedServices: ServiceItem[] = [
       "Heart health education",
       "Open to everyone in the community",
     ],
-    image: "/images/curemed/services/health-screening-event.webp",
+    image: "/images/curemed/services/health-screening.png",
     brands: ["curemed", "saimz"],
     facebookPosts: [
       {
@@ -265,10 +258,9 @@ const sharedServices: ServiceItem[] = [
         date: "February 22, 2024",
         type: "video",
         postId: "829235362551611",
+        image: "/images/curemed/services/health-screening.png",
         videoUrl:
           "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/curemed/posts/829235362551611&show_text=0&width=600&height=400",
-        videoThumbnail:
-          "https://scontent-iad6-1.xx.fbcdn.net/v/t15.5256-10/425823941_724343939512563_2065554735491044057_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1080&ctp=s960x960&_nc_cat=100&ccb=1-7&_nc_sid=d2b52d&_nc_ohc=hP6IhKgrhvEQ7kNvwG7u6tG&_nc_oc=Ado0uedd1H85C9qeJjj8sbuMPsGHU75PXQ6QVZF6cPcbLwG66GnBQWT2zt8D_uJvfVI&_nc_zt=23&_nc_ht=scontent-iad6-1.xx&_nc_gid=ZKVmS2br45Ct4O4xj1VsIw&_nc_ss=72289&oh=00_AQDa7RsFduGSPXsF6R2cqmYsQMWO8rNWRbnzrreFYbxJqg&oe=6A541DB4",
       },
     ],
   },
@@ -292,7 +284,7 @@ const sharedServices: ServiceItem[] = [
       "Contact us to set up delivery",
       "Stay where you are—we've got you covered",
     ],
-    image: "/images/curemed/services/delivery-service.webp",
+    image: "/images/curemed/services/delivery-service.png",
     brands: ["curemed", "saimz"],
     facebookPosts: [
       {
@@ -302,8 +294,7 @@ const sharedServices: ServiceItem[] = [
         date: "May 23, 2024",
         type: "post",
         postId: "1481150507360090",
-        image:
-          "https://scontent-iad6-1.cdninstagram.com/v/t51.82787-15/704032278_18111426619737374_8973756067700469548_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=HzIQoD-mwf0Q7kNvwFWGrEb&_nc_oc=AdpjyEeCKiGq1vt9xdOXg0ujmGMOLX7rfFsP9fRpNz2kwSvwiv4fSrmdD4-KcHdMPr4&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&_nc_gid=e1XTiCZzaZhgMqrfJ4-cKA&_nc_ss=72289&oh=00_AQDG_VL3LjyeEzQn5eeWocfAOkQj7Zvbac3d5If4cyqzmw&oe=6A5402C6",
+        image: "/images/curemed/services/delivery-service.png",
       },
     ],
   },
@@ -327,7 +318,7 @@ const sharedServices: ServiceItem[] = [
       "Vaccines available at the pharmacy",
       "Multilingual support: English, Español, العربية",
     ],
-    image: "/images/curemed/services/prescription-transfer.webp",
+    image: "/images/curemed/services/prescription-transfer.jpg",
     brands: ["curemed", "saimz"],
     facebookPosts: [
       {
@@ -337,8 +328,7 @@ const sharedServices: ServiceItem[] = [
         date: "June 2, 2024",
         type: "post",
         postId: "1491282519680222",
-        image:
-          "https://scontent-iad3-1.xx.fbcdn.net/v/t45.1600-4/718068560_1493002832841524_6277086336005687969_n.jpg?stp=cp0_dst-jpg_fr_q75_sh2.08_spS444_tt6&cstp=mx1369x1149&ctp=p526x296&_nc_cat=110&ccb=1-7&_nc_sid=f0a831&_nc_ohc=BwJGVrOQg08Q7kNvwEyx2fE&_nc_oc=AdoRArKBQjx0GU6JUnxfd6-J7h3Oc19ksLinQTI0_LK8Z7fjSt1LpNAriX6glaHlB7g&_nc_zt=1&_nc_ht=scontent-iad3-1.xx&_nc_gid=e1XTiCZzaZhgMqrfJ4-cKA&_nc_ss=72289&oh=00_AQBUGJmxyKGeuagN8nGy8NaMnnVSfYCDKsOtVJIziaJGzQ&oe=6A540774",
+        image: "/images/curemed/services/prescription-transfer.jpg",
       },
     ],
   },
@@ -362,7 +352,7 @@ const sharedServices: ServiceItem[] = [
       "Comprehensive care planning",
       "Support for chronic conditions",
     ],
-    image: "/images/curemed/services/health-clarity-session.webp",
+    image: "/images/curemed/services/health-clarity.jpg",
     brands: ["curemed"], // فقط لـ Curemed
     facebookPosts: [
       {
@@ -372,12 +362,11 @@ const sharedServices: ServiceItem[] = [
         date: "June 30, 2024",
         type: "post",
         postId: "1517734590368348",
-        image:
-          "https://scontent-hou1-1.xx.fbcdn.net/v/t39.30808-6/734355480_1517734293701711_6692300827230665409_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x2048&ctp=p526x296&_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_ohc=xpi2p7Bs-cEQ7kNvwFSPdHS&_nc_oc=Ados54OaXefCkE2KyIgxc5hq9EUIUNIXCC6e_9R6uUpkV9b4DaWT6dfLXdlltb7Yr5w&_nc_zt=23&_nc_ht=scontent-hou1-1.xx&_nc_gid=9J0_OmDrMWQlTPTJusdymw&_nc_ss=72289&oh=00_AQBrCz2c-i_K7QJtvlxobIo2dAsJMh8m7YOjxdcMRSLbww&oe=6A541C2F",
+        image: "/images/curemed/services/health-clarity.jpg",
       },
     ],
   },
-  // ===== إضافة خدمة compounding =====
+  // ===== compounding =====
   {
     slug: "compounding",
     rx: "09",
@@ -398,7 +387,7 @@ const sharedServices: ServiceItem[] = [
       "Hormone replacement therapy",
       "Veterinary compounding available",
     ],
-    image: "/images/curemed/services/compounding.webp",
+    image: "/images/curemed/services/pharmacist-consultation.webp",
     brands: ["curemed"],
   },
   {

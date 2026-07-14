@@ -24,30 +24,30 @@ export function getServiceImage(
   }
 
   // ===== CUREMED =====
-  if (service.facebookPosts?.length) {
-    const firstPost = service.facebookPosts[0];
+  // if (service.facebookPosts?.length) {
+  //   const firstPost = service.facebookPosts[0];
 
-    if (firstPost.type === "video" && firstPost.videoThumbnail) {
-      return firstPost.videoThumbnail;
-    }
+  //   if (firstPost.type === "video" && firstPost.videoThumbnail) {
+  //     return firstPost.videoThumbnail;
+  //   }
 
-    if (firstPost.image) {
-      return firstPost.image;
-    }
-  }
+  //   if (firstPost.image) {
+  //     return firstPost.image;
+  //   }
+  // }
 
   const images: Record<string, string> = {
     "immunizations-vaccines":
-      "/images/curemed/services/immunization-clinic.webp",
+      "/images/curemed/services/vaccination-clinic.png",
     "medication-therapy-management":
-      "/images/curemed/services/medication-therapy-management.webp",
-    "travel-health-hajj": "/images/curemed/services/travel-health.webp",
-    "womens-health": "/images/curemed/services/womens-health.webp",
-    "health-screenings": "/images/curemed/services/health-screening.webp",
-    "delivery-service": "/images/curemed/services/delivery-service.webp",
+      "/images/curemed/services/medication-therapy-management.png",
+    "travel-health-hajj": "/images/curemed/services/travel-health.jpg",
+    "womens-health": "/images/curemed/services/womens-health.jpg",
+    "health-screenings": "/images/curemed/services/health-screening.png",
+    "delivery-service": "/images/curemed/services/delivery-service.png",
     "prescription-transfers":
-      "/images/curemed/services/prescription-transfer.webp",
-    "health-clarity-sessions": "/images/curemed/services/health-clarity.webp",
+      "/images/curemed/services/prescription-transfer.jpg",
+    "health-clarity-sessions": "/images/curemed/services/health-clarity.jpg",
   };
 
   return (

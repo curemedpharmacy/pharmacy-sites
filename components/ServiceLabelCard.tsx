@@ -138,7 +138,7 @@ export function ServiceLabelCard({
     );
   }
 
-  // ===== CUREMED (كما هو بالضبط بدون أي تغيير) =====
+  // ===== CUREMED =====
   return (
     <Link
       href={href}
