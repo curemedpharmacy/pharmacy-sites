@@ -71,7 +71,7 @@ const saimzContent: HeroContent = {
 // ===== CUREMED HERO =====
 const curemedContent = {
   title: "Care close to",
-  highlight: "home.",
+  highlight: "home",
   description:
     "At Curemed, our caring goes beyond the cure. We help neighbors in Paterson with refill support, free delivery, vaccine visits, testing, and other everyday pharmacy services.",
   ctaText: "Contact the Pharmacy",
