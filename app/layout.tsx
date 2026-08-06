@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
@@ -46,6 +47,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={cn("font-sans", geist.variable)}>
+      <head>
+        {/* Start of HubSpot Embed Code */}
+        <Script
+          type="text/javascript"
+          id="hs-script-loader"
+          strategy="afterInteractive"
+          src="//js-na2.hs-scripts.com/246974247.js"
+        />
+        {/* End of HubSpot Embed Code */}
+      </head>
       <body className={`antialiased ${isSaimz ? "saimz-brand" : ""}`}>
         <Providers>
           <JsonLd data={pharmacyLocalBusinessSchema()} />
