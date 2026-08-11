@@ -12,6 +12,7 @@ const navLinks = [
   { href: "/services", label: "Services" },
   { href: "/about", label: "About Us" },
   { href: "/locations", label: "Locations" },
+  { href: "/blog", label: "Blog" },
   { href: "/faq", label: "FAQ" },
 ];
 
@@ -19,6 +20,7 @@ const saimzNavLinks = [
   { href: "/services", label: "Our Services" },
   { href: "/about", label: "About Saimz" },
   { href: "/locations", label: "Visit Us" },
+  { href: "/blog", label: "Blog" },
   { href: "/faq", label: "Help Center" },
 ];
 
