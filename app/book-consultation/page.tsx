@@ -239,8 +239,8 @@ export default function BookConsultationPage() {
           <div className="relative">
             <div className="relative aspect-4/5 overflow-hidden rounded-2xl border border-ink/10 shadow-xl sm:aspect-square lg:aspect-4/5">
               <Image
-                src="/images/curemed/services/pharmacist-consultation.webp"
-                alt="Dr. Ghada consulting with a patient inside CureMed Pharmacy"
+                src="/images/curemed/services/dr-ghada-consultation.jpeg"
+                alt="Dr. Ghada consulting with a patient over medication organization at CureMed Pharmacy"
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 50vw"
