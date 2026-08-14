@@ -28,6 +28,7 @@ export const curemed: BrandConfig = {
     instagram: "https://www.instagram.com/ghadakuwaik",
     linkedin: "https://www.linkedin.com/company/curemed-pharmacy",
   },
+  gaId: "G-M15WB6QKKH",
   offersCompounding: true,
   heroImages: [
     
