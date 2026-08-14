@@ -48,20 +48,24 @@ export default function RootLayout({
     <html lang="en" className={cn("font-sans", geist.variable)}>
       <head>
         {/* Google tag (gtag.js) */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-M15WB6QKKH"
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
+        {brand.gaId && (
+          <>
+            <script
+              async
+              src={`https://www.googletagmanager.com/gtag/js?id=${brand.gaId}`}
+            />
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-M15WB6QKKH');
+            gtag('config', '${brand.gaId}');
           `,
-          }}
-        />
+              }}
+            />
+          </>
+        )}
         {/* Start of HubSpot Embed Code */}
         <script
           type="text/javascript"

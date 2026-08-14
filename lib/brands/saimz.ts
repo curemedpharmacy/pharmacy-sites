@@ -25,6 +25,7 @@ export const saimz: BrandConfig = {
   ],
   social: {},
   npi: "1962995290",
+  gaId: "G-MJBETC5DF5",
   offersCompounding: false,
   heroImages: [
     {
