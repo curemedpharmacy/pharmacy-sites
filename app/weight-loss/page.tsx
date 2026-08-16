@@ -6,7 +6,6 @@ import { HubSpotMeetings } from "@/components/HubSpotMeetings";
 import { JsonLd } from "@/components/JsonLd";
 import {
   breadcrumbSchema,
-  faqPageSchema,
   pharmacyLocalBusinessSchema,
 } from "@/lib/schema";
 import { Button } from "@/components/ui/button";
@@ -24,7 +23,6 @@ import {
   ClipboardCheck,
   LineChart,
   HeartPulse,
-  ArrowRight,
   CheckCircle2,
   Video,
   Truck,
@@ -288,84 +286,15 @@ const serviceAreas = [
   "Elmwood Park",
 ];
 
-const faqs = [
-  {
-    question: "What are GLP-1 medications?",
-    answer:
-      "GLP-1 medications (like semaglutide and tirzepatide) are FDA-approved therapies that mimic a natural hormone which regulates appetite and blood sugar. They help you feel full sooner, eat less, and lose weight steadily when paired with counseling and monitoring.",
-  },
-  {
-    question: "Are the medications FDA-approved?",
-    answer:
-      "Yes. We dispense FDA-approved GLP-1 medications through our licensed pharmacy, with proper storage, handling, and monitoring throughout your program.",
-  },
-  {
-    question: "Do I need a prescription?",
-    answer:
-      "GLP-1 medications require a prescription. We work alongside your physician, and if you don't have a prescriber, we can help point you in the right direction. Your consultation is the best place to start.",
-  },
-  {
-    question: "What do the weekly tests involve?",
-    answer:
-      "Weekly check-ins typically include weight and body-composition tracking, vitals, and metabolic monitoring. They let us see how your body is responding and adjust your plan early — before small issues become setbacks.",
-  },
-  {
-    question: "What's the difference between semaglutide and tirzepatide?",
-    answer:
-      "Both are once-weekly GLP-1 based injections that reduce appetite and support weight loss. Tirzepatide acts on two hormone receptors (GLP-1 and GIP) while semaglutide targets one. The right choice depends on your health history, goals, and how your body responds — which is exactly what we determine together during your consultation and weekly check-ins.",
-  },
-  {
-    question: "Can I do the program by telehealth?",
-    answer:
-      "Yes. New Jersey allows weight loss care and prescribing through telehealth, so you can complete your consultation and weekly check-ins by secure video from anywhere in NJ. Your medication is then dispensed by our licensed pharmacy and shipped to you or ready for local pickup in Paterson.",
-  },
-  {
-    question: "Is GLP-1 weight loss treatment legal and safe in New Jersey?",
-    answer:
-      "Yes. We dispense GLP-1 medications through our licensed New Jersey pharmacy, based on a valid prescription and under strict pharmacy quality standards. Your therapy is monitored throughout the program and coordinated with your prescriber for safety.",
-  },
-  {
-    question: "What health conditions can losing weight improve?",
-    answer:
-      "Carrying excess body fat raises the risk of many chronic conditions. Reaching a healthier weight can lower your risk of type 2 diabetes, high blood pressure, high cholesterol, sleep apnea, joint pain and osteoarthritis, back pain, heartburn, and heart disease — which is why we treat weight loss as part of your overall health, not just a number on the scale.",
-  },
-  {
-    question: "Are GLP-1 medications the only weight loss option you offer?",
-    answer:
-      "GLP-1 medications like semaglutide and tirzepatide are the most effective options for most patients, but they aren't the only ones. Depending on your health history, other FDA-approved medications such as liraglutide (Saxenda) or phentermine may be appropriate. We review your full picture during your consultation and recommend the safest fit for you.",
-  },
-  {
-    question: "Who is a good candidate for a GLP-1 weight loss program?",
-    answer:
-      "GLP-1 programs are generally suited to adults working toward meaningful, sustained weight loss — often those with a higher BMI or weight-related health concerns. The best way to know if it's right for you is a consultation, where we review your health history and goals before recommending anything.",
-  },
-  {
-    question: "Do you serve areas around Paterson?",
-    answer:
-      "Yes. We serve patients across Paterson and the surrounding Passaic County and North Jersey communities — including Clifton, Passaic, Wayne, Totowa, Hawthorne, Fair Lawn, and more — in person and by telehealth throughout New Jersey.",
-  },
-  {
-    question: "Can we speak in Arabic?",
-    answer:
-      "Yes. Dr. Ghada AbuKuwaik is fluent in both English and Arabic — just select your preference when you book.",
-  },
-  {
-    question: "How much does the program cost?",
-    answer: `Pricing depends on your plan and medication. The best next step is a consultation, where we'll walk you through your options clearly. Call us at ${PHONE_DISPLAY} with any questions.`,
-  },
-];
-
 export default function WeightLossPage() {
   const breadcrumb = breadcrumbSchema([
     { name: "Home", url: brand.url },
     { name: "Weight Loss", url: `${brand.url}/weight-loss` },
   ]);
-  const faqSchema = faqPageSchema(faqs);
 
   return (
     <>
       <JsonLd data={breadcrumb} />
-      <JsonLd data={faqSchema} />
       <JsonLd data={pharmacyLocalBusinessSchema()} />
 
       {/* ===== SECTION 1 — HERO ===== */}
@@ -820,26 +749,6 @@ export default function WeightLossPage() {
             </a>
             .
           </p>
-        </div>
-      </section>
-
-      {/* ===== SECTION 6 — FAQ ===== */}
-      <section className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20">
-        <h2 className="text-center font-display text-3xl font-semibold text-ink sm:text-4xl">
-          Frequently Asked Questions
-        </h2>
-        <div className="mt-10 divide-y divide-ink/10">
-          {faqs.map((faq) => (
-            <details key={faq.question} className="group py-5">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-lg font-medium text-ink">
-                {faq.question}
-                <ArrowRight className="h-4 w-4 shrink-0 text-amber-dark transition-transform duration-300 group-open:rotate-90" />
-              </summary>
-              <p className="mt-3 text-base leading-relaxed text-ink/70">
-                {faq.answer}
-              </p>
-            </details>
-          ))}
         </div>
       </section>
 

@@ -14,7 +14,6 @@ const navLinks = [
   { href: "/about", label: "About Us" },
   { href: "/locations", label: "Locations" },
   { href: "/blog", label: "Blog" },
-  { href: "/faq", label: "FAQ" },
 ];
 
 const saimzNavLinks = [
