@@ -233,6 +233,44 @@ const qualitySignals = [
   },
 ];
 
+const healthBenefits = [
+  "Type 2 diabetes",
+  "High blood pressure",
+  "High cholesterol",
+  "Sleep apnea",
+  "Joint pain & osteoarthritis",
+  "Back pain",
+  "Heartburn & acid reflux",
+  "Heart disease risk",
+];
+
+const medicationOptions = [
+  {
+    name: "Semaglutide",
+    brands: "Ozempic, Wegovy",
+    note: "Once-weekly GLP-1 that curbs appetite and slows digestion.",
+    featured: true,
+  },
+  {
+    name: "Tirzepatide",
+    brands: "Mounjaro, Zepbound",
+    note: "Dual GLP-1/GIP action for strong appetite control.",
+    featured: true,
+  },
+  {
+    name: "Liraglutide",
+    brands: "Saxenda",
+    note: "Daily GLP-1 option for appetite management.",
+    featured: false,
+  },
+  {
+    name: "Phentermine",
+    brands: "Adipex-P, Lomaira",
+    note: "Short-term appetite suppressant for eligible patients.",
+    featured: false,
+  },
+];
+
 const serviceAreas = [
   "Paterson",
   "Clifton",
@@ -240,12 +278,14 @@ const serviceAreas = [
   "Wayne",
   "Totowa",
   "Little Falls",
-  "Haledon",
-  "Prospect Park",
+  "Montclair",
+  "Nutley",
+  "Bloomfield",
+  "Garfield",
+  "Rutherford",
   "Hawthorne",
   "Fair Lawn",
   "Elmwood Park",
-  "Woodland Park",
 ];
 
 const faqs = [
@@ -283,6 +323,16 @@ const faqs = [
     question: "Is GLP-1 weight loss treatment legal and safe in New Jersey?",
     answer:
       "Yes. We dispense GLP-1 medications through our licensed New Jersey pharmacy, based on a valid prescription and under strict pharmacy quality standards. Your therapy is monitored throughout the program and coordinated with your prescriber for safety.",
+  },
+  {
+    question: "What health conditions can losing weight improve?",
+    answer:
+      "Carrying excess body fat raises the risk of many chronic conditions. Reaching a healthier weight can lower your risk of type 2 diabetes, high blood pressure, high cholesterol, sleep apnea, joint pain and osteoarthritis, back pain, heartburn, and heart disease — which is why we treat weight loss as part of your overall health, not just a number on the scale.",
+  },
+  {
+    question: "Are GLP-1 medications the only weight loss option you offer?",
+    answer:
+      "GLP-1 medications like semaglutide and tirzepatide are the most effective options for most patients, but they aren't the only ones. Depending on your health history, other FDA-approved medications such as liraglutide (Saxenda) or phentermine may be appropriate. We review your full picture during your consultation and recommend the safest fit for you.",
   },
   {
     question: "Who is a good candidate for a GLP-1 weight loss program?",
@@ -492,6 +542,91 @@ export default function WeightLossPage() {
                   className="flex items-start gap-2 text-sm leading-relaxed text-ink/75"
                 >
                   <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-amber-dark" />
+                  {benefit}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Medication options */}
+        <div className="mx-auto mt-14 max-w-7xl px-4 sm:px-6">
+          <h3 className="font-display text-xl font-semibold text-ink">
+            Medications We May Prescribe
+          </h3>
+          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-ink/70">
+            The right medication depends on your health history and goals. After
+            your consultation, we&apos;ll recommend the safest, most effective
+            option for you.
+          </p>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {medicationOptions.map((med) => (
+              <div
+                key={med.name}
+                className={`flex flex-col rounded-xl border p-5 ${
+                  med.featured
+                    ? "border-amber/40 bg-amber/5"
+                    : "border-ink/10 bg-paper"
+                }`}
+              >
+                <div className="flex items-center gap-2">
+                  <Syringe className="h-4 w-4 text-amber-dark" />
+                  <h4 className="font-display text-base font-semibold text-ink">
+                    {med.name}
+                  </h4>
+                </div>
+                <p className="mt-1 font-mono text-xs uppercase tracking-[0.08em] text-ink/50">
+                  {med.brands}
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-ink/70">
+                  {med.note}
+                </p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-4 text-xs leading-relaxed text-ink/50">
+            Brand names are trademarks of their respective manufacturers. CureMed
+            Pharmacy is not affiliated with or endorsed by these companies.
+            Medications are prescribed only when clinically appropriate.
+          </p>
+        </div>
+      </section>
+
+      {/* ===== SECTION 3.4 — WHY IT MATTERS (HEALTH BENEFITS) ===== */}
+      <section className="border-t border-ink/10 bg-sage/5 py-16 sm:py-20">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:items-center">
+          <div>
+            <span className="inline-flex items-center gap-2 rounded-full bg-amber/10 px-3 py-1 font-mono text-xs uppercase tracking-[0.14em] text-amber-dark">
+              <HeartPulse className="h-3 w-3" />
+              More than the scale
+            </span>
+            <h2 className="mt-4 font-display text-3xl font-semibold text-ink text-balance sm:text-4xl">
+              Weight Loss Is About Your Whole Health
+            </h2>
+            <p className="mt-4 text-lg leading-relaxed text-ink/70">
+              Excess body fat quietly raises the risk of chronic conditions that
+              get harder to manage over time. Reaching a healthier weight
+              isn&apos;t just about how you look — it can lower your risk for
+              serious, sometimes life-threatening health problems.
+            </p>
+            <p className="mt-4 text-base leading-relaxed text-ink/70">
+              That&apos;s why our pharmacists look at your full health picture —
+              existing conditions, lifestyle, and other medications — before
+              recommending a plan built around you.
+            </p>
+          </div>
+
+          <div className="rounded-2xl border border-ink/10 bg-paper p-6 sm:p-8">
+            <p className="font-mono text-xs uppercase tracking-[0.12em] text-ink/50">
+              Losing weight can reduce your risk of
+            </p>
+            <ul className="mt-5 grid gap-x-6 gap-y-3 sm:grid-cols-2">
+              {healthBenefits.map((benefit) => (
+                <li
+                  key={benefit}
+                  className="flex items-center gap-2.5 text-sm text-ink/80"
+                >
+                  <CheckCircle2 className="h-4 w-4 shrink-0 text-sage" />
                   {benefit}
                 </li>
               ))}
