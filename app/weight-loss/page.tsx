@@ -4,7 +4,11 @@ import Link from "next/link";
 import { getBrandConfig } from "@/lib/brands";
 import { HubSpotMeetings } from "@/components/HubSpotMeetings";
 import { JsonLd } from "@/components/JsonLd";
-import { breadcrumbSchema, faqPageSchema } from "@/lib/schema";
+import {
+  breadcrumbSchema,
+  faqPageSchema,
+  pharmacyLocalBusinessSchema,
+} from "@/lib/schema";
 import { Button } from "@/components/ui/button";
 import {
   Phone,
@@ -22,6 +26,12 @@ import {
   HeartPulse,
   ArrowRight,
   CheckCircle2,
+  Video,
+  Truck,
+  Award,
+  Building2,
+  X,
+  Clock,
 } from "lucide-react";
 
 const brand = getBrandConfig();
@@ -37,11 +47,23 @@ export const metadata: Metadata = {
   keywords: [
     "weight loss Paterson NJ",
     "GLP-1 medication",
+    "GLP-1 pharmacy Paterson NJ",
+    "telehealth weight loss NJ",
+    "telehealth weight loss Paterson",
     "semaglutide",
+    "semaglutide Paterson NJ",
     "tirzepatide",
+    "tirzepatide New Jersey",
+    "compounded semaglutide",
+    "compounded tirzepatide",
     "medical weight loss program",
+    "weight loss clinic Paterson NJ",
     "weight loss counseling",
     "FDA approved weight loss medication",
+    "weight loss Clifton NJ",
+    "weight loss Passaic NJ",
+    "weight loss Wayne NJ",
+    "weight loss Passaic County",
     "CureMed Pharmacy",
   ],
   alternates: { canonical: "/weight-loss" },
@@ -137,6 +159,95 @@ const glpBenefits = [
   "Coordinated safely alongside your other medications",
 ];
 
+const telehealthPoints = [
+  {
+    icon: Video,
+    title: "Virtual visits across New Jersey",
+    body: "Can't make it to Paterson? Meet your pharmacist by secure video from anywhere in NJ. Same personalized counseling, no waiting room.",
+  },
+  {
+    icon: Truck,
+    title: "Medication shipped to your door",
+    body: "Your GLP-1 therapy is dispensed by our licensed pharmacy and shipped in proper temperature-controlled packaging — or ready for local pickup.",
+  },
+  {
+    icon: Clock,
+    title: "Check-ins that fit your week",
+    body: "Weekly progress reviews happen in person or online, so staying on track never means rearranging your whole schedule.",
+  },
+];
+
+const comparison = [
+  {
+    feature: "One-on-one pharmacist counseling",
+    us: true,
+    them: "Automated forms, little human contact",
+  },
+  {
+    feature: "Weekly progress tests & monitoring",
+    us: true,
+    them: "Rarely included",
+  },
+  {
+    feature: "FDA-approved GLP-1 medications",
+    us: true,
+    them: "Varies — often unclear sourcing",
+  },
+  {
+    feature: "Dispensed by a licensed NJ pharmacy",
+    us: true,
+    them: "Ships from unknown facilities",
+  },
+  {
+    feature: "Side-effect & dose management",
+    us: true,
+    them: "Limited or self-managed",
+  },
+  {
+    feature: "English & Arabic support",
+    us: true,
+    them: "English only",
+  },
+  {
+    feature: "A pharmacist you can actually reach",
+    us: true,
+    them: "Chat tickets & call centers",
+  },
+];
+
+const qualitySignals = [
+  {
+    icon: BadgeCheck,
+    title: "Licensed New Jersey pharmacy",
+    body: "Fully licensed and regulated by the New Jersey Board of Pharmacy, so every medication is handled to state and federal standards.",
+  },
+  {
+    icon: Award,
+    title: "Quality you can trust",
+    body: "Medications are stored, handled, and dispensed under strict pharmacy quality standards — with clear guidance every step of the way.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Physician-coordinated care",
+    body: "We work alongside your prescriber to keep your GLP-1 therapy safe and coordinated with the rest of your medications.",
+  },
+];
+
+const serviceAreas = [
+  "Paterson",
+  "Clifton",
+  "Passaic",
+  "Wayne",
+  "Totowa",
+  "Little Falls",
+  "Haledon",
+  "Prospect Park",
+  "Hawthorne",
+  "Fair Lawn",
+  "Elmwood Park",
+  "Woodland Park",
+];
+
 const faqs = [
   {
     question: "What are GLP-1 medications?",
@@ -157,6 +268,31 @@ const faqs = [
     question: "What do the weekly tests involve?",
     answer:
       "Weekly check-ins typically include weight and body-composition tracking, vitals, and metabolic monitoring. They let us see how your body is responding and adjust your plan early — before small issues become setbacks.",
+  },
+  {
+    question: "What's the difference between semaglutide and tirzepatide?",
+    answer:
+      "Both are once-weekly GLP-1 based injections that reduce appetite and support weight loss. Tirzepatide acts on two hormone receptors (GLP-1 and GIP) while semaglutide targets one. The right choice depends on your health history, goals, and how your body responds — which is exactly what we determine together during your consultation and weekly check-ins.",
+  },
+  {
+    question: "Can I do the program by telehealth?",
+    answer:
+      "Yes. New Jersey allows weight loss care and prescribing through telehealth, so you can complete your consultation and weekly check-ins by secure video from anywhere in NJ. Your medication is then dispensed by our licensed pharmacy and shipped to you or ready for local pickup in Paterson.",
+  },
+  {
+    question: "Is GLP-1 weight loss treatment legal and safe in New Jersey?",
+    answer:
+      "Yes. We dispense GLP-1 medications through our licensed New Jersey pharmacy, based on a valid prescription and under strict pharmacy quality standards. Your therapy is monitored throughout the program and coordinated with your prescriber for safety.",
+  },
+  {
+    question: "Who is a good candidate for a GLP-1 weight loss program?",
+    answer:
+      "GLP-1 programs are generally suited to adults working toward meaningful, sustained weight loss — often those with a higher BMI or weight-related health concerns. The best way to know if it's right for you is a consultation, where we review your health history and goals before recommending anything.",
+  },
+  {
+    question: "Do you serve areas around Paterson?",
+    answer:
+      "Yes. We serve patients across Paterson and the surrounding Passaic County and North Jersey communities — including Clifton, Passaic, Wayne, Totowa, Hawthorne, Fair Lawn, and more — in person and by telehealth throughout New Jersey.",
   },
   {
     question: "Can we speak in Arabic?",
@@ -180,6 +316,7 @@ export default function WeightLossPage() {
     <>
       <JsonLd data={breadcrumb} />
       <JsonLd data={faqSchema} />
+      <JsonLd data={pharmacyLocalBusinessSchema()} />
 
       {/* ===== SECTION 1 — HERO ===== */}
       <section className="relative overflow-hidden bg-linear-to-br from-paper via-paper to-sage/5">
@@ -363,6 +500,46 @@ export default function WeightLossPage() {
         </div>
       </section>
 
+      {/* ===== SECTION 3.5 — TELEHEALTH ===== */}
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20">
+        <div className="max-w-2xl">
+          <span className="inline-flex items-center gap-2 rounded-full bg-sage/15 px-3 py-1 font-mono text-xs uppercase tracking-[0.14em] text-ink">
+            <Video className="h-3 w-3" />
+            In-person or online
+          </span>
+          <h2 className="mt-4 font-display text-3xl font-semibold text-ink sm:text-4xl">
+            Telehealth Weight Loss, Anywhere in New Jersey
+          </h2>
+          <p className="mt-3 text-lg leading-relaxed text-ink/70">
+            Visit us in Paterson or do the whole program from home. New Jersey
+            allows weight loss care by telehealth, so you get the same
+            pharmacist-led counseling and monitoring wherever you are.
+          </p>
+        </div>
+
+        <div className="mt-10 grid gap-6 lg:grid-cols-3">
+          {telehealthPoints.map((point) => {
+            const Icon = point.icon;
+            return (
+              <div
+                key={point.title}
+                className="flex flex-col rounded-xl border border-ink/10 bg-paper/60 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-sage/40 hover:shadow-md"
+              >
+                <div className="w-fit rounded-lg bg-sage/15 p-2.5 text-ink">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <h3 className="mt-4 font-display text-lg font-semibold text-ink">
+                  {point.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink/70">
+                  {point.body}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
       {/* ===== SECTION 4 — HOW IT WORKS ===== */}
       <section className="bg-ink py-16 text-paper sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -400,6 +577,78 @@ export default function WeightLossPage() {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      {/* ===== SECTION 4.5 — WHY CUREMED (COMPARISON) ===== */}
+      <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="font-display text-3xl font-semibold text-ink sm:text-4xl">
+            A Real Program vs. an Online Prescription
+          </h2>
+          <p className="mt-3 text-lg leading-relaxed text-ink/70">
+            Plenty of sites will mail you a GLP-1 pen. Very few pair it with a
+            pharmacist, real monitoring, and someone who picks up the phone.
+          </p>
+        </div>
+
+        <div className="mt-10 overflow-hidden rounded-2xl border border-ink/10 shadow-sm">
+          <div className="grid grid-cols-[1.6fr_1fr_1fr] bg-ink text-paper">
+            <div className="px-4 py-4 font-mono text-xs uppercase tracking-[0.12em] sm:px-6">
+              What matters
+            </div>
+            <div className="px-3 py-4 text-center font-display text-sm font-semibold sm:px-4">
+              CureMed
+            </div>
+            <div className="px-3 py-4 text-center font-mono text-xs uppercase tracking-[0.1em] text-paper/70 sm:px-4">
+              Online-only
+            </div>
+          </div>
+          {comparison.map((row, i) => (
+            <div
+              key={row.feature}
+              className={`grid grid-cols-[1.6fr_1fr_1fr] items-center border-t border-ink/10 ${
+                i % 2 === 0 ? "bg-paper" : "bg-paper/60"
+              }`}
+            >
+              <div className="px-4 py-4 text-sm font-medium text-ink sm:px-6">
+                {row.feature}
+              </div>
+              <div className="flex justify-center px-3 py-4 sm:px-4">
+                <CheckCircle2 className="h-5 w-5 text-amber-dark" />
+                <span className="sr-only">
+                  Included with the CureMed program
+                </span>
+              </div>
+              <div className="px-3 py-4 text-center text-xs leading-snug text-ink/55 sm:px-4">
+                <X className="mx-auto mb-1 h-4 w-4 text-ink/30" />
+                {row.them}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Quality trust band */}
+        <div className="mt-10 grid gap-6 sm:grid-cols-3">
+          {qualitySignals.map((signal) => {
+            const Icon = signal.icon;
+            return (
+              <div
+                key={signal.title}
+                className="rounded-xl border border-ink/10 bg-sage/5 p-6"
+              >
+                <div className="w-fit rounded-lg bg-amber/10 p-2.5 text-amber-dark">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <h3 className="mt-4 font-display text-base font-semibold text-ink">
+                  {signal.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink/70">
+                  {signal.body}
+                </p>
+              </div>
+            );
+          })}
         </div>
       </section>
 
@@ -456,6 +705,56 @@ export default function WeightLossPage() {
               </p>
             </details>
           ))}
+        </div>
+      </section>
+
+      {/* ===== SECTION 6.5 — SERVICE AREA (LOCAL SEO) ===== */}
+      <section className="border-t border-ink/10 bg-paper/60 py-16 sm:py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6">
+          <div className="max-w-2xl">
+            <span className="inline-flex items-center gap-2 rounded-full bg-amber/10 px-3 py-1 font-mono text-xs uppercase tracking-[0.14em] text-amber-dark">
+              <Building2 className="h-3 w-3" />
+              Service Area
+            </span>
+            <h2 className="mt-4 font-display text-3xl font-semibold text-ink sm:text-4xl">
+              Medical Weight Loss in Paterson &amp; Passaic County, NJ
+            </h2>
+          </div>
+
+          <div className="mt-6 grid gap-6 text-base leading-relaxed text-ink/75 lg:grid-cols-2">
+            <p>
+              CureMed Pharmacy provides pharmacist-led GLP-1 weight loss care to
+              patients in Paterson, New Jersey and the surrounding Passaic County
+              and North Jersey communities. Whether you&apos;re starting
+              semaglutide or tirzepatide for the first time or continuing an
+              existing plan, you get counseling, weekly progress tests, and
+              FDA-approved medication under one roof — in person or by telehealth.
+            </p>
+            <p>
+              As a licensed New Jersey pharmacy, we dispense and monitor your
+              medication to strict quality standards and coordinate directly with
+              your prescriber. New Jersey&apos;s telehealth rules let us support
+              patients across the state, so distance is never a reason to put your
+              health goals on hold.
+            </p>
+          </div>
+
+          <div className="mt-8">
+            <p className="font-mono text-xs uppercase tracking-[0.12em] text-ink/50">
+              Serving patients in and around
+            </p>
+            <ul className="mt-4 flex flex-wrap gap-2">
+              {serviceAreas.map((area) => (
+                <li
+                  key={area}
+                  className="inline-flex items-center gap-1.5 rounded-full border border-ink/15 bg-paper px-3 py-1.5 text-sm text-ink/80"
+                >
+                  <MapPin className="h-3.5 w-3.5 text-amber-dark" />
+                  {area}, NJ
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
