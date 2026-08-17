@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 const navLinks = [
   { href: "/services", label: "Services" },
   { href: "/weight-loss", label: "Weight Loss" },
-  { href: "/book-consultation", label: "Book a Consultation" },
+  { href: "/book-consultation", label: "Health Plan" },
   { href: "/about", label: "About Us" },
   { href: "/locations", label: "Locations" },
   { href: "/blog", label: "Blog" },
