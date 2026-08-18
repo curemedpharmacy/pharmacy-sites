@@ -28,7 +28,7 @@ import {
 
 const brand = getBrandConfig();
 
-const MEETINGS_SRC = "https://meetings-na2.hubspot.com/curemed";
+const MEETINGS_SRC = "https://meetings-na2.hubspot.com/ghada-abukuwaik";
 const PHONE_DISPLAY = "(862) 225-9432";
 const PHONE_TEL = "+18622259432";
 
@@ -252,6 +252,31 @@ export default function BookConsultationPage() {
         </div>
       </section>
 
+      {/* ===== BOOKING FORM (moved to top) ===== */}
+      <section
+        id="book"
+        className="scroll-mt-24 bg-linear-to-br from-amber/5 via-paper to-sage/5 py-16 sm:py-20"
+      >
+        <div className="mx-auto max-w-4xl px-4 sm:px-6">
+          <div className="text-center">
+            <h2 className="font-display text-3xl font-semibold text-ink sm:text-4xl">
+              Reserve Your 20 Minutes
+            </h2>
+            <p className="mt-3 text-lg text-ink/70">
+              No payment required to book. $39 is paid at your appointment.
+            </p>
+          </div>
+
+          <div className="mt-10 rounded-2xl border border-ink/10 bg-paper p-4 shadow-lg sm:p-6">
+            <HubSpotMeetings src={MEETINGS_SRC} />
+          </div>
+
+          <p className="mt-4 text-center text-sm text-ink/60">
+            We&apos;ll text you within one business day to confirm your time.
+          </p>
+        </div>
+      </section>
+
       {/* ===== SECTION 2 — WHAT YOU GET ===== */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20">
         <div className="max-w-2xl">
@@ -427,31 +452,6 @@ export default function BookConsultationPage() {
               Saimz Pharmacy · Community health educator
             </p>
           </div>
-        </div>
-      </section>
-
-      {/* ===== SECTION 7 — BOOKING FORM ===== */}
-      <section
-        id="book"
-        className="scroll-mt-24 bg-linear-to-br from-amber/5 via-paper to-sage/5 py-16 sm:py-20"
-      >
-        <div className="mx-auto max-w-4xl px-4 sm:px-6">
-          <div className="text-center">
-            <h2 className="font-display text-3xl font-semibold text-ink sm:text-4xl">
-              Reserve Your 20 Minutes
-            </h2>
-            <p className="mt-3 text-lg text-ink/70">
-              No payment required to book. $39 is paid at your appointment.
-            </p>
-          </div>
-
-          <div className="mt-10 rounded-2xl border border-ink/10 bg-paper p-4 shadow-lg sm:p-6">
-            <HubSpotMeetings src={MEETINGS_SRC} />
-          </div>
-
-          <p className="mt-4 text-center text-sm text-ink/60">
-            We&apos;ll text you within one business day to confirm your time.
-          </p>
         </div>
       </section>
 
