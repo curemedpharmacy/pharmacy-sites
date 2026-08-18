@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     type: "website",
     title: "Medical Weight Loss with GLP-1 Medications — CureMed Pharmacy",
     description:
-      "Counseling, weekly tests, and FDA-approved GLP-1 medications, guided by a licensed pharmacist in Paterson, NJ. English & Arabic.",
+      "Counseling, weekly tests, and FDA-approved GLP-1 medications, guided by a licensed pharmacist in Paterson, NJ. English, Spanish & Arabic.",
     url: `${brand.url}/weight-loss`,
     images: [
       {
@@ -98,7 +98,7 @@ const pillars = [
     points: [
       "Personalized nutrition and lifestyle guidance",
       "Side-effect management and dose adjustments",
-      "Available in English and Arabic",
+      "Available in English, Spanish, and Arabic",
     ],
   },
   {
@@ -134,7 +134,7 @@ const howItWorks = [
   {
     icon: ClipboardCheck,
     title: "Get your baseline",
-    body: "We run your initial tests and build a personalized plan with clear targets and a medication schedule.",
+    body: "We run your initial tests and build a personalized plan. Dr. Ghada then provides treatment based on your doctor's prescription, with a clear medication schedule.",
   },
   {
     icon: LineChart,
@@ -202,7 +202,7 @@ const comparison = [
     them: "Limited or self-managed",
   },
   {
-    feature: "English & Arabic support",
+    feature: "English, Spanish & Arabic support",
     us: true,
     them: "English only",
   },
@@ -316,7 +316,8 @@ export default function WeightLossPage() {
             <p className="mt-5 max-w-xl text-pretty text-lg leading-relaxed text-ink/70">
               A pharmacist-led weight loss program that combines one-on-one
               counseling, weekly progress tests, and FDA-approved GLP-1
-              medications — all under one roof in Paterson. English and Arabic.
+              medications — all under one roof in Paterson. English, Spanish,
+              and Arabic.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-2.5">
@@ -364,7 +365,7 @@ export default function WeightLossPage() {
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <Languages className="h-4 w-4 text-amber-dark" />
-                English &amp; Arabic
+                English, Spanish &amp; Arabic
               </span>
             </div>
           </div>
@@ -481,12 +482,13 @@ export default function WeightLossPage() {
         {/* Medication options */}
         <div className="mx-auto mt-14 max-w-7xl px-4 sm:px-6">
           <h3 className="font-display text-xl font-semibold text-ink">
-            Medications We May Prescribe
+            Medications We May Dispense
           </h3>
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-ink/70">
-            The right medication depends on your health history and goals. After
-            your consultation, we&apos;ll recommend the safest, most effective
-            option for you.
+            The right medication depends on your health history and goals. Dr.
+            Ghada provides treatment based on your doctor&apos;s prescription —
+            after your consultation, we&apos;ll coordinate with your prescriber
+            on the safest, most effective option for you.
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {medicationOptions.map((med) => (
@@ -516,7 +518,8 @@ export default function WeightLossPage() {
           <p className="mt-4 text-xs leading-relaxed text-ink/50">
             Brand names are trademarks of their respective manufacturers. CureMed
             Pharmacy is not affiliated with or endorsed by these companies.
-            Medications are prescribed only when clinically appropriate.
+            Treatment is provided based on a doctor&apos;s prescription and only
+            when clinically appropriate.
           </p>
         </div>
       </section>

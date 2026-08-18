@@ -28,14 +28,14 @@ import {
 
 const brand = getBrandConfig();
 
-const MEETINGS_SRC = "https://meetings-na2.hubspot.com/curemed";
+const MEETINGS_SRC = "https://meetings-na2.hubspot.com/ghada-abukuwaik";
 const PHONE_DISPLAY = "(862) 225-9432";
 const PHONE_TEL = "+18622259432";
 
 export const metadata: Metadata = {
   title: "Book a Pharmacist Consultation | CureMed Pharmacy Paterson NJ",
   description:
-    "Book a private 20-minute consultation with a licensed pharmacist in Paterson, NJ. Medication reviews, weight management, travel health. English & Arabic.",
+    "Book a private 20-minute consultation with a licensed pharmacist in Paterson, NJ. Medication reviews, weight management, travel health. English, Spanish & Arabic.",
   alternates: { canonical: "/book-consultation" },
   openGraph: {
     title: "Book a Consultation — CureMed Pharmacy",
@@ -74,7 +74,7 @@ const whatYouGet = [
   {
     icon: Languages,
     title: "Your language",
-    body: "English or Arabic — whichever you're most comfortable in.",
+    body: "English, Spanish, or Arabic — whichever you're most comfortable in.",
   },
 ];
 
@@ -140,8 +140,8 @@ const faqs = [
     a: "No. This is open to anyone, whether you fill prescriptions with us or not.",
   },
   {
-    q: "Can we speak in Arabic?",
-    a: "Yes. Dr. Ghada is fluent in both English and Arabic — just select your preference when you book.",
+    q: "Can we speak in Spanish or Arabic?",
+    a: "Yes. Consultations are available in English, Spanish, and Arabic — just select your preference when you book.",
   },
   {
     q: "Can I do this by phone instead of coming in?",
@@ -190,7 +190,7 @@ export default function BookConsultationPage() {
             <p className="mt-5 max-w-xl text-pretty text-lg leading-relaxed text-ink/70">
               Book one-on-one time with Dr. Ghada AbuKuwaik — medication reviews,
               weight management guidance, travel health, and more. In person or
-              by phone. English and Arabic.
+              by phone. English, Spanish, and Arabic.
             </p>
             <p className="mt-5 rounded-lg border border-amber/20 bg-amber/5 px-4 py-3 text-sm font-medium text-ink">
               $39 · 20 minutes · Paid at your appointment · Credited toward any
@@ -227,7 +227,7 @@ export default function BookConsultationPage() {
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <Languages className="h-4 w-4 text-amber-dark" />
-                English &amp; Arabic
+                English, Spanish &amp; Arabic
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <MapPin className="h-4 w-4 text-amber-dark" />
@@ -249,6 +249,31 @@ export default function BookConsultationPage() {
               <div className="absolute inset-0 bg-linear-to-t from-ink/30 via-transparent to-transparent" />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ===== BOOKING FORM (moved to top) ===== */}
+      <section
+        id="book"
+        className="scroll-mt-24 bg-linear-to-br from-amber/5 via-paper to-sage/5 py-16 sm:py-20"
+      >
+        <div className="mx-auto max-w-4xl px-4 sm:px-6">
+          <div className="text-center">
+            <h2 className="font-display text-3xl font-semibold text-ink sm:text-4xl">
+              Reserve Your 20 Minutes
+            </h2>
+            <p className="mt-3 text-lg text-ink/70">
+              No payment required to book. $39 is paid at your appointment.
+            </p>
+          </div>
+
+          <div className="mt-10 rounded-2xl border border-ink/10 bg-paper p-4 shadow-lg sm:p-6">
+            <HubSpotMeetings src={MEETINGS_SRC} />
+          </div>
+
+          <p className="mt-4 text-center text-sm text-ink/60">
+            We&apos;ll text you within one business day to confirm your time.
+          </p>
         </div>
       </section>
 
@@ -413,8 +438,8 @@ export default function BookConsultationPage() {
               <p>
                 Beyond the counter, she runs free community health seminars,
                 speaks regularly on medication safety and weight health, and
-                creates educational content for patients in both English and
-                Arabic.
+              creates educational content for patients in English, Spanish, and
+              Arabic.
               </p>
               <p>
                 Her approach is simple: most people leave the pharmacy with their
@@ -427,31 +452,6 @@ export default function BookConsultationPage() {
               Saimz Pharmacy · Community health educator
             </p>
           </div>
-        </div>
-      </section>
-
-      {/* ===== SECTION 7 — BOOKING FORM ===== */}
-      <section
-        id="book"
-        className="scroll-mt-24 bg-linear-to-br from-amber/5 via-paper to-sage/5 py-16 sm:py-20"
-      >
-        <div className="mx-auto max-w-4xl px-4 sm:px-6">
-          <div className="text-center">
-            <h2 className="font-display text-3xl font-semibold text-ink sm:text-4xl">
-              Reserve Your 20 Minutes
-            </h2>
-            <p className="mt-3 text-lg text-ink/70">
-              No payment required to book. $39 is paid at your appointment.
-            </p>
-          </div>
-
-          <div className="mt-10 rounded-2xl border border-ink/10 bg-paper p-4 shadow-lg sm:p-6">
-            <HubSpotMeetings src={MEETINGS_SRC} />
-          </div>
-
-          <p className="mt-4 text-center text-sm text-ink/60">
-            We&apos;ll text you within one business day to confirm your time.
-          </p>
         </div>
       </section>
 
