@@ -33,14 +33,30 @@ const PHONE_DISPLAY = "(862) 225-9432";
 const PHONE_TEL = "+18622259432";
 
 export const metadata: Metadata = {
-  title: "Book a Pharmacist Consultation | CureMed Pharmacy Paterson NJ",
+  title: "Personalized Health Plan & Pharmacist Consultation in Clifton & Paterson, NJ | CureMed Pharmacy",
   description:
-    "Book a private 20-minute consultation with a licensed pharmacist in Paterson, NJ. Medication reviews, weight management, travel health. English, Spanish & Arabic.",
+    "Build a personalized health plan with a private 20-minute pharmacist consultation in Clifton & Paterson, NJ. Medication reviews, weight management, travel health. English, Spanish & Arabic.",
+  keywords: [
+    "health plan Clifton NJ",
+    "health plan Paterson NJ",
+    "pharmacist consultation Clifton NJ",
+    "pharmacist consultation Paterson NJ",
+    "medication review Clifton NJ",
+    "medication review Paterson NJ",
+    "weight management consultation NJ",
+    "travel health consultation NJ",
+    "Hajj vaccination NJ",
+    "women's health pharmacist NJ",
+    "personalized health plan",
+    "20-minute consultation",
+    "telehealth pharmacist NJ",
+    "CureMed Pharmacy",
+  ],
   alternates: { canonical: "/book-consultation" },
   openGraph: {
-    title: "Book a Consultation — CureMed Pharmacy",
+    title: "Personalized Health Plan in Clifton & Paterson, NJ — CureMed Pharmacy",
     description:
-      "Private, one-on-one time with Dr. Ghada AbuKuwaik. $39, 20 minutes, in person or by phone.",
+      "Private, one-on-one time with Dr. Ghada AbuKuwaik to build your personalized health plan. $39, 20 minutes, in person or by phone.",
     url: `${brand.url}/book-consultation`,
   },
 };
