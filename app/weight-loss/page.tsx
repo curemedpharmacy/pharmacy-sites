@@ -39,26 +39,32 @@ const PHONE_DISPLAY = "(862) 225-9432";
 const PHONE_TEL = "+18622259432";
 
 export const metadata: Metadata = {
-  title: "Medical Weight Loss with GLP-1 Medications | CureMed Pharmacy Paterson NJ",
+  title: "Medical Weight Loss in Clifton & Paterson, NJ | CureMed Pharmacy",
   description:
-    "A pharmacist-led weight loss program in Paterson, NJ combining one-on-one counseling, weekly progress tests, and FDA-approved GLP-1 medications like semaglutide and tirzepatide. Book your consultation today.",
+    "Medical weight loss in Clifton & Paterson, NJ. A pharmacist-led program combining one-on-one counseling, weekly progress tests, and FDA-approved GLP-1 medications like semaglutide and tirzepatide. Book your consultation today.",
   keywords: [
+    "medical weight loss Clifton NJ",
+    "medical weight loss Paterson NJ",
+    "weight loss clinic Clifton NJ",
+    "weight loss clinic Paterson NJ",
+    "weight loss Clifton NJ",
     "weight loss Paterson NJ",
     "GLP-1 medication",
+    "GLP-1 pharmacy Clifton NJ",
     "GLP-1 pharmacy Paterson NJ",
     "telehealth weight loss NJ",
+    "telehealth weight loss Clifton",
     "telehealth weight loss Paterson",
     "semaglutide",
+    "semaglutide Clifton NJ",
     "semaglutide Paterson NJ",
     "tirzepatide",
     "tirzepatide New Jersey",
     "compounded semaglutide",
     "compounded tirzepatide",
     "medical weight loss program",
-    "weight loss clinic Paterson NJ",
     "weight loss counseling",
     "FDA approved weight loss medication",
-    "weight loss Clifton NJ",
     "weight loss Passaic NJ",
     "weight loss Wayne NJ",
     "weight loss Passaic County",
@@ -67,9 +73,9 @@ export const metadata: Metadata = {
   alternates: { canonical: "/weight-loss" },
   openGraph: {
     type: "website",
-    title: "Medical Weight Loss with GLP-1 Medications — CureMed Pharmacy",
+    title: "Medical Weight Loss in Clifton & Paterson, NJ — CureMed Pharmacy",
     description:
-      "Counseling, weekly tests, and FDA-approved GLP-1 medications, guided by a licensed pharmacist in Paterson, NJ. English, Spanish & Arabic.",
+      "Counseling, weekly tests, and FDA-approved GLP-1 medications, guided by a licensed pharmacist in Clifton & Paterson, NJ. English, Spanish & Arabic.",
     url: `${brand.url}/weight-loss`,
     images: [
       {
@@ -82,9 +88,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Medical Weight Loss with GLP-1 Medications — CureMed Pharmacy",
+    title: "Medical Weight Loss in Clifton & Paterson, NJ — CureMed Pharmacy",
     description:
-      "Counseling, weekly tests, and FDA-approved GLP-1 medications, guided by a licensed pharmacist in Paterson, NJ.",
+      "Counseling, weekly tests, and FDA-approved GLP-1 medications, guided by a licensed pharmacist in Clifton & Paterson, NJ.",
     images: ["/images/curemed/services/weight-loss-consultation.png"],
   },
 };
