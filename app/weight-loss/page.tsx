@@ -98,7 +98,7 @@ const pillars = [
     points: [
       "Personalized nutrition and lifestyle guidance",
       "Side-effect management and dose adjustments",
-      "Available in English and Arabic",
+      "Available in English, Spanish, and Arabic",
     ],
   },
   {
@@ -202,7 +202,7 @@ const comparison = [
     them: "Limited or self-managed",
   },
   {
-    feature: "English & Arabic support",
+    feature: "English, Spanish & Arabic support",
     us: true,
     them: "English only",
   },
@@ -316,7 +316,8 @@ export default function WeightLossPage() {
             <p className="mt-5 max-w-xl text-pretty text-lg leading-relaxed text-ink/70">
               A pharmacist-led weight loss program that combines one-on-one
               counseling, weekly progress tests, and FDA-approved GLP-1
-              medications — all under one roof in Paterson. English and Arabic.
+              medications — all under one roof in Paterson. English, Spanish,
+              and Arabic.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-2.5">
@@ -364,7 +365,7 @@ export default function WeightLossPage() {
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <Languages className="h-4 w-4 text-amber-dark" />
-                English &amp; Arabic
+                English, Spanish &amp; Arabic
               </span>
             </div>
           </div>
