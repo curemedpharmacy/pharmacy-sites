@@ -33,8 +33,8 @@ export const curemed: BrandConfig = {
   heroImages: [
     
      {
-      path: "/images/curemed/hero/storefront-personalized-care.png",
-      alt: "Storefront with personalized pharmacy care",
+      path: "/images/curemed/hero/consultation-mural.jpeg",
+      alt: "Pharmacist consulting a patient at CureMed Pharmacy",
     },
     
     {
