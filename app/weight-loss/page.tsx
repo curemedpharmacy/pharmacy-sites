@@ -385,6 +385,42 @@ export default function WeightLossPage() {
         </div>
       </section>
 
+      {/* ===== SECTION 1.5 — BOOKING ===== */}
+      <section
+        id="book"
+        className="scroll-mt-24 border-y border-ink/10 bg-linear-to-br from-amber/5 via-paper to-sage/5 py-16 sm:py-20"
+      >
+        <div className="mx-auto max-w-4xl px-4 sm:px-6">
+          <div className="text-center">
+            <h2 className="font-display text-3xl font-semibold text-ink sm:text-4xl">
+              Book Your Weight Loss Consultation
+            </h2>
+            <p className="mt-3 text-lg text-ink/70">
+              Pick a time that works for you. We&apos;ll talk through your goals
+              and whether a GLP-1 program is the right fit.
+            </p>
+          </div>
+
+          <div className="mt-10 rounded-2xl border border-ink/10 bg-paper p-4 shadow-lg sm:p-6">
+            <HubSpotMeetings
+              src={MEETINGS_SRC}
+              title="Book a weight loss consultation with CureMed Pharmacy"
+            />
+          </div>
+
+          <p className="mt-4 text-center text-sm text-ink/60">
+            Prefer to talk first? Call us at{" "}
+            <a
+              href={`tel:${PHONE_TEL}`}
+              className="font-medium text-amber-dark hover:underline"
+            >
+              {PHONE_DISPLAY}
+            </a>
+            .
+          </p>
+        </div>
+      </section>
+
       {/* ===== SECTION 2 — THREE PILLARS ===== */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20">
         <div className="max-w-2xl">
@@ -713,42 +749,6 @@ export default function WeightLossPage() {
               </div>
             );
           })}
-        </div>
-      </section>
-
-      {/* ===== SECTION 5 — BOOKING ===== */}
-      <section
-        id="book"
-        className="scroll-mt-24 bg-linear-to-br from-amber/5 via-paper to-sage/5 py-16 sm:py-20"
-      >
-        <div className="mx-auto max-w-4xl px-4 sm:px-6">
-          <div className="text-center">
-            <h2 className="font-display text-3xl font-semibold text-ink sm:text-4xl">
-              Book Your Weight Loss Consultation
-            </h2>
-            <p className="mt-3 text-lg text-ink/70">
-              Pick a time that works for you. We&apos;ll talk through your goals
-              and whether a GLP-1 program is the right fit.
-            </p>
-          </div>
-
-          <div className="mt-10 rounded-2xl border border-ink/10 bg-paper p-4 shadow-lg sm:p-6">
-            <HubSpotMeetings
-              src={MEETINGS_SRC}
-              title="Book a weight loss consultation with CureMed Pharmacy"
-            />
-          </div>
-
-          <p className="mt-4 text-center text-sm text-ink/60">
-            Prefer to talk first? Call us at{" "}
-            <a
-              href={`tel:${PHONE_TEL}`}
-              className="font-medium text-amber-dark hover:underline"
-            >
-              {PHONE_DISPLAY}
-            </a>
-            .
-          </p>
         </div>
       </section>
 
