@@ -341,6 +341,11 @@ export default function WeightLossPage() {
               </span>
             </div>
 
+            <p className="mt-5 rounded-lg border border-amber/20 bg-amber/5 px-4 py-3 text-sm font-medium text-ink">
+              $39 · 20 minutes · Paid at your appointment · Credited toward any
+              program you enroll in
+            </p>
+
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Button
                 asChild
@@ -405,6 +410,10 @@ export default function WeightLossPage() {
             <p className="mt-3 text-lg text-ink/70">
               Pick a time that works for you. We&apos;ll talk through your goals
               and whether a GLP-1 program is the right fit.
+            </p>
+            <p className="mt-3 text-base text-ink/70">
+              No payment required to book. $39 is paid at your appointment — and
+              credited toward any program you enroll in.
             </p>
           </div>
 
