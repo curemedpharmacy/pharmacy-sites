@@ -384,8 +384,8 @@ export default function WeightLossPage() {
           <div className="relative">
             <div className="relative aspect-4/5 overflow-hidden rounded-2xl border border-ink/10 shadow-xl sm:aspect-square lg:aspect-4/5">
               <Image
-                src="/images/curemed/services/weight-loss-consultation.png"
-                alt="A licensed pharmacist reviewing a personalized weight loss plan with a patient at CureMed Pharmacy"
+                src="/images/curemed/services/weight-loss-hero.png"
+                alt="A licensed CureMed pharmacist administering a weight loss injection to a seated patient inside the pharmacy"
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 50vw"
