@@ -22,6 +22,118 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "natural-doesnt-mean-harmless",
+    title: "Natural Doesn't Mean Harmless",
+    excerpt:
+      "\"It's just an herb.\" But natural is not the same as safe — and some of the most popular herbal products can quietly cancel out or dangerously amplify a prescription drug.",
+    category: "Medication Support",
+    author: "CureMed Pharmacy Team",
+    publishedAt: "2025-09-02",
+    readTime: "7 min read",
+    image: "/images/blog/natural-not-harmless.png",
+    imageAlt:
+      "Dried herbal supplements and green leaves spilling from an amber glass bottle beside white prescription tablets on a neutral surface.",
+    content: [
+      {
+        type: "paragraph",
+        text: "\"It's just an herb.\" It's one of the most common things people say when they list their supplements — often as an afterthought, if they mention them at all. But \"natural\" is not the same as \"safe,\" and it is definitely not the same as \"won't interfere with my medications.\" Some of the most popular herbal products on the shelf can quietly cancel out a prescription drug, or dangerously amplify one.",
+      },
+      {
+        type: "paragraph",
+        text: "Here are two of the best-documented examples.",
+      },
+      {
+        type: "heading",
+        text: "St. John's Wort: The Supplement That Turns Down Your Other Medications",
+      },
+      {
+        type: "paragraph",
+        text: "St. John's wort is sold for low mood and mild depression. The problem is that it revs up a set of enzymes in your liver (the cytochrome P450 system, especially one called CYP3A4) that your body uses to process a huge number of prescription drugs. When those enzymes work faster, your medications get cleared out of your body faster — so there's less drug in your system than your doctor intended.",
+      },
+      {
+        type: "paragraph",
+        text: "Medications that St. John's wort can weaken include:",
+      },
+      {
+        type: "list",
+        items: [
+          "Birth control pills — reduced effectiveness has led to unintended pregnancies",
+          "Blood thinners such as warfarin",
+          "Transplant anti-rejection drugs such as cyclosporine and tacrolimus",
+          "HIV medications and certain cancer drugs",
+          "Heart medications such as digoxin",
+          "Cholesterol drugs such as simvastatin",
+          "Some antidepressants, sedatives, and seizure medications",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "There's a second, opposite danger. When St. John's wort is combined with prescription antidepressants (such as SSRIs), it can push serotonin levels too high and trigger serotonin syndrome — a potentially serious reaction with agitation, rapid heartbeat, sweating, tremor, and confusion.",
+      },
+      {
+        type: "paragraph",
+        text: "The bottom line: St. John's wort is not a \"gentle\" herb. It is one of the most interaction-prone products sold without a prescription.",
+      },
+      {
+        type: "heading",
+        text: "Ginkgo Biloba: Popular for Memory, Risky With Blood Thinners",
+      },
+      {
+        type: "paragraph",
+        text: "Ginkgo is marketed for memory and circulation. It also has a mild blood-thinning (antiplatelet) effect of its own. On its own that's usually not dramatic — but stacked on top of other blood thinners, it can add up.",
+      },
+      {
+        type: "paragraph",
+        text: "Ginkgo has been linked, in case reports and observational studies, to increased bleeding — including serious bleeding into the brain — when combined with:",
+      },
+      {
+        type: "list",
+        items: [
+          "Warfarin",
+          "Aspirin",
+          "Clopidogrel and other antiplatelet drugs",
+          "NSAID pain relievers such as ibuprofen",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "The research isn't perfectly consistent — some controlled studies found no major effect — but enough serious bleeding events have been reported that caution is warranted, especially in older adults and anyone already on a blood thinner.",
+      },
+      { type: "heading", text: "Other Herbs Worth Knowing About" },
+      {
+        type: "paragraph",
+        text: "The same \"natural but not harmless\" pattern shows up elsewhere:",
+      },
+      {
+        type: "list",
+        items: [
+          "Garlic, ginger, and danshen supplements can add to bleeding risk with warfarin or aspirin",
+          "Ginseng can interfere with warfarin and interact with some antidepressants",
+          "Kava can deepen the sedation from anti-anxiety medications and alcohol",
+        ],
+      },
+      { type: "heading", text: "What To Actually Do" },
+      {
+        type: "list",
+        items: [
+          "Tell your doctor and pharmacist about every supplement you take — including \"just vitamins\" and herbal teas. Surveys show most people don't, and that's exactly how these interactions slip through.",
+          "Don't start or stop an herbal product on your own if you take prescription medications — especially blood thinners, birth control, antidepressants, transplant drugs, HIV or cancer therapy, or seizure medications.",
+          "Bring the actual bottle to appointments. Doses and formulations vary widely because supplements aren't regulated the way prescription drugs are.",
+          "Watch for warning signs — unusual bruising or bleeding, or agitation and a racing heart after combining an herb with an antidepressant — and seek care promptly.",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "\"Natural\" describes where something comes from, not what it does in your body. Herbs are real, active drugs — treat them that way.",
+      },
+      {
+        type: "callout",
+        title: "Talk to your pharmacist",
+        text: "This article is for general education and is not a substitute for personalized medical advice. Bring a full list of your supplements — and the bottles — to a CureMed pharmacist to check for interactions with your medications.",
+      },
+    ],
+  },
+  {
     slug: "generic-vs-brand-name-what-youre-paying-for",
     title: "Generic vs. Brand Name: What You're Actually Paying For",
     excerpt:
@@ -890,7 +1002,7 @@ export const articles: Article[] = [
       {
         type: "list",
         items: [
-          "Semaglutide (Wegovy): 0.25 mg → 0.5 mg → 1.0 mg → 1.7 mg → 2.4 mg weekly, each step lasting at least 4 weeks",
+          "Semaglutide (Wegovy): 0.25 mg → 0.5 mg → 1.0 mg �� 1.7 mg → 2.4 mg weekly, each step lasting at least 4 weeks",
           "Liraglutide (Saxenda): 0.6 mg → 1.2 mg → 1.8 mg → 2.4 mg → 3.0 mg daily, each step lasting at least 1 week",
           "Tirzepatide (Mounjaro/Zepbound): 2.5 mg → 5 mg → 7.5 mg → 10 mg → 12.5 mg → 15 mg weekly, each step lasting at least 4 weeks",
         ],
