@@ -22,6 +22,101 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "medicine-cabinet-myth-where-to-store-pills",
+    title:
+      "The Medicine Cabinet Myth: Why Your Bathroom Is the Worst Place to Store Pills",
+    excerpt:
+      "It's called the \"medicine cabinet\" — but the bathroom is one of the worst spots in your home for storing pills. The steam that fogs your mirror is quietly working against them.",
+    category: "Medication Support",
+    author: "CureMed Pharmacy Team",
+    publishedAt: "2025-09-02",
+    readTime: "6 min read",
+    image: "/images/blog/medicine-storage.png",
+    imageAlt:
+      "Amber prescription pill bottles stored neatly in an open bedroom dresser drawer beside a small silica gel packet.",
+    content: [
+      {
+        type: "paragraph",
+        text: "It's called the \"medicine cabinet\" — so the bathroom must be where medicine belongs, right? Actually, the bathroom is one of the worst spots in your home for storing pills. The same steam that fogs your mirror is quietly working against the drugs sitting a few feet away.",
+      },
+      { type: "heading", text: "The Problem: Heat + Humidity = Breakdown" },
+      {
+        type: "paragraph",
+        text: "Most medications are designed to be stored in a cool, dry place — generally below about 25°C (77°F) and away from moisture. Bathrooms fail on both counts. Every hot shower sends temperature and humidity spiking, sometimes several times a day.",
+      },
+      {
+        type: "paragraph",
+        text: "Two things happen when pills are exposed to heat and moisture over time:",
+      },
+      {
+        type: "list",
+        items: [
+          "They lose strength. Heat speeds up the chemical reactions that break a drug down, so the active ingredient slowly degrades. A pill can contain less medicine than the label promises — well before the expiration date printed on the bottle. Expiration dates are only guaranteed when a drug is stored as directed.",
+          "They physically break down. Humidity is the sneakier culprit. Moisture in the air makes certain tablets absorb water, causing them to soften, crumble, discolor, cake together, or even dissolve slightly. Effervescent tablets, sugar-coated pills, and moisture-loving drugs are especially vulnerable.",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "You often can't see this happening. A pill can look perfectly normal and still have lost potency.",
+      },
+      { type: "heading", text: "Why the Bathroom Is Uniquely Bad" },
+      {
+        type: "list",
+        items: [
+          "Repeated humidity spikes from showers and baths — the single biggest issue.",
+          "Warm, enclosed space with little ventilation, so moisture lingers.",
+          "Small temperature swings all day long, which stress medications more than a stable environment does.",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "Interestingly, surveys of household storage habits repeatedly list the bathroom (along with the kitchen) as a common but unsuitable place to keep medicine.",
+      },
+      { type: "heading", text: "The Kitchen Isn't Great Either" },
+      {
+        type: "paragraph",
+        text: "The counter or cabinet near the stove, oven, sink, dishwasher, or a sunny window has the same enemies: heat, steam, and light. If you want one rule, it's this: keep medicine away from anywhere that gets hot, steamy, or damp.",
+      },
+      { type: "heading", text: "Where to Store Pills Instead" },
+      {
+        type: "paragraph",
+        text: "Aim for cool, dry, dark, and out of reach of children and pets. Good options include:",
+      },
+      {
+        type: "list",
+        items: [
+          "A bedroom dresser drawer or a linen closet in a hallway",
+          "A high kitchen cabinet away from the stove, sink, and dishwasher",
+          "Any storage box or drawer in a room that stays at a comfortable, steady temperature",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "Additional tips:",
+      },
+      {
+        type: "list",
+        items: [
+          "Keep pills in their original container with the lid closed tightly — it's designed to protect them.",
+          "Leave the little packet or cotton that comes in some bottles; those help control moisture. (Add your own silica gel packet if you like.)",
+          "Don't transfer everything into a pretty glass jar or a daily pill organizer weeks in advance if the medication is moisture-sensitive — check with your pharmacist.",
+          "Refrigerate only if the label says so. Otherwise, room temperature in a dry spot is best. Don't refrigerate a drug unless directed.",
+          "Watch for warning signs: unusual smell, color change, crumbling, stickiness, or tablets stuck together. When in doubt, ask your pharmacist.",
+        ],
+      },
+      { type: "heading", text: "The Bottom Line" },
+      {
+        type: "paragraph",
+        text: "The name is misleading. The bathroom's heat and humidity make it one of the worst places in the house to keep your medications — and the damage happens invisibly, before the expiration date. Move your pills to a cool, dry, dark spot, and they'll be more likely to work the way they're supposed to when you need them.",
+      },
+      {
+        type: "callout",
+        title: "Talk to your pharmacist",
+        text: "This handout is general information, not a substitute for the storage instructions on your specific medication or advice from your pharmacist. When in doubt about how to store a medicine, ask a CureMed pharmacist.",
+      },
+    ],
+  },
+  {
     slug: "dont-cut-an-adult-pill-in-half-for-your-child",
     title: "Please Don't Cut an Adult Pill in Half for Your Child",
     excerpt:
