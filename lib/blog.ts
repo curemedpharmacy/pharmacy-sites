@@ -22,6 +22,104 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "walk-in-flu-shot-no-appointment-needed",
+    title:
+      "Walk In This Week to CureMed Pharmacy — No Appointment Needed for Your Flu Shot",
+    excerpt:
+      "The flu is not \"just a bad cold.\" The single best way to protect yourself and the people around you is a flu shot — and you can get one this week, no appointment needed.",
+    category: "Vaccinations",
+    author: "CureMed Pharmacy Team",
+    publishedAt: "2025-09-02",
+    readTime: "6 min read",
+    image: "/images/blog/walk-in-flu-shot.png",
+    imageAlt:
+      "A welcoming neighborhood pharmacy immunization counter with a flu vaccine vial, syringe, and adhesive bandage ready for walk-in patients.",
+    content: [
+      {
+        type: "paragraph",
+        text: "The flu is not \"just a bad cold.\" Every year in the United States, influenza sends hundreds of thousands of people to the hospital and kills thousands more. The single best way to protect yourself and the people around you is a flu shot — and you can get one this week, no appointment needed. Just walk in.",
+      },
+      {
+        type: "heading",
+        text: "Why this matters: the flu is deadly more often than people think",
+      },
+      {
+        type: "paragraph",
+        text: "Influenza is one of the most underestimated illnesses in America. Federal surveillance shows that in a typical year, the flu causes:",
+      },
+      {
+        type: "list",
+        items: [
+          "9 million to 41 million illnesses",
+          "100,000 to 710,000 hospitalizations",
+          "Roughly 5,000 to 51,000 deaths",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "Those deaths are not rare, one-in-a-million events — they happen every single season. In the severe 2017–2018 season, an estimated 52,000 people died. Even a more recent season like 2023–2024 caused at least 380,000 hospitalizations and around 17,000 deaths.",
+      },
+      {
+        type: "paragraph",
+        text: "The people most likely to be hospitalized or die are adults 65 and older, young children, pregnant women, and anyone with a chronic condition like asthma, heart disease, diabetes, or a weakened immune system — but healthy people die from the flu too.",
+      },
+      { type: "heading", text: "The flu shot works — and it saves lives" },
+      {
+        type: "paragraph",
+        text: "No vaccine is perfect, but the flu shot reliably lowers your chance of getting seriously sick, being hospitalized, or dying.",
+      },
+      {
+        type: "list",
+        items: [
+          "In the 2023–2024 season, flu vaccination cut the risk of being hospitalized for the flu by about 39% in adults — and reduced the risk of dying in the hospital by roughly half.",
+          "Across many seasons, vaccination has been shown to reduce ICU admissions, the need for a breathing machine, and death.",
+          "Protection is often even stronger in children, which is why every child 6 months and older should get one.",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "Over the past decade, flu vaccination has prevented millions of illnesses and tens of thousands of hospitalizations and deaths every year in the U.S. alone.",
+      },
+      { type: "heading", text: "No, the flu shot cannot give you the flu" },
+      {
+        type: "paragraph",
+        text: "This is the myth that keeps people away. The standard flu shot contains no live virus — it physically cannot cause influenza. Some people feel a sore arm, a mild ache, or a low-grade fever for a day. That is your immune system building protection, not the flu. Feeling a little off for 24 hours is nothing compared to a week flat on your back — or a hospital stay.",
+      },
+      { type: "heading", text: "Now is the right time" },
+      {
+        type: "paragraph",
+        text: "Flu season in the U.S. usually ramps up in the fall and peaks between December and March. It takes about two weeks after your shot to build full protection, so getting vaccinated now — in September or October — means you're covered before the virus starts circulating. Waiting until people around you are already sick is waiting too long.",
+      },
+      { type: "heading", text: "Who should get it? Almost everyone." },
+      {
+        type: "paragraph",
+        text: "Health authorities recommend a flu shot every year for everyone 6 months and older who doesn't have a specific reason not to. Adults 65 and older should ask about the high-dose or adjuvanted versions, which are designed to give older immune systems stronger protection.",
+      },
+      {
+        type: "heading",
+        text: "Walk in this week — no appointment needed",
+      },
+      {
+        type: "list",
+        items: [
+          "No appointment. No wait list. Just come in.",
+          "Most visits take 10–15 minutes.",
+          "Bring your insurance card if you have one — flu shots are covered by most plans at no cost to you.",
+          "Getting other vaccines? You can often get your flu shot at the same visit.",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "Protecting yourself also protects your kids, your parents, your coworkers, and anyone you'd hate to make sick. One quick stop this week is one of the easiest, most powerful things you can do for your health all year.",
+      },
+      {
+        type: "callout",
+        title: "Stop in this week — we'll get you in and out",
+        text: "No appointment needed for your flu shot at CureMed Pharmacy. Bring your insurance card if you have one, and ask our pharmacist about high-dose options if you're 65 or older.",
+      },
+    ],
+  },
+  {
     slug: "medicine-cabinet-myth-where-to-store-pills",
     title:
       "The Medicine Cabinet Myth: Why Your Bathroom Is the Worst Place to Store Pills",
