@@ -22,6 +22,115 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "generic-vs-brand-name-what-youre-paying-for",
+    title: "Generic vs. Brand Name: What You're Actually Paying For",
+    excerpt:
+      "Same drug, same dose, fraction of the price. When you insist on the brand name, what are you actually paying extra for? Usually: the name.",
+    category: "Medication Support",
+    author: "CureMed Pharmacy Team",
+    publishedAt: "2025-09-02",
+    readTime: "8 min read",
+    image: "/images/blog/generic-vs-brand.png",
+    imageAlt:
+      "Two identical white prescription pill bottles side by side on a neutral surface with a few tablets spilled between them.",
+    content: [
+      {
+        type: "paragraph",
+        text: "Stand in a pharmacy aisle and the store-brand pain reliever can cost a fraction of the national brand sitting right next to it — same drug, same dose. The same thing happens with prescriptions. So what are you actually paying extra for when you insist on the brand name? Usually: the name.",
+      },
+      { type: "heading", text: "The short version" },
+      {
+        type: "paragraph",
+        text: "A generic drug has the same active ingredient, same strength, same dose, and same route as its brand-name counterpart, and the U.S. Food and Drug Administration holds it to the same standards for quality, purity, and manufacturing. What you're paying extra for with the brand is mostly marketing and history — not better medicine.",
+      },
+      {
+        type: "paragraph",
+        text: "About 9 out of 10 prescriptions filled in the United States are generics, yet brand-name drugs account for the majority of what the country spends on medications (Gassman et al., New England Journal of Medicine, 2017; Sacks et al., JAMA Internal Medicine, 2021).",
+      },
+      { type: "heading", text: "What \"generic\" actually means" },
+      {
+        type: "paragraph",
+        text: "When a company invents a new drug, it gets a patent — a period of years where it's the only one allowed to sell it. That's when the drug is expensive: the company is recouping its research costs and has no competition. When the patent expires, other manufacturers can make the same medicine. Those are generics.",
+      },
+      {
+        type: "paragraph",
+        text: "A generic is not a knockoff or an imitation. To be approved, it must be what the FDA calls therapeutically equivalent to the original — meaning it's expected to produce the identical clinical effect and safety profile (Holmes et al., Journal of the American College of Cardiology, 2011).",
+      },
+      { type: "heading", text: "How the FDA makes sure it works the same" },
+      {
+        type: "paragraph",
+        text: "Generic makers file what's called an Abbreviated New Drug Application. \"Abbreviated\" doesn't mean lax — it means they don't have to repeat the original, years-long clinical trials, because the active ingredient has already been proven safe and effective. Instead, they must prove two things (Reigart et al., American Academy of Pediatrics, 2026; Gassman et al., New England Journal of Medicine, 2017):",
+      },
+      {
+        type: "list",
+        items: [
+          "Pharmaceutical equivalence — the same active ingredient, in the same amount, same dosage form, same route.",
+          "Bioequivalence — the drug enters the bloodstream at essentially the same rate and to the same extent as the brand. In practice, the generic's blood levels must fall within a tight statistical window of the brand's, and the manufacturing plants are inspected to the same Good Manufacturing Practice standards.",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "Systematic reviews of FDA-approved generics have found them to be clinically equivalent to the original brand-name products (Vokinger et al., JAMA Internal Medicine, 2017).",
+      },
+      {
+        type: "heading",
+        text: "What can differ — and why it usually doesn't matter",
+      },
+      {
+        type: "paragraph",
+        text: "Generics are allowed to differ from the brand in inactive ingredients: fillers, dyes, coatings, flavorings, and the pill's shape, size, or color. That's why your refill might look different. For the vast majority of people and medications, these differences have no effect on how the drug works (Reigart et al., American Academy of Pediatrics, 2026).",
+      },
+      {
+        type: "paragraph",
+        text: "A few practical caveats worth knowing:",
+      },
+      {
+        type: "list",
+        items: [
+          "Rare allergies or sensitivities to a specific dye or filler are possible. If you've reacted to an inactive ingredient before, tell your pharmacist.",
+          "A small number of \"narrow therapeutic index\" drugs — where the difference between the right dose and too much or too little is very small — deserve extra attention. Examples that have been flagged include the thyroid medication levothyroxine and the seizure/mood medication lamotrigine. This doesn't mean generics don't work for these — it means it's reasonable to stay on a consistent version and let your doctor know if you switch (Vokinger et al., JAMA Internal Medicine, 2017).",
+        ],
+      },
+      { type: "heading", text: "The money" },
+      {
+        type: "paragraph",
+        text: "This is the part that adds up fast:",
+      },
+      {
+        type: "list",
+        items: [
+          "With just one generic competitor, the price is roughly 39% lower than the brand. With four competitors it's about 79% lower, and with six or more it's about 95% lower (Santoro et al., Neurology, 2024).",
+          "Between 2007 and 2016, generic drugs saved the U.S. health care system an estimated $1.7 trillion (Sacks et al., JAMA Internal Medicine, 2021).",
+          "When generic statins (cholesterol drugs) became available, one analysis estimated roughly $925 in savings for an individual and $11.9 billion overall (Lin et al., JAMA Network Open, 2021).",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "Lower cost isn't just about your wallet, either — cheaper medications make it easier to keep taking them, which is linked to better health outcomes (Sacks et al., JAMA Internal Medicine, 2021).",
+      },
+      { type: "heading", text: "How to actually save" },
+      {
+        type: "list",
+        items: [
+          "Ask your pharmacist or prescriber, \"Is there a generic?\" In most states, pharmacists can automatically substitute an equivalent generic unless your doctor writes \"dispense as written.\"",
+          "If a brand is prescribed, ask why. Sometimes there's a real reason; often there simply isn't a generic yet, or one wasn't considered.",
+          "Watch out for brand-name combination pills. Some expensive branded products just combine two cheap generics — buying the two generics separately can cost far less.",
+          "Don't panic if your refill looks different. A new shape or color usually just means a different manufacturer filled it.",
+        ],
+      },
+      { type: "heading", text: "The bottom line" },
+      {
+        type: "paragraph",
+        text: "Paying more for a brand name rarely buys you a better or safer medicine. In most cases it buys you the same active ingredient in fancier packaging. Ask about the generic — your body gets the same treatment, and your budget gets a break.",
+      },
+      {
+        type: "callout",
+        title: "Talk to your pharmacist",
+        text: "This handout is general information, not medical advice. Talk with your doctor or pharmacist before changing any medication, especially for thyroid, seizure, blood-thinning, or transplant drugs.",
+      },
+    ],
+  },
+  {
     slug: "nj-6th-grade-vaccine-requirement",
     title: "The NJ 6th-Grade Vaccine Requirement Most Parents Miss",
     excerpt:
