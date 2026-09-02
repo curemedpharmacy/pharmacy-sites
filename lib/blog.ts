@@ -22,6 +22,95 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "nj-6th-grade-vaccine-requirement",
+    title: "The NJ 6th-Grade Vaccine Requirement Most Parents Miss",
+    excerpt:
+      "New Jersey requires two additional vaccines before the first day of 6th grade — and every year families are caught off guard when the school nurse calls.",
+    category: "Vaccinations",
+    author: "CureMed Pharmacy Team",
+    publishedAt: "2025-09-02",
+    readTime: "7 min read",
+    image: "/images/blog/nj-6th-grade-vaccines.png",
+    imageAlt:
+      "A middle-school immunization record card and two single-dose vaccine vials resting on a neutral surface next to a binder and pencils.",
+    content: [
+      {
+        type: "paragraph",
+        text: "Every August, families stock up on binders, sneakers, and calculators. But if your child is heading into 6th grade in New Jersey this year, the most important item on the list isn't at the office-supply store — it's at your pediatrician's office. New Jersey requires two additional vaccines before the first day of 6th grade, and every year families are caught off guard when the school nurse calls to say a child can't start on time.",
+      },
+      {
+        type: "paragraph",
+        text: "Here's what you actually need to know.",
+      },
+      { type: "heading", text: "The requirement in one sentence" },
+      {
+        type: "paragraph",
+        text: "Under New Jersey school-immunization rules, any student entering 6th grade who was born on or after January 1, 1997 must show proof of:",
+      },
+      {
+        type: "list",
+        items: [
+          "One dose of Tdap (tetanus, diphtheria, and acellular pertussis booster), and",
+          "One dose of meningococcal conjugate vaccine (MenACWY — brand names such as Menactra, Menveo, or MenQuadfi).",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "These aren't optional \"nice to have\" boosters. In New Jersey they are conditions of attendance — a child without documented proof can be excluded from school until the records are provided.",
+      },
+      { type: "heading", text: "Why these two shots, and why now?" },
+      {
+        type: "paragraph",
+        text: "Both vaccines line up with the national schedule from the CDC's Advisory Committee on Immunization Practices (ACIP), which recommends that all adolescents get a Tdap booster and a first dose of MenACWY at age 11–12 — right around the start of middle school (Havers et al., MMWR, 2020; Mbaeyi et al., MMWR, 2020).",
+      },
+      {
+        type: "paragraph",
+        text: "Tdap re-boosts protection against whooping cough (pertussis), tetanus, and diphtheria. The protection built in early childhood from the DTaP series fades over time, and the preteen booster restores it during the years when kids are packed together in classrooms and pertussis can spread (Havers et al., MMWR, 2020).",
+      },
+      {
+        type: "paragraph",
+        text: "Meningococcal (MenACWY) protects against Neisseria meningitidis, the bacteria that cause meningococcal disease — a rare but genuinely life-threatening infection that can cause meningitis and bloodstream infection. It can progress from feeling unwell to critical illness within hours, which is exactly why the vaccine is given ahead of the adolescent years (Collins et al., MMWR, 2024).",
+      },
+      {
+        type: "heading",
+        text: "The part parents forget: there's a second meningococcal shot later",
+      },
+      {
+        type: "paragraph",
+        text: "The 6th-grade MenACWY dose is the first dose, not the last. ACIP recommends a booster dose of MenACWY at age 16 for teens who got their first dose before their 16th birthday — timed to cover the higher-risk late-teen and college years (Mbaeyi et al., MMWR, 2020). New Jersey builds this into its requirements as well, so plan on it now: circle age 16 as the second meningococcal visit. (Tdap, by contrast, is a one-time adolescent booster.)",
+      },
+      {
+        type: "heading",
+        text: "Make it actionable — a quick checklist for parents",
+      },
+      {
+        type: "list",
+        items: [
+          "Check the birthdate rule. The requirement applies to 6th-grade entrants born on or after January 1, 1997 — which is effectively every current middle schooler.",
+          "Book the visit early. Late summer is the busiest time for pediatric offices. Schedule the well-visit in June or July, not the week before school.",
+          "Get both shots at one visit. Tdap and MenACWY can safely be given at the same appointment (at different injection sites), so one visit usually covers the requirement.",
+          "Ask for the record on paper. Leave with a printed, dated immunization record showing the vaccine names — that's what the school nurse needs.",
+          "Missed the childhood shots? You don't start over. If your child fell behind on earlier vaccines, the series is caught up, not restarted — the schedule picks up where it left off (Havers et al., MMWR, 2020).",
+          "Put age 16 on the calendar for the MenACWY booster.",
+        ],
+      },
+      { type: "heading", text: "The bigger picture" },
+      {
+        type: "paragraph",
+        text: "Nationally, more than 90% of adolescents get their Tdap and first MenACWY dose — proof that when families know the requirement, they follow through (Pingali et al., MMWR, 2025). The problem is rarely refusal; it's simply not knowing the 6th-grade rule exists until the school year is about to start.",
+      },
+      {
+        type: "paragraph",
+        text: "A single, well-timed summer visit keeps your child protected, keeps them in class on day one, and takes one more thing off your back-to-school list. Talk to your child's doctor about scheduling the Tdap and meningococcal vaccines before the first bell rings.",
+      },
+      {
+        type: "callout",
+        title: "Talk to your pharmacist",
+        text: "This handout is for general education and reflects New Jersey's school-entry immunization requirements and national ACIP recommendations. Exact requirements can change year to year — confirm your child's needs with their pediatrician, school nurse, or a CureMed pharmacist.",
+      },
+    ],
+  },
+  {
     slug: "is-it-too-early-to-get-the-flu-shot-in-august",
     title: "Is It Too Early to Get the Flu Shot in August?",
     excerpt:
