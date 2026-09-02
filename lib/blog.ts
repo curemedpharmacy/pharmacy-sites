@@ -22,6 +22,102 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "is-it-too-early-to-get-the-flu-shot-in-august",
+    title: "Is It Too Early to Get the Flu Shot in August?",
+    excerpt:
+      "Pharmacies advertise flu shots alongside back-to-school displays, but with the flu vaccine, timing genuinely matters — and earlier is not always better.",
+    category: "Vaccinations",
+    author: "CureMed Pharmacy Team",
+    publishedAt: "2025-09-02",
+    readTime: "7 min read",
+    image: "/images/blog/flu-shot-timing-august.png",
+    imageAlt:
+      "A flu vaccine vial and syringe resting on an autumn desk calendar with a few dried leaves nearby.",
+    content: [
+      {
+        type: "paragraph",
+        text: "Pharmacies start advertising flu shots alongside the back-to-school displays, and it is tempting to check it off the list in August. But when it comes to the flu vaccine, timing genuinely matters — and earlier is not always better.",
+      },
+      { type: "heading", text: "The short answer" },
+      {
+        type: "paragraph",
+        text: "For most people, the sweet spot is September or October. Getting vaccinated in July or August is generally discouraged for most adults, and waiting much past November means you may be unprotected if flu arrives early. The goal is simple: have your strongest protection ready when flu is actually spreading, which in the U.S. usually peaks between December and February — most often in January or February.",
+      },
+      { type: "heading", text: "Why not just get it as early as possible?" },
+      {
+        type: "paragraph",
+        text: "The flu shot works by teaching your immune system to make antibodies against the season's expected flu strains. That protection is strongest in the first weeks to months after your shot — and then it slowly fades over the course of the season, a phenomenon scientists call \"waning.\"",
+      },
+      {
+        type: "paragraph",
+        text: "Research has put rough numbers on this fade:",
+      },
+      {
+        type: "list",
+        items: [
+          "In studies of adults, vaccine protection dropped by roughly 8–9% per month after vaccination.",
+          "In adults 65 and older, the decline was steeper — about 10–11% per month.",
+          "Earlier network studies found protection fell by about 6–7% per month across different flu strains.",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "Here is why that matters in practice. If you get your shot in early August and flu doesn't peak until February, that is six months of gradual decline. By the time you are most likely to be exposed, a chunk of your protection may already be gone. Get it in late September or October, and your protection is much fresher when it counts.",
+      },
+      {
+        type: "heading",
+        text: "The reassuring part: protection doesn't vanish",
+      },
+      {
+        type: "paragraph",
+        text: "Waning does not mean the vaccine stops working. Studies consistently show meaningful protection lasting at least 5 to 6 months after vaccination, and antibody levels generally stay above pre-vaccine levels for the length of a typical flu season. A late-summer shot still protects you — it just may protect you a little less during the peak than a fall shot would. Some protection is always far better than none.",
+      },
+      {
+        type: "heading",
+        text: "Who should consider getting it earlier anyway?",
+      },
+      {
+        type: "paragraph",
+        text: "The \"wait until fall\" advice has important exceptions. Earlier vaccination — even in July or August — makes sense for:",
+      },
+      {
+        type: "list",
+        items: [
+          "Children who need two doses. Kids getting the flu vaccine for the first time (or who haven't had at least two lifetime doses) need two shots at least four weeks apart. Starting early lets them finish, ideally by the end of October.",
+          "Pregnant people in the third trimester. An early shot can pass protection to the baby for the first vulnerable months of life, before the infant is old enough to be vaccinated.",
+          "Anyone who might not be able to come back later. A vaccine you can get now beats a fall appointment you might miss. If August is your only reliable opportunity, take it.",
+        ],
+      },
+      {
+        type: "heading",
+        text: "The other side: don't wait too long, either",
+      },
+      {
+        type: "paragraph",
+        text: "If earlier can be too early, later can be too late. Flu season is unpredictable and occasionally starts in October. The CDC recommends most people be vaccinated by the end of October. That said, if you miss that window, getting vaccinated in November, December, or even later is still worthwhile — flu often circulates into spring, and a later shot still protects you.",
+      },
+      { type: "heading", text: "The bottom line for your calendar" },
+      {
+        type: "list",
+        items: [
+          "July–August: Usually too early for most healthy adults — but fine (or recommended) for young children needing two doses, third-trimester pregnancy, or if you can't come back later.",
+          "September–October: The target for most people. This is the \"just right\" window.",
+          "By end of October: Try to be done, especially if you're 65 or older or at higher risk.",
+          "November and beyond: Later than ideal, but still absolutely worth doing.",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "One important caveat: flu season timing shifts year to year, and no one can predict the exact peak in advance. These recommendations balance that uncertainty against how protection fades. When in doubt, ask your doctor or pharmacist what makes sense for your age, health, and schedule — and remember that the worst flu shot is the one you never get around to.",
+      },
+      {
+        type: "callout",
+        title: "Talk to your pharmacist",
+        text: "This article is for general education and is not a substitute for personalized medical advice. Ask a CureMed pharmacist about the best time to get your flu shot based on your age, health, and schedule.",
+      },
+    ],
+  },
+  {
     slug: "you-cannot-get-flu-from-the-flu-shot",
     title:
       "You Cannot Get the Flu From the Flu Shot — Here's Why That Myth Won't Die",
