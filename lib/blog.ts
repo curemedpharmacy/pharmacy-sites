@@ -22,6 +22,109 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "weight-loss-injections-paterson-what-to-ask",
+    title: "Weight Loss Injections in Paterson: What to Ask Before You Start",
+    excerpt:
+      "Weight-loss injections can produce meaningful, sustained results, but they are not right for everyone. Here are the questions to ask so you get safe, effective care.",
+    category: "Weight Management",
+    author: "CureMed Pharmacy Team",
+    publishedAt: "2025-08-27",
+    readTime: "9 min read",
+    image: "/images/blog/weight-loss-injections-paterson.png",
+    imageAlt:
+      "A weekly GLP-1 weight-loss injection pen resting on a neutral clinical surface beside a measuring tape and a glass of water.",
+    content: [
+      {
+        type: "paragraph",
+        text: "Weight-loss injections have become one of the most talked-about options for people struggling with excess weight in Paterson and across New Jersey. These prescription medications can produce meaningful, sustained weight loss, but they are not right for everyone. If you are considering starting, going in with the right questions helps you get safe, effective care.",
+      },
+      { type: "heading", text: "What are weight-loss injections?" },
+      {
+        type: "paragraph",
+        text: "The injectable medications approved for chronic weight management belong to a class called nutrient-stimulated hormone therapies. They mimic gut hormones that reduce appetite, increase fullness, and slow how quickly the stomach empties. The main options include:",
+      },
+      {
+        type: "list",
+        items: [
+          "Semaglutide (Wegovy) – a once-weekly GLP-1 injection. In clinical trials, average total weight loss was roughly 15% over 68 weeks.",
+          "Tirzepatide (Zepbound) – a once-weekly injection that works on two hormone receptors (GIP and GLP-1). Average weight loss reached approximately 15–21% over 72 weeks, the highest among current options.",
+          "Liraglutide (Saxenda) – a once-daily GLP-1 injection with more modest average weight loss (around 5–8%).",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "Ozempic and Mounjaro contain the same active ingredients (semaglutide and tirzepatide) but are FDA-approved for type 2 diabetes rather than weight loss; they are sometimes used off-label. Oral options also now exist, including oral semaglutide (Wegovy) and orforglipron (Foundayo).",
+      },
+      { type: "heading", text: "Am I a candidate?" },
+      {
+        type: "paragraph",
+        text: "These medications are approved as an add-on to a reduced-calorie diet and increased physical activity for adults with:",
+      },
+      {
+        type: "list",
+        items: [
+          "A body mass index (BMI) of 30 or higher (obesity), or",
+          "A BMI of 27 or higher (overweight) plus a weight-related condition such as high blood pressure, type 2 diabetes, high cholesterol, obstructive sleep apnea, or heart disease.",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "Major medical organizations, including the American College of Physicians, now list semaglutide and tirzepatide as first-line injectable choices for these patients.",
+      },
+      { type: "heading", text: "Questions to ask before you start" },
+      {
+        type: "paragraph",
+        text: "1. Which medication is right for me, and why? Ask how your provider chose a specific drug based on your weight-loss goals, other health conditions, insurance coverage, and cost.",
+      },
+      {
+        type: "paragraph",
+        text: "2. Do I have any conditions that make these unsafe? Tell your provider if you or a family member has a history of medullary thyroid cancer or the genetic syndrome MEN2 — these are contraindications to GLP-1 and GIP/GLP-1 injections. Also disclose any history of pancreatitis, gallbladder disease, severe gastrointestinal disease or gastroparesis, kidney problems, eating disorders, or depression and suicidal thoughts.",
+      },
+      {
+        type: "paragraph",
+        text: "3. Could I be pregnant, or am I planning pregnancy? These medications are not used during pregnancy or breastfeeding. Because they can slow stomach emptying, they may also reduce the effectiveness of oral birth control, so a backup method may be recommended.",
+      },
+      {
+        type: "paragraph",
+        text: "4. What side effects should I expect? The most common effects are gastrointestinal — nausea, vomiting, diarrhea, and constipation. These are usually mild to moderate and often ease over time, especially when the dose is increased slowly. Ask what to do if side effects become hard to tolerate.",
+      },
+      {
+        type: "paragraph",
+        text: "5. How does the dose get adjusted? These drugs are started at a low dose and gradually increased over several months. Ask about the titration schedule, how injections are given, and how to store your pen.",
+      },
+      {
+        type: "paragraph",
+        text: "6. What follow-up and monitoring will I need? Expect regular visits to check your weight, blood pressure, heart rate, and response. If you have diabetes and take insulin or a sulfonylurea, your provider may lower those doses to avoid low blood sugar.",
+      },
+      {
+        type: "paragraph",
+        text: "7. What happens if the medication isn't working? A general benchmark is meaningful weight loss within the first few months. Ask what response is expected and when a change in strategy would be considered.",
+      },
+      {
+        type: "paragraph",
+        text: "8. What if I stop taking it? Obesity is a chronic condition, and weight regain is common after stopping. Ask about the long-term plan and whether the medication is intended for ongoing use.",
+      },
+      {
+        type: "paragraph",
+        text: "9. What are the warning signs to watch for? Seek care for severe or persistent abdominal pain (possible pancreatitis or gallbladder problems), signs of an allergic reaction, or new or worsening mood changes or thoughts of self-harm.",
+      },
+      { type: "heading", text: "Beware of unregulated \"weight-loss shots\"" },
+      {
+        type: "paragraph",
+        text: "Some med spas and online sellers offer compounded or non-FDA-approved injectable products. Ask whether you are receiving an FDA-approved, brand-name medication prescribed and supervised by a licensed clinician. Avoid products of uncertain source, dose, or purity.",
+      },
+      { type: "heading", text: "The bottom line" },
+      {
+        type: "paragraph",
+        text: "Weight-loss injections can be highly effective, but they work best as part of a supervised plan that includes nutrition, physical activity, and regular follow-up. Coming to your first appointment in Paterson with these questions helps you and your provider decide whether an injectable medication is a safe and worthwhile option for you.",
+      },
+      {
+        type: "callout",
+        text: "This article is for general education and is not a substitute for personalized medical advice. Talk with a qualified healthcare provider before starting any weight-loss medication.",
+      },
+    ],
+  },
+  {
     slug: "glp-1-medications-explained",
     title: "GLP-1 Medications Explained: What They Do and Who They're For",
     excerpt:
