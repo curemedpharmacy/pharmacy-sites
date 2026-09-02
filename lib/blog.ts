@@ -22,6 +22,81 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "dont-cut-an-adult-pill-in-half-for-your-child",
+    title: "Please Don't Cut an Adult Pill in Half for Your Child",
+    excerpt:
+      "If a full adult tablet is \"too much,\" half must be about right for a small child — right? Cutting an adult pill in half is one of the more dangerous shortcuts in home medicine.",
+    category: "Medication Support",
+    author: "CureMed Pharmacy Team",
+    publishedAt: "2025-09-02",
+    readTime: "6 min read",
+    image: "/images/blog/dont-split-adult-pills.png",
+    imageAlt:
+      "A single white tablet being split with a pill cutter next to a child's oral dosing syringe and a small bottle of liquid medicine.",
+    content: [
+      {
+        type: "paragraph",
+        text: "It seems logical: if a full adult tablet is \"too much,\" half must be about right for a small child. Unfortunately, cutting an adult pill in half is one of the more common and more dangerous shortcuts in home medicine. Children are not small adults, and an adult tablet was never designed to be broken down for them. Here is why the practice is risky — and what to do instead.",
+      },
+      { type: "heading", text: "Half a pill is rarely half a dose" },
+      {
+        type: "paragraph",
+        text: "When a tablet is split, the drug inside almost never divides evenly. Studies that weighed split tablets found that a large share fell outside acceptable limits — even careful splitting by hand or with a dedicated splitter produced fragments ranging from roughly 60% to 130% of the intended amount (van Riet-Nales et al., International Journal of Pharmaceutics, 2014). When researchers actually measured how much drug a child received from a manipulated adult tablet or capsule, the delivered dose was frequently and significantly lower than the target — sometimes dramatically so (Binson et al., Pharmaceutics, 2021).",
+      },
+      {
+        type: "paragraph",
+        text: "For an adult, a small error may not matter much. For a young child dosed by weight, the same error is a far larger fraction of the intended dose — meaning a real risk of either too little medicine (treatment failure) or too much (toxicity).",
+      },
+      {
+        type: "heading",
+        text: "Some pills stop working — or become dangerous — the moment they're cut",
+      },
+      {
+        type: "paragraph",
+        text: "Many tablets and capsules are built to release their drug in a specific way. Splitting or crushing them defeats that design:",
+      },
+      {
+        type: "list",
+        items: [
+          "Extended-release and enteric-coated tablets are meant to release slowly or to survive stomach acid. Breaking them can dump the entire dose at once or destroy the medicine.",
+          "Combination and specially formulated tablets can lose a large fraction of their active drug when broken. One documented example: crushing a lopinavir/ritonavir (HIV) tablet reduced drug exposure by roughly 45–47% (Tayal et al., European Journal of Pediatrics, 2020).",
+          "Capsules with liquid inside, very small or oddly shaped tablets, and hazardous drugs (including some cancer and blood-pressure-in-the-lungs medicines) should not be opened or split at all — a few are even unsafe for a pregnant caregiver to handle.",
+        ],
+      },
+      { type: "heading", text: "The choking hazard is real" },
+      {
+        type: "paragraph",
+        text: "Young children are still learning to swallow pills, and fear of choking is one of the main reasons solid medicines are hard to give in early childhood. Pill fragments and sharp broken edges can be aspirated. Choking deaths in toddlers given tablets have been reported (Tayal et al., European Journal of Pediatrics, 2020). Crushing a pill and hiding it in food does not eliminate the problem — it can change how the drug is absorbed and children often refuse or spit out the altered taste.",
+      },
+      { type: "heading", text: "Why \"just estimate it\" is not safe" },
+      {
+        type: "paragraph",
+        text: "Adult and pediatric doses are not simply scaled by size. Children's dosing is based on weight (and sometimes age and organ maturity), and the right amount changes as they grow. An adult pill was formulated, tested, and approved for adults — not to be quartered on a kitchen counter. Reviews of this practice consistently find it widespread but unsupported by good evidence, and a recognized source of dosing errors (Paulsson et al., Acta Paediatrica, 2025).",
+      },
+      { type: "heading", text: "What to do instead" },
+      {
+        type: "list",
+        items: [
+          "Ask for a child-friendly form first. Many medicines come as liquids, suspensions, chewable or dissolvable tablets, sprinkles, or granules made for children. A compounded liquid is often the most accurate option when no commercial pediatric version exists (Binson et al., Pharmaceutics, 2021).",
+          "Use only the dosing tool that comes with the medicine — the marked oral syringe or dosing cup, never a kitchen spoon.",
+          "Never split, crush, or open a pill unless your pharmacist or doctor confirms it is safe for that specific medicine, and ask them to show you exactly how.",
+          "Check the concentration, especially with liquids, since the same drug can come in different strengths.",
+          "When in doubt, call your pharmacist. This is exactly the kind of question they answer every day, and it takes two minutes.",
+        ],
+      },
+      { type: "heading", text: "The bottom line for parents" },
+      {
+        type: "paragraph",
+        text: "Cutting an adult pill in half feels careful, but it trades a known, tested dose for a guess — and adds a choking risk on top. The safe move is almost always a formulation actually made for children, given with the right measuring tool. A quick call to your pharmacist or pediatrician can save you from a dangerous mistake.",
+      },
+      {
+        type: "callout",
+        title: "Talk to your pharmacist",
+        text: "This article is for general education and is not a substitute for personalized medical advice. Before splitting or crushing any medicine for a child, ask a CureMed pharmacist whether a child-friendly form is available and how to dose it accurately.",
+      },
+    ],
+  },
+  {
     slug: "natural-doesnt-mean-harmless",
     title: "Natural Doesn't Mean Harmless",
     excerpt:
