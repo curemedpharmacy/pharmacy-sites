@@ -22,6 +22,118 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "back-to-school-vaccine-checklist",
+    title:
+      "The Back-to-School Checklist Nobody Hands You: Vaccines, Not Just School Supplies",
+    excerpt:
+      "The most important back-to-school item isn't on any supply list — it's your child's vaccination record. Here's what to know before the first bell rings.",
+    category: "Vaccinations",
+    author: "CureMed Pharmacy Team",
+    publishedAt: "2025-09-02",
+    readTime: "7 min read",
+    image: "/images/blog/back-to-school-vaccines.png",
+    imageAlt:
+      "A child's immunization record card and a single-dose vaccine vial resting on a neutral surface next to school supplies.",
+    content: [
+      {
+        type: "paragraph",
+        text: "You bought the backpack. You labeled the crayons. You found the one specific brand of folder the teacher requested. But the most important item for your child's school year isn't on any supply list the school hands you — it's their vaccination record.",
+      },
+      {
+        type: "paragraph",
+        text: "Vaccines are the part of back-to-school prep that protects not just your child's grades, but their health, their classmates, and your whole community. Here's what to know before the first bell rings.",
+      },
+      { type: "heading", text: "Why This Belongs on Your Checklist" },
+      {
+        type: "paragraph",
+        text: "Vaccines work quietly. When they're doing their job, nothing happens — no measles, no whooping cough, no missed weeks of school. That silence can make them easy to forget. But the diseases they prevent haven't disappeared; they're held back by high vaccination rates in the community.",
+      },
+      {
+        type: "paragraph",
+        text: "When enough children in a school and neighborhood are vaccinated, even kids who can't be — like infants too young or children with weakened immune systems — are shielded. That's the whole idea behind school immunization requirements: they raise vaccination rates and sharply reduce outbreaks of diseases like measles and chickenpox (American Academy of Pediatrics, 2025).",
+      },
+      {
+        type: "paragraph",
+        text: "The reverse is also true. When vaccination rates slip, these diseases come back. A 2025 modeling study in JAMA found that even a 10% drop in measles-mumps-rubella (MMR) vaccination in the US could lead to millions of measles cases over 25 years — and that measles could once again become a constant, year-round presence rather than a rare imported event (Kiang et al., JAMA, 2025).",
+      },
+      { type: "heading", text: "The Ages That Matter Most" },
+      {
+        type: "paragraph",
+        text: "Two moments in childhood are especially important for the school-related vaccine schedule set by the CDC's Advisory Committee on Immunization Practices (ACIP).",
+      },
+      {
+        type: "paragraph",
+        text: "Before kindergarten (ages 4–6). This is when children are due for their final \"booster\" doses that carry protection into the school years:",
+      },
+      {
+        type: "list",
+        items: [
+          "DTaP (diphtheria, tetanus, whooping cough) — the 5th dose",
+          "IPV (polio) — the 4th dose",
+          "MMR (measles, mumps, rubella) — the 2nd dose",
+          "Varicella (chickenpox) — the 2nd dose",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "These are the shots most states require for kindergarten entry (Jacobson, Mayo Clinic Proceedings, 2020; CDC/ACIP, 2025).",
+      },
+      {
+        type: "paragraph",
+        text: "The preteen visit (ages 11–12). It's easy to think vaccines are \"done\" once a child starts school, but the 11–12 year checkup is a major one:",
+      },
+      {
+        type: "list",
+        items: [
+          "Tdap — a booster against tetanus, diphtheria, and whooping cough",
+          "HPV — a 2-dose series that prevents several cancers later in life",
+          "Meningococcal (MenACWY) — with a booster dose at age 16",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "Don't skip that age-16 meningococcal booster — it's frequently missed but protects teens right as they head toward dorms and close-quarters living (Jacobson, Mayo Clinic Proceedings, 2020; Pingali et al., MMWR, 2021).",
+      },
+      {
+        type: "paragraph",
+        text: "Every fall, for everyone. An annual flu vaccine is recommended for all children 6 months and older before each flu season. Children under 9 getting it for the first time may need two doses about a month apart (American Academy of Pediatrics, Red Book, 2024–2027).",
+      },
+      { type: "heading", text: "If Your Child Fell Behind" },
+      {
+        type: "paragraph",
+        text: "Life happens — appointments get missed, and many families fell behind during the COVID-19 pandemic. Here's the reassuring part: a lapse in the vaccine schedule almost never means starting over.",
+      },
+      {
+        type: "paragraph",
+        text: "The series simply picks up where it left off. As the American Academy of Pediatrics puts it, a delayed dose \"should be administered at the next opportunity, and the series should resume for completion\" — no restarting and no extra doses needed (American Academy of Pediatrics, Red Book, 2024–2027). Catch-up schedules exist for exactly this situation, so a child who is behind can still get fully protected (CDC/ACIP catch-up schedule, 2025).",
+      },
+      {
+        type: "paragraph",
+        text: "If you're not sure where your child stands, ask your pediatrician's office to review the record. It's a quick conversation, and back-to-school season is the perfect prompt.",
+      },
+      { type: "heading", text: "What You Can Do This Week" },
+      {
+        type: "list",
+        items: [
+          "Find the record. Locate your child's immunization card or ask your clinic for a printout.",
+          "Book the visit. Schedule the back-to-school or annual checkup early — appointment slots fill fast in late summer.",
+          "Ask two questions. \"Is my child up to date?\" and \"Is anything due or overdue?\"",
+          "Add the flu shot to the fall to-do list.",
+          "Bring your questions. If you're unsure about any vaccine, your pediatrician is the best source — far more reliable than social media.",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "Crayons get used up. Backpacks wear out. But the protection your child gets from staying on schedule with vaccines lasts far beyond one school year — and it's the one item on the list that helps keep the entire classroom healthy.",
+      },
+      {
+        type: "callout",
+        title: "Talk to your pharmacist",
+        text: "This article is for general education and is not a substitute for personalized medical advice. Ask your pediatrician or a CureMed pharmacist to review your child's immunization record and confirm which vaccines are due.",
+      },
+    ],
+  },
+  {
     slug: "stopping-antibiotics-early-vs-finishing-the-course",
     title:
       "Stopping Antibiotics Early Feels Responsible. It's Actually the Opposite.",
