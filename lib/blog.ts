@@ -22,6 +22,86 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "stopping-antibiotics-early-vs-finishing-the-course",
+    title:
+      "Stopping Antibiotics Early Feels Responsible. It's Actually the Opposite.",
+    excerpt:
+      "For decades we were told to finish every pill. The randomized evidence now points the other way: the responsible course is usually the shortest effective one.",
+    category: "Medication Support",
+    author: "CureMed Pharmacy Team",
+    publishedAt: "2025-09-02",
+    readTime: "8 min read",
+    image: "/images/blog/antibiotics-course-length.png",
+    imageAlt:
+      "A partially used blister pack of white antibiotic tablets beside an amber prescription pill bottle on a neutral clinical surface.",
+    content: [
+      {
+        type: "paragraph",
+        text: "For decades, patients and clinicians alike absorbed a single rule about antibiotics: finish every pill, even after you feel better, because stopping early breeds resistance. The instinct behind it is decent. But the science underneath it has quietly collapsed. The uncomfortable truth is that the \"responsible\" instinct to keep taking antibiotics longer is often the one driving the harm we were trying to prevent.",
+      },
+      {
+        type: "paragraph",
+        text: "The real question was never \"did you finish the bottle?\" It was \"was the bottle the right size in the first place?\"",
+      },
+      { type: "heading", text: "Where the \"finish the course\" rule came from" },
+      {
+        type: "paragraph",
+        text: "The idea traces back to the dawn of the antibiotic era, when the concern was that undertreatment might leave surviving bacteria to regroup. It became gospel long before it was tested. What it was never based on was randomized evidence that longer courses actually prevent resistance. Over the past 25 years, that evidence has arrived — and it points the other way. More than 120 randomized controlled trials have now compared shorter versus longer courses for common bacterial infections, and short courses have proven non-inferior for community-acquired pneumonia, complicated urinary tract infection in women, gram-negative bloodstream infection, and skin and soft-tissue infection, provided the diagnosis is correct, the drug is appropriate, and the patient is improving (Lee et al., Clinical Microbiology and Infection, 2023).",
+      },
+      { type: "heading", text: "Every extra day carries a cost" },
+      {
+        type: "paragraph",
+        text: "The reframing that matters is this: an antibiotic is not a vitamin you take until the bottle is empty. It is a drug with a dose-dependent downside. An umbrella review pooling 35 systematic reviews and 71 randomized trials found that each additional day of antibiotic therapy was associated with roughly a 4% increase in the odds of an adverse drug event (Curran et al., Clinical Microbiology and Infection, 2022). Longer courses mean more Clostridioides difficile infection, more disruption of the protective gut microbiota, more superinfection, and more selection pressure for resistant organisms — precisely the outcome the old mantra invoked. The 2025 Infectious Diseases Society of America guideline on complicated UTI states plainly that the risks of superinfection and resistance rise substantially with extended duration, and that reducing therapy to the shortest effective course is central to antibiotic stewardship (Trautner et al., IDSA, 2025).",
+      },
+      {
+        type: "paragraph",
+        text: "Resistance, in particular, is not primarily prevented by long courses; it is fed by them. A modelling study and meta-analysis estimated that a single additional day of treatment was associated with roughly a 7% absolute increase in the risk of carrying resistant gram-negative bacteria (Mo et al., PLoS Medicine, 2023). The prolonged antibiotic exposure that \"finishing the course\" was meant to justify is itself a driver of the resistant flora we fear.",
+      },
+      {
+        type: "heading",
+        text: "The evidence for \"shorter is better,\" infection by infection",
+      },
+      {
+        type: "paragraph",
+        text: "The shift is not a fringe position; it is increasingly the guideline-concordant one:",
+      },
+      {
+        type: "list",
+        items: [
+          "Bloodstream infection: In the BALANCE trial, 7 days of antibiotics was non-inferior to 14 days for mortality in hospitalized, largely critically ill patients with bacteremia — overturning the traditional default of two weeks or longer (BALANCE Investigators, New England Journal of Medicine, 2025).",
+          "Community-acquired pneumonia: An umbrella review found moderate-quality evidence that 5 days is clinically non-inferior to longer courses outside the ICU (Kuijpers et al., Lancet Infectious Diseases, 2025).",
+          "COPD exacerbations: Shorter courses of 3–6 days were consistently non-inferior to longer ones, with similar or fewer adverse events (Kuijpers et al., Lancet Infectious Diseases, 2025).",
+          "UTI in men: A randomized trial found 7 days non-inferior to 14 days for symptom resolution in afebrile men — a group long treated for two weeks or more by convention (Drekonja et al., JAMA, 2021).",
+          "Osteomyelitis: Six weeks suffices in the absence of retained hardware, where far longer courses were once routine (Lee et al., Clinical Microbiology and Infection, 2023).",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "Real-world data reinforce that longer is not safer. In an analysis of 4 million primary-care infection episodes in England, longer courses were no more effective than shorter ones at preventing infection-related hospitalization, and most such hospitalizations actually occurred among patients who had received the longer prescriptions (Palin et al., Clinical Infectious Diseases, 2021).",
+      },
+      { type: "heading", text: "So why does the old advice persist?" },
+      {
+        type: "paragraph",
+        text: "Partly habit, partly a mismatch between what guidelines recommend and what gets prescribed. In English primary care, 80% or more of antibiotic courses for upper respiratory infections and acute bronchitis exceeded the recommended duration, amounting to roughly 1.3 million unnecessary antibiotic-days across the indications studied (Pouwels et al., BMJ, 2019). The default course is frequently too long before the patient ever opens the bottle — which is exactly why \"just finish it\" quietly perpetuates overuse.",
+      },
+      { type: "heading", text: "The important caveats" },
+      {
+        type: "paragraph",
+        text: "None of this licenses patients to stop antibiotics whenever they feel better, and it does not mean \"shorter is always better.\" The trial evidence applies when the diagnosis is correct, the right drug is chosen, and the patient is clinically improving. Some infections still genuinely require prolonged therapy, and evidence is still thin or absent for certain populations — non-ventilator hospital-acquired pneumonia and medically complex patients among them (Kuijpers et al., Lancet Infectious Diseases, 2025). Short-course penicillin dosed three times daily for streptococcal pharyngitis, for instance, is not supported the way short-course cephalosporins are. The point is not for patients to self-shorten unilaterally, but for the prescribed duration to be as short as the evidence allows from the outset — and for patients to complete that appropriately short, individualized course.",
+      },
+      { type: "heading", text: "The bottom line" },
+      {
+        type: "paragraph",
+        text: "The genuinely responsible act is not blindly finishing an arbitrarily long course. It is a prescriber choosing the shortest effective, guideline-concordant duration, and a patient completing exactly that. \"Finish every last pill\" was a well-meant rule built on an untested assumption. The evidence now says that when it comes to antibiotics, the responsible amount is usually less than we were taught — and treating longer \"just to be safe\" is the option that carries the real risk.",
+      },
+      {
+        type: "callout",
+        title: "Talk to your pharmacist",
+        text: "This article is for general education and is not a substitute for personalized medical advice. Never start, stop, or change an antibiotic on your own — ask your prescriber or a CureMed pharmacist about the shortest effective course for your specific infection.",
+      },
+    ],
+  },
+  {
     slug: "weight-loss-injections-paterson-what-to-ask",
     title: "Weight Loss Injections in Paterson: What to Ask Before You Start",
     excerpt:
