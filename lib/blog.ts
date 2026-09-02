@@ -22,6 +22,170 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "is-it-too-early-to-get-the-flu-shot-in-august",
+    title: "Is It Too Early to Get the Flu Shot in August?",
+    excerpt:
+      "Pharmacies advertise flu shots alongside back-to-school displays, but with the flu vaccine, timing genuinely matters — and earlier is not always better.",
+    category: "Vaccinations",
+    author: "CureMed Pharmacy Team",
+    publishedAt: "2025-09-02",
+    readTime: "7 min read",
+    image: "/images/blog/flu-shot-timing-august.png",
+    imageAlt:
+      "A flu vaccine vial and syringe resting on an autumn desk calendar with a few dried leaves nearby.",
+    content: [
+      {
+        type: "paragraph",
+        text: "Pharmacies start advertising flu shots alongside the back-to-school displays, and it is tempting to check it off the list in August. But when it comes to the flu vaccine, timing genuinely matters — and earlier is not always better.",
+      },
+      { type: "heading", text: "The short answer" },
+      {
+        type: "paragraph",
+        text: "For most people, the sweet spot is September or October. Getting vaccinated in July or August is generally discouraged for most adults, and waiting much past November means you may be unprotected if flu arrives early. The goal is simple: have your strongest protection ready when flu is actually spreading, which in the U.S. usually peaks between December and February — most often in January or February.",
+      },
+      { type: "heading", text: "Why not just get it as early as possible?" },
+      {
+        type: "paragraph",
+        text: "The flu shot works by teaching your immune system to make antibodies against the season's expected flu strains. That protection is strongest in the first weeks to months after your shot — and then it slowly fades over the course of the season, a phenomenon scientists call \"waning.\"",
+      },
+      {
+        type: "paragraph",
+        text: "Research has put rough numbers on this fade:",
+      },
+      {
+        type: "list",
+        items: [
+          "In studies of adults, vaccine protection dropped by roughly 8–9% per month after vaccination.",
+          "In adults 65 and older, the decline was steeper — about 10–11% per month.",
+          "Earlier network studies found protection fell by about 6–7% per month across different flu strains.",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "Here is why that matters in practice. If you get your shot in early August and flu doesn't peak until February, that is six months of gradual decline. By the time you are most likely to be exposed, a chunk of your protection may already be gone. Get it in late September or October, and your protection is much fresher when it counts.",
+      },
+      {
+        type: "heading",
+        text: "The reassuring part: protection doesn't vanish",
+      },
+      {
+        type: "paragraph",
+        text: "Waning does not mean the vaccine stops working. Studies consistently show meaningful protection lasting at least 5 to 6 months after vaccination, and antibody levels generally stay above pre-vaccine levels for the length of a typical flu season. A late-summer shot still protects you — it just may protect you a little less during the peak than a fall shot would. Some protection is always far better than none.",
+      },
+      {
+        type: "heading",
+        text: "Who should consider getting it earlier anyway?",
+      },
+      {
+        type: "paragraph",
+        text: "The \"wait until fall\" advice has important exceptions. Earlier vaccination — even in July or August — makes sense for:",
+      },
+      {
+        type: "list",
+        items: [
+          "Children who need two doses. Kids getting the flu vaccine for the first time (or who haven't had at least two lifetime doses) need two shots at least four weeks apart. Starting early lets them finish, ideally by the end of October.",
+          "Pregnant people in the third trimester. An early shot can pass protection to the baby for the first vulnerable months of life, before the infant is old enough to be vaccinated.",
+          "Anyone who might not be able to come back later. A vaccine you can get now beats a fall appointment you might miss. If August is your only reliable opportunity, take it.",
+        ],
+      },
+      {
+        type: "heading",
+        text: "The other side: don't wait too long, either",
+      },
+      {
+        type: "paragraph",
+        text: "If earlier can be too early, later can be too late. Flu season is unpredictable and occasionally starts in October. The CDC recommends most people be vaccinated by the end of October. That said, if you miss that window, getting vaccinated in November, December, or even later is still worthwhile — flu often circulates into spring, and a later shot still protects you.",
+      },
+      { type: "heading", text: "The bottom line for your calendar" },
+      {
+        type: "list",
+        items: [
+          "July–August: Usually too early for most healthy adults — but fine (or recommended) for young children needing two doses, third-trimester pregnancy, or if you can't come back later.",
+          "September–October: The target for most people. This is the \"just right\" window.",
+          "By end of October: Try to be done, especially if you're 65 or older or at higher risk.",
+          "November and beyond: Later than ideal, but still absolutely worth doing.",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "One important caveat: flu season timing shifts year to year, and no one can predict the exact peak in advance. These recommendations balance that uncertainty against how protection fades. When in doubt, ask your doctor or pharmacist what makes sense for your age, health, and schedule — and remember that the worst flu shot is the one you never get around to.",
+      },
+      {
+        type: "callout",
+        title: "Talk to your pharmacist",
+        text: "This article is for general education and is not a substitute for personalized medical advice. Ask a CureMed pharmacist about the best time to get your flu shot based on your age, health, and schedule.",
+      },
+    ],
+  },
+  {
+    slug: "you-cannot-get-flu-from-the-flu-shot",
+    title:
+      "You Cannot Get the Flu From the Flu Shot — Here's Why That Myth Won't Die",
+    excerpt:
+      "\"The last time I got the flu shot, it gave me the flu.\" It's one of the most repeated pieces of health misinformation there is — and it's wrong. Here's why.",
+    category: "Vaccinations",
+    author: "CureMed Pharmacy Team",
+    publishedAt: "2025-09-02",
+    readTime: "6 min read",
+    image: "/images/blog/flu-shot-myth.png",
+    imageAlt:
+      "A single-dose flu vaccine vial and a syringe resting on a neutral clinical surface next to an adhesive bandage.",
+    content: [
+      {
+        type: "paragraph",
+        text: "Every autumn, the same worry resurfaces: \"The last time I got the flu shot, it gave me the flu.\" It is one of the most repeated pieces of health misinformation there is — and it is wrong. The standard flu shot cannot give you influenza. Here is why that is true, and why the myth refuses to die.",
+      },
+      { type: "heading", text: "The shot contains no living virus" },
+      {
+        type: "paragraph",
+        text: "The injectable flu vaccine is what scientists call an inactivated vaccine. The influenza viruses used to make it are killed — chemically inactivated and, in most versions, broken apart so that only fragments of the virus's surface proteins remain (Treanor, New England Journal of Medicine, 2016; Yamayoshi and Kawaoka, Nature Medicine, 2019). There is no whole, live, reproducing virus in the syringe. A dead fragment of a virus cannot replicate, cannot spread through your body, and cannot cause an infection. It is biologically impossible for the flu shot to give you the flu, in the same way a photograph of a fire cannot burn your house down.",
+      },
+      {
+        type: "paragraph",
+        text: "Some newer shots skip the virus almost entirely: the recombinant vaccine is made from a single manufactured protein grown in insect cells, with no influenza virus involved at all (Treanor, New England Journal of Medicine, 2016).",
+      },
+      { type: "heading", text: "What the vaccine actually does" },
+      {
+        type: "paragraph",
+        text: "The purpose of the shot is to show your immune system a harmless \"wanted poster\" of the influenza virus. Your body responds by building antibodies against those surface proteins (Kim et al., Reviews in Medical Virology, 2022). If you later encounter the real, living virus, your immune system recognizes it and is ready to fight — which is the entire point.",
+      },
+      { type: "heading", text: "So why do some people feel unwell afterward?" },
+      {
+        type: "paragraph",
+        text: "This is the heart of the confusion. Feeling a little off after a flu shot is real, but it is not influenza. There are a few explanations:",
+      },
+      {
+        type: "list",
+        items: [
+          "Your immune system is working. Mild, short-lived side effects — a sore arm, low-grade fever, achiness, or tiredness — are simply signs that your body is responding to the vaccine and building protection (Demicheli et al., Cochrane Database of Systematic Reviews, 2018). These are far milder than actual flu and typically pass within a day or two.",
+          "It takes about two weeks to work. Protection is not instant. Antibodies take roughly two weeks to build. Anyone exposed to influenza in the days just before or after their shot can still catch it — not because of the vaccine, but because protection had not kicked in yet.",
+          "Winter is full of other viruses. Colds, RSV, COVID-19, and other respiratory bugs circulate during the same months. A stuffy nose and cough in flu season are often one of these look-alikes, not influenza — but the shot gets the blame because the timing lines up.",
+          "The vaccine is good, not perfect. In a typical season the flu shot lowers your risk of getting influenza by roughly 30% to 60%, depending on how well it matches the circulating strains (Uyeki et al., Lancet, 2022). Someone who gets vaccinated and still catches flu may wrongly conclude the shot caused it, when in fact it simply did not fully prevent that particular infection — and it likely still made the illness milder.",
+        ],
+      },
+      { type: "heading", text: "Why the myth won't die" },
+      {
+        type: "paragraph",
+        text: "The myth is sticky because of a mental shortcut: two events close together in time feel like cause and effect. Get a shot in the morning, feel achy that night, catch a cold two weeks later — the brain connects the dots into a story, even though the biology says otherwise. Because millions of people get vaccinated each fall, these coincidental illnesses are guaranteed to happen to some of them, and each one becomes a story retold to friends and family. The myth spreads person to person, season after season.",
+      },
+      { type: "heading", text: "One point of clarification" },
+      {
+        type: "paragraph",
+        text: "There is also a nasal-spray flu vaccine, which does contain a live but weakened virus. Even this version is specifically designed so it cannot cause actual influenza — the virus is altered so it cannot thrive at the warm temperatures of your lungs. It is not given to certain groups, such as people who are pregnant or have weakened immune systems, and those individuals receive the inactivated shot instead. When people talk about \"the flu shot,\" they almost always mean the inactivated injection, which contains no live virus at all.",
+      },
+      { type: "heading", text: "The bottom line" },
+      {
+        type: "paragraph",
+        text: "The flu shot cannot give you the flu. What it can do is train your body to fight the real virus and reduce your chances of a miserable — and sometimes dangerous — infection. If you feel briefly achy afterward, that is your immune system doing exactly what it is supposed to.",
+      },
+      {
+        type: "callout",
+        title: "Talk to your pharmacist",
+        text: "This article is for general education and is not a substitute for personalized medical advice. Ask a CureMed pharmacist which flu vaccine is right for you and get vaccinated ahead of the season.",
+      },
+    ],
+  },
+  {
     slug: "back-to-school-vaccine-checklist",
     title:
       "The Back-to-School Checklist Nobody Hands You: Vaccines, Not Just School Supplies",
