@@ -22,6 +22,193 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "dont-cut-an-adult-pill-in-half-for-your-child",
+    title: "Please Don't Cut an Adult Pill in Half for Your Child",
+    excerpt:
+      "If a full adult tablet is \"too much,\" half must be about right for a small child — right? Cutting an adult pill in half is one of the more dangerous shortcuts in home medicine.",
+    category: "Medication Support",
+    author: "CureMed Pharmacy Team",
+    publishedAt: "2025-09-02",
+    readTime: "6 min read",
+    image: "/images/blog/dont-split-adult-pills.png",
+    imageAlt:
+      "A single white tablet being split with a pill cutter next to a child's oral dosing syringe and a small bottle of liquid medicine.",
+    content: [
+      {
+        type: "paragraph",
+        text: "It seems logical: if a full adult tablet is \"too much,\" half must be about right for a small child. Unfortunately, cutting an adult pill in half is one of the more common and more dangerous shortcuts in home medicine. Children are not small adults, and an adult tablet was never designed to be broken down for them. Here is why the practice is risky — and what to do instead.",
+      },
+      { type: "heading", text: "Half a pill is rarely half a dose" },
+      {
+        type: "paragraph",
+        text: "When a tablet is split, the drug inside almost never divides evenly. Studies that weighed split tablets found that a large share fell outside acceptable limits — even careful splitting by hand or with a dedicated splitter produced fragments ranging from roughly 60% to 130% of the intended amount (van Riet-Nales et al., International Journal of Pharmaceutics, 2014). When researchers actually measured how much drug a child received from a manipulated adult tablet or capsule, the delivered dose was frequently and significantly lower than the target — sometimes dramatically so (Binson et al., Pharmaceutics, 2021).",
+      },
+      {
+        type: "paragraph",
+        text: "For an adult, a small error may not matter much. For a young child dosed by weight, the same error is a far larger fraction of the intended dose — meaning a real risk of either too little medicine (treatment failure) or too much (toxicity).",
+      },
+      {
+        type: "heading",
+        text: "Some pills stop working — or become dangerous — the moment they're cut",
+      },
+      {
+        type: "paragraph",
+        text: "Many tablets and capsules are built to release their drug in a specific way. Splitting or crushing them defeats that design:",
+      },
+      {
+        type: "list",
+        items: [
+          "Extended-release and enteric-coated tablets are meant to release slowly or to survive stomach acid. Breaking them can dump the entire dose at once or destroy the medicine.",
+          "Combination and specially formulated tablets can lose a large fraction of their active drug when broken. One documented example: crushing a lopinavir/ritonavir (HIV) tablet reduced drug exposure by roughly 45–47% (Tayal et al., European Journal of Pediatrics, 2020).",
+          "Capsules with liquid inside, very small or oddly shaped tablets, and hazardous drugs (including some cancer and blood-pressure-in-the-lungs medicines) should not be opened or split at all — a few are even unsafe for a pregnant caregiver to handle.",
+        ],
+      },
+      { type: "heading", text: "The choking hazard is real" },
+      {
+        type: "paragraph",
+        text: "Young children are still learning to swallow pills, and fear of choking is one of the main reasons solid medicines are hard to give in early childhood. Pill fragments and sharp broken edges can be aspirated. Choking deaths in toddlers given tablets have been reported (Tayal et al., European Journal of Pediatrics, 2020). Crushing a pill and hiding it in food does not eliminate the problem — it can change how the drug is absorbed and children often refuse or spit out the altered taste.",
+      },
+      { type: "heading", text: "Why \"just estimate it\" is not safe" },
+      {
+        type: "paragraph",
+        text: "Adult and pediatric doses are not simply scaled by size. Children's dosing is based on weight (and sometimes age and organ maturity), and the right amount changes as they grow. An adult pill was formulated, tested, and approved for adults — not to be quartered on a kitchen counter. Reviews of this practice consistently find it widespread but unsupported by good evidence, and a recognized source of dosing errors (Paulsson et al., Acta Paediatrica, 2025).",
+      },
+      { type: "heading", text: "What to do instead" },
+      {
+        type: "list",
+        items: [
+          "Ask for a child-friendly form first. Many medicines come as liquids, suspensions, chewable or dissolvable tablets, sprinkles, or granules made for children. A compounded liquid is often the most accurate option when no commercial pediatric version exists (Binson et al., Pharmaceutics, 2021).",
+          "Use only the dosing tool that comes with the medicine — the marked oral syringe or dosing cup, never a kitchen spoon.",
+          "Never split, crush, or open a pill unless your pharmacist or doctor confirms it is safe for that specific medicine, and ask them to show you exactly how.",
+          "Check the concentration, especially with liquids, since the same drug can come in different strengths.",
+          "When in doubt, call your pharmacist. This is exactly the kind of question they answer every day, and it takes two minutes.",
+        ],
+      },
+      { type: "heading", text: "The bottom line for parents" },
+      {
+        type: "paragraph",
+        text: "Cutting an adult pill in half feels careful, but it trades a known, tested dose for a guess — and adds a choking risk on top. The safe move is almost always a formulation actually made for children, given with the right measuring tool. A quick call to your pharmacist or pediatrician can save you from a dangerous mistake.",
+      },
+      {
+        type: "callout",
+        title: "Talk to your pharmacist",
+        text: "This article is for general education and is not a substitute for personalized medical advice. Before splitting or crushing any medicine for a child, ask a CureMed pharmacist whether a child-friendly form is available and how to dose it accurately.",
+      },
+    ],
+  },
+  {
+    slug: "natural-doesnt-mean-harmless",
+    title: "Natural Doesn't Mean Harmless",
+    excerpt:
+      "\"It's just an herb.\" But natural is not the same as safe — and some of the most popular herbal products can quietly cancel out or dangerously amplify a prescription drug.",
+    category: "Medication Support",
+    author: "CureMed Pharmacy Team",
+    publishedAt: "2025-09-02",
+    readTime: "7 min read",
+    image: "/images/blog/natural-not-harmless.png",
+    imageAlt:
+      "Dried herbal supplements and green leaves spilling from an amber glass bottle beside white prescription tablets on a neutral surface.",
+    content: [
+      {
+        type: "paragraph",
+        text: "\"It's just an herb.\" It's one of the most common things people say when they list their supplements — often as an afterthought, if they mention them at all. But \"natural\" is not the same as \"safe,\" and it is definitely not the same as \"won't interfere with my medications.\" Some of the most popular herbal products on the shelf can quietly cancel out a prescription drug, or dangerously amplify one.",
+      },
+      {
+        type: "paragraph",
+        text: "Here are two of the best-documented examples.",
+      },
+      {
+        type: "heading",
+        text: "St. John's Wort: The Supplement That Turns Down Your Other Medications",
+      },
+      {
+        type: "paragraph",
+        text: "St. John's wort is sold for low mood and mild depression. The problem is that it revs up a set of enzymes in your liver (the cytochrome P450 system, especially one called CYP3A4) that your body uses to process a huge number of prescription drugs. When those enzymes work faster, your medications get cleared out of your body faster — so there's less drug in your system than your doctor intended.",
+      },
+      {
+        type: "paragraph",
+        text: "Medications that St. John's wort can weaken include:",
+      },
+      {
+        type: "list",
+        items: [
+          "Birth control pills — reduced effectiveness has led to unintended pregnancies",
+          "Blood thinners such as warfarin",
+          "Transplant anti-rejection drugs such as cyclosporine and tacrolimus",
+          "HIV medications and certain cancer drugs",
+          "Heart medications such as digoxin",
+          "Cholesterol drugs such as simvastatin",
+          "Some antidepressants, sedatives, and seizure medications",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "There's a second, opposite danger. When St. John's wort is combined with prescription antidepressants (such as SSRIs), it can push serotonin levels too high and trigger serotonin syndrome — a potentially serious reaction with agitation, rapid heartbeat, sweating, tremor, and confusion.",
+      },
+      {
+        type: "paragraph",
+        text: "The bottom line: St. John's wort is not a \"gentle\" herb. It is one of the most interaction-prone products sold without a prescription.",
+      },
+      {
+        type: "heading",
+        text: "Ginkgo Biloba: Popular for Memory, Risky With Blood Thinners",
+      },
+      {
+        type: "paragraph",
+        text: "Ginkgo is marketed for memory and circulation. It also has a mild blood-thinning (antiplatelet) effect of its own. On its own that's usually not dramatic — but stacked on top of other blood thinners, it can add up.",
+      },
+      {
+        type: "paragraph",
+        text: "Ginkgo has been linked, in case reports and observational studies, to increased bleeding — including serious bleeding into the brain — when combined with:",
+      },
+      {
+        type: "list",
+        items: [
+          "Warfarin",
+          "Aspirin",
+          "Clopidogrel and other antiplatelet drugs",
+          "NSAID pain relievers such as ibuprofen",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "The research isn't perfectly consistent — some controlled studies found no major effect — but enough serious bleeding events have been reported that caution is warranted, especially in older adults and anyone already on a blood thinner.",
+      },
+      { type: "heading", text: "Other Herbs Worth Knowing About" },
+      {
+        type: "paragraph",
+        text: "The same \"natural but not harmless\" pattern shows up elsewhere:",
+      },
+      {
+        type: "list",
+        items: [
+          "Garlic, ginger, and danshen supplements can add to bleeding risk with warfarin or aspirin",
+          "Ginseng can interfere with warfarin and interact with some antidepressants",
+          "Kava can deepen the sedation from anti-anxiety medications and alcohol",
+        ],
+      },
+      { type: "heading", text: "What To Actually Do" },
+      {
+        type: "list",
+        items: [
+          "Tell your doctor and pharmacist about every supplement you take — including \"just vitamins\" and herbal teas. Surveys show most people don't, and that's exactly how these interactions slip through.",
+          "Don't start or stop an herbal product on your own if you take prescription medications — especially blood thinners, birth control, antidepressants, transplant drugs, HIV or cancer therapy, or seizure medications.",
+          "Bring the actual bottle to appointments. Doses and formulations vary widely because supplements aren't regulated the way prescription drugs are.",
+          "Watch for warning signs — unusual bruising or bleeding, or agitation and a racing heart after combining an herb with an antidepressant — and seek care promptly.",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "\"Natural\" describes where something comes from, not what it does in your body. Herbs are real, active drugs — treat them that way.",
+      },
+      {
+        type: "callout",
+        title: "Talk to your pharmacist",
+        text: "This article is for general education and is not a substitute for personalized medical advice. Bring a full list of your supplements — and the bottles — to a CureMed pharmacist to check for interactions with your medications.",
+      },
+    ],
+  },
+  {
     slug: "generic-vs-brand-name-what-youre-paying-for",
     title: "Generic vs. Brand Name: What You're Actually Paying For",
     excerpt:
@@ -890,7 +1077,7 @@ export const articles: Article[] = [
       {
         type: "list",
         items: [
-          "Semaglutide (Wegovy): 0.25 mg → 0.5 mg → 1.0 mg → 1.7 mg → 2.4 mg weekly, each step lasting at least 4 weeks",
+          "Semaglutide (Wegovy): 0.25 mg → 0.5 mg → 1.0 mg �� 1.7 mg → 2.4 mg weekly, each step lasting at least 4 weeks",
           "Liraglutide (Saxenda): 0.6 mg → 1.2 mg → 1.8 mg → 2.4 mg → 3.0 mg daily, each step lasting at least 1 week",
           "Tirzepatide (Mounjaro/Zepbound): 2.5 mg → 5 mg → 7.5 mg → 10 mg → 12.5 mg → 15 mg weekly, each step lasting at least 4 weeks",
         ],
