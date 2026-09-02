@@ -22,6 +22,74 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "you-cannot-get-flu-from-the-flu-shot",
+    title:
+      "You Cannot Get the Flu From the Flu Shot — Here's Why That Myth Won't Die",
+    excerpt:
+      "\"The last time I got the flu shot, it gave me the flu.\" It's one of the most repeated pieces of health misinformation there is — and it's wrong. Here's why.",
+    category: "Vaccinations",
+    author: "CureMed Pharmacy Team",
+    publishedAt: "2025-09-02",
+    readTime: "6 min read",
+    image: "/images/blog/flu-shot-myth.png",
+    imageAlt:
+      "A single-dose flu vaccine vial and a syringe resting on a neutral clinical surface next to an adhesive bandage.",
+    content: [
+      {
+        type: "paragraph",
+        text: "Every autumn, the same worry resurfaces: \"The last time I got the flu shot, it gave me the flu.\" It is one of the most repeated pieces of health misinformation there is — and it is wrong. The standard flu shot cannot give you influenza. Here is why that is true, and why the myth refuses to die.",
+      },
+      { type: "heading", text: "The shot contains no living virus" },
+      {
+        type: "paragraph",
+        text: "The injectable flu vaccine is what scientists call an inactivated vaccine. The influenza viruses used to make it are killed — chemically inactivated and, in most versions, broken apart so that only fragments of the virus's surface proteins remain (Treanor, New England Journal of Medicine, 2016; Yamayoshi and Kawaoka, Nature Medicine, 2019). There is no whole, live, reproducing virus in the syringe. A dead fragment of a virus cannot replicate, cannot spread through your body, and cannot cause an infection. It is biologically impossible for the flu shot to give you the flu, in the same way a photograph of a fire cannot burn your house down.",
+      },
+      {
+        type: "paragraph",
+        text: "Some newer shots skip the virus almost entirely: the recombinant vaccine is made from a single manufactured protein grown in insect cells, with no influenza virus involved at all (Treanor, New England Journal of Medicine, 2016).",
+      },
+      { type: "heading", text: "What the vaccine actually does" },
+      {
+        type: "paragraph",
+        text: "The purpose of the shot is to show your immune system a harmless \"wanted poster\" of the influenza virus. Your body responds by building antibodies against those surface proteins (Kim et al., Reviews in Medical Virology, 2022). If you later encounter the real, living virus, your immune system recognizes it and is ready to fight — which is the entire point.",
+      },
+      { type: "heading", text: "So why do some people feel unwell afterward?" },
+      {
+        type: "paragraph",
+        text: "This is the heart of the confusion. Feeling a little off after a flu shot is real, but it is not influenza. There are a few explanations:",
+      },
+      {
+        type: "list",
+        items: [
+          "Your immune system is working. Mild, short-lived side effects — a sore arm, low-grade fever, achiness, or tiredness — are simply signs that your body is responding to the vaccine and building protection (Demicheli et al., Cochrane Database of Systematic Reviews, 2018). These are far milder than actual flu and typically pass within a day or two.",
+          "It takes about two weeks to work. Protection is not instant. Antibodies take roughly two weeks to build. Anyone exposed to influenza in the days just before or after their shot can still catch it — not because of the vaccine, but because protection had not kicked in yet.",
+          "Winter is full of other viruses. Colds, RSV, COVID-19, and other respiratory bugs circulate during the same months. A stuffy nose and cough in flu season are often one of these look-alikes, not influenza — but the shot gets the blame because the timing lines up.",
+          "The vaccine is good, not perfect. In a typical season the flu shot lowers your risk of getting influenza by roughly 30% to 60%, depending on how well it matches the circulating strains (Uyeki et al., Lancet, 2022). Someone who gets vaccinated and still catches flu may wrongly conclude the shot caused it, when in fact it simply did not fully prevent that particular infection — and it likely still made the illness milder.",
+        ],
+      },
+      { type: "heading", text: "Why the myth won't die" },
+      {
+        type: "paragraph",
+        text: "The myth is sticky because of a mental shortcut: two events close together in time feel like cause and effect. Get a shot in the morning, feel achy that night, catch a cold two weeks later — the brain connects the dots into a story, even though the biology says otherwise. Because millions of people get vaccinated each fall, these coincidental illnesses are guaranteed to happen to some of them, and each one becomes a story retold to friends and family. The myth spreads person to person, season after season.",
+      },
+      { type: "heading", text: "One point of clarification" },
+      {
+        type: "paragraph",
+        text: "There is also a nasal-spray flu vaccine, which does contain a live but weakened virus. Even this version is specifically designed so it cannot cause actual influenza — the virus is altered so it cannot thrive at the warm temperatures of your lungs. It is not given to certain groups, such as people who are pregnant or have weakened immune systems, and those individuals receive the inactivated shot instead. When people talk about \"the flu shot,\" they almost always mean the inactivated injection, which contains no live virus at all.",
+      },
+      { type: "heading", text: "The bottom line" },
+      {
+        type: "paragraph",
+        text: "The flu shot cannot give you the flu. What it can do is train your body to fight the real virus and reduce your chances of a miserable — and sometimes dangerous — infection. If you feel briefly achy afterward, that is your immune system doing exactly what it is supposed to.",
+      },
+      {
+        type: "callout",
+        title: "Talk to your pharmacist",
+        text: "This article is for general education and is not a substitute for personalized medical advice. Ask a CureMed pharmacist which flu vaccine is right for you and get vaccinated ahead of the season.",
+      },
+    ],
+  },
+  {
     slug: "back-to-school-vaccine-checklist",
     title:
       "The Back-to-School Checklist Nobody Hands You: Vaccines, Not Just School Supplies",
