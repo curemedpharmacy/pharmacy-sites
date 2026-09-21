@@ -31,6 +31,7 @@ export type BrandConfig = {
   };
   npi?: string;
   gaId?: string;
+  metaPixelIds?: string[];
   offersCompounding: boolean;
   heroImages: BrandImage[];
   galleryImages: {
