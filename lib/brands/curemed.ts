@@ -29,6 +29,7 @@ export const curemed: BrandConfig = {
     linkedin: "https://www.linkedin.com/company/curemed-pharmacy",
   },
   gaId: "G-M15WB6QKKH",
+  metaPixelIds: ["1620073003174135", "1088561384162365"],
   offersCompounding: true,
   heroImages: [
     

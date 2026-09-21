@@ -76,9 +76,10 @@ export default function RootLayout({
         />
         {/* End of HubSpot Embed Code */}
         {/* Meta Pixel Code */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
+        {brand.metaPixelIds && brand.metaPixelIds.length > 0 && (
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
             !function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
             n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -87,24 +88,30 @@ export default function RootLayout({
             t.src=v;s=b.getElementsByTagName(e)[0];
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '1620073003174135');
+            ${brand.metaPixelIds.map((id) => `fbq('init', '${id}');`).join("\n            ")}
             fbq('track', 'PageView');
           `,
-          }}
-        />
+            }}
+          />
+        )}
         {/* End Meta Pixel Code */}
       </head>
       <body className={`antialiased ${isSaimz ? "saimz-brand" : ""}`}>
         {/* Meta Pixel noscript fallback */}
-        <noscript>
-          <img
-            height="1"
-            width="1"
-            style={{ display: "none" }}
-            src="https://www.facebook.com/tr?id=1620073003174135&ev=PageView&noscript=1"
-            alt=""
-          />
-        </noscript>
+        {brand.metaPixelIds && brand.metaPixelIds.length > 0 && (
+          <noscript>
+            {brand.metaPixelIds.map((id) => (
+              <img
+                key={id}
+                height="1"
+                width="1"
+                style={{ display: "none" }}
+                src={`https://www.facebook.com/tr?id=${id}&ev=PageView&noscript=1`}
+                alt=""
+              />
+            ))}
+          </noscript>
+        )}
         <Providers>
           <JsonLd data={pharmacyLocalBusinessSchema()} />
           <Header />
