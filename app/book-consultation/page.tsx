@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { getBrandConfig } from "@/lib/brands";
-import { HubSpotMeetings } from "@/components/HubSpotMeetings";
+import { HubSpotForm } from "@/components/HubSpotForm";
 import { Button } from "@/components/ui/button";
 import {
   Phone,
@@ -28,7 +28,7 @@ import {
 
 const brand = getBrandConfig();
 
-const MEETINGS_SRC = "https://meetings-na2.hubspot.com/ghada-abukuwaik";
+const FORM_SRC = "https://431ijr.share-na2.hsforms.com/2q3h3XS05SuG81Mwp8QMhsQ";
 const PHONE_DISPLAY = "(862) 225-9432";
 const PHONE_TEL = "+18622259432";
 
@@ -284,7 +284,7 @@ export default function BookConsultationPage() {
           </div>
 
           <div className="mt-10 rounded-2xl border border-ink/10 bg-paper p-4 shadow-lg sm:p-6">
-            <HubSpotMeetings src={MEETINGS_SRC} />
+            <HubSpotForm src={FORM_SRC} />
           </div>
 
           <p className="mt-4 text-center text-sm text-ink/60">
