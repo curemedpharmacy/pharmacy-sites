@@ -22,6 +22,114 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "womens-health-at-the-pharmacy-counter",
+    title: "Women's Health at the Pharmacy Counter: What You Can Actually Ask",
+    excerpt:
+      "No appointment, evening and weekend hours, and a trained health professional at the counter. For many women, the pharmacist is the most accessible member of the care team — here's what you can walk in and ask about.",
+    category: "Medication Support",
+    author: "CureMed Pharmacy Team",
+    publishedAt: "2025-09-02",
+    readTime: "6 min read",
+    image: "/images/blog/womens-health-pharmacy.png",
+    imageAlt:
+      "A friendly female pharmacist speaking with a woman patient across a private consultation counter, with a blood pressure monitor on the counter.",
+    content: [
+      {
+        type: "paragraph",
+        text: "Your neighborhood pharmacy is one of the easiest places to get health help — no appointment, evening and weekend hours, and a trained health professional at the counter. For many women, the pharmacist is the most accessible member of the health care team, and their role now goes well beyond handing over a prescription bag. Here is what you can actually walk in and ask about.",
+      },
+      { type: "heading", text: "Birth control (contraception)" },
+      {
+        type: "paragraph",
+        text: "In many U.S. states, pharmacists can prescribe or directly provide hormonal birth control — pills, the patch, the vaginal ring, and the injection — without a separate doctor's visit first (this is sometimes called \"pharmacy access\" or \"behind-the-counter\" access).",
+      },
+      {
+        type: "paragraph",
+        text: "What to expect:",
+      },
+      {
+        type: "list",
+        items: [
+          "A short questionnaire and a blood pressure check. Pharmacists use a standardized checklist based on national guidelines to make sure a method is safe for you. Progestin-only pills and the injection generally need no tests; combined (estrogen-containing) methods require a blood pressure reading, which the pharmacy can do on-site.",
+          "No pelvic exam or Pap test is required just to start most birth control.",
+          "Refills and renewals — if you already take the pill, ask about continuing it through the pharmacy.",
+          "Emergency contraception (\"morning-after pill\") and questions about how and when to use it.",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "Rules vary by state, so ask your pharmacist what they are able to provide where you live.",
+      },
+      {
+        type: "heading",
+        text: "Planning a pregnancy (or preventing one while managing a health condition)",
+      },
+      {
+        type: "paragraph",
+        text: "If you are thinking about pregnancy — or want to avoid it while your health is being managed — your pharmacist can help:",
+      },
+      {
+        type: "list",
+        items: [
+          "Review your medications to flag any that are not safe in pregnancy and suggest talking to your prescriber about alternatives.",
+          "Recommend folic acid and other steps to take before conception.",
+          "Help keep conditions like diabetes and high blood pressure well controlled, which matters a great deal before and during pregnancy.",
+        ],
+      },
+      { type: "heading", text: "Pregnancy and after delivery" },
+      {
+        type: "paragraph",
+        text: "You can ask about:",
+      },
+      {
+        type: "list",
+        items: [
+          "Which medications, including over-the-counter products, are safe during pregnancy and while breastfeeding.",
+          "Nausea and other common pregnancy symptoms.",
+          "Vaccines recommended during pregnancy.",
+        ],
+      },
+      { type: "heading", text: "Vaccines and screening" },
+      {
+        type: "paragraph",
+        text: "Pharmacists routinely provide immunizations, including the HPV vaccine, and can advise on which vaccines you need. Many pharmacies also offer blood pressure checks and can point you toward recommended screenings.",
+      },
+      { type: "heading", text: "Sexual health" },
+      {
+        type: "paragraph",
+        text: "Depending on your location, pharmacies may offer:",
+      },
+      {
+        type: "list",
+        items: [
+          "Testing and treatment for sexually transmitted infections (such as chlamydia).",
+          "HIV prevention medication (PrEP).",
+          "Confidential advice — you can ask for a private consultation area.",
+        ],
+      },
+      { type: "heading", text: "Everyday questions — no purchase needed" },
+      {
+        type: "paragraph",
+        text: "You do not have to be picking up a prescription to ask a question. Pharmacists give advice about over-the-counter medicines, symptoms, and general health, and will refer you to a doctor or clinic when something needs a higher level of care.",
+      },
+      { type: "heading", text: "How to make the most of your visit" },
+      {
+        type: "list",
+        items: [
+          "Ask for a private word if your question is personal — pharmacies can accommodate this.",
+          "Bring a list of everything you take, including vitamins and supplements.",
+          "Mention if you are pregnant, breastfeeding, or planning a pregnancy.",
+          "Ask \"what can you do here?\" — services differ by state and by pharmacy.",
+        ],
+      },
+      {
+        type: "callout",
+        title: "Just ask",
+        text: "The pharmacy counter is a practical, welcoming first stop for many women's health needs. When in doubt, ask a CureMed pharmacist what services are available where you live — and request a private word anytime your question is personal.",
+      },
+    ],
+  },
+  {
     slug: "diabetes-and-your-pharmacy-more-than-insulin",
     title: "Diabetes and Your Pharmacy: More Than Just Picking Up Insulin",
     excerpt:
