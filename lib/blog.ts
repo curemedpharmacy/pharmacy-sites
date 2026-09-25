@@ -23,6 +23,80 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "why-we-speak-arabic-and-spanish-at-the-counter",
+    title: "Why We Speak Arabic and Spanish at the Counter and Why It Matters",
+    excerpt:
+      "When you pick up a prescription, understanding exactly how to take it can be the difference between getting better and getting hurt. That's why we offer help in Arabic and Spanish.",
+    category: "Medication Support",
+    author: "CureMed Pharmacy Team",
+    publishedAt: "2025-09-02",
+    readTime: "6 min read",
+    image: "/images/blog/multilingual-pharmacy.png",
+    imageAlt:
+      "A warm, welcoming pharmacist speaking with a patient across a pharmacy counter with medication bottles between them.",
+    content: [
+      {
+        type: "paragraph",
+        text: "When you pick up a prescription, understanding exactly how to take it can be the difference between getting better and getting hurt. That is why our pharmacy team offers help in Arabic and Spanish — not as a courtesy, but as a core part of keeping you safe.",
+      },
+      { type: "heading", text: "Why Language at the Counter Really Matters" },
+      {
+        type: "paragraph",
+        text: "Medicine only works when you understand how to use it. Research shows that patients who are more comfortable in a language other than English are at higher risk of misunderstanding their medications, taking the wrong dose, and having drug complications and side effects (Schulson et al., Joint Commission Journal on Quality and Patient Safety, 2025; Lopez Vera et al., Journal of Immigrant and Minority Health, 2023).",
+      },
+      {
+        type: "paragraph",
+        text: "When a pharmacist speaks with you in your own language, the benefits are real and measurable:",
+      },
+      {
+        type: "list",
+        items: [
+          "Fewer mistakes. Language barriers are a known cause of medication errors in pharmacies. Clear communication in your language lowers that risk (El Hajj et al., PLoS One, 2025).",
+          "Better understanding of your labels. Patients given prescription instructions in their own language understand their regimens better and are more likely to take the right dose at the right time (Bailey et al., Journal of General Internal Medicine, 2012).",
+          "Better results from treatment. For conditions like diabetes, patients cared for in their own language have achieved better blood sugar control than those facing a language barrier (Lopez Vera et al., Journal of Immigrant and Minority Health, 2023).",
+          "You feel comfortable asking. Many people simply don't ask the pharmacist questions when they don't share a language. Speaking your language means you can ask about side effects, timing, and interactions — without hesitation (Shaw et al., Health Expectations, 2025).",
+        ],
+      },
+      { type: "heading", text: "What You Can Do at Our Counter" },
+      {
+        type: "list",
+        items: [
+          "Tell us your preferred language. Let any team member know you'd like to speak in Arabic or Spanish, and we'll connect you with someone who can help.",
+          "Ask us to explain the label. We can review how and when to take each medicine, what it's for, and what to watch out for — in plain terms, in your language.",
+          "Ask any question. No question is too small. If something about your medicine is unclear, that's exactly what we're here for.",
+          "Bring your medication list. We can review everything together and check for problems, doses, and timing.",
+        ],
+      },
+      { type: "heading", text: "Your Right to Understand" },
+      {
+        type: "paragraph",
+        text: "Getting information about your medicines in a language you understand is your right, not a favor. Health care providers and pharmacies that receive federal funding are required to provide language assistance (Juckett & Unger, American Family Physician, 2014).",
+      },
+      {
+        type: "paragraph",
+        text: "A few things worth knowing:",
+      },
+      {
+        type: "list",
+        items: [
+          "You do not need to bring your own interpreter. Professional interpreters are trained, keep your information private, and make fewer errors than family or friends.",
+          "Children should not be your interpreter except in a true emergency. It's not fair to them, and important details can be missed.",
+          "If no one on-site speaks your language, we can use a phone or video interpreter service to make sure you're fully informed.",
+        ],
+      },
+      { type: "heading", text: "The Bottom Line" },
+      {
+        type: "paragraph",
+        text: "Offering care in Arabic and Spanish isn't just about convenience — it's about safety, trust, and helping you get the full benefit of your medicines. Whatever language you're most comfortable in, please speak up. We want you to leave our counter knowing exactly what your medicine does and how to take it.",
+      },
+      {
+        type: "callout",
+        title: "Speak up in your language",
+        text: "Let any member of the CureMed team know you'd prefer Arabic or Spanish, and we'll make sure you leave understanding exactly how to take your medicine.",
+      },
+    ],
+  },
+  {
     slug: "why-your-pharmacy-knows-more-about-your-medications",
     title:
       "Why Your Pharmacy Might Know More About Your Medications Than Your Doctor",
