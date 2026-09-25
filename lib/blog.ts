@@ -5,6 +5,7 @@ export type ArticleBlock =
   | { type: "heading"; text: string }
   | { type: "paragraph"; text: string }
   | { type: "list"; items: string[] }
+  | { type: "table"; headers: string[]; rows: string[][] }
   | { type: "callout"; title?: string; text: string };
 
 export type Article = {
@@ -21,6 +22,119 @@ export type Article = {
 };
 
 export const articles: Article[] = [
+  {
+    slug: "cold-vs-flu-vs-allergies-how-to-tell-the-difference",
+    title: "Cold vs. Flu vs. Allergies: How to Tell the Difference",
+    excerpt:
+      "Sneezing, a stuffy nose, and feeling run-down can come from a cold, the flu, or allergies. They overlap a lot — but a few key clues usually point you in the right direction.",
+    category: "Medication Support",
+    author: "CureMed Pharmacy Team",
+    publishedAt: "2025-09-02",
+    readTime: "7 min read",
+    image: "/images/blog/cold-flu-allergies.png",
+    imageAlt:
+      "A box of tissues, a thermometer, a mug of tea with lemon and honey, and a small bottle of allergy tablets arranged on a wooden surface.",
+    content: [
+      {
+        type: "paragraph",
+        text: "Sneezing, a stuffy nose, and feeling run-down can come from a common cold, the flu (influenza), or allergies. They overlap a lot, but a few key clues usually point you in the right direction. Here's how to tell them apart — and what actually helps.",
+      },
+      { type: "heading", text: "The quickest way to tell them apart" },
+      {
+        type: "paragraph",
+        text: "How fast did it start? A cold comes on slowly, over 1–3 days. The flu hits suddenly, often within hours — you can sometimes name the hour you felt awful. Allergies appear when you're exposed to a trigger (pollen, dust, pets) and can last as long as the exposure continues.",
+      },
+      {
+        type: "paragraph",
+        text: "Do you have a fever and body aches? Fever and whole-body aches strongly suggest the flu — fever is common, often 100°F or higher, and body aches are frequently severe. Colds usually cause little or no fever and only mild aches. Allergies never cause a fever or true body aches.",
+      },
+      {
+        type: "paragraph",
+        text: "Are your eyes and nose itchy? Itchy, watery eyes and lots of sneezing point toward allergies — itchiness is the hallmark of an allergic reaction. Colds cause sneezing and a runny nose too, but usually without the intense itch. The flu less often causes a runny or stuffy nose.",
+      },
+      {
+        type: "paragraph",
+        text: "How exhausted are you? Extreme, wipe-you-out exhaustion is typical of the flu and can linger for 2–3 weeks. This level of exhaustion does not happen with a plain cold.",
+      },
+      { type: "heading", text: "Side-by-side comparison" },
+      {
+        type: "table",
+        headers: ["Feature", "Common Cold", "Flu (Influenza)", "Allergies"],
+        rows: [
+          ["Onset", "Gradual (1–3 days)", "Sudden (within hours)", "When exposed to a trigger"],
+          ["Fever", "Rare or mild", "Common, often 100°F+", "Never"],
+          ["Body aches", "Mild if any", "Common, often severe", "None"],
+          ["Fatigue/exhaustion", "Mild", "Often severe, lasts weeks", "Mild tiredness only"],
+          ["Sneezing/runny nose", "Very common", "Sometimes", "Very common"],
+          ["Itchy eyes/nose", "Uncommon", "No", "Very common (hallmark)"],
+          ["Sore throat", "Common, mild", "Sometimes", "Sometimes (post-nasal drip)"],
+          ["Cough", "Common, mild–moderate", "Common, can be severe", "Sometimes"],
+          ["How long it lasts", "About 7–10 days", "Days to a couple weeks", "As long as exposed"],
+          ["Time of year", "Year-round, peaks in winter", "Mostly late fall–winter", "Seasonal or year-round"],
+        ],
+      },
+      { type: "heading", text: "A couple of important cautions" },
+      {
+        type: "list",
+        items: [
+          "Symptoms overlap, and no single symptom is proof. COVID-19 and other respiratory viruses can look just like a cold or the flu. If it matters for treatment, a test is the only way to know for sure which virus you have.",
+          "Allergies don't cause fever. If you have a fever, think infection (cold or flu), not allergies.",
+        ],
+      },
+      { type: "heading", text: "What helps each one" },
+      {
+        type: "paragraph",
+        text: "Common cold — There's no cure; the goal is comfort while it runs its course (about a week or two):",
+      },
+      {
+        type: "list",
+        items: [
+          "Rest and fluids.",
+          "Over-the-counter pain/fever relievers (acetaminophen or ibuprofen).",
+          "Decongestants and/or antihistamine-decongestant combination products for a stuffy, runny nose.",
+          "Saline nasal rinses; zinc may shorten a cold if started within 24 hours of the first symptoms (it can cause nausea and a bad taste).",
+          "Antibiotics do not work on colds or the flu and can cause side effects.",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "Flu — Rest, fluids, and fever/pain relievers help symptoms. In addition, prescription antiviral medicines (like oseltamivir/Tamiflu or baloxavir/Xofluza) work best when started within about 48 hours of the first symptoms. Ask your pharmacist or clinician promptly if you think you have the flu — especially if you're at higher risk.",
+      },
+      {
+        type: "paragraph",
+        text: "Allergies — Treatment targets the allergic reaction, not an infection:",
+      },
+      {
+        type: "list",
+        items: [
+          "Non-drowsy (second-generation) antihistamines.",
+          "Steroid nasal sprays are very effective for nasal allergy symptoms.",
+          "Saline rinses and avoiding your triggers when possible.",
+          "A pharmacist can help you choose among these over-the-counter options.",
+        ],
+      },
+      { type: "heading", text: "When to seek medical care" },
+      {
+        type: "paragraph",
+        text: "Contact a clinician or pharmacist promptly if you:",
+      },
+      {
+        type: "list",
+        items: [
+          "Think you may have the flu and are at higher risk of complications — including young children, adults 65+, pregnant people, or anyone with conditions like asthma, heart disease, diabetes, or a weakened immune system. Antivirals may help even a bit later in these cases.",
+          "Have trouble breathing or shortness of breath.",
+          "Have a high fever that won't come down or lasts more than 3–4 days.",
+          "Have cold symptoms that last more than about 2 weeks or that improve and then suddenly get worse (this can signal a new infection).",
+          "Have chest pain, confusion, severe weakness, or symptoms of dehydration.",
+        ],
+      },
+      {
+        type: "callout",
+        title: "Your pharmacist is a great first stop",
+        text: "A CureMed pharmacist can help you choose the right over-the-counter product and decide whether you need to see a clinician or get tested. This article is general information, not a substitute for personalized medical advice.",
+      },
+    ],
+  },
   {
     slug: "womens-health-at-the-pharmacy-counter",
     title: "Women's Health at the Pharmacy Counter: What You Can Actually Ask",
