@@ -23,6 +23,103 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "why-your-pharmacy-knows-more-about-your-medications",
+    title:
+      "Why Your Pharmacy Might Know More About Your Medications Than Your Doctor",
+    excerpt:
+      "Your doctor prescribes your medications — but your pharmacist often sees the whole picture. If you have several doctors and a few OTC products at home, your pharmacy may be where it all comes together.",
+    category: "Medication Support",
+    author: "CureMed Pharmacy Team",
+    publishedAt: "2025-09-02",
+    readTime: "7 min read",
+    image: "/images/blog/pharmacist-medication-review.png",
+    imageAlt:
+      "A friendly pharmacist reviewing a patient's multiple prescription bottles and a printed medication list together at the pharmacy counter.",
+    content: [
+      {
+        type: "paragraph",
+        text: "Your doctor prescribes your medications—but your pharmacist often sees the whole picture. If you have several doctors, a specialist or two, and a few over-the-counter products at home, your pharmacy may be the one place where all of it comes together. Here's why that matters and how to use it.",
+      },
+      {
+        type: "heading",
+        text: "Your pharmacist sees medications from every prescriber",
+      },
+      {
+        type: "paragraph",
+        text: "Most people with more than one health condition see more than one doctor. Each may prescribe without knowing exactly what the others have ordered. Studies repeatedly find real discrepancies between the medication lists kept by patients, their doctors, and their pharmacists—which can lead to the same drug (or two similar drugs) being prescribed twice (Bosch-Lenders et al., BMC Primary Care, 2026).",
+      },
+      {
+        type: "paragraph",
+        text: "When you fill everything at one pharmacy, the pharmacist's records capture the full regimen—prescription drugs, and often the over-the-counter medicines and supplements you mention. That combined view is exactly what makes it possible to catch problems no single prescriber may see.",
+      },
+      {
+        type: "heading",
+        text: "They are trained specifically to catch drug problems",
+      },
+      {
+        type: "paragraph",
+        text: "Pharmacists are medication experts by training. When they review a regimen, they look systematically for:",
+      },
+      {
+        type: "list",
+        items: [
+          "Drug interactions — two medications that shouldn't be combined, or that need spacing or monitoring",
+          "Duplicate therapy — two drugs that do the same thing, often from different doctors",
+          "Wrong or risky doses — including doses that should be lowered for age or kidney function",
+          "Medications with no clear reason to keep taking them anymore",
+          "Side effects that may actually be caused by a medicine",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "In studies where pharmacists formally reviewed patients taking many medications, drug interactions and safety issues were among the most common problems found—and pharmacists resolved a large share of them directly, either by counseling the patient or contacting the doctor (Szilvay et al., PLoS One, 2021). Reviews of patients on five or more medicines frequently turn up \"overtreatment,\" including duplicate drugs and medicines no longer needed (Kempen et al., International Journal of Clinical Pharmacy, 2014).",
+      },
+      {
+        type: "heading",
+        text: "Your refill history reveals things a visit can't",
+      },
+      {
+        type: "paragraph",
+        text: "Your pharmacy knows when you actually pick up your medications. Gaps between refills are one of the most reliable signals that a medication isn't being taken as prescribed—something that may never come up in a rushed office visit. Refill records are considered a valid, practical measure of whether medications are being taken consistently (American Heart Association, 2018). A pharmacist who notices you're overdue can ask what's going on—cost, side effects, confusion about the schedule—and help solve it.",
+      },
+      {
+        type: "heading",
+        text: "This isn't a substitute for your doctor—it's a safety net",
+      },
+      {
+        type: "paragraph",
+        text: "None of this replaces your physician, who diagnoses your conditions and decides your treatment. The point is that pharmacists add a second expert layer focused entirely on the medications themselves. When pharmacists provide structured \"medication therapy management,\" studies link it to fewer hospital readmissions, fewer emergency visits, fewer adverse drug events, and better control of conditions like diabetes and high blood pressure (Deng et al., Frontiers in Pharmacology, 2023; Viswanathan et al., JAMA Internal Medicine, 2015).",
+      },
+      {
+        type: "heading",
+        text: "How to get the most from your pharmacist",
+      },
+      {
+        type: "list",
+        items: [
+          "Use one pharmacy for all your prescriptions when you can, so everything is in one record.",
+          "Bring everything to a review—including OTC medicines, vitamins, and supplements (\"brown-bag\" checkup).",
+          "Ask for a medication review, especially if you take five or more medicines or have recently left the hospital.",
+          "Speak up about side effects, costs, or missed doses. These are exactly the problems a pharmacist can help fix or flag to your doctor.",
+          "Ask questions when starting a new drug—what it's for, how to take it, and what to watch for.",
+        ],
+      },
+      {
+        type: "heading",
+        text: "When to call your doctor or seek urgent care",
+      },
+      {
+        type: "paragraph",
+        text: "A pharmacist can flag concerns and adjust guidance, but call your doctor promptly for new or worsening symptoms, and seek emergency care for severe reactions such as trouble breathing, swelling of the face or throat, chest pain, or fainting.",
+      },
+      {
+        type: "callout",
+        title: "Talk to your pharmacist",
+        text: "Filling everything at one pharmacy gives your CureMed pharmacist the full picture of your medications. Ask us for a medication review—especially if you take five or more medicines or recently left the hospital.",
+      },
+    ],
+  },
+  {
     slug: "cold-vs-flu-vs-allergies-how-to-tell-the-difference",
     title: "Cold vs. Flu vs. Allergies: How to Tell the Difference",
     excerpt:
