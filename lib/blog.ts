@@ -5,6 +5,7 @@ export type ArticleBlock =
   | { type: "heading"; text: string }
   | { type: "paragraph"; text: string }
   | { type: "list"; items: string[] }
+  | { type: "table"; headers: string[]; rows: string[][] }
   | { type: "callout"; title?: string; text: string };
 
 export type Article = {
@@ -21,6 +22,475 @@ export type Article = {
 };
 
 export const articles: Article[] = [
+  {
+    slug: "why-we-speak-arabic-and-spanish-at-the-counter",
+    title: "Why We Speak Arabic and Spanish at the Counter and Why It Matters",
+    excerpt:
+      "When you pick up a prescription, understanding exactly how to take it can be the difference between getting better and getting hurt. That's why we offer help in Arabic and Spanish.",
+    category: "Medication Support",
+    author: "CureMed Pharmacy Team",
+    publishedAt: "2025-09-02",
+    readTime: "6 min read",
+    image: "/images/blog/multilingual-pharmacy.png",
+    imageAlt:
+      "A warm, welcoming pharmacist speaking with a patient across a pharmacy counter with medication bottles between them.",
+    content: [
+      {
+        type: "paragraph",
+        text: "When you pick up a prescription, understanding exactly how to take it can be the difference between getting better and getting hurt. That is why our pharmacy team offers help in Arabic and Spanish — not as a courtesy, but as a core part of keeping you safe.",
+      },
+      { type: "heading", text: "Why Language at the Counter Really Matters" },
+      {
+        type: "paragraph",
+        text: "Medicine only works when you understand how to use it. Research shows that patients who are more comfortable in a language other than English are at higher risk of misunderstanding their medications, taking the wrong dose, and having drug complications and side effects (Schulson et al., Joint Commission Journal on Quality and Patient Safety, 2025; Lopez Vera et al., Journal of Immigrant and Minority Health, 2023).",
+      },
+      {
+        type: "paragraph",
+        text: "When a pharmacist speaks with you in your own language, the benefits are real and measurable:",
+      },
+      {
+        type: "list",
+        items: [
+          "Fewer mistakes. Language barriers are a known cause of medication errors in pharmacies. Clear communication in your language lowers that risk (El Hajj et al., PLoS One, 2025).",
+          "Better understanding of your labels. Patients given prescription instructions in their own language understand their regimens better and are more likely to take the right dose at the right time (Bailey et al., Journal of General Internal Medicine, 2012).",
+          "Better results from treatment. For conditions like diabetes, patients cared for in their own language have achieved better blood sugar control than those facing a language barrier (Lopez Vera et al., Journal of Immigrant and Minority Health, 2023).",
+          "You feel comfortable asking. Many people simply don't ask the pharmacist questions when they don't share a language. Speaking your language means you can ask about side effects, timing, and interactions — without hesitation (Shaw et al., Health Expectations, 2025).",
+        ],
+      },
+      { type: "heading", text: "What You Can Do at Our Counter" },
+      {
+        type: "list",
+        items: [
+          "Tell us your preferred language. Let any team member know you'd like to speak in Arabic or Spanish, and we'll connect you with someone who can help.",
+          "Ask us to explain the label. We can review how and when to take each medicine, what it's for, and what to watch out for — in plain terms, in your language.",
+          "Ask any question. No question is too small. If something about your medicine is unclear, that's exactly what we're here for.",
+          "Bring your medication list. We can review everything together and check for problems, doses, and timing.",
+        ],
+      },
+      { type: "heading", text: "Your Right to Understand" },
+      {
+        type: "paragraph",
+        text: "Getting information about your medicines in a language you understand is your right, not a favor. Health care providers and pharmacies that receive federal funding are required to provide language assistance (Juckett & Unger, American Family Physician, 2014).",
+      },
+      {
+        type: "paragraph",
+        text: "A few things worth knowing:",
+      },
+      {
+        type: "list",
+        items: [
+          "You do not need to bring your own interpreter. Professional interpreters are trained, keep your information private, and make fewer errors than family or friends.",
+          "Children should not be your interpreter except in a true emergency. It's not fair to them, and important details can be missed.",
+          "If no one on-site speaks your language, we can use a phone or video interpreter service to make sure you're fully informed.",
+        ],
+      },
+      { type: "heading", text: "The Bottom Line" },
+      {
+        type: "paragraph",
+        text: "Offering care in Arabic and Spanish isn't just about convenience — it's about safety, trust, and helping you get the full benefit of your medicines. Whatever language you're most comfortable in, please speak up. We want you to leave our counter knowing exactly what your medicine does and how to take it.",
+      },
+      {
+        type: "callout",
+        title: "Speak up in your language",
+        text: "Let any member of the CureMed team know you'd prefer Arabic or Spanish, and we'll make sure you leave understanding exactly how to take your medicine.",
+      },
+    ],
+  },
+  {
+    slug: "why-your-pharmacy-knows-more-about-your-medications",
+    title:
+      "Why Your Pharmacy Might Know More About Your Medications Than Your Doctor",
+    excerpt:
+      "Your doctor prescribes your medications — but your pharmacist often sees the whole picture. If you have several doctors and a few OTC products at home, your pharmacy may be where it all comes together.",
+    category: "Medication Support",
+    author: "CureMed Pharmacy Team",
+    publishedAt: "2025-09-02",
+    readTime: "7 min read",
+    image: "/images/blog/pharmacist-medication-review.png",
+    imageAlt:
+      "A friendly pharmacist reviewing a patient's multiple prescription bottles and a printed medication list together at the pharmacy counter.",
+    content: [
+      {
+        type: "paragraph",
+        text: "Your doctor prescribes your medications—but your pharmacist often sees the whole picture. If you have several doctors, a specialist or two, and a few over-the-counter products at home, your pharmacy may be the one place where all of it comes together. Here's why that matters and how to use it.",
+      },
+      {
+        type: "heading",
+        text: "Your pharmacist sees medications from every prescriber",
+      },
+      {
+        type: "paragraph",
+        text: "Most people with more than one health condition see more than one doctor. Each may prescribe without knowing exactly what the others have ordered. Studies repeatedly find real discrepancies between the medication lists kept by patients, their doctors, and their pharmacists—which can lead to the same drug (or two similar drugs) being prescribed twice (Bosch-Lenders et al., BMC Primary Care, 2026).",
+      },
+      {
+        type: "paragraph",
+        text: "When you fill everything at one pharmacy, the pharmacist's records capture the full regimen—prescription drugs, and often the over-the-counter medicines and supplements you mention. That combined view is exactly what makes it possible to catch problems no single prescriber may see.",
+      },
+      {
+        type: "heading",
+        text: "They are trained specifically to catch drug problems",
+      },
+      {
+        type: "paragraph",
+        text: "Pharmacists are medication experts by training. When they review a regimen, they look systematically for:",
+      },
+      {
+        type: "list",
+        items: [
+          "Drug interactions — two medications that shouldn't be combined, or that need spacing or monitoring",
+          "Duplicate therapy — two drugs that do the same thing, often from different doctors",
+          "Wrong or risky doses — including doses that should be lowered for age or kidney function",
+          "Medications with no clear reason to keep taking them anymore",
+          "Side effects that may actually be caused by a medicine",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "In studies where pharmacists formally reviewed patients taking many medications, drug interactions and safety issues were among the most common problems found—and pharmacists resolved a large share of them directly, either by counseling the patient or contacting the doctor (Szilvay et al., PLoS One, 2021). Reviews of patients on five or more medicines frequently turn up \"overtreatment,\" including duplicate drugs and medicines no longer needed (Kempen et al., International Journal of Clinical Pharmacy, 2014).",
+      },
+      {
+        type: "heading",
+        text: "Your refill history reveals things a visit can't",
+      },
+      {
+        type: "paragraph",
+        text: "Your pharmacy knows when you actually pick up your medications. Gaps between refills are one of the most reliable signals that a medication isn't being taken as prescribed—something that may never come up in a rushed office visit. Refill records are considered a valid, practical measure of whether medications are being taken consistently (American Heart Association, 2018). A pharmacist who notices you're overdue can ask what's going on—cost, side effects, confusion about the schedule—and help solve it.",
+      },
+      {
+        type: "heading",
+        text: "This isn't a substitute for your doctor—it's a safety net",
+      },
+      {
+        type: "paragraph",
+        text: "None of this replaces your physician, who diagnoses your conditions and decides your treatment. The point is that pharmacists add a second expert layer focused entirely on the medications themselves. When pharmacists provide structured \"medication therapy management,\" studies link it to fewer hospital readmissions, fewer emergency visits, fewer adverse drug events, and better control of conditions like diabetes and high blood pressure (Deng et al., Frontiers in Pharmacology, 2023; Viswanathan et al., JAMA Internal Medicine, 2015).",
+      },
+      {
+        type: "heading",
+        text: "How to get the most from your pharmacist",
+      },
+      {
+        type: "list",
+        items: [
+          "Use one pharmacy for all your prescriptions when you can, so everything is in one record.",
+          "Bring everything to a review—including OTC medicines, vitamins, and supplements (\"brown-bag\" checkup).",
+          "Ask for a medication review, especially if you take five or more medicines or have recently left the hospital.",
+          "Speak up about side effects, costs, or missed doses. These are exactly the problems a pharmacist can help fix or flag to your doctor.",
+          "Ask questions when starting a new drug—what it's for, how to take it, and what to watch for.",
+        ],
+      },
+      {
+        type: "heading",
+        text: "When to call your doctor or seek urgent care",
+      },
+      {
+        type: "paragraph",
+        text: "A pharmacist can flag concerns and adjust guidance, but call your doctor promptly for new or worsening symptoms, and seek emergency care for severe reactions such as trouble breathing, swelling of the face or throat, chest pain, or fainting.",
+      },
+      {
+        type: "callout",
+        title: "Talk to your pharmacist",
+        text: "Filling everything at one pharmacy gives your CureMed pharmacist the full picture of your medications. Ask us for a medication review—especially if you take five or more medicines or recently left the hospital.",
+      },
+    ],
+  },
+  {
+    slug: "cold-vs-flu-vs-allergies-how-to-tell-the-difference",
+    title: "Cold vs. Flu vs. Allergies: How to Tell the Difference",
+    excerpt:
+      "Sneezing, a stuffy nose, and feeling run-down can come from a cold, the flu, or allergies. They overlap a lot — but a few key clues usually point you in the right direction.",
+    category: "Medication Support",
+    author: "CureMed Pharmacy Team",
+    publishedAt: "2025-09-02",
+    readTime: "7 min read",
+    image: "/images/blog/cold-flu-allergies.png",
+    imageAlt:
+      "A box of tissues, a thermometer, a mug of tea with lemon and honey, and a small bottle of allergy tablets arranged on a wooden surface.",
+    content: [
+      {
+        type: "paragraph",
+        text: "Sneezing, a stuffy nose, and feeling run-down can come from a common cold, the flu (influenza), or allergies. They overlap a lot, but a few key clues usually point you in the right direction. Here's how to tell them apart — and what actually helps.",
+      },
+      { type: "heading", text: "The quickest way to tell them apart" },
+      {
+        type: "paragraph",
+        text: "How fast did it start? A cold comes on slowly, over 1–3 days. The flu hits suddenly, often within hours — you can sometimes name the hour you felt awful. Allergies appear when you're exposed to a trigger (pollen, dust, pets) and can last as long as the exposure continues.",
+      },
+      {
+        type: "paragraph",
+        text: "Do you have a fever and body aches? Fever and whole-body aches strongly suggest the flu — fever is common, often 100°F or higher, and body aches are frequently severe. Colds usually cause little or no fever and only mild aches. Allergies never cause a fever or true body aches.",
+      },
+      {
+        type: "paragraph",
+        text: "Are your eyes and nose itchy? Itchy, watery eyes and lots of sneezing point toward allergies — itchiness is the hallmark of an allergic reaction. Colds cause sneezing and a runny nose too, but usually without the intense itch. The flu less often causes a runny or stuffy nose.",
+      },
+      {
+        type: "paragraph",
+        text: "How exhausted are you? Extreme, wipe-you-out exhaustion is typical of the flu and can linger for 2–3 weeks. This level of exhaustion does not happen with a plain cold.",
+      },
+      { type: "heading", text: "Side-by-side comparison" },
+      {
+        type: "table",
+        headers: ["Feature", "Common Cold", "Flu (Influenza)", "Allergies"],
+        rows: [
+          ["Onset", "Gradual (1–3 days)", "Sudden (within hours)", "When exposed to a trigger"],
+          ["Fever", "Rare or mild", "Common, often 100°F+", "Never"],
+          ["Body aches", "Mild if any", "Common, often severe", "None"],
+          ["Fatigue/exhaustion", "Mild", "Often severe, lasts weeks", "Mild tiredness only"],
+          ["Sneezing/runny nose", "Very common", "Sometimes", "Very common"],
+          ["Itchy eyes/nose", "Uncommon", "No", "Very common (hallmark)"],
+          ["Sore throat", "Common, mild", "Sometimes", "Sometimes (post-nasal drip)"],
+          ["Cough", "Common, mild–moderate", "Common, can be severe", "Sometimes"],
+          ["How long it lasts", "About 7–10 days", "Days to a couple weeks", "As long as exposed"],
+          ["Time of year", "Year-round, peaks in winter", "Mostly late fall–winter", "Seasonal or year-round"],
+        ],
+      },
+      { type: "heading", text: "A couple of important cautions" },
+      {
+        type: "list",
+        items: [
+          "Symptoms overlap, and no single symptom is proof. COVID-19 and other respiratory viruses can look just like a cold or the flu. If it matters for treatment, a test is the only way to know for sure which virus you have.",
+          "Allergies don't cause fever. If you have a fever, think infection (cold or flu), not allergies.",
+        ],
+      },
+      { type: "heading", text: "What helps each one" },
+      {
+        type: "paragraph",
+        text: "Common cold — There's no cure; the goal is comfort while it runs its course (about a week or two):",
+      },
+      {
+        type: "list",
+        items: [
+          "Rest and fluids.",
+          "Over-the-counter pain/fever relievers (acetaminophen or ibuprofen).",
+          "Decongestants and/or antihistamine-decongestant combination products for a stuffy, runny nose.",
+          "Saline nasal rinses; zinc may shorten a cold if started within 24 hours of the first symptoms (it can cause nausea and a bad taste).",
+          "Antibiotics do not work on colds or the flu and can cause side effects.",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "Flu — Rest, fluids, and fever/pain relievers help symptoms. In addition, prescription antiviral medicines (like oseltamivir/Tamiflu or baloxavir/Xofluza) work best when started within about 48 hours of the first symptoms. Ask your pharmacist or clinician promptly if you think you have the flu — especially if you're at higher risk.",
+      },
+      {
+        type: "paragraph",
+        text: "Allergies — Treatment targets the allergic reaction, not an infection:",
+      },
+      {
+        type: "list",
+        items: [
+          "Non-drowsy (second-generation) antihistamines.",
+          "Steroid nasal sprays are very effective for nasal allergy symptoms.",
+          "Saline rinses and avoiding your triggers when possible.",
+          "A pharmacist can help you choose among these over-the-counter options.",
+        ],
+      },
+      { type: "heading", text: "When to seek medical care" },
+      {
+        type: "paragraph",
+        text: "Contact a clinician or pharmacist promptly if you:",
+      },
+      {
+        type: "list",
+        items: [
+          "Think you may have the flu and are at higher risk of complications — including young children, adults 65+, pregnant people, or anyone with conditions like asthma, heart disease, diabetes, or a weakened immune system. Antivirals may help even a bit later in these cases.",
+          "Have trouble breathing or shortness of breath.",
+          "Have a high fever that won't come down or lasts more than 3–4 days.",
+          "Have cold symptoms that last more than about 2 weeks or that improve and then suddenly get worse (this can signal a new infection).",
+          "Have chest pain, confusion, severe weakness, or symptoms of dehydration.",
+        ],
+      },
+      {
+        type: "callout",
+        title: "Your pharmacist is a great first stop",
+        text: "A CureMed pharmacist can help you choose the right over-the-counter product and decide whether you need to see a clinician or get tested. This article is general information, not a substitute for personalized medical advice.",
+      },
+    ],
+  },
+  {
+    slug: "womens-health-at-the-pharmacy-counter",
+    title: "Women's Health at the Pharmacy Counter: What You Can Actually Ask",
+    excerpt:
+      "No appointment, evening and weekend hours, and a trained health professional at the counter. For many women, the pharmacist is the most accessible member of the care team — here's what you can walk in and ask about.",
+    category: "Medication Support",
+    author: "CureMed Pharmacy Team",
+    publishedAt: "2025-09-02",
+    readTime: "6 min read",
+    image: "/images/blog/womens-health-pharmacy.png",
+    imageAlt:
+      "A friendly female pharmacist speaking with a woman patient across a private consultation counter, with a blood pressure monitor on the counter.",
+    content: [
+      {
+        type: "paragraph",
+        text: "Your neighborhood pharmacy is one of the easiest places to get health help — no appointment, evening and weekend hours, and a trained health professional at the counter. For many women, the pharmacist is the most accessible member of the health care team, and their role now goes well beyond handing over a prescription bag. Here is what you can actually walk in and ask about.",
+      },
+      { type: "heading", text: "Birth control (contraception)" },
+      {
+        type: "paragraph",
+        text: "In many U.S. states, pharmacists can prescribe or directly provide hormonal birth control — pills, the patch, the vaginal ring, and the injection — without a separate doctor's visit first (this is sometimes called \"pharmacy access\" or \"behind-the-counter\" access).",
+      },
+      {
+        type: "paragraph",
+        text: "What to expect:",
+      },
+      {
+        type: "list",
+        items: [
+          "A short questionnaire and a blood pressure check. Pharmacists use a standardized checklist based on national guidelines to make sure a method is safe for you. Progestin-only pills and the injection generally need no tests; combined (estrogen-containing) methods require a blood pressure reading, which the pharmacy can do on-site.",
+          "No pelvic exam or Pap test is required just to start most birth control.",
+          "Refills and renewals — if you already take the pill, ask about continuing it through the pharmacy.",
+          "Emergency contraception (\"morning-after pill\") and questions about how and when to use it.",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "Rules vary by state, so ask your pharmacist what they are able to provide where you live.",
+      },
+      {
+        type: "heading",
+        text: "Planning a pregnancy (or preventing one while managing a health condition)",
+      },
+      {
+        type: "paragraph",
+        text: "If you are thinking about pregnancy — or want to avoid it while your health is being managed — your pharmacist can help:",
+      },
+      {
+        type: "list",
+        items: [
+          "Review your medications to flag any that are not safe in pregnancy and suggest talking to your prescriber about alternatives.",
+          "Recommend folic acid and other steps to take before conception.",
+          "Help keep conditions like diabetes and high blood pressure well controlled, which matters a great deal before and during pregnancy.",
+        ],
+      },
+      { type: "heading", text: "Pregnancy and after delivery" },
+      {
+        type: "paragraph",
+        text: "You can ask about:",
+      },
+      {
+        type: "list",
+        items: [
+          "Which medications, including over-the-counter products, are safe during pregnancy and while breastfeeding.",
+          "Nausea and other common pregnancy symptoms.",
+          "Vaccines recommended during pregnancy.",
+        ],
+      },
+      { type: "heading", text: "Vaccines and screening" },
+      {
+        type: "paragraph",
+        text: "Pharmacists routinely provide immunizations, including the HPV vaccine, and can advise on which vaccines you need. Many pharmacies also offer blood pressure checks and can point you toward recommended screenings.",
+      },
+      { type: "heading", text: "Sexual health" },
+      {
+        type: "paragraph",
+        text: "Depending on your location, pharmacies may offer:",
+      },
+      {
+        type: "list",
+        items: [
+          "Testing and treatment for sexually transmitted infections (such as chlamydia).",
+          "HIV prevention medication (PrEP).",
+          "Confidential advice — you can ask for a private consultation area.",
+        ],
+      },
+      { type: "heading", text: "Everyday questions — no purchase needed" },
+      {
+        type: "paragraph",
+        text: "You do not have to be picking up a prescription to ask a question. Pharmacists give advice about over-the-counter medicines, symptoms, and general health, and will refer you to a doctor or clinic when something needs a higher level of care.",
+      },
+      { type: "heading", text: "How to make the most of your visit" },
+      {
+        type: "list",
+        items: [
+          "Ask for a private word if your question is personal — pharmacies can accommodate this.",
+          "Bring a list of everything you take, including vitamins and supplements.",
+          "Mention if you are pregnant, breastfeeding, or planning a pregnancy.",
+          "Ask \"what can you do here?\" — services differ by state and by pharmacy.",
+        ],
+      },
+      {
+        type: "callout",
+        title: "Just ask",
+        text: "The pharmacy counter is a practical, welcoming first stop for many women's health needs. When in doubt, ask a CureMed pharmacist what services are available where you live — and request a private word anytime your question is personal.",
+      },
+    ],
+  },
+  {
+    slug: "diabetes-and-your-pharmacy-more-than-insulin",
+    title: "Diabetes and Your Pharmacy: More Than Just Picking Up Insulin",
+    excerpt:
+      "Your pharmacy is one of the most accessible parts of the health care system. If you live with diabetes, your pharmacist can be a powerful partner in your care — not just the person who hands you your prescription.",
+    category: "Medication Support",
+    author: "CureMed Pharmacy Team",
+    publishedAt: "2025-09-02",
+    readTime: "7 min read",
+    image: "/images/blog/diabetes-pharmacy-care.png",
+    imageAlt:
+      "A friendly pharmacist reviewing medications and a blood glucose meter with a patient across a pharmacy counter.",
+    content: [
+      {
+        type: "paragraph",
+        text: "Your pharmacy is one of the most accessible parts of the health care system. For most people, it is far easier to walk into a local pharmacy than to schedule a doctor's visit — in England, for example, nearly everyone in the most underserved areas lives within a 20-minute walk of a community pharmacy (Highton et al., Diabetologia, 2026). If you live with diabetes, that accessibility means your pharmacist can be a powerful partner in your care, not just the person who hands you your prescription.",
+      },
+      {
+        type: "paragraph",
+        text: "Here is what your pharmacy can do for you beyond filling your insulin or pills.",
+      },
+      { type: "heading", text: "A Medication Review That Looks at the Whole Picture" },
+      {
+        type: "paragraph",
+        text: "Many people with diabetes take several medications — for blood sugar, blood pressure, cholesterol, and other conditions. A pharmacist can sit down with you for a comprehensive medication review to make sure everything is working together safely. During this kind of visit, the pharmacist checks what you are taking, looks for drug interactions or duplicate medicines, helps simplify complicated schedules, and answers your questions (Albabtain et al., Scientific Reports, 2024).",
+      },
+      {
+        type: "paragraph",
+        text: "These reviews are not just paperwork. In one randomized trial, patients who received a structured pharmacy medication therapy management program were far more likely to take their medications as prescribed and reported much less diabetes-related distress than those who received usual care (Albabtain et al., Scientific Reports, 2024).",
+      },
+      { type: "heading", text: "Help Taking Your Medications as Prescribed" },
+      {
+        type: "paragraph",
+        text: "Sticking to a diabetes regimen is hard, and missing doses is common. Pharmacists can help with practical tools: pill organizers, refill reminders, written treatment plans, and coaching on how and when to take each medicine. Research shows that pharmacist-led support consistently improves how reliably people take their medications — and better adherence translates into better blood sugar control (Highton et al., Diabetologia, 2026).",
+      },
+      { type: "heading", text: "Diabetes Education and Self-Management Support" },
+      {
+        type: "paragraph",
+        text: "Learning to manage diabetes day to day is a skill, and pharmacists are trained to teach it. This can include how your medications work, how to check your blood sugar, how to use devices like insulin pens or glucose meters, recognizing the long-term complications of diabetes, and how diet, exercise, and quitting smoking fit in (Conley et al., Current Diabetes Reports, 2014).",
+      },
+      {
+        type: "paragraph",
+        text: "A large review of the evidence found that pharmacist-led self-management support lowered HbA1c (a three-month average of blood sugar) by about 0.7% on average, while also improving blood pressure, cholesterol, weight, and medication adherence (van Eikenhorst et al., Frontiers in Pharmacology, 2017). Pharmacists can also connect you to formal diabetes self-management education and support programs if you would benefit from more in-depth training (Daly et al., JAPhA, 2026).",
+      },
+      { type: "heading", text: "Blood Sugar and Health Monitoring" },
+      {
+        type: "paragraph",
+        text: "Some pharmacies offer point-of-care testing, such as an on-the-spot HbA1c check, and can help interpret home blood glucose or blood pressure readings you bring in (Daly et al., JAPhA, 2026). A growing number of pharmacies are even beginning to support continuous glucose monitoring — wearable sensors that track blood sugar throughout the day — especially for people whose numbers are not yet where they should be (Joung et al., PLoS One, 2026).",
+      },
+      { type: "heading", text: "Part of Your Care Team" },
+      {
+        type: "paragraph",
+        text: "Increasingly, pharmacists work directly with your doctor. Under collaborative arrangements, some pharmacists can adjust medication doses, order lab tests, and communicate directly with your physician to keep your care coordinated (Firkus et al., PLoS One, 2022; Conley et al., Current Diabetes Reports, 2014). Studies of these team-based models show improvements not only in blood sugar, but also in blood pressure and cholesterol control (Firkus et al., PLoS One, 2022).",
+      },
+      { type: "heading", text: "How to Get the Most From Your Pharmacy" },
+      {
+        type: "list",
+        items: [
+          "Ask about a medication review. If you take several medicines, request a sit-down consultation.",
+          "Bring your numbers. Home blood sugar and blood pressure logs give your pharmacist useful information.",
+          "Ask questions about side effects and timing. Pharmacists are experts on how to take your medicines safely.",
+          "Ask about education programs and monitoring services. Many are free or low-cost and can be arranged close to home.",
+          "Keep your pharmacist in the loop. Let them know about new prescriptions, over-the-counter products, and supplements.",
+        ],
+      },
+      { type: "heading", text: "The Bottom Line" },
+      {
+        type: "paragraph",
+        text: "Your pharmacy is much more than a place to pick up insulin. Pharmacists are highly trained, easily accessible members of your health care team who can help you understand your medications, take them successfully, learn to manage your diabetes, monitor your progress, and stay connected with your doctor. Making use of these services can genuinely improve your health.",
+      },
+      {
+        type: "callout",
+        title: "Talk to your pharmacist",
+        text: "This handout is for general education and does not replace advice from your own health care providers. Ask a CureMed pharmacist about medication reviews, diabetes education, and monitoring services available close to home.",
+      },
+    ],
+  },
   {
     slug: "walk-in-flu-shot-no-appointment-needed",
     title:

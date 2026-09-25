@@ -108,6 +108,60 @@ function ArticleBody({ blocks, isSaimz }: { blocks: ArticleBlock[]; isSaimz: boo
             </ul>
           );
         }
+        if (block.type === "table") {
+          return (
+            <div
+              key={index}
+              className={`mt-6 overflow-x-auto rounded-2xl border ${
+                isSaimz ? "border-[#1A4A7A]/15" : "border-ink/10"
+              }`}
+            >
+              <table className="w-full border-collapse text-left text-sm">
+                <thead>
+                  <tr className={isSaimz ? "bg-[#E8F0FE]" : "bg-amber/5"}>
+                    {block.headers.map((header, i) => (
+                      <th
+                        key={i}
+                        className={`px-4 py-3 font-display text-sm font-semibold ${
+                          isSaimz ? "text-[#0A1628]" : "text-ink"
+                        }`}
+                      >
+                        {header}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {block.rows.map((row, r) => (
+                    <tr
+                      key={r}
+                      className={`border-t ${
+                        isSaimz ? "border-[#1A4A7A]/10" : "border-ink/10"
+                      }`}
+                    >
+                      {row.map((cell, c) => (
+                        <td
+                          key={c}
+                          className={`px-4 py-3 align-top leading-relaxed ${
+                            c === 0
+                              ? isSaimz
+                                ? "font-medium text-[#0A1628]"
+                                : "font-medium text-ink"
+                              : isSaimz
+                                ? "text-[#33506E]"
+                                : "text-ink/80"
+                          }`}
+                        >
+                          {cell}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          );
+        }
         // callout
         return (
           <div key={index} className={calloutClass}>
