@@ -22,6 +22,83 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "diabetes-and-your-pharmacy-more-than-insulin",
+    title: "Diabetes and Your Pharmacy: More Than Just Picking Up Insulin",
+    excerpt:
+      "Your pharmacy is one of the most accessible parts of the health care system. If you live with diabetes, your pharmacist can be a powerful partner in your care — not just the person who hands you your prescription.",
+    category: "Medication Support",
+    author: "CureMed Pharmacy Team",
+    publishedAt: "2025-09-02",
+    readTime: "7 min read",
+    image: "/images/blog/diabetes-pharmacy-care.png",
+    imageAlt:
+      "A friendly pharmacist reviewing medications and a blood glucose meter with a patient across a pharmacy counter.",
+    content: [
+      {
+        type: "paragraph",
+        text: "Your pharmacy is one of the most accessible parts of the health care system. For most people, it is far easier to walk into a local pharmacy than to schedule a doctor's visit — in England, for example, nearly everyone in the most underserved areas lives within a 20-minute walk of a community pharmacy (Highton et al., Diabetologia, 2026). If you live with diabetes, that accessibility means your pharmacist can be a powerful partner in your care, not just the person who hands you your prescription.",
+      },
+      {
+        type: "paragraph",
+        text: "Here is what your pharmacy can do for you beyond filling your insulin or pills.",
+      },
+      { type: "heading", text: "A Medication Review That Looks at the Whole Picture" },
+      {
+        type: "paragraph",
+        text: "Many people with diabetes take several medications — for blood sugar, blood pressure, cholesterol, and other conditions. A pharmacist can sit down with you for a comprehensive medication review to make sure everything is working together safely. During this kind of visit, the pharmacist checks what you are taking, looks for drug interactions or duplicate medicines, helps simplify complicated schedules, and answers your questions (Albabtain et al., Scientific Reports, 2024).",
+      },
+      {
+        type: "paragraph",
+        text: "These reviews are not just paperwork. In one randomized trial, patients who received a structured pharmacy medication therapy management program were far more likely to take their medications as prescribed and reported much less diabetes-related distress than those who received usual care (Albabtain et al., Scientific Reports, 2024).",
+      },
+      { type: "heading", text: "Help Taking Your Medications as Prescribed" },
+      {
+        type: "paragraph",
+        text: "Sticking to a diabetes regimen is hard, and missing doses is common. Pharmacists can help with practical tools: pill organizers, refill reminders, written treatment plans, and coaching on how and when to take each medicine. Research shows that pharmacist-led support consistently improves how reliably people take their medications — and better adherence translates into better blood sugar control (Highton et al., Diabetologia, 2026).",
+      },
+      { type: "heading", text: "Diabetes Education and Self-Management Support" },
+      {
+        type: "paragraph",
+        text: "Learning to manage diabetes day to day is a skill, and pharmacists are trained to teach it. This can include how your medications work, how to check your blood sugar, how to use devices like insulin pens or glucose meters, recognizing the long-term complications of diabetes, and how diet, exercise, and quitting smoking fit in (Conley et al., Current Diabetes Reports, 2014).",
+      },
+      {
+        type: "paragraph",
+        text: "A large review of the evidence found that pharmacist-led self-management support lowered HbA1c (a three-month average of blood sugar) by about 0.7% on average, while also improving blood pressure, cholesterol, weight, and medication adherence (van Eikenhorst et al., Frontiers in Pharmacology, 2017). Pharmacists can also connect you to formal diabetes self-management education and support programs if you would benefit from more in-depth training (Daly et al., JAPhA, 2026).",
+      },
+      { type: "heading", text: "Blood Sugar and Health Monitoring" },
+      {
+        type: "paragraph",
+        text: "Some pharmacies offer point-of-care testing, such as an on-the-spot HbA1c check, and can help interpret home blood glucose or blood pressure readings you bring in (Daly et al., JAPhA, 2026). A growing number of pharmacies are even beginning to support continuous glucose monitoring — wearable sensors that track blood sugar throughout the day — especially for people whose numbers are not yet where they should be (Joung et al., PLoS One, 2026).",
+      },
+      { type: "heading", text: "Part of Your Care Team" },
+      {
+        type: "paragraph",
+        text: "Increasingly, pharmacists work directly with your doctor. Under collaborative arrangements, some pharmacists can adjust medication doses, order lab tests, and communicate directly with your physician to keep your care coordinated (Firkus et al., PLoS One, 2022; Conley et al., Current Diabetes Reports, 2014). Studies of these team-based models show improvements not only in blood sugar, but also in blood pressure and cholesterol control (Firkus et al., PLoS One, 2022).",
+      },
+      { type: "heading", text: "How to Get the Most From Your Pharmacy" },
+      {
+        type: "list",
+        items: [
+          "Ask about a medication review. If you take several medicines, request a sit-down consultation.",
+          "Bring your numbers. Home blood sugar and blood pressure logs give your pharmacist useful information.",
+          "Ask questions about side effects and timing. Pharmacists are experts on how to take your medicines safely.",
+          "Ask about education programs and monitoring services. Many are free or low-cost and can be arranged close to home.",
+          "Keep your pharmacist in the loop. Let them know about new prescriptions, over-the-counter products, and supplements.",
+        ],
+      },
+      { type: "heading", text: "The Bottom Line" },
+      {
+        type: "paragraph",
+        text: "Your pharmacy is much more than a place to pick up insulin. Pharmacists are highly trained, easily accessible members of your health care team who can help you understand your medications, take them successfully, learn to manage your diabetes, monitor your progress, and stay connected with your doctor. Making use of these services can genuinely improve your health.",
+      },
+      {
+        type: "callout",
+        title: "Talk to your pharmacist",
+        text: "This handout is for general education and does not replace advice from your own health care providers. Ask a CureMed pharmacist about medication reviews, diabetes education, and monitoring services available close to home.",
+      },
+    ],
+  },
+  {
     slug: "walk-in-flu-shot-no-appointment-needed",
     title:
       "Walk In This Week to CureMed Pharmacy — No Appointment Needed for Your Flu Shot",
